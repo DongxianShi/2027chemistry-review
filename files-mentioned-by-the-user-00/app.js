@@ -1168,7 +1168,7 @@ function renderNode(id, pos, role = "related", muted = false) {
   if (id === selectedId) card.classList.add("selected");
   if (id === expandedNodeId) card.classList.add("expanded-source");
   if (nodeMatchesSearch(node)) card.classList.add("match");
-  card.title = node.title;
+  card.title = displayTitle(node);
   card.dataset.id = id;
   card.dataset.kind = node.kind;
   card.style.left = `${pos.x}px`;
@@ -1308,8 +1308,8 @@ function renderNodeLinks(title, ids, kind) {
     if (!node) return;
     const btn = document.createElement("button");
     btn.type = "button";
-    btn.textContent = node.title;
-    btn.title = node.title;
+    btn.textContent = displayTitle(node);
+    btn.title = displayTitle(node);
     btn.addEventListener("click", () => {
       if (EXPANDABLE.has(node.kind)) openLeafNode(id, { toggle: false, focusHost: true });
       else {
