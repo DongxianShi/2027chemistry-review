@@ -1636,13 +1636,14 @@ function renderInlinePage(node) {
   const figure = document.createElement("figure");
   figure.className = "inline-media inline-page-frame";
   const img = document.createElement("img");
-  img.src = node.image;
-  img.alt = `${node.title} 原页截图`;
+  img.src = imageForPageNode(node);
+  img.alt = `${displayTitle(node)} 原页截图`;
   const cap = document.createElement("figcaption");
   cap.textContent = "完整原页截图";
   img.addEventListener("error", () => {
+    if (tryFallbackImage(img, node.image)) return;
     figure.classList.add("missing");
-    cap.textContent = "原页截图未随网站发布，请确认 build/page_images 已上传。";
+    cap.textContent = "原页截图未随网站发布，请确认 build/page_images 或 build/page_images_hd 已上传。";
   });
   figure.append(img, cap);
   return figure;
@@ -1666,16 +1667,27 @@ function renderInlineExample(node) {
 
   const img = document.createElement("img");
   img.src = crop.image;
-  img.alt = `${node.title} 对应页局部截图`;
+  img.alt = `${displayTitle(node)} 对应页局部截图`;
   img.addEventListener("load", () => fitCropFrame(frame, img));
   img.addEventListener("error", () => {
+    if (tryFallbackImage(img, crop.fallback)) return;
     figure.classList.add("missing");
-    frame.textContent = "例题截图未随网站发布，请确认 build/page_images 已上传。";
+    frame.textContent = "例题截图未随网站发布，请确认 build/page_images 或 build/page_images_hd 已上传。";
   });
   frame.appendChild(img);
 
   const cap = document.createElement("figcaption");
-  cap.textContent = `第 ${crop.page} 页 OCR 定位局部`;
+  const toggle = document.createElement("button");
+  toggle.type = "button";
+  toggle.className = "crop-toggle";
+  toggle.textContent = "▾ 显示完整页";
+  toggle.addEventListener("click", () => {
+    const full = frame.classList.toggle("full-page");
+    toggle.textContent = full ? "▴ 回到裁剪区域" : "▾ 显示完整页";
+    if (full) showFullFrame(frame, img);
+    else fitCropFrame(frame, img);
+  });
+  cap.append(`第 ${crop.page} 页高清裁剪区域`, toggle);
   figure.append(frame, cap);
   requestAnimationFrame(() => fitCropFrame(frame, img));
   return figure;
@@ -1683,14 +1695,22 @@ function renderInlineExample(node) {
 
 function fitCropFrame(frame, img) {
   if (!img.naturalWidth || !frame.clientWidth) return;
+  frame.classList.remove("full-page");
   const startRatio = Number(frame.dataset.cropStart) || 0;
   const endRatio = Number(frame.dataset.cropEnd) || 1;
   const scaledHeight = img.naturalHeight * (frame.clientWidth / img.naturalWidth);
   const start = clamp(startRatio * scaledHeight, 0, Math.max(0, scaledHeight - 120));
   const end = clamp(endRatio * scaledHeight, start + 150, scaledHeight);
-  const height = clamp(end - start, 220, Math.min(500, Math.max(240, scaledHeight - start)));
+  const height = clamp(end - start, 280, Math.min(650, Math.max(320, scaledHeight - start)));
   frame.style.height = `${height}px`;
   img.style.transform = `translateY(${-start}px)`;
+}
+
+function showFullFrame(frame, img) {
+  if (!img.naturalWidth || !frame.clientWidth) return;
+  const scaledHeight = img.naturalHeight * (frame.clientWidth / img.naturalWidth);
+  frame.style.height = `${Math.min(680, scaledHeight)}px`;
+  img.style.transform = "translateY(0)";
 }
 
 function exampleCropSpec(node) {
@@ -1700,7 +1720,7 @@ function exampleCropSpec(node) {
   const pageLines = textLines(pageNode.text);
   const exampleLines = textLines(node.text);
   if (!pageLines.length || !exampleLines.length) {
-    return { page, image: pageNode.image, startRatio: 0.08, endRatio: 0.92 };
+    return { page, image: imageForPageNumber(page), fallback: pageNode.image || fallbackImageForPageNumber(page), startRatio: 0.04, endRatio: 0.96 };
   }
 
   const startLine = exampleLines.find(line => /^【?例\d+】?/.test(line)) || exampleLines[0];
@@ -1716,9 +1736,9 @@ function exampleCropSpec(node) {
 
   const bodyStart = 0.055;
   const bodyRange = 0.89;
-  const startRatio = clamp(bodyStart + (startIndex / pageLines.length) * bodyRange - 0.016, 0, 0.92);
-  const endRatio = clamp(bodyStart + ((endIndex + 1) / pageLines.length) * bodyRange + 0.045, startRatio + 0.18, 1);
-  return { page, image: pageNode.image, startRatio, endRatio };
+  const startRatio = clamp(bodyStart + (startIndex / pageLines.length) * bodyRange - 0.06, 0, 0.9);
+  const endRatio = clamp(bodyStart + ((endIndex + 1) / pageLines.length) * bodyRange + 0.12, startRatio + 0.3, 1);
+  return { page, image: imageForPageNumber(page), fallback: pageNode.image || fallbackImageForPageNumber(page), startRatio, endRatio };
 }
 
 function textLines(text) {
