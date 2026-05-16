@@ -1,0 +1,2198 @@
+{
+  "centers": 1446,
+  "failingCenters": 50,
+  "stickyFailures": 0,
+  "textOverlaps": 0,
+  "lineNodeOverlaps": 28,
+  "lineLabelOverlaps": 83,
+  "failures": [
+    {
+      "centerId": "n1",
+      "centerTitle": "2027广东高考化学一轮复习",
+      "text": [],
+      "sticky": [],
+      "lineNode": [],
+      "lineLabel": [
+        {
+          "centerId": "n1",
+          "edge": {
+            "source": "n1",
+            "target": "n158",
+            "relation": "包含",
+            "index": 6
+          },
+          "label": {
+            "source": "n1",
+            "target": "n175",
+            "relation": "包含",
+            "text": "包含",
+            "index": 7
+          }
+        },
+        {
+          "centerId": "n1",
+          "edge": {
+            "source": "n1",
+            "target": "n248",
+            "relation": "包含",
+            "index": 8
+          },
+          "label": {
+            "source": "n175",
+            "target": "n416",
+            "relation": "结构决定有机性质",
+            "text": "结构决定有机性质",
+            "index": 22
+          }
+        }
+      ]
+    },
+    {
+      "centerId": "n3",
+      "centerTitle": "模块1物质的组成与分类",
+      "text": [],
+      "sticky": [],
+      "lineNode": [],
+      "lineLabel": [
+        {
+          "centerId": "n3",
+          "edge": {
+            "source": "n3",
+            "target": "sum_n3_3",
+            "relation": "内容提要",
+            "index": 3
+          },
+          "label": {
+            "source": "n3",
+            "target": "sum_n3_1",
+            "relation": "内容提要",
+            "text": "内容提要",
+            "index": 1
+          }
+        },
+        {
+          "centerId": "n3",
+          "edge": {
+            "source": "n3",
+            "target": "sum_n3_4",
+            "relation": "内容提要",
+            "index": 4
+          },
+          "label": {
+            "source": "n3",
+            "target": "sum_n3_9",
+            "relation": "内容提要",
+            "text": "内容提要",
+            "index": 9
+          }
+        },
+        {
+          "centerId": "n3",
+          "edge": {
+            "source": "n3",
+            "target": "n6",
+            "relation": "包含",
+            "index": 13
+          },
+          "label": {
+            "source": "n3",
+            "target": "sum_n3_10",
+            "relation": "内容提要",
+            "text": "内容提要",
+            "index": 10
+          }
+        }
+      ]
+    },
+    {
+      "centerId": "n12",
+      "centerTitle": "模块1化学计量中的重要物理量",
+      "text": [],
+      "sticky": [],
+      "lineNode": [],
+      "lineLabel": [
+        {
+          "centerId": "n12",
+          "edge": {
+            "source": "n12",
+            "target": "n15",
+            "relation": "包含",
+            "index": 14
+          },
+          "label": {
+            "source": "n12",
+            "target": "n14",
+            "relation": "包含",
+            "text": "包含",
+            "index": 13
+          }
+        }
+      ]
+    },
+    {
+      "centerId": "n17",
+      "centerTitle": "模块2化学计量中常用的计算方法",
+      "text": [],
+      "sticky": [],
+      "lineNode": [],
+      "lineLabel": [
+        {
+          "centerId": "n17",
+          "edge": {
+            "source": "n11",
+            "target": "n17",
+            "relation": "包含",
+            "index": 0
+          },
+          "label": {
+            "source": "n17",
+            "target": "sum_n17_1",
+            "relation": "内容提要",
+            "text": "内容提要",
+            "index": 1
+          }
+        }
+      ]
+    },
+    {
+      "centerId": "n24",
+      "centerTitle": "第3章离子反应",
+      "text": [],
+      "sticky": [],
+      "lineNode": [],
+      "lineLabel": [
+        {
+          "centerId": "n24",
+          "edge": {
+            "source": "n1",
+            "target": "n24",
+            "relation": "包含",
+            "index": 0
+          },
+          "label": {
+            "source": "n24",
+            "target": "n322",
+            "relation": "离子反应延伸到离子平衡",
+            "text": "离子反应延伸到离子平衡",
+            "index": 5
+          }
+        },
+        {
+          "centerId": "n24",
+          "edge": {
+            "source": "n565",
+            "target": "n24",
+            "relation": "化学用语支撑离子方程式",
+            "index": 6
+          },
+          "label": {
+            "source": "n24",
+            "target": "n322",
+            "relation": "离子反应延伸到离子平衡",
+            "text": "离子反应延伸到离子平衡",
+            "index": 5
+          }
+        }
+      ]
+    },
+    {
+      "centerId": "n33",
+      "centerTitle": "模块3离子方程式正误判断的“七个注意”",
+      "text": [],
+      "sticky": [],
+      "lineNode": [
+        {
+          "centerId": "n33",
+          "edge": {
+            "source": "n33",
+            "target": "sum_n33_2",
+            "relation": "内容提要",
+            "index": 2
+          },
+          "node": {
+            "id": "sum_n33_5",
+            "kind": "summary",
+            "text": "3.铵盐与碱反应的产物是写成\"NH·HO\"还是\"NH”，关键看条件是...提要"
+          }
+        },
+        {
+          "centerId": "n33",
+          "edge": {
+            "source": "n33",
+            "target": "sum_n33_11",
+            "relation": "内容提要",
+            "index": 11
+          },
+          "node": {
+            "id": "sum_n33_6",
+            "kind": "summary",
+            "text": "1.“折”的本质是：在水中物质完全以自由移动离子的形式存在。提要"
+          }
+        }
+      ],
+      "lineLabel": [
+        {
+          "centerId": "n33",
+          "edge": {
+            "source": "n33",
+            "target": "sum_n33_11",
+            "relation": "内容提要",
+            "index": 11
+          },
+          "label": {
+            "source": "n33",
+            "target": "sum_n33_6",
+            "relation": "内容提要",
+            "text": "内容提要",
+            "index": 6
+          }
+        }
+      ]
+    },
+    {
+      "centerId": "n53",
+      "centerTitle": "模块3氧化还原方程式配平",
+      "text": [],
+      "sticky": [],
+      "lineNode": [
+        {
+          "centerId": "n53",
+          "edge": {
+            "source": "n53",
+            "target": "n59",
+            "relation": "包含",
+            "index": 11
+          },
+          "node": {
+            "id": "n58",
+            "kind": "type",
+            "text": "类型V：歧化反应的配平类型"
+          }
+        }
+      ],
+      "lineLabel": [
+        {
+          "centerId": "n53",
+          "edge": {
+            "source": "n42",
+            "target": "n53",
+            "relation": "包含",
+            "index": 0
+          },
+          "label": {
+            "source": "n53",
+            "target": "sum_n53_1",
+            "relation": "内容提要",
+            "text": "内容提要",
+            "index": 1
+          }
+        },
+        {
+          "centerId": "n53",
+          "edge": {
+            "source": "n53",
+            "target": "sum_n53_3",
+            "relation": "内容提要",
+            "index": 3
+          },
+          "label": {
+            "source": "n53",
+            "target": "sum_n53_1",
+            "relation": "内容提要",
+            "text": "内容提要",
+            "index": 1
+          }
+        }
+      ]
+    },
+    {
+      "centerId": "n76",
+      "centerTitle": "第 2节 钠盐、碱金属",
+      "text": [],
+      "sticky": [],
+      "lineNode": [
+        {
+          "centerId": "n76",
+          "edge": {
+            "source": "n76",
+            "target": "sum_n76_6",
+            "relation": "内容提要",
+            "index": 6
+          },
+          "node": {
+            "id": "sum_n76_9",
+            "kind": "summary",
+            "text": "(2)本质：某些金属及其化合物在灼烧时电子吸收热能发生跃迁成为激发态...提要"
+          }
+        }
+      ],
+      "lineLabel": [
+        {
+          "centerId": "n76",
+          "edge": {
+            "source": "n76",
+            "target": "sum_n76_5",
+            "relation": "内容提要",
+            "index": 5
+          },
+          "label": {
+            "source": "n76",
+            "target": "sum_n76_11",
+            "relation": "内容提要",
+            "text": "内容提要",
+            "index": 11
+          }
+        }
+      ]
+    },
+    {
+      "centerId": "n85",
+      "centerTitle": "第1节铁单质、铁的氧化物、含铁的碱",
+      "text": [],
+      "sticky": [],
+      "lineNode": [
+        {
+          "centerId": "n85",
+          "edge": {
+            "source": "n85",
+            "target": "sum_n85_4",
+            "relation": "内容提要",
+            "index": 4
+          },
+          "node": {
+            "id": "sum_n85_3",
+            "kind": "summary",
+            "text": "3.用途：提要"
+          }
+        }
+      ],
+      "lineLabel": [
+        {
+          "centerId": "n85",
+          "edge": {
+            "source": "n84",
+            "target": "n85",
+            "relation": "包含",
+            "index": 0
+          },
+          "label": {
+            "source": "n85",
+            "target": "sum_n85_2",
+            "relation": "内容提要",
+            "text": "内容提要",
+            "index": 2
+          }
+        },
+        {
+          "centerId": "n85",
+          "edge": {
+            "source": "n85",
+            "target": "sum_n85_5",
+            "relation": "内容提要",
+            "index": 5
+          },
+          "label": {
+            "source": "n85",
+            "target": "sum_n85_2",
+            "relation": "内容提要",
+            "text": "内容提要",
+            "index": 2
+          }
+        }
+      ]
+    },
+    {
+      "centerId": "n90",
+      "centerTitle": "第 2 节铁盐、钴和镍及其化合物",
+      "text": [],
+      "sticky": [],
+      "lineNode": [],
+      "lineLabel": [
+        {
+          "centerId": "n90",
+          "edge": {
+            "source": "n90",
+            "target": "sum_n90_3",
+            "relation": "内容提要",
+            "index": 3
+          },
+          "label": {
+            "source": "n90",
+            "target": "sum_n90_8",
+            "relation": "内容提要",
+            "text": "内容提要",
+            "index": 8
+          }
+        },
+        {
+          "centerId": "n90",
+          "edge": {
+            "source": "n90",
+            "target": "sum_n90_13",
+            "relation": "内容提要",
+            "index": 13
+          },
+          "label": {
+            "source": "n90",
+            "target": "sum_n90_7",
+            "relation": "内容提要",
+            "text": "内容提要",
+            "index": 7
+          }
+        }
+      ]
+    },
+    {
+      "centerId": "n104",
+      "centerTitle": "第1节 镁、钙、钡",
+      "text": [],
+      "sticky": [],
+      "lineNode": [
+        {
+          "centerId": "n104",
+          "edge": {
+            "source": "n104",
+            "target": "sum_n104_2",
+            "relation": "内容提要",
+            "index": 2
+          },
+          "node": {
+            "id": "n103",
+            "kind": "module",
+            "text": "模块4其他金属元素模块"
+          }
+        }
+      ],
+      "lineLabel": [
+        {
+          "centerId": "n104",
+          "edge": {
+            "source": "n103",
+            "target": "n104",
+            "relation": "包含",
+            "index": 0
+          },
+          "label": {
+            "source": "n104",
+            "target": "sum_n104_7",
+            "relation": "内容提要",
+            "text": "内容提要",
+            "index": 7
+          }
+        },
+        {
+          "centerId": "n104",
+          "edge": {
+            "source": "n104",
+            "target": "sum_n104_2",
+            "relation": "内容提要",
+            "index": 2
+          },
+          "label": {
+            "source": "n104",
+            "target": "sum_n104_7",
+            "relation": "内容提要",
+            "text": "内容提要",
+            "index": 7
+          }
+        },
+        {
+          "centerId": "n104",
+          "edge": {
+            "source": "n104",
+            "target": "sum_n104_2",
+            "relation": "内容提要",
+            "index": 2
+          },
+          "label": {
+            "source": "n103",
+            "target": "n104",
+            "relation": "包含",
+            "text": "包含",
+            "index": 0
+          }
+        }
+      ]
+    },
+    {
+      "centerId": "n114",
+      "centerTitle": "模块1碳、硅及其化合物",
+      "text": [],
+      "sticky": [],
+      "lineNode": [
+        {
+          "centerId": "n114",
+          "edge": {
+            "source": "n114",
+            "target": "sum_n114_12",
+            "relation": "内容提要",
+            "index": 12
+          },
+          "node": {
+            "id": "sum_n114_2",
+            "kind": "summary",
+            "text": "2.化学性质：晶体硅性质较稳定，无定形硅有较强还原性，能与许多氧化剂...提要"
+          }
+        }
+      ],
+      "lineLabel": [
+        {
+          "centerId": "n114",
+          "edge": {
+            "source": "n114",
+            "target": "sum_n114_8",
+            "relation": "内容提要",
+            "index": 8
+          },
+          "label": {
+            "source": "n114",
+            "target": "sum_n114_6",
+            "relation": "内容提要",
+            "text": "内容提要",
+            "index": 6
+          }
+        }
+      ]
+    },
+    {
+      "centerId": "n123",
+      "centerTitle": "第1节氯及其化合物",
+      "text": [],
+      "sticky": [],
+      "lineNode": [],
+      "lineLabel": [
+        {
+          "centerId": "n123",
+          "edge": {
+            "source": "n123",
+            "target": "sum_n123_8",
+            "relation": "内容提要",
+            "index": 8
+          },
+          "label": {
+            "source": "n123",
+            "target": "sum_n123_3",
+            "relation": "内容提要",
+            "text": "内容提要",
+            "index": 3
+          }
+        }
+      ]
+    },
+    {
+      "centerId": "n129",
+      "centerTitle": "第2节卤族元素",
+      "text": [],
+      "sticky": [],
+      "lineNode": [],
+      "lineLabel": [
+        {
+          "centerId": "n129",
+          "edge": {
+            "source": "n129",
+            "target": "sum_n129_1",
+            "relation": "内容提要",
+            "index": 1
+          },
+          "label": {
+            "source": "n129",
+            "target": "sum_n129_2",
+            "relation": "内容提要",
+            "text": "内容提要",
+            "index": 2
+          }
+        },
+        {
+          "centerId": "n129",
+          "edge": {
+            "source": "n129",
+            "target": "sum_n129_7",
+            "relation": "内容提要",
+            "index": 7
+          },
+          "label": {
+            "source": "n129",
+            "target": "sum_n129_6",
+            "relation": "内容提要",
+            "text": "内容提要",
+            "index": 6
+          }
+        },
+        {
+          "centerId": "n129",
+          "edge": {
+            "source": "n129",
+            "target": "sum_n129_9",
+            "relation": "内容提要",
+            "index": 9
+          },
+          "label": {
+            "source": "n129",
+            "target": "n133",
+            "relation": "包含",
+            "text": "包含",
+            "index": 13
+          }
+        }
+      ]
+    },
+    {
+      "centerId": "n148",
+      "centerTitle": "第1节氮气、氮的氧化物、氮的氢化物",
+      "text": [],
+      "sticky": [],
+      "lineNode": [],
+      "lineLabel": [
+        {
+          "centerId": "n148",
+          "edge": {
+            "source": "n148",
+            "target": "sum_n148_3",
+            "relation": "内容提要",
+            "index": 3
+          },
+          "label": {
+            "source": "n148",
+            "target": "sum_n148_10",
+            "relation": "内容提要",
+            "text": "内容提要",
+            "index": 10
+          }
+        }
+      ]
+    },
+    {
+      "centerId": "n153",
+      "centerTitle": "第 2 节含氮的酸和盐、磷及其化合物",
+      "text": [],
+      "sticky": [],
+      "lineNode": [
+        {
+          "centerId": "n153",
+          "edge": {
+            "source": "n153",
+            "target": "sum_n153_1",
+            "relation": "内容提要",
+            "index": 1
+          },
+          "node": {
+            "id": "sum_n153_5",
+            "kind": "summary",
+            "text": "二、含氮的盐提要"
+          }
+        }
+      ],
+      "lineLabel": []
+    },
+    {
+      "centerId": "n159",
+      "centerTitle": "模块1化学工艺流程的框架及其关键环节",
+      "text": [],
+      "sticky": [],
+      "lineNode": [],
+      "lineLabel": [
+        {
+          "centerId": "n159",
+          "edge": {
+            "source": "n159",
+            "target": "sum_n159_1",
+            "relation": "内容提要",
+            "index": 1
+          },
+          "label": {
+            "source": "n159",
+            "target": "sum_n159_3",
+            "relation": "内容提要",
+            "text": "内容提要",
+            "index": 3
+          }
+        },
+        {
+          "centerId": "n159",
+          "edge": {
+            "source": "n159",
+            "target": "sum_n159_11",
+            "relation": "内容提要",
+            "index": 11
+          },
+          "label": {
+            "source": "n159",
+            "target": "sum_n159_10",
+            "relation": "内容提要",
+            "text": "内容提要",
+            "index": 10
+          }
+        },
+        {
+          "centerId": "n159",
+          "edge": {
+            "source": "n159",
+            "target": "n162",
+            "relation": "包含",
+            "index": 14
+          },
+          "label": {
+            "source": "n159",
+            "target": "n161",
+            "relation": "包含",
+            "text": "包含",
+            "index": 13
+          }
+        }
+      ]
+    },
+    {
+      "centerId": "n166",
+      "centerTitle": "模块2常考元素的化工流程题",
+      "text": [],
+      "sticky": [],
+      "lineNode": [
+        {
+          "centerId": "n166",
+          "edge": {
+            "source": "n166",
+            "target": "n171",
+            "relation": "包含",
+            "index": 20
+          },
+          "node": {
+            "id": "n173",
+            "kind": "type",
+            "text": "类型VI：以Co、Ni元素为主线的工艺流程题类型"
+          }
+        },
+        {
+          "centerId": "n166",
+          "edge": {
+            "source": "n166",
+            "target": "n172",
+            "relation": "包含",
+            "index": 21
+          },
+          "node": {
+            "id": "n173",
+            "kind": "type",
+            "text": "类型VI：以Co、Ni元素为主线的工艺流程题类型"
+          }
+        }
+      ],
+      "lineLabel": [
+        {
+          "centerId": "n166",
+          "edge": {
+            "source": "n158",
+            "target": "n166",
+            "relation": "包含",
+            "index": 0
+          },
+          "label": {
+            "source": "n166",
+            "target": "sum_n166_8",
+            "relation": "内容提要",
+            "text": "内容提要",
+            "index": 8
+          }
+        },
+        {
+          "centerId": "n166",
+          "edge": {
+            "source": "n166",
+            "target": "sum_n166_6",
+            "relation": "内容提要",
+            "index": 6
+          },
+          "label": {
+            "source": "n166",
+            "target": "sum_n166_1",
+            "relation": "内容提要",
+            "text": "内容提要",
+            "index": 1
+          }
+        }
+      ]
+    },
+    {
+      "centerId": "n180",
+      "centerTitle": "模块2：原子核外电子排布原理",
+      "text": [],
+      "sticky": [],
+      "lineNode": [],
+      "lineLabel": [
+        {
+          "centerId": "n180",
+          "edge": {
+            "source": "n180",
+            "target": "sum_n180_10",
+            "relation": "内容提要",
+            "index": 10
+          },
+          "label": {
+            "source": "n180",
+            "target": "sum_n180_7",
+            "relation": "内容提要",
+            "text": "内容提要",
+            "index": 7
+          }
+        }
+      ]
+    },
+    {
+      "centerId": "n201",
+      "centerTitle": "第2节价层电子对的互斥理论与杂化轨道理论",
+      "text": [],
+      "sticky": [],
+      "lineNode": [],
+      "lineLabel": [
+        {
+          "centerId": "n201",
+          "edge": {
+            "source": "n197",
+            "target": "n201",
+            "relation": "包含",
+            "index": 0
+          },
+          "label": {
+            "source": "n201",
+            "target": "sum_n201_7",
+            "relation": "内容提要",
+            "text": "内容提要",
+            "index": 7
+          }
+        }
+      ]
+    },
+    {
+      "centerId": "n226",
+      "centerTitle": "模块8晶胞计算题型",
+      "text": [],
+      "sticky": [],
+      "lineNode": [
+        {
+          "centerId": "n226",
+          "edge": {
+            "source": "n226",
+            "target": "n230",
+            "relation": "包含",
+            "index": 19
+          },
+          "node": {
+            "id": "n231",
+            "kind": "type",
+            "text": "类型V：晶体结构的缺陷与掺杂问题类型"
+          }
+        },
+        {
+          "centerId": "n226",
+          "edge": {
+            "source": "n226",
+            "target": "n232",
+            "relation": "包含",
+            "index": 21
+          },
+          "node": {
+            "id": "n231",
+            "kind": "type",
+            "text": "类型V：晶体结构的缺陷与掺杂问题类型"
+          }
+        }
+      ],
+      "lineLabel": [
+        {
+          "centerId": "n226",
+          "edge": {
+            "source": "n175",
+            "target": "n226",
+            "relation": "包含",
+            "index": 0
+          },
+          "label": {
+            "source": "n226",
+            "target": "sum_n226_10",
+            "relation": "内容提要",
+            "text": "内容提要",
+            "index": 10
+          }
+        },
+        {
+          "centerId": "n226",
+          "edge": {
+            "source": "n226",
+            "target": "sum_n226_15",
+            "relation": "内容提要",
+            "index": 15
+          },
+          "label": {
+            "source": "n226",
+            "target": "sum_n226_11",
+            "relation": "内容提要",
+            "text": "内容提要",
+            "index": 11
+          }
+        },
+        {
+          "centerId": "n226",
+          "edge": {
+            "source": "n226",
+            "target": "n234",
+            "relation": "包含",
+            "index": 23
+          },
+          "label": {
+            "source": "n226",
+            "target": "n228",
+            "relation": "包含",
+            "text": "包含",
+            "index": 17
+          }
+        }
+      ]
+    },
+    {
+      "centerId": "n235",
+      "centerTitle": "模块9配合物与超分子",
+      "text": [],
+      "sticky": [],
+      "lineNode": [],
+      "lineLabel": [
+        {
+          "centerId": "n235",
+          "edge": {
+            "source": "n235",
+            "target": "sum_n235_6",
+            "relation": "内容提要",
+            "index": 6
+          },
+          "label": {
+            "source": "n235",
+            "target": "sum_n235_7",
+            "relation": "内容提要",
+            "text": "内容提要",
+            "index": 7
+          }
+        }
+      ]
+    },
+    {
+      "centerId": "n250",
+      "centerTitle": "第1节反应热与变",
+      "text": [],
+      "sticky": [],
+      "lineNode": [
+        {
+          "centerId": "n250",
+          "edge": {
+            "source": "n250",
+            "target": "n252",
+            "relation": "包含",
+            "index": 15
+          },
+          "node": {
+            "id": "n253",
+            "kind": "type",
+            "text": "类型Ⅲ：利用键能计算△H类型"
+          }
+        },
+        {
+          "centerId": "n250",
+          "edge": {
+            "source": "n250",
+            "target": "n256",
+            "relation": "包含",
+            "index": 19
+          },
+          "node": {
+            "id": "n258",
+            "kind": "type",
+            "text": "类型VⅢI：根据题目信息计算△H类型"
+          }
+        }
+      ],
+      "lineLabel": [
+        {
+          "centerId": "n250",
+          "edge": {
+            "source": "n250",
+            "target": "sum_n250_9",
+            "relation": "内容提要",
+            "index": 9
+          },
+          "label": {
+            "source": "n250",
+            "target": "sum_n250_5",
+            "relation": "内容提要",
+            "text": "内容提要",
+            "index": 5
+          }
+        },
+        {
+          "centerId": "n250",
+          "edge": {
+            "source": "n250",
+            "target": "sum_n250_10",
+            "relation": "内容提要",
+            "index": 10
+          },
+          "label": {
+            "source": "n250",
+            "target": "sum_n250_4",
+            "relation": "内容提要",
+            "text": "内容提要",
+            "index": 4
+          }
+        },
+        {
+          "centerId": "n250",
+          "edge": {
+            "source": "n250",
+            "target": "sum_n250_11",
+            "relation": "内容提要",
+            "index": 11
+          },
+          "label": {
+            "source": "n250",
+            "target": "sum_n250_8",
+            "relation": "内容提要",
+            "text": "内容提要",
+            "index": 8
+          }
+        },
+        {
+          "centerId": "n250",
+          "edge": {
+            "source": "n250",
+            "target": "n252",
+            "relation": "包含",
+            "index": 15
+          },
+          "label": {
+            "source": "n250",
+            "target": "n253",
+            "relation": "包含",
+            "text": "包含",
+            "index": 16
+          }
+        },
+        {
+          "centerId": "n250",
+          "edge": {
+            "source": "n250",
+            "target": "n256",
+            "relation": "包含",
+            "index": 19
+          },
+          "label": {
+            "source": "n250",
+            "target": "n258",
+            "relation": "包含",
+            "text": "包含",
+            "index": 21
+          }
+        }
+      ]
+    },
+    {
+      "centerId": "n279",
+      "centerTitle": "第5节反应速率图像分析",
+      "text": [],
+      "sticky": [],
+      "lineNode": [],
+      "lineLabel": [
+        {
+          "centerId": "n279",
+          "edge": {
+            "source": "n279",
+            "target": "sum_n279_1",
+            "relation": "内容提要",
+            "index": 1
+          },
+          "label": {
+            "source": "n279",
+            "target": "sum_n279_11",
+            "relation": "内容提要",
+            "text": "内容提要",
+            "index": 11
+          }
+        },
+        {
+          "centerId": "n279",
+          "edge": {
+            "source": "n279",
+            "target": "sum_n279_6",
+            "relation": "内容提要",
+            "index": 6
+          },
+          "label": {
+            "source": "n279",
+            "target": "sum_n279_8",
+            "relation": "内容提要",
+            "text": "内容提要",
+            "index": 8
+          }
+        },
+        {
+          "centerId": "n279",
+          "edge": {
+            "source": "n279",
+            "target": "n282",
+            "relation": "包含",
+            "index": 14
+          },
+          "label": {
+            "source": "n279",
+            "target": "n281",
+            "relation": "包含",
+            "text": "包含",
+            "index": 13
+          }
+        }
+      ]
+    },
+    {
+      "centerId": "n286",
+      "centerTitle": "模块3化学平衡",
+      "text": [],
+      "sticky": [],
+      "lineNode": [],
+      "lineLabel": [
+        {
+          "centerId": "n286",
+          "edge": {
+            "source": "n248",
+            "target": "n286",
+            "relation": "包含",
+            "index": 0
+          },
+          "label": {
+            "source": "n286",
+            "target": "n313",
+            "relation": "包含",
+            "text": "包含",
+            "index": 6
+          }
+        }
+      ]
+    },
+    {
+      "centerId": "n290",
+      "centerTitle": "第2 节影响平衡的因素",
+      "text": [],
+      "sticky": [],
+      "lineNode": [
+        {
+          "centerId": "n290",
+          "edge": {
+            "source": "n290",
+            "target": "sum_n290_1",
+            "relation": "内容提要",
+            "index": 1
+          },
+          "node": {
+            "id": "sum_n290_9",
+            "kind": "summary",
+            "text": "3.恒温恒压体系，当稀有气体（或无关气体）占比越多，则参与反应的气体...提要"
+          }
+        }
+      ],
+      "lineLabel": [
+        {
+          "centerId": "n290",
+          "edge": {
+            "source": "n290",
+            "target": "sum_n290_1",
+            "relation": "内容提要",
+            "index": 1
+          },
+          "label": {
+            "source": "n290",
+            "target": "sum_n290_9",
+            "relation": "内容提要",
+            "text": "内容提要",
+            "index": 9
+          }
+        }
+      ]
+    },
+    {
+      "centerId": "n296",
+      "centerTitle": "第3节化学平衡常数",
+      "text": [],
+      "sticky": [],
+      "lineNode": [
+        {
+          "centerId": "n296",
+          "edge": {
+            "source": "n296",
+            "target": "n301",
+            "relation": "包含",
+            "index": 9
+          },
+          "node": {
+            "id": "n300",
+            "kind": "type",
+            "text": "类型IV:K。的计算类型"
+          }
+        }
+      ],
+      "lineLabel": [
+        {
+          "centerId": "n296",
+          "edge": {
+            "source": "n286",
+            "target": "n296",
+            "relation": "包含",
+            "index": 0
+          },
+          "label": {
+            "source": "n296",
+            "target": "sum_n296_1",
+            "relation": "内容提要",
+            "text": "内容提要",
+            "index": 1
+          }
+        },
+        {
+          "centerId": "n296",
+          "edge": {
+            "source": "n296",
+            "target": "sum_n296_3",
+            "relation": "内容提要",
+            "index": 3
+          },
+          "label": {
+            "source": "n296",
+            "target": "sum_n296_1",
+            "relation": "内容提要",
+            "text": "内容提要",
+            "index": 1
+          }
+        }
+      ]
+    },
+    {
+      "centerId": "n313",
+      "centerTitle": "第6节平衡图像分析",
+      "text": [],
+      "sticky": [],
+      "lineNode": [],
+      "lineLabel": [
+        {
+          "centerId": "n313",
+          "edge": {
+            "source": "n313",
+            "target": "n318",
+            "relation": "包含",
+            "index": 6
+          },
+          "label": {
+            "source": "n313",
+            "target": "n319",
+            "relation": "包含",
+            "text": "包含",
+            "index": 7
+          }
+        }
+      ]
+    },
+    {
+      "centerId": "n332",
+      "centerTitle": "第3节溶液酸碱性与 pH",
+      "text": [],
+      "sticky": [],
+      "lineNode": [
+        {
+          "centerId": "n332",
+          "edge": {
+            "source": "n332",
+            "target": "sum_n332_5",
+            "relation": "内容提要",
+            "index": 5
+          },
+          "node": {
+            "id": "sum_n332_1",
+            "kind": "summary",
+            "text": "内容提要提要"
+          }
+        }
+      ],
+      "lineLabel": [
+        {
+          "centerId": "n332",
+          "edge": {
+            "source": "n332",
+            "target": "sum_n332_3",
+            "relation": "内容提要",
+            "index": 3
+          },
+          "label": {
+            "source": "n332",
+            "target": "sum_n332_8",
+            "relation": "内容提要",
+            "text": "内容提要",
+            "index": 8
+          }
+        },
+        {
+          "centerId": "n332",
+          "edge": {
+            "source": "n332",
+            "target": "sum_n332_5",
+            "relation": "内容提要",
+            "index": 5
+          },
+          "label": {
+            "source": "n332",
+            "target": "sum_n332_1",
+            "relation": "内容提要",
+            "text": "内容提要",
+            "index": 1
+          }
+        }
+      ]
+    },
+    {
+      "centerId": "n341",
+      "centerTitle": "第1节盐类水解平衡、规律及其运用",
+      "text": [],
+      "sticky": [],
+      "lineNode": [
+        {
+          "centerId": "n341",
+          "edge": {
+            "source": "n341",
+            "target": "sum_n341_6",
+            "relation": "内容提要",
+            "index": 6
+          },
+          "node": {
+            "id": "sum_n341_10",
+            "kind": "summary",
+            "text": "3.K的影响因素：K只受温度的影响，由于ΔH>0，K与温度正相关。提要"
+          }
+        }
+      ],
+      "lineLabel": [
+        {
+          "centerId": "n341",
+          "edge": {
+            "source": "n341",
+            "target": "sum_n341_9",
+            "relation": "内容提要",
+            "index": 9
+          },
+          "label": {
+            "source": "n341",
+            "target": "sum_n341_11",
+            "relation": "内容提要",
+            "text": "内容提要",
+            "index": 11
+          }
+        }
+      ]
+    },
+    {
+      "centerId": "n362",
+      "centerTitle": "第1节溶解平衡的影响因素及其运用",
+      "text": [],
+      "sticky": [],
+      "lineNode": [
+        {
+          "centerId": "n362",
+          "edge": {
+            "source": "n362",
+            "target": "sum_n362_1",
+            "relation": "内容提要",
+            "index": 1
+          },
+          "node": {
+            "id": "sum_n362_2",
+            "kind": "summary",
+            "text": "二、溶解平街的影响因素（以AgCI为例）提要"
+          }
+        },
+        {
+          "centerId": "n362",
+          "edge": {
+            "source": "n362",
+            "target": "sum_n362_5",
+            "relation": "内容提要",
+            "index": 5
+          },
+          "node": {
+            "id": "sum_n362_7",
+            "kind": "summary",
+            "text": "2.K的应用提要"
+          }
+        }
+      ],
+      "lineLabel": [
+        {
+          "centerId": "n362",
+          "edge": {
+            "source": "n362",
+            "target": "sum_n362_1",
+            "relation": "内容提要",
+            "index": 1
+          },
+          "label": {
+            "source": "n362",
+            "target": "sum_n362_2",
+            "relation": "内容提要",
+            "text": "内容提要",
+            "index": 2
+          }
+        }
+      ]
+    },
+    {
+      "centerId": "n366",
+      "centerTitle": "第2节沉淀溶解平衡图像分析",
+      "text": [],
+      "sticky": [],
+      "lineNode": [],
+      "lineLabel": [
+        {
+          "centerId": "n366",
+          "edge": {
+            "source": "n366",
+            "target": "sum_n366_3",
+            "relation": "内容提要",
+            "index": 3
+          },
+          "label": {
+            "source": "n366",
+            "target": "sum_n366_1",
+            "relation": "内容提要",
+            "text": "内容提要",
+            "index": 1
+          }
+        },
+        {
+          "centerId": "n366",
+          "edge": {
+            "source": "n366",
+            "target": "n369",
+            "relation": "包含",
+            "index": 14
+          },
+          "label": {
+            "source": "n366",
+            "target": "n368",
+            "relation": "包含",
+            "text": "包含",
+            "index": 13
+          }
+        }
+      ]
+    },
+    {
+      "centerId": "n381",
+      "centerTitle": "第3节常见化学电源 -次电池、二次电池、燃料电池",
+      "text": [],
+      "sticky": [],
+      "lineNode": [],
+      "lineLabel": [
+        {
+          "centerId": "n381",
+          "edge": {
+            "source": "n381",
+            "target": "n386",
+            "relation": "包含",
+            "index": 13
+          },
+          "label": {
+            "source": "n381",
+            "target": "sum_n381_8",
+            "relation": "内容提要",
+            "text": "内容提要",
+            "index": 8
+          }
+        }
+      ]
+    },
+    {
+      "centerId": "n401",
+      "centerTitle": "第3节电解原理的应用",
+      "text": [],
+      "sticky": [],
+      "lineNode": [
+        {
+          "centerId": "n401",
+          "edge": {
+            "source": "n401",
+            "target": "sum_n401_4",
+            "relation": "内容提要",
+            "index": 4
+          },
+          "node": {
+            "id": "sum_n401_3",
+            "kind": "summary",
+            "text": "3.制备漂白液提要"
+          }
+        }
+      ],
+      "lineLabel": [
+        {
+          "centerId": "n401",
+          "edge": {
+            "source": "n394",
+            "target": "n401",
+            "relation": "包含",
+            "index": 0
+          },
+          "label": {
+            "source": "n401",
+            "target": "sum_n401_7",
+            "relation": "内容提要",
+            "text": "内容提要",
+            "index": 7
+          }
+        }
+      ]
+    },
+    {
+      "centerId": "n406",
+      "centerTitle": "第 4节高频考查的电解池题型",
+      "text": [],
+      "sticky": [],
+      "lineNode": [],
+      "lineLabel": [
+        {
+          "centerId": "n406",
+          "edge": {
+            "source": "n406",
+            "target": "n411",
+            "relation": "包含",
+            "index": 6
+          },
+          "label": {
+            "source": "n406",
+            "target": "n412",
+            "relation": "包含",
+            "text": "包含",
+            "index": 7
+          }
+        }
+      ]
+    },
+    {
+      "centerId": "n416",
+      "centerTitle": "第12章有机化学基础",
+      "text": [],
+      "sticky": [],
+      "lineNode": [],
+      "lineLabel": [
+        {
+          "centerId": "n416",
+          "edge": {
+            "source": "n416",
+            "target": "n453",
+            "relation": "包含",
+            "index": 6
+          },
+          "label": {
+            "source": "n416",
+            "target": "n444",
+            "relation": "包含",
+            "text": "包含",
+            "index": 5
+          }
+        },
+        {
+          "centerId": "n416",
+          "edge": {
+            "source": "n416",
+            "target": "n471",
+            "relation": "包含",
+            "index": 8
+          },
+          "label": {
+            "source": "n416",
+            "target": "n479",
+            "relation": "包含",
+            "text": "包含",
+            "index": 9
+          }
+        },
+        {
+          "centerId": "n416",
+          "edge": {
+            "source": "n416",
+            "target": "n511",
+            "relation": "包含",
+            "index": 12
+          },
+          "label": {
+            "source": "n416",
+            "target": "n417",
+            "relation": "包含",
+            "text": "包含",
+            "index": 1
+          }
+        }
+      ]
+    },
+    {
+      "centerId": "n422",
+      "centerTitle": "第2节有机化合物的命名",
+      "text": [],
+      "sticky": [],
+      "lineNode": [
+        {
+          "centerId": "n422",
+          "edge": {
+            "source": "n422",
+            "target": "sum_n422_9",
+            "relation": "内容提要",
+            "index": 9
+          },
+          "node": {
+            "id": "sum_n422_2",
+            "kind": "summary",
+            "text": "2.系统命名法提要"
+          }
+        }
+      ],
+      "lineLabel": [
+        {
+          "centerId": "n422",
+          "edge": {
+            "source": "n417",
+            "target": "n422",
+            "relation": "包含",
+            "index": 0
+          },
+          "label": {
+            "source": "n422",
+            "target": "sum_n422_1",
+            "relation": "内容提要",
+            "text": "内容提要",
+            "index": 1
+          }
+        },
+        {
+          "centerId": "n422",
+          "edge": {
+            "source": "n422",
+            "target": "sum_n422_4",
+            "relation": "内容提要",
+            "index": 4
+          },
+          "label": {
+            "source": "n422",
+            "target": "sum_n422_1",
+            "relation": "内容提要",
+            "text": "内容提要",
+            "index": 1
+          }
+        }
+      ]
+    },
+    {
+      "centerId": "n445",
+      "centerTitle": "第1节醇",
+      "text": [],
+      "sticky": [],
+      "lineNode": [
+        {
+          "centerId": "n445",
+          "edge": {
+            "source": "n445",
+            "target": "sum_n445_1",
+            "relation": "内容提要",
+            "index": 1
+          },
+          "node": {
+            "id": "sum_n445_5",
+            "kind": "summary",
+            "text": "3.取代反应：提要"
+          }
+        }
+      ],
+      "lineLabel": [
+        {
+          "centerId": "n445",
+          "edge": {
+            "source": "n445",
+            "target": "sum_n445_4",
+            "relation": "内容提要",
+            "index": 4
+          },
+          "label": {
+            "source": "n445",
+            "target": "sum_n445_9",
+            "relation": "内容提要",
+            "text": "内容提要",
+            "index": 9
+          }
+        }
+      ]
+    },
+    {
+      "centerId": "n458",
+      "centerTitle": "第1节　羧酸",
+      "text": [],
+      "sticky": [],
+      "lineNode": [],
+      "lineLabel": [
+        {
+          "centerId": "n458",
+          "edge": {
+            "source": "n457",
+            "target": "n458",
+            "relation": "包含",
+            "index": 0
+          },
+          "label": {
+            "source": "n458",
+            "target": "sum_n458_2",
+            "relation": "内容提要",
+            "text": "内容提要",
+            "index": 2
+          }
+        }
+      ]
+    },
+    {
+      "centerId": "n475",
+      "centerTitle": "第2节蛋白质与核酸",
+      "text": [],
+      "sticky": [],
+      "lineNode": [],
+      "lineLabel": [
+        {
+          "centerId": "n475",
+          "edge": {
+            "source": "n471",
+            "target": "n475",
+            "relation": "包含",
+            "index": 0
+          },
+          "label": {
+            "source": "n475",
+            "target": "sum_n475_1",
+            "relation": "内容提要",
+            "text": "内容提要",
+            "index": 1
+          }
+        }
+      ]
+    },
+    {
+      "centerId": "n479",
+      "centerTitle": "模块9合成高分子",
+      "text": [],
+      "sticky": [],
+      "lineNode": [],
+      "lineLabel": [
+        {
+          "centerId": "n479",
+          "edge": {
+            "source": "n479",
+            "target": "sum_n479_1",
+            "relation": "内容提要",
+            "index": 1
+          },
+          "label": {
+            "source": "n479",
+            "target": "sum_n479_6",
+            "relation": "内容提要",
+            "text": "内容提要",
+            "index": 6
+          }
+        },
+        {
+          "centerId": "n479",
+          "edge": {
+            "source": "n479",
+            "target": "sum_n479_5",
+            "relation": "内容提要",
+            "index": 5
+          },
+          "label": {
+            "source": "n479",
+            "target": "sum_n479_9",
+            "relation": "内容提要",
+            "text": "内容提要",
+            "index": 9
+          }
+        },
+        {
+          "centerId": "n479",
+          "edge": {
+            "source": "n479",
+            "target": "sum_n479_7",
+            "relation": "内容提要",
+            "index": 7
+          },
+          "label": {
+            "source": "n479",
+            "target": "sum_n479_8",
+            "relation": "内容提要",
+            "text": "内容提要",
+            "index": 8
+          }
+        },
+        {
+          "centerId": "n479",
+          "edge": {
+            "source": "n479",
+            "target": "n482",
+            "relation": "包含",
+            "index": 14
+          },
+          "label": {
+            "source": "n479",
+            "target": "n481",
+            "relation": "包含",
+            "text": "包含",
+            "index": 13
+          }
+        }
+      ]
+    },
+    {
+      "centerId": "n502",
+      "centerTitle": "第5节限制条件下的同分异构体判断",
+      "text": [],
+      "sticky": [],
+      "lineNode": [],
+      "lineLabel": [
+        {
+          "centerId": "n502",
+          "edge": {
+            "source": "n502",
+            "target": "sum_n502_3",
+            "relation": "内容提要",
+            "index": 3
+          },
+          "label": {
+            "source": "n502",
+            "target": "sum_n502_2",
+            "relation": "内容提要",
+            "text": "内容提要",
+            "index": 2
+          }
+        }
+      ]
+    },
+    {
+      "centerId": "n511",
+      "centerTitle": "模块12有机合成与推断",
+      "text": [],
+      "sticky": [],
+      "lineNode": [
+        {
+          "centerId": "n511",
+          "edge": {
+            "source": "n511",
+            "target": "sum_n511_6",
+            "relation": "内容提要",
+            "index": 6
+          },
+          "node": {
+            "id": "n416",
+            "kind": "chapter",
+            "text": "第12章有机化学基础章"
+          }
+        },
+        {
+          "centerId": "n511",
+          "edge": {
+            "source": "n511",
+            "target": "sum_n511_8",
+            "relation": "内容提要",
+            "index": 8
+          },
+          "node": {
+            "id": "sum_n511_4",
+            "kind": "summary",
+            "text": "1.与溴水、澳的四氯化碳发生加成反应。提要"
+          }
+        },
+        {
+          "centerId": "n511",
+          "edge": {
+            "source": "n511",
+            "target": "n513",
+            "relation": "包含",
+            "index": 17
+          },
+          "node": {
+            "id": "n512",
+            "kind": "type",
+            "text": "类型I：以药物合成为载体的有机推断题类型"
+          }
+        }
+      ],
+      "lineLabel": []
+    },
+    {
+      "centerId": "n522",
+      "centerTitle": "模块1化学实验基础",
+      "text": [],
+      "sticky": [],
+      "lineNode": [],
+      "lineLabel": [
+        {
+          "centerId": "n522",
+          "edge": {
+            "source": "n521",
+            "target": "n522",
+            "relation": "包含",
+            "index": 0
+          },
+          "label": {
+            "source": "n522",
+            "target": "n540",
+            "relation": "包含",
+            "text": "包含",
+            "index": 6
+          }
+        }
+      ]
+    },
+    {
+      "centerId": "n523",
+      "centerTitle": "第1节化学中常考的仪器",
+      "text": [],
+      "sticky": [],
+      "lineNode": [
+        {
+          "centerId": "n523",
+          "edge": {
+            "source": "n523",
+            "target": "sum_n523_4",
+            "relation": "内容提要",
+            "index": 4
+          },
+          "node": {
+            "id": "sum_n523_3",
+            "kind": "summary",
+            "text": "2.各种各样的烧瓶提要"
+          }
+        }
+      ],
+      "lineLabel": []
+    },
+    {
+      "centerId": "n534",
+      "centerTitle": "第 4节常见物质的检验、性质强弱比较",
+      "text": [],
+      "sticky": [],
+      "lineNode": [
+        {
+          "centerId": "n534",
+          "edge": {
+            "source": "n534",
+            "target": "sum_n534_3",
+            "relation": "内容提要",
+            "index": 3
+          },
+          "node": {
+            "id": "sum_n534_4",
+            "kind": "summary",
+            "text": "1.可使有黑色氧化膜的灼热铜丝变得光亮，并产生有刺激性气味的物质提要"
+          }
+        }
+      ],
+      "lineLabel": [
+        {
+          "centerId": "n534",
+          "edge": {
+            "source": "n522",
+            "target": "n534",
+            "relation": "包含",
+            "index": 0
+          },
+          "label": {
+            "source": "n534",
+            "target": "sum_n534_7",
+            "relation": "内容提要",
+            "text": "内容提要",
+            "index": 7
+          }
+        },
+        {
+          "centerId": "n534",
+          "edge": {
+            "source": "n534",
+            "target": "sum_n534_1",
+            "relation": "内容提要",
+            "index": 1
+          },
+          "label": {
+            "source": "n534",
+            "target": "sum_n534_7",
+            "relation": "内容提要",
+            "text": "内容提要",
+            "index": 7
+          }
+        },
+        {
+          "centerId": "n534",
+          "edge": {
+            "source": "n534",
+            "target": "sum_n534_7",
+            "relation": "内容提要",
+            "index": 7
+          },
+          "label": {
+            "source": "n534",
+            "target": "sum_n534_1",
+            "relation": "内容提要",
+            "text": "内容提要",
+            "index": 1
+          }
+        }
+      ]
+    },
+    {
+      "centerId": "n537",
+      "centerTitle": "第5节常见物质的制备",
+      "text": [],
+      "sticky": [],
+      "lineNode": [],
+      "lineLabel": [
+        {
+          "centerId": "n537",
+          "edge": {
+            "source": "n522",
+            "target": "n537",
+            "relation": "包含",
+            "index": 0
+          },
+          "label": {
+            "source": "n537",
+            "target": "sum_n537_1",
+            "relation": "内容提要",
+            "text": "内容提要",
+            "index": 1
+          }
+        }
+      ]
+    },
+    {
+      "centerId": "n550",
+      "centerTitle": "第 2 节探究物质的组成、性质和含量",
+      "text": [],
+      "sticky": [],
+      "lineNode": [],
+      "lineLabel": [
+        {
+          "centerId": "n550",
+          "edge": {
+            "source": "n550",
+            "target": "n555",
+            "relation": "包含",
+            "index": 13
+          },
+          "label": {
+            "source": "n550",
+            "target": "sum_n550_7",
+            "relation": "内容提要",
+            "text": "内容提要",
+            "index": 7
+          }
+        }
+      ]
+    },
+    {
+      "centerId": "n564",
+      "centerTitle": "模块4化学性质问题",
+      "text": [],
+      "sticky": [],
+      "lineNode": [],
+      "lineLabel": [
+        {
+          "centerId": "n564",
+          "edge": {
+            "source": "n560",
+            "target": "n564",
+            "relation": "包含",
+            "index": 0
+          },
+          "label": {
+            "source": "n564",
+            "target": "sum_n564_7",
+            "relation": "内容提要",
+            "text": "内容提要",
+            "index": 7
+          }
+        }
+      ]
+    },
+    {
+      "centerId": "n566",
+      "centerTitle": "模块1常考化学用语",
+      "text": [],
+      "sticky": [],
+      "lineNode": [],
+      "lineLabel": [
+        {
+          "centerId": "n566",
+          "edge": {
+            "source": "n566",
+            "target": "sum_n566_1",
+            "relation": "内容提要",
+            "index": 1
+          },
+          "label": {
+            "source": "n566",
+            "target": "sum_n566_11",
+            "relation": "内容提要",
+            "text": "内容提要",
+            "index": 11
+          }
+        },
+        {
+          "centerId": "n566",
+          "edge": {
+            "source": "n566",
+            "target": "sum_n566_3",
+            "relation": "内容提要",
+            "index": 3
+          },
+          "label": {
+            "source": "n566",
+            "target": "sum_n566_2",
+            "relation": "内容提要",
+            "text": "内容提要",
+            "index": 2
+          }
+        },
+        {
+          "centerId": "n566",
+          "edge": {
+            "source": "n566",
+            "target": "sum_n566_6",
+            "relation": "内容提要",
+            "index": 6
+          },
+          "label": {
+            "source": "n566",
+            "target": "sum_n566_9",
+            "relation": "内容提要",
+            "text": "内容提要",
+            "index": 9
+          }
+        },
+        {
+          "centerId": "n566",
+          "edge": {
+            "source": "n566",
+            "target": "sum_n566_7",
+            "relation": "内容提要",
+            "index": 7
+          },
+          "label": {
+            "source": "n566",
+            "target": "sum_n566_10",
+            "relation": "内容提要",
+            "text": "内容提要",
+            "index": 10
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,65 @@
+{
+  "centers": 1,
+  "failingCenters": 1,
+  "stickyFailures": 0,
+  "textOverlaps": 0,
+  "lineNodeOverlaps": 2,
+  "lineLabelOverlaps": 1,
+  "failures": [
+    {
+      "centerId": "n33",
+      "centerTitle": "模块3离子方程式正误判断的“七个注意”",
+      "text": [],
+      "sticky": [],
+      "lineNode": [
+        {
+          "centerId": "n33",
+          "edge": {
+            "source": "n33",
+            "target": "sum_n33_2",
+            "relation": "内容提要",
+            "index": 2
+          },
+          "node": {
+            "id": "sum_n33_5",
+            "kind": "summary",
+            "text": "3.铵盐与碱反应的产物是写成\"NH·HO\"还是\"NH”，关键看条件是...提要"
+          }
+        },
+        {
+          "centerId": "n33",
+          "edge": {
+            "source": "n33",
+            "target": "sum_n33_11",
+            "relation": "内容提要",
+            "index": 11
+          },
+          "node": {
+            "id": "sum_n33_6",
+            "kind": "summary",
+            "text": "1.“折”的本质是：在水中物质完全以自由移动离子的形式存在。提要"
+          }
+        }
+      ],
+      "lineLabel": [
+        {
+          "centerId": "n33",
+          "edge": {
+            "source": "n33",
+            "target": "sum_n33_11",
+            "relation": "内容提要",
+            "index": 11
+          },
+          "label": {
+            "source": "n33",
+            "target": "sum_n33_6",
+            "relation": "内容提要",
+            "text": "内容提要",
+            "index": 6
+          }
+        }
+      ]
+    }
+  ],
+  "screenshot": "build\\quality_n33.png"
+}

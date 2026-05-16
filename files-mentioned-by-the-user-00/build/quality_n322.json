@@ -1,0 +1,10 @@
+{
+  "centers": 1,
+  "failingCenters": 0,
+  "stickyFailures": 0,
+  "textOverlaps": 0,
+  "lineNodeOverlaps": 0,
+  "lineLabelOverlaps": 0,
+  "failures": [],
+  "screenshot": "build\\quality_n322.png"
+}

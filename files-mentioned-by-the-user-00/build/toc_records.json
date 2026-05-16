@@ -1,0 +1,4013 @@
+[
+  {
+    "kind": "chapter",
+    "title": "第1章物质组成、分类和转化",
+    "page": 2,
+    "raw": "第1章物质组成、分类和转化",
+    "inferred": true
+  },
+  {
+    "kind": "module",
+    "title": "模块1物质的组成与分类",
+    "page": 3,
+    "raw": "模块1物质的组成与分类",
+    "inferred": true
+  },
+  {
+    "kind": "type",
+    "title": "类型I：基本概念的易错辨析",
+    "page": 4,
+    "raw": "类型I：基本概念的易错辨析",
+    "inferred": true
+  },
+  {
+    "kind": "type",
+    "title": "类型Ⅱ：物质的分类",
+    "page": 5,
+    "raw": "类型Ⅱ：物质的分类",
+    "inferred": true
+  },
+  {
+    "kind": "type",
+    "title": "类型Ⅲ:胶体的性质和运用",
+    "page": 8,
+    "raw": "类型Ⅲ:胶体的性质和运用",
+    "inferred": false
+  },
+  {
+    "kind": "module",
+    "title": "模块2物质的转化",
+    "page": 11,
+    "raw": "模块2物质的转化",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型I：基本概念的易错辨析",
+    "page": 12,
+    "raw": "类型I：基本概念的易错辨析",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型Ⅱ：物质之间的转化",
+    "page": 13,
+    "raw": "类型Ⅱ：物质之间的转化",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型Ⅲ：物质的转化与生活中的应用",
+    "page": 14,
+    "raw": "类型Ⅲ：物质的转化与生活中的应用",
+    "inferred": false
+  },
+  {
+    "kind": "chapter",
+    "title": "第2章化学计量",
+    "page": 16,
+    "raw": "第2章化学计量",
+    "inferred": false
+  },
+  {
+    "kind": "module",
+    "title": "模块1化学计量中的重要物理量",
+    "page": 16,
+    "raw": "模块1化学计量中的重要物理量",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型I：基本物理量的正误判断",
+    "page": 19,
+    "raw": "类型I：基本物理量的正误判断",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型Ⅱ：混合气体的平均摩尔质量的计算",
+    "page": 20,
+    "raw": "类型Ⅱ：混合气体的平均摩尔质量的计算",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型Ⅲ:阿伏加德罗定律的运用",
+    "page": 21,
+    "raw": "类型Ⅲ:阿伏加德罗定律的运用",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型IV：溶液中离子浓度的计算",
+    "page": 21,
+    "raw": "类型IV：溶液中离子浓度的计算",
+    "inferred": false
+  },
+  {
+    "kind": "module",
+    "title": "模块2化学计量中常用的计算方法",
+    "page": 22,
+    "raw": "模块2化学计量中常用的计算方法",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型I：电荷守恒",
+    "page": 23,
+    "raw": "类型I：电荷守恒",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型Ⅱ：电子得失守恒(化合价升降守恒)计算",
+    "page": 23,
+    "raw": "类型Ⅱ：电子得失守恒(化合价升降守恒)计算",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型Ⅲ:原子守恒(质量守恒)",
+    "page": 24,
+    "raw": "类型Ⅲ:原子守恒(质量守恒)",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型IV:差量法",
+    "page": 24,
+    "raw": "类型IV:差量法",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型V：能量守恒",
+    "page": 25,
+    "raw": "类型V：能量守恒",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型VI:关系式法",
+    "page": 26,
+    "raw": "类型VI:关系式法",
+    "inferred": false
+  },
+  {
+    "kind": "chapter",
+    "title": "第3章离子反应",
+    "page": 28,
+    "raw": "第3章离子反应·",
+    "inferred": false
+  },
+  {
+    "kind": "module",
+    "title": "模块1电解质与电离",
+    "page": 28,
+    "raw": "模块1电解质与电离",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型I：电解质、非电解质、强电解质、弱电解质的辨析",
+    "page": 29,
+    "raw": "类型I：电解质、非电解质、强电解质、弱电解质的辨析",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型Ⅱ：离子反应过程中溶液导电性的变化",
+    "page": 30,
+    "raw": "类型Ⅱ：离子反应过程中溶液导电性的变化",
+    "inferred": false
+  },
+  {
+    "kind": "module",
+    "title": "模块2“与量有关\"的离子方程式书写",
+    "page": 33,
+    "raw": "模块2“与量有关\"的离子方程式书写",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型I:连续型",
+    "page": 33,
+    "raw": "类型I:连续型",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型Ⅱ：离子配比组合一复分解型",
+    "page": 36,
+    "raw": "类型Ⅱ：离子配比组合一复分解型",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型Ⅲ：离子配比组合 氧化还原型",
+    "page": 38,
+    "raw": "类型Ⅲ：离子配比组合",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型IV：离子配比组合一复分解和氧化还原交叉型",
+    "page": 38,
+    "raw": "类型IV：离子配比组合一复分解和氧化还原交叉型",
+    "inferred": false
+  },
+  {
+    "kind": "module",
+    "title": "模块3离子方程式正误判断的“七个注意”",
+    "page": 40,
+    "raw": "模块3离子方程式正误判断的“七个注意”",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型I：判断客观规律是否正确",
+    "page": 43,
+    "raw": "类型I：判断客观规律是否正确",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型Ⅱ:判断配平或守恒是否正确",
+    "page": 44,
+    "raw": "类型Ⅱ:判断配平或守恒是否正确",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型Ⅲ：判断符号使用是否正确",
+    "page": 44,
+    "raw": "类型Ⅲ：判断符号使用是否正确",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型IV：判断“拆\"是否正确",
+    "page": 45,
+    "raw": "类型IV：判断“拆\"是否正确",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型V：判断是否“漏写”",
+    "page": 45,
+    "raw": "类型V：判断是否“漏写”",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型VI:判断是否符合“量\"的关系",
+    "page": 46,
+    "raw": "类型VI:判断是否符合“量\"的关系",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型Ⅲ：判断是否存在浓度或温度造成的\"量变引起质变\"",
+    "page": 48,
+    "raw": "类型Ⅲ：判断是否存在浓度或温度造成的\"量变引起质变\"",
+    "inferred": false
+  },
+  {
+    "kind": "module",
+    "title": "模块4离子大量共存题型",
+    "page": 49,
+    "raw": "模块4离子大量共存题型",
+    "inferred": false
+  },
+  {
+    "kind": "chapter",
+    "title": "第4章氧化还原反应",
+    "page": 55,
+    "raw": "第4章氧化还原反应.·",
+    "inferred": false
+  },
+  {
+    "kind": "module",
+    "title": "模块1氧化还原反应及其相关概念",
+    "page": 55,
+    "raw": "模块1氧化还原反应及其相关概念",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型I：判断反应是否为氧化还原反应",
+    "page": 57,
+    "raw": "类型I：判断反应是否为氧化还原反应",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型Ⅱ：四大基本反应和氧化还原反应的关系判断",
+    "page": 58,
+    "raw": "类型Ⅱ：四大基本反应和氧化还原反应的关系判断",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型Ⅲ:氧化反应/还原反应、氧化剂/还原剂、氧化产物/还原产物的判断58",
+    "page": 59,
+    "raw": "类型Ⅲ:氧化反应/还原反应、氧化剂/还原剂、氧化产物/还原产物的判断58",
+    "inferred": true
+  },
+  {
+    "kind": "type",
+    "title": "类型IⅣV：氧化还原反应中电子转移的表示方法一单线桥、双线桥",
+    "page": 59,
+    "raw": "类型IⅣV：氧化还原反应中电子转移的表示方法一单线桥、双线桥",
+    "inferred": false
+  },
+  {
+    "kind": "module",
+    "title": "模块2氧化还原反应的规律",
+    "page": 61,
+    "raw": "模块2氧化还原反应的规律",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型I：依据氧化还原反应原理判断氧化性、还原性强弱",
+    "page": 64,
+    "raw": "类型I：依据氧化还原反应原理判断氧化性、还原性强弱",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型Ⅱ：利用氧化性、还原性判断反应能否发生",
+    "page": 65,
+    "raw": "类型Ⅱ：利用氧化性、还原性判断反应能否发生..",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型Ⅲ：利用氧化性、还原性强弱判断反应的先后顺序",
+    "page": 66,
+    "raw": "类型Ⅲ：利用氧化性、还原性强弱判断反应的先后顺序",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型IV：设计实验验证氧化性与还原性强弱",
+    "page": 67,
+    "raw": "类型IV：设计实验验证氧化性与还原性强弱",
+    "inferred": false
+  },
+  {
+    "kind": "module",
+    "title": "模块3氧化还原方程式配平",
+    "page": 69,
+    "raw": "模块3氧化还原方程式配平··",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型I：完全氧化还原反应的配平(正向配平法)",
+    "page": 70,
+    "raw": "类型I：完全氧化还原反应的配平(正向配平法)",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型Ⅱ：反应物中同一元素部分变价、部分不变价(逆向配平法)",
+    "page": 70,
+    "raw": "类型Ⅱ：反应物中同一元素部分变价、部分不变价(逆向配平法)··",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型Ⅲ：反应物含\"角标\"的完全氧化还原反应",
+    "page": 71,
+    "raw": "类型Ⅲ：反应物含\"角标\"的完全氧化还原反应",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型IV：同一反应物含多种变价元素的配平方法",
+    "page": 72,
+    "raw": "类型IV：同一反应物含多种变价元素的配平方法",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型V：歧化反应的配平",
+    "page": 72,
+    "raw": "类型V：歧化反应的配平·.",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型VI:含有机化合物的配平题型",
+    "page": 73,
+    "raw": "类型VI:含有机化合物的配平题型",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型I：特殊技巧的方程式配平",
+    "page": 74,
+    "raw": "类型I：特殊技巧的方程式配平",
+    "inferred": false
+  },
+  {
+    "kind": "module",
+    "title": "模块4新情景下氧化还原反应方程式的书写",
+    "page": 75,
+    "raw": "模块4新情景下氧化还原反应方程式的书写",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型I：根据文字信息书写陌生方程式 /一化高考化学核心方法",
+    "page": 76,
+    "raw": "类型I：根据文字信息书写陌生方程式",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型Ⅱ：根据流程图书写陌生方程式",
+    "page": 77,
+    "raw": "类型Ⅱ：根据流程图书写陌生方程式",
+    "inferred": true
+  },
+  {
+    "kind": "type",
+    "title": "类型Ⅲ：根据实验信息书写陌生方程式",
+    "page": 79,
+    "raw": "类型Ⅲ：根据实验信息书写陌生方程式",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型IV：根据反应机理书写陌生方程式",
+    "page": 81,
+    "raw": "类型IV：根据反应机理书写陌生方程式",
+    "inferred": false
+  },
+  {
+    "kind": "module",
+    "title": "模块5:氧化还原反应的计算",
+    "page": 82,
+    "raw": "模块5:氧化还原反应的计算",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型I：转移电子数计算",
+    "page": 82,
+    "raw": "类型I：转移电子数计算",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型Ⅱ：电子得失守恒(化合价升降守恒)计算",
+    "page": 83,
+    "raw": "类型Ⅱ：电子得失守恒(化合价升降守恒)计算",
+    "inferred": false
+  },
+  {
+    "kind": "chapter",
+    "title": "第5章金属及其化合物",
+    "page": 85,
+    "raw": "第5章金属及其化合物·",
+    "inferred": false
+  },
+  {
+    "kind": "module",
+    "title": "模块1钠及其化合物、碱金属",
+    "page": 85,
+    "raw": "模块1钠及其化合物、碱金属",
+    "inferred": false
+  },
+  {
+    "kind": "section",
+    "title": "第1节 钠单质、钠的氧化物、氢氧化钠、氢化钠",
+    "page": 85,
+    "raw": "第1节 钠单质、钠的氧化物、氢氧化钠、氢化钠",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型I：基础常识判断",
+    "page": 88,
+    "raw": "类型I：基础常识判断",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型Ⅱ:阿伏加德罗常数",
+    "page": 89,
+    "raw": "类型Ⅱ:阿伏加德罗常数",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型Ⅲ:实验题型",
+    "page": 89,
+    "raw": "类型Ⅲ:实验题型",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型IV：新型物质的性质推导",
+    "page": 90,
+    "raw": "类型IV：新型物质的性质推导",
+    "inferred": false
+  },
+  {
+    "kind": "section",
+    "title": "第 2节 钠盐、碱金属",
+    "page": 91,
+    "raw": "第 2节 钠盐、碱金属",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型I：化学与生活",
+    "page": 94,
+    "raw": "类型I：化学与生活",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型Ⅱ:阿伏加德罗常数",
+    "page": 94,
+    "raw": "类型Ⅱ:阿伏加德罗常数",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型Ⅲ:性质辩析",
+    "page": 95,
+    "raw": "类型Ⅲ:性质辩析",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型IV:实验题型",
+    "page": 95,
+    "raw": "类型IV:实验题型",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型V：价类二维图",
+    "page": 97,
+    "raw": "类型V：价类二维图",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型VI：周期表和周期律",
+    "page": 97,
+    "raw": "类型VI：周期表和周期律",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型I:侯氏制碱法",
+    "page": 98,
+    "raw": "类型I:侯氏制碱法",
+    "inferred": false
+  },
+  {
+    "kind": "module",
+    "title": "模块2铁及其化合物、第VⅢ族元素钴和镍",
+    "page": 100,
+    "raw": "模块2铁及其化合物、第VⅢ族元素钴和镍",
+    "inferred": false
+  },
+  {
+    "kind": "section",
+    "title": "第1节铁单质、铁的氧化物、含铁的碱",
+    "page": 100,
+    "raw": "第1节铁单质、铁的氧化物、含铁的碱",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型I：基础常识判断",
+    "page": 103,
+    "raw": "类型I：基础常识判断.",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型Ⅱ：离子方程式的正误判断",
+    "page": 103,
+    "raw": "类型Ⅱ：离子方程式的正误判断",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型Ⅲ：阿伏加德罗常数",
+    "page": 104,
+    "raw": "类型Ⅲ：阿伏加德罗常数···",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型IV:实验题型",
+    "page": 104,
+    "raw": "类型IV:实验题型·.",
+    "inferred": false
+  },
+  {
+    "kind": "section",
+    "title": "第 2 节铁盐、钴和镍及其化合物",
+    "page": 106,
+    "raw": "第 2 节铁盐、钴和镍及其化合物",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型I：离子共存",
+    "page": 109,
+    "raw": "类型I：离子共存··",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型Ⅱ：离子检验",
+    "page": 109,
+    "raw": "类型Ⅱ：离子检验…··",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型Ⅲ：根据信息书写离子方程式",
+    "page": 110,
+    "raw": "类型Ⅲ：根据信息书写离子方程式",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型IV：热重曲线的分析",
+    "page": 110,
+    "raw": "类型IV：热重曲线的分析·",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型V：实验题型 化高考化学核心方法",
+    "page": 111,
+    "raw": "类型V：实验题型.",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型VI：化工流程",
+    "page": 112,
+    "raw": "类型VI：化工流程",
+    "inferred": false
+  },
+  {
+    "kind": "module",
+    "title": "模块3铝、硼及其化合物",
+    "page": 114,
+    "raw": "模块3铝、硼及其化合物",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型I：基础常识判断",
+    "page": 116,
+    "raw": "类型I：基础常识判断",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型Ⅱ:离子方程式的正误判断",
+    "page": 117,
+    "raw": "类型Ⅱ:离子方程式的正误判断",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型Ⅲ：化工流程",
+    "page": 117,
+    "raw": "类型Ⅲ：化工流程·",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型IV：结构和性质的基础填空",
+    "page": 118,
+    "raw": "类型IV：结构和性质的基础填空",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型V：铝及其化合物的综合应用",
+    "page": 118,
+    "raw": "类型V：铝及其化合物的综合应用",
+    "inferred": false
+  },
+  {
+    "kind": "module",
+    "title": "模块4其他金属元素",
+    "page": 120,
+    "raw": "模块4其他金属元素",
+    "inferred": false
+  },
+  {
+    "kind": "section",
+    "title": "第1节 镁、钙、钡",
+    "page": 120,
+    "raw": "第1节 镁、钙、钡",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型I：化工流程",
+    "page": 123,
+    "raw": "类型I：化工流程",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型Ⅱ:实验题型",
+    "page": 123,
+    "raw": "类型Ⅱ:实验题型",
+    "inferred": false
+  },
+  {
+    "kind": "section",
+    "title": "第2节 铅、铜、银",
+    "page": 125,
+    "raw": "第2节 铅、铜、银",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型I:基础常识判断",
+    "page": 129,
+    "raw": "类型I:基础常识判断·",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型Ⅱ：化学与生活",
+    "page": 130,
+    "raw": "类型Ⅱ：化学与生活.·",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型Ⅲ：阿伏加德罗常数",
+    "page": 130,
+    "raw": "类型Ⅲ：阿伏加德罗常数",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型IV：化工流程",
+    "page": 131,
+    "raw": "类型IV：化工流程·",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型V:实验题型",
+    "page": 131,
+    "raw": "类型V:实验题型",
+    "inferred": false
+  },
+  {
+    "kind": "chapter",
+    "title": "第6章非金属及其化合物",
+    "page": 134,
+    "raw": "第6章非金属及其化合物",
+    "inferred": false
+  },
+  {
+    "kind": "module",
+    "title": "模块1碳、硅及其化合物",
+    "page": 134,
+    "raw": "模块1碳、硅及其化合物",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型I：化学与生活",
+    "page": 137,
+    "raw": "类型I：化学与生活",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型Ⅱ：阿伏加德罗常数",
+    "page": 138,
+    "raw": "类型Ⅱ：阿伏加德罗常数··",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型Ⅲ：方法的运用",
+    "page": 138,
+    "raw": "类型Ⅲ：方法的运用·",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型IV：碳循环图像分析",
+    "page": 139,
+    "raw": "类型IV：碳循环图像分析·",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型V：化学反应方程式的判断",
+    "page": 139,
+    "raw": "类型V：化学反应方程式的判断",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型VI：化工流程",
+    "page": 140,
+    "raw": "类型VI：化工流程·",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型II:结构与性质",
+    "page": 140,
+    "raw": "类型II:结构与性质",
+    "inferred": false
+  },
+  {
+    "kind": "module",
+    "title": "模块2卤素",
+    "page": 141,
+    "raw": "模块2卤素",
+    "inferred": false
+  },
+  {
+    "kind": "section",
+    "title": "第1节氯及其化合物",
+    "page": 141,
+    "raw": "第1节氯及其化合物",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型I：基础常识判断",
+    "page": 146,
+    "raw": "类型I：基础常识判断",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型Ⅱ:阿伏加德罗常数",
+    "page": 147,
+    "raw": "类型Ⅱ:阿伏加德罗常数·",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型Ⅲ：离子反应",
+    "page": 147,
+    "raw": "类型Ⅲ：离子反应··.",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型IV：图像分析",
+    "page": 148,
+    "raw": "类型IV：图像分析·",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型V:实验题型",
+    "page": 149,
+    "raw": "类型V:实验题型",
+    "inferred": false
+  },
+  {
+    "kind": "section",
+    "title": "第2节卤族元素",
+    "page": 151,
+    "raw": "第2节卤族元素",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型I：周期表、周期律",
+    "page": 154,
+    "raw": "类型I：周期表、周期律",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型Ⅱ:类比法和对比法",
+    "page": 154,
+    "raw": "类型Ⅱ:类比法和对比法",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型Ⅲ:实验题型",
+    "page": 155,
+    "raw": "类型Ⅲ:实验题型·",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型IⅣV:工艺流程",
+    "page": 156,
+    "raw": "类型IⅣV:工艺流程",
+    "inferred": false
+  },
+  {
+    "kind": "module",
+    "title": "模块3硫及其化合物",
+    "page": 157,
+    "raw": "模块3硫及其化合物",
+    "inferred": false
+  },
+  {
+    "kind": "section",
+    "title": "第1节硫单质、硫的氧化物",
+    "page": 157,
+    "raw": "第1节硫单质、硫的氧化物",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型I：化学与生活",
+    "page": 161,
+    "raw": "类型I：化学与生活·.",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型Ⅱ：阿伏加德罗常数",
+    "page": 161,
+    "raw": "类型Ⅱ：阿伏加德罗常数·",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型Ⅲ：离子方程式",
+    "page": 162,
+    "raw": "类型Ⅲ：离子方程式··",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型IV:实验题型",
+    "page": 162,
+    "raw": "类型IV:实验题型",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型V：反应原理示意图",
+    "page": 163,
+    "raw": "类型V：反应原理示意图·",
+    "inferred": false
+  },
+  {
+    "kind": "section",
+    "title": "第 2节含硫的酸、盐及其他含硫化合物",
+    "page": 163,
+    "raw": "第 2节含硫的酸、盐及其他含硫化合物",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型I：基础常识判断",
+    "page": 169,
+    "raw": "类型I：基础常识判断…··",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型Ⅱ：反应原理示意图",
+    "page": 170,
+    "raw": "类型Ⅱ：反应原理示意图",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型Ⅲ：价类二维图",
+    "page": 170,
+    "raw": "类型Ⅲ：价类二维图···",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型IV：化工流程",
+    "page": 171,
+    "raw": "类型IV：化工流程",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型V:实验题型",
+    "page": 171,
+    "raw": "类型V:实验题型",
+    "inferred": false
+  },
+  {
+    "kind": "module",
+    "title": "模块4氮及其化合物",
+    "page": 174,
+    "raw": "模块4氮及其化合物",
+    "inferred": false
+  },
+  {
+    "kind": "section",
+    "title": "第1节氮气、氮的氧化物、氮的氢化物",
+    "page": 174,
+    "raw": "第1节氮气、氮的氧化物、氮的氢化物",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型I：基础常识判断",
+    "page": 178,
+    "raw": "类型I：基础常识判断··",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型Ⅱ：阿伏加德罗常数",
+    "page": 179,
+    "raw": "类型Ⅱ：阿伏加德罗常数··",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型Ⅲ：元素推导",
+    "page": 179,
+    "raw": "类型Ⅲ：元素推导·.",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型IV：实验题型",
+    "page": 180,
+    "raw": "类型IV：实验题型",
+    "inferred": false
+  },
+  {
+    "kind": "section",
+    "title": "第 2 节含氮的酸和盐、磷及其化合物",
+    "page": 181,
+    "raw": "第 2 节含氮的酸和盐、磷及其化合物",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型I：基础常识判断",
+    "page": 184,
+    "raw": "类型I：基础常识判断··",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型Ⅱ：价类二维图",
+    "page": 185,
+    "raw": "类型Ⅱ：价类二维图",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型Ⅲ:实验题型",
+    "page": 186,
+    "raw": "类型Ⅲ:实验题型",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型IV：化工流程",
+    "page": 187,
+    "raw": "类型IV：化工流程··.",
+    "inferred": false
+  },
+  {
+    "kind": "chapter",
+    "title": "第7章化学工艺流程",
+    "page": 188,
+    "raw": "第7章化学工艺流程",
+    "inferred": false
+  },
+  {
+    "kind": "module",
+    "title": "模块1化学工艺流程的框架及其关键环节",
+    "page": 188,
+    "raw": "模块1化学工艺流程的框架及其关键环节",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型I：核心方程式的书写一复分解反应",
+    "page": 193,
+    "raw": "类型I：核心方程式的书写一复分解反应",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型Ⅱ：核心方程式的书写一氧化还原反应",
+    "page": 194,
+    "raw": "类型Ⅱ：核心方程式的书写一氧化还原反应",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型Ⅲ:pH范围判断及其计算",
+    "page": 194,
+    "raw": "类型Ⅲ:pH范围判断及其计算",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型IV：温度调控",
+    "page": 196,
+    "raw": "类型IV：温度调控··",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型V：萃取和反萃取",
+    "page": 196,
+    "raw": "类型V：萃取和反萃取·….",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型VI:重结晶",
+    "page": 197,
+    "raw": "类型VI:重结晶",
+    "inferred": false
+  },
+  {
+    "kind": "module",
+    "title": "模块2常考元素的化工流程题",
+    "page": 198,
+    "raw": "模块2常考元素的化工流程题",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型I：以第IA、第ⅡA元素为主线的工艺流程题",
+    "page": 202,
+    "raw": "类型I：以第IA、第ⅡA元素为主线的工艺流程题",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型ⅡI：以两性元素Al、Zn、Ga、Be为主线的工艺流程题",
+    "page": 205,
+    "raw": "类型ⅡI：以两性元素Al、Zn、Ga、Be为主线的工艺流程题",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型Ⅲ：以Ti元素为主线的工艺流程题",
+    "page": 208,
+    "raw": "类型Ⅲ：以Ti元素为主线的工艺流程题",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型IV：以V元素为主线的工艺流程题",
+    "page": 209,
+    "raw": "类型IV：以V元素为主线的工艺流程题",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型V：以Cr元素为主线的工艺流程题",
+    "page": 212,
+    "raw": "类型V：以Cr元素为主线的工艺流程题",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型VI：以Mn元素为主线的工艺流程题",
+    "page": 214,
+    "raw": "类型VI：以Mn元素为主线的工艺流程题",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型VI：以Co、Ni元素为主线的工艺流程题",
+    "page": 217,
+    "raw": "类型VI：以Co、Ni元素为主线的工艺流程题",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型Vl：以Cu、Ag、Au元素为主线的工艺流程题",
+    "page": 219,
+    "raw": "类型Vl：以Cu、Ag、Au元素为主线的工艺流程题",
+    "inferred": false
+  },
+  {
+    "kind": "chapter",
+    "title": "第8章物质结构与性质元素周期律",
+    "page": 222,
+    "raw": "第8章物质结构与性质元素周期律",
+    "inferred": false
+  },
+  {
+    "kind": "module",
+    "title": "模块1 元素、核素、同位素",
+    "page": 222,
+    "raw": "模块1 元素、核素、同位素",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型I：核素与同位素的基本概念",
+    "page": 223,
+    "raw": "类型I：核素与同位素的基本概念",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型Ⅱ：根据核反应推断核素",
+    "page": 223,
+    "raw": "类型Ⅱ：根据核反应推断核素·",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型Ⅲ：微粒中粒子数的计算",
+    "page": 224,
+    "raw": "类型Ⅲ：微粒中粒子数的计算",
+    "inferred": false
+  },
+  {
+    "kind": "module",
+    "title": "模块2：原子核外电子排布原理",
+    "page": 225,
+    "raw": "模块2：原子核外电子排布原理",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型I：能层与能级、基态与激发态、原子光谱基本概念",
+    "page": 228,
+    "raw": "类型I：能层与能级、基态与激发态、原子光谱基本概念",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型Ⅱ：洪特规则、泡利原理、能量最低原理",
+    "page": 228,
+    "raw": "类型Ⅱ：洪特规则、泡利原理、能量最低原理",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型Ⅲ：电子排布式和轨道表示式(电子排布图)的书写方式",
+    "page": 229,
+    "raw": "类型Ⅲ：电子排布式和轨道表示式(电子排布图)的书写方式",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型IV：原子核外未成对电子数判断",
+    "page": 229,
+    "raw": "类型IV：原子核外未成对电子数判断·",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型V：电子云和电子运动状态的判断",
+    "page": 230,
+    "raw": "类型V：电子云和电子运动状态的判断·",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型VI：根据电子排布方式判断能量高低",
+    "page": 231,
+    "raw": "类型VI：根据电子排布方式判断能量高低",
+    "inferred": false
+  },
+  {
+    "kind": "module",
+    "title": "模块3元素周期表周期律",
+    "page": 232,
+    "raw": "模块3元素周期表周期律",
+    "inferred": false
+  },
+  {
+    "kind": "section",
+    "title": "第1节元素周期表",
+    "page": 232,
+    "raw": "第1节元素周期表",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型I：元素周期表结构与应用",
+    "page": 234,
+    "raw": "类型I：元素周期表结构与应用··",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型Ⅱ：核外电子排布与元素周期表",
+    "page": 235,
+    "raw": "类型Ⅱ：核外电子排布与元素周期表",
+    "inferred": false
+  },
+  {
+    "kind": "section",
+    "title": "第 2 节元素周期律",
+    "page": 236,
+    "raw": "第 2 节元素周期律",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型I：元素周期律一原子半径、离子半径、化合价、金属性、非金属性",
+    "page": 239,
+    "raw": "类型I：元素周期律一原子半径、离子半径、化合价、金属性、非金属性·.239",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型Ⅱ：第一电离能的概念与变化规律",
+    "page": 240,
+    "raw": "类型Ⅱ：第一电离能的概念与变化规律.·.",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型Ⅲ：根据电子排布式或轨道表示式比较电离能大小 I/一化高考化学核心方法",
+    "page": 241,
+    "raw": "类型Ⅲ：根据电子排布式或轨道表示式比较电离能大小·",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型IV：逐级电离能大小比较",
+    "page": 242,
+    "raw": "类型IV：逐级电离能大小比较·",
+    "inferred": true
+  },
+  {
+    "kind": "type",
+    "title": "类型V：电负性",
+    "page": 242,
+    "raw": "类型V：电负性··",
+    "inferred": false
+  },
+  {
+    "kind": "module",
+    "title": "模块4共价键与分子的空间结构",
+    "page": 243,
+    "raw": "模块4共价键与分子的空间结构",
+    "inferred": false
+  },
+  {
+    "kind": "section",
+    "title": "第1节共价键",
+    "page": 243,
+    "raw": "第1节共价键",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型I:o键与π键的辨析",
+    "page": 244,
+    "raw": "类型I:o键与π键的辨析",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型Ⅱ：键参数—键能、键长、键角",
+    "page": 246,
+    "raw": "类型Ⅱ：键参数—键能、键长、键角",
+    "inferred": false
+  },
+  {
+    "kind": "section",
+    "title": "第2节价层电子对的互斥理论与杂化轨道理论",
+    "page": 247,
+    "raw": "第2节价层电子对的互斥理论与杂化轨道理论",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型I：价层电子对互斥模型(VSEPR)与分子的空间结构",
+    "page": 250,
+    "raw": "类型I：价层电子对互斥模型(VSEPR)与分子的空间结构",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型Ⅱ：由分子式判断中心原子杂化类型",
+    "page": 251,
+    "raw": "类型Ⅱ：由分子式判断中心原子杂化类型·",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型Ⅲ：由结构式判断中心原子杂化类型",
+    "page": 252,
+    "raw": "类型Ⅲ：由结构式判断中心原子杂化类型",
+    "inferred": false
+  },
+  {
+    "kind": "section",
+    "title": "第3节键角大小比较题型",
+    "page": 253,
+    "raw": "第3节键角大小比较题型",
+    "inferred": false
+  },
+  {
+    "kind": "section",
+    "title": "第4节大π键",
+    "page": 257,
+    "raw": "第4节大π键",
+    "inferred": false
+  },
+  {
+    "kind": "module",
+    "title": "模块5分子结构与物质的性质",
+    "page": 261,
+    "raw": "模块5分子结构与物质的性质",
+    "inferred": false
+  },
+  {
+    "kind": "section",
+    "title": "第1节共价键的极性与分子的极性",
+    "page": 261,
+    "raw": "第1节共价键的极性与分子的极性",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型I：共价键的极性与分子的极性",
+    "page": 264,
+    "raw": "类型I：共价键的极性与分子的极性",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型Ⅱ：键的极性对化学性质的影响",
+    "page": 265,
+    "raw": "类型Ⅱ：键的极性对化学性质的影响",
+    "inferred": false
+  },
+  {
+    "kind": "section",
+    "title": "第2节分子间的作用力",
+    "page": 266,
+    "raw": "第2节分子间的作用力",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型I：分子间的作用力的辨析",
+    "page": 267,
+    "raw": "类型I：分子间的作用力的辨析",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型Ⅱ：分子间的作用力影响分子晶体熔沸点问题",
+    "page": 269,
+    "raw": "类型Ⅱ：分子间的作用力影响分子晶体熔沸点问题",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型Ⅲ：分子间作用力与溶解性问题",
+    "page": 271,
+    "raw": "类型Ⅲ：分子间作用力与溶解性问题",
+    "inferred": false
+  },
+  {
+    "kind": "section",
+    "title": "第3节分子的手性",
+    "page": 271,
+    "raw": "第3节分子的手性",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型I：分子的手性基本概念",
+    "page": 272,
+    "raw": "类型I：分子的手性基本概念·",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型Ⅱ：手性碳原子判断",
+    "page": 272,
+    "raw": "类型Ⅱ：手性碳原子判断·",
+    "inferred": false
+  },
+  {
+    "kind": "module",
+    "title": "模块6晶体与晶胞",
+    "page": 274,
+    "raw": "模块6晶体与晶胞",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型I：晶体与晶胞的基本概念",
+    "page": 275,
+    "raw": "类型I：晶体与晶胞的基本概念·",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型Ⅱ：晶胞中粒子数目的计算",
+    "page": 275,
+    "raw": "类型Ⅱ：晶胞中粒子数目的计算",
+    "inferred": false
+  },
+  {
+    "kind": "module",
+    "title": "模块7晶体类型、结构与性质",
+    "page": 278,
+    "raw": "模块7晶体类型、结构与性质",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型I：分子晶体与共价晶体",
+    "page": 279,
+    "raw": "类型I：分子晶体与共价晶体·",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型Ⅱ：离子晶体与金属晶体",
+    "page": 280,
+    "raw": "类型Ⅱ：离子晶体与金属晶体",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型Ⅲ：过渡晶体与混合型晶体",
+    "page": 281,
+    "raw": "类型Ⅲ：过渡晶体与混合型晶体",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型IⅣV：晶体的熔、沸点大小比较",
+    "page": 282,
+    "raw": "类型IⅣV：晶体的熔、沸点大小比较",
+    "inferred": false
+  },
+  {
+    "kind": "module",
+    "title": "模块8晶胞计算题型",
+    "page": 285,
+    "raw": "模块8晶胞计算题型",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型I：晶胞中的配位数问题",
+    "page": 288,
+    "raw": "类型I：晶胞中的配位数问题·",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型Ⅱ：晶胞中原子的最短距离问题 化高考化学核心方法",
+    "page": 289,
+    "raw": "类型Ⅱ：晶胞中原子的最短距离问题",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型Ⅲ：利用晶胞截面图判断晶胞结构的计算题型",
+    "page": 290,
+    "raw": "类型Ⅲ：利用晶胞截面图判断晶胞结构的计算题型",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型IV：空间占有率问题",
+    "page": 292,
+    "raw": "类型IV：空间占有率问题··",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型V：晶体结构的缺陷与掺杂问题",
+    "page": 292,
+    "raw": "类型V：晶体结构的缺陷与掺杂问题",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型VI：原子坐标问题",
+    "page": 294,
+    "raw": "类型VI：原子坐标问题··",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型VII：晶胞投影问题",
+    "page": 295,
+    "raw": "类型VII：晶胞投影问题··",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型Ⅲ：非立方晶系(或非四方晶系)问题",
+    "page": 295,
+    "raw": "类型Ⅲ：非立方晶系(或非四方晶系)问题",
+    "inferred": false
+  },
+  {
+    "kind": "module",
+    "title": "模块9配合物与超分子",
+    "page": 297,
+    "raw": "模块9配合物与超分子",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型I：配位键与配合物基本概念",
+    "page": 299,
+    "raw": "类型I：配位键与配合物基本概念",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型Ⅱ：配体的配位能力比较",
+    "page": 300,
+    "raw": "类型Ⅱ：配体的配位能力比较·",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型Ⅲ：确定配合物化学式",
+    "page": 300,
+    "raw": "类型Ⅲ：确定配合物化学式.…·.",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型IV：配合物或配离子的结构问题",
+    "page": 300,
+    "raw": "类型IV：配合物或配离子的结构问题",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型V：螯合配位问题",
+    "page": 301,
+    "raw": "类型V：螯合配位问题.··",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型VI：超分子基本概念",
+    "page": 301,
+    "raw": "类型VI：超分子基本概念·.",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型Ⅱ：超分子的分子识别问题",
+    "page": 302,
+    "raw": "类型Ⅱ：超分子的分子识别问题",
+    "inferred": false
+  },
+  {
+    "kind": "module",
+    "title": "模块10元素推断综合题",
+    "page": 303,
+    "raw": "模块10元素推断综合题",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型I：利用元素形成的单质或化合物的性质推断元素",
+    "page": 304,
+    "raw": "类型I：利用元素形成的单质或化合物的性质推断元素",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型Ⅱ：利用元素周期表、周期律推断元素",
+    "page": 305,
+    "raw": "类型Ⅱ：利用元素周期表、周期律推断元素",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型Ⅲ：利用核外电子排布方式推断元素",
+    "page": 306,
+    "raw": "类型Ⅲ：利用核外电子排布方式推断元素",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型IV：利用结构式推断元素",
+    "page": 307,
+    "raw": "类型IV：利用结构式推断元素·...",
+    "inferred": false
+  },
+  {
+    "kind": "chapter",
+    "title": "第9章化学反应原理",
+    "page": 310,
+    "raw": "第9章化学反应原理",
+    "inferred": false
+  },
+  {
+    "kind": "module",
+    "title": "模块1化学反应中的能量变化",
+    "page": 310,
+    "raw": "模块1化学反应中的能量变化",
+    "inferred": false
+  },
+  {
+    "kind": "section",
+    "title": "第1节反应热与变",
+    "page": 310,
+    "raw": "第1节反应热与变",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型I：反应热与变的基本概念",
+    "page": 314,
+    "raw": "类型I：反应热与变的基本概念",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型Ⅱ：△H的影响因素和符号判断",
+    "page": 314,
+    "raw": "类型Ⅱ：△H的影响因素和符号判断",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型Ⅲ：利用键能计算△H",
+    "page": 315,
+    "raw": "类型Ⅲ：利用键能计算△H",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型IV：利用能量图计算△H",
+    "page": 315,
+    "raw": "类型IV：利用能量图计算△H·",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型V：利用盖斯定律计算△H",
+    "page": 316,
+    "raw": "类型V：利用盖斯定律计算△H",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型VI：利用燃烧热计算△H",
+    "page": 316,
+    "raw": "类型VI：利用燃烧热计算△H·",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型I：利用活化能计算△H",
+    "page": 316,
+    "raw": "类型I：利用活化能计算△H··",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型VⅢI：根据题目信息计算△H",
+    "page": 317,
+    "raw": "类型VⅢI：根据题目信息计算△H",
+    "inferred": false
+  },
+  {
+    "kind": "section",
+    "title": "第2节热化学方程式",
+    "page": 317,
+    "raw": "第2节热化学方程式",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型I：热化学方程式正误判断",
+    "page": 319,
+    "raw": "类型I：热化学方程式正误判断",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型Ⅱ：热化学方程式的书写 /一化高考化学核心方法",
+    "page": 318,
+    "raw": "类型Ⅱ：热化学方程式的书写·",
+    "inferred": false
+  },
+  {
+    "kind": "module",
+    "title": "模块2化学反应速率",
+    "page": 319,
+    "raw": "模块2化学反应速率",
+    "inferred": true
+  },
+  {
+    "kind": "section",
+    "title": "第1节基元反应 活化能 催化剂",
+    "page": 320,
+    "raw": "第1节基元反应 活化能 催化剂",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型I：基本概念和基本原理的辨析",
+    "page": 321,
+    "raw": "类型I：基本概念和基本原理的辨析",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型Ⅱ：基元反应与化学反应历程",
+    "page": 322,
+    "raw": "类型Ⅱ：基元反应与化学反应历程",
+    "inferred": false
+  },
+  {
+    "kind": "section",
+    "title": "第2节反应历程图",
+    "page": 322,
+    "raw": "第2节反应历程图",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型I：能量历程图题型",
+    "page": 324,
+    "raw": "类型I：能量历程图题型·",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型Ⅱ:催化机理能垒图题型",
+    "page": 326,
+    "raw": "类型Ⅱ:催化机理能垒图题型·",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型Ⅲ：物质反应环形机理图题型",
+    "page": 328,
+    "raw": "类型Ⅲ：物质反应环形机理图题型",
+    "inferred": false
+  },
+  {
+    "kind": "section",
+    "title": "第3节化学反应速率的分类及计算",
+    "page": 329,
+    "raw": "第3节化学反应速率的分类及计算",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型I：平均速率的计算",
+    "page": 331,
+    "raw": "类型I：平均速率的计算·.",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型Ⅱ：瞬时速率的计算",
+    "page": 331,
+    "raw": "类型Ⅱ：瞬时速率的计算·",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型Ⅲ：阿伦尼乌斯公式应用一k和温度的关系",
+    "page": 332,
+    "raw": "类型Ⅲ：阿伦尼乌斯公式应用一k和温度的关系",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型IⅣV：阿伦尼乌斯公式应用一k和催化剂的关系",
+    "page": 332,
+    "raw": "类型IⅣV：阿伦尼乌斯公式应用一k和催化剂的关系",
+    "inferred": false
+  },
+  {
+    "kind": "section",
+    "title": "第 4 节影响化学反应速率的因素",
+    "page": 334,
+    "raw": "第 4 节影响化学反应速率的因素",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型I：基本概念和基本原理的辨析",
+    "page": 336,
+    "raw": "类型I：基本概念和基本原理的辨析",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型Ⅱ：影响化学反应速率的因素",
+    "page": 336,
+    "raw": "类型Ⅱ：影响化学反应速率的因素.",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型Ⅲ:控制变量法在实验中的运用",
+    "page": 338,
+    "raw": "类型Ⅲ:控制变量法在实验中的运用",
+    "inferred": false
+  },
+  {
+    "kind": "section",
+    "title": "第5节反应速率图像分析",
+    "page": 339,
+    "raw": "第5节反应速率图像分析",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型I:时间—浓度(或物质的量)图",
+    "page": 343,
+    "raw": "类型I:时间—浓度(或物质的量)图",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型Ⅱ：时间—速率图",
+    "page": 345,
+    "raw": "类型Ⅱ：时间—速率图···",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型Ⅲ：温度(或压强)—速率图",
+    "page": 345,
+    "raw": "类型Ⅲ：温度(或压强)—速率图",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型IV：恒温曲线（或恒压曲线）",
+    "page": 346,
+    "raw": "类型IV：恒温曲线（或恒压曲线）··",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型V：时间—温度(或压强、或催化剂)—含量(或转化率)图",
+    "page": 347,
+    "raw": "类型V：时间—温度(或压强、或催化剂)—含量(或转化率)图",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型VI：多重因素速率图",
+    "page": 348,
+    "raw": "类型VI：多重因素速率图",
+    "inferred": false
+  },
+  {
+    "kind": "module",
+    "title": "模块3化学平衡",
+    "page": 349,
+    "raw": "模块3化学平衡",
+    "inferred": false
+  },
+  {
+    "kind": "section",
+    "title": "第1节化学平衡状态",
+    "page": 349,
+    "raw": "第1节化学平衡状态",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型I：可逆反应与化学平衡的基本概念",
+    "page": 352,
+    "raw": "类型I：可逆反应与化学平衡的基本概念",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型Ⅱ:判断平衡的标志",
+    "page": 352,
+    "raw": "类型Ⅱ:判断平衡的标志·",
+    "inferred": false
+  },
+  {
+    "kind": "section",
+    "title": "第2 节影响平衡的因素",
+    "page": 354,
+    "raw": "第2 节影响平衡的因素",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型I：基本理论的理解与辨析",
+    "page": 356,
+    "raw": "类型I：基本理论的理解与辨析·",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型Ⅱ：影响平衡移动的因素与平衡移动的方向",
+    "page": 356,
+    "raw": "类型Ⅱ：影响平衡移动的因素与平衡移动的方向",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型Ⅲ：平衡转化率问题",
+    "page": 357,
+    "raw": "类型Ⅲ：平衡转化率问题..·.",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型IV：恒压体系含无关气体对转化率的影响问题",
+    "page": 359,
+    "raw": "类型IV：恒压体系含无关气体对转化率的影响问题",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型V：竞争反应的转化率、选择性问题",
+    "page": 360,
+    "raw": "类型V：竞争反应的转化率、选择性问题",
+    "inferred": false
+  },
+  {
+    "kind": "section",
+    "title": "第3节化学平衡常数",
+    "page": 361,
+    "raw": "第3节化学平衡常数",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型I：化学平衡常数的基本常识判断",
+    "page": 362,
+    "raw": "类型I：化学平衡常数的基本常识判断",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型Ⅱ：组合化学方程式计算K",
+    "page": 363,
+    "raw": "类型Ⅱ：组合化学方程式计算K",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型Ⅲ:速率常数与平衡常数的关系",
+    "page": 363,
+    "raw": "类型Ⅲ:速率常数与平衡常数的关系",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型IV:K。的计算",
+    "page": 363,
+    "raw": "类型IV:K。的计算",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型V：恒温恒压体系中K，的计算",
+    "page": 365,
+    "raw": "类型V：恒温恒压体系中K，的计算",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型VI:恒温恒容体系中K，的计算",
+    "page": 367,
+    "raw": "类型VI:恒温恒容体系中K，的计算",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型I：平衡体系含无关气体的K，计算",
+    "page": 368,
+    "raw": "类型I：平衡体系含无关气体的K，计算",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型Ⅲ：多反应体系中的平衡常数计算",
+    "page": 369,
+    "raw": "类型Ⅲ：多反应体系中的平衡常数计算",
+    "inferred": false
+  },
+  {
+    "kind": "section",
+    "title": "第4 节等效平衡",
+    "page": 370,
+    "raw": "第4 节等效平衡",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型I：比较百分含量",
+    "page": 372,
+    "raw": "类型I：比较百分含量",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型Ⅱ：比较转化率",
+    "page": 372,
+    "raw": "类型Ⅱ：比较转化率·",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型Ⅲ：比较△H",
+    "page": 373,
+    "raw": "类型Ⅲ：比较△H·",
+    "inferred": false
+  },
+  {
+    "kind": "section",
+    "title": "第5节反应进行的方向",
+    "page": 374,
+    "raw": "第5节反应进行的方向",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型I：基本概念和基本原理的辨析",
+    "page": 374,
+    "raw": "类型I：基本概念和基本原理的辨析",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型Ⅱ：自由能变化(△G)一温度图像题",
+    "page": 375,
+    "raw": "类型Ⅱ：自由能变化(△G)一温度图像题",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型Ⅲ：计算AG判断反应是否能自发",
+    "page": 376,
+    "raw": "类型Ⅲ：计算AG判断反应是否能自发",
+    "inferred": false
+  },
+  {
+    "kind": "section",
+    "title": "第6节平衡图像分析",
+    "page": 377,
+    "raw": "第6节平衡图像分析",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型I：时间—压强(或温度)— 百分含量(或转化率)图像",
+    "page": 377,
+    "raw": "类型I：时间—压强(或温度)—",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型Ⅱ:投料比- —转化率图像",
+    "page": 378,
+    "raw": "类型Ⅱ:投料比-",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型Ⅲ:温度- 平衡常数图像",
+    "page": 379,
+    "raw": "类型Ⅲ:温度-",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型IV：温度- 百分含量(转化率)图像",
+    "page": 380,
+    "raw": "类型IV：温度-",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型V：温度- 选择性—转化率图像",
+    "page": 380,
+    "raw": "类型V：温度-",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型VI:温度- 转化率(或选择性)的三坐标图像 压强一",
+    "page": 381,
+    "raw": "类型VI:温度-",
+    "inferred": false
+  },
+  {
+    "kind": "section",
+    "title": "第7节化学反应的调控",
+    "page": 382,
+    "raw": "第7节化学反应的调控",
+    "inferred": false
+  },
+  {
+    "kind": "module",
+    "title": "模块4化学反应原理综合考查",
+    "page": 385,
+    "raw": "模块4化学反应原理综合考查",
+    "inferred": false
+  },
+  {
+    "kind": "chapter",
+    "title": "第10章水溶液中的离子反应与平衡",
+    "page": 393,
+    "raw": "第10章水溶液中的离子反应与平衡·",
+    "inferred": false
+  },
+  {
+    "kind": "module",
+    "title": "模块1电离平衡",
+    "page": 393,
+    "raw": "模块1电离平衡",
+    "inferred": false
+  },
+  {
+    "kind": "section",
+    "title": "第1节弱电解质电离平衡的影响因素",
+    "page": 393,
+    "raw": "第1节弱电解质电离平衡的影响因素",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型I：弱酸、弱碱、水的电离基本常识",
+    "page": 394,
+    "raw": "类型I：弱酸、弱碱、水的电离基本常识",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型Ⅱ：电离平衡的影响因素",
+    "page": 395,
+    "raw": "类型Ⅱ：电离平衡的影响因素·",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型Ⅲ:强酸(碱)与弱酸(碱)的比较",
+    "page": 396,
+    "raw": "类型Ⅲ:强酸(碱)与弱酸(碱)的比较",
+    "inferred": false
+  },
+  {
+    "kind": "section",
+    "title": "第2节α、KaK,、Kw计算及其运用",
+    "page": 398,
+    "raw": "第2节α、KaK,、Kw计算及其运用",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型I：利用K。或K,书写化学方程式",
+    "page": 399,
+    "raw": "类型I：利用K。或K,书写化学方程式",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型Ⅱ：利用K。、K,、Kw的表达式解决粒子浓度比值的变化问题",
+    "page": 399,
+    "raw": "类型Ⅱ：利用K。、K,、Kw的表达式解决粒子浓度比值的变化问题",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型Ⅲ：利用KaK,Kw计算α和pH",
+    "page": 400,
+    "raw": "类型Ⅲ：利用KaK,Kw计算α和pH",
+    "inferred": false
+  },
+  {
+    "kind": "section",
+    "title": "第3节溶液酸碱性与 pH",
+    "page": 401,
+    "raw": "第3节溶液酸碱性与 pH",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型I：基本概念的易错辨析",
+    "page": 406,
+    "raw": "类型I：基本概念的易错辨析",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型Ⅱ:pH的计算",
+    "page": 408,
+    "raw": "类型Ⅱ:pH的计算",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型Ⅲ:水电离的c(H+）c(OH-)的计算",
+    "page": 407,
+    "raw": "类型Ⅲ:水电离的c(H+）c(OH-)的计算",
+    "inferred": false
+  },
+  {
+    "kind": "section",
+    "title": "第4节水溶液各种\"比大小\"问题",
+    "page": 408,
+    "raw": "第4节水溶液各种\"比大小\"问题",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型I：等物质的量浓度或等pH的\"比大小\"问题",
+    "page": 410,
+    "raw": "类型I：等物质的量浓度或等pH的\"比大小\"问题",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型Ⅱ：溶液混合后的酸碱性判断",
+    "page": 412,
+    "raw": "类型Ⅱ：溶液混合后的酸碱性判断·.",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型Ⅲ：混合溶液限定为“中性\"的大小问题",
+    "page": 413,
+    "raw": "类型Ⅲ：混合溶液限定为“中性\"的大小问题",
+    "inferred": false
+  },
+  {
+    "kind": "module",
+    "title": "模块2盐类的水解",
+    "page": 415,
+    "raw": "模块2盐类的水解",
+    "inferred": false
+  },
+  {
+    "kind": "section",
+    "title": "第1节盐类水解平衡、规律及其运用",
+    "page": 415,
+    "raw": "第1节盐类水解平衡、规律及其运用",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型I：基本概念的易错辨析",
+    "page": 421,
+    "raw": "类型I：基本概念的易错辨析··",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型Ⅱ：水解方程式的书写",
+    "page": 422,
+    "raw": "类型Ⅱ：水解方程式的书写···",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型Ⅲ：盐类水解与阿伏加德罗常数题型",
+    "page": 422,
+    "raw": "类型Ⅲ：盐类水解与阿伏加德罗常数题型",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型IV：水解常数的计算",
+    "page": 422,
+    "raw": "类型IV：水解常数的计算..·.",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型V：盐溶液的酸碱性判断",
+    "page": 423,
+    "raw": "类型V：盐溶液的酸碱性判断",
+    "inferred": false
+  },
+  {
+    "kind": "section",
+    "title": "第2节粒子浓度大小比较",
+    "page": 424,
+    "raw": "第2节粒子浓度大小比较",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型I：不同溶液中同一粒子浓度大小比较",
+    "page": 425,
+    "raw": "类型I：不同溶液中同一粒子浓度大小比较",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型Ⅱ：同一溶液中粒子浓度大小比较",
+    "page": 426,
+    "raw": "类型Ⅱ：同一溶液中粒子浓度大小比较·",
+    "inferred": false
+  },
+  {
+    "kind": "section",
+    "title": "第3节溶液中的三大守恒",
+    "page": 430,
+    "raw": "第3节溶液中的三大守恒",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型I：利用三大守恒判断等式或不等式的正误",
+    "page": 433,
+    "raw": "类型I：利用三大守恒判断等式或不等式的正误",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型Ⅱ：酸碱滴定与溶液的三大守恒",
+    "page": 434,
+    "raw": "类型Ⅱ：酸碱滴定与溶液的三大守恒",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型Ⅲ：利用三大守恒求K",
+    "page": 434,
+    "raw": "类型Ⅲ：利用三大守恒求K。",
+    "inferred": false
+  },
+  {
+    "kind": "section",
+    "title": "第 4节电解质溶液的电离与水解综合图像分析",
+    "page": 435,
+    "raw": "第 4节电解质溶液的电离与水解综合图像分析",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型I：稀释曲线图",
+    "page": 435,
+    "raw": "类型I：稀释曲线图·.",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型Ⅱ：水的电离平衡曲线图",
+    "page": 436,
+    "raw": "类型Ⅱ：水的电离平衡曲线图···",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型Ⅲl:中和滴定的pH图像",
+    "page": 437,
+    "raw": "类型Ⅲl:中和滴定的pH图像·",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型IV：分布系数一pH图像",
+    "page": 440,
+    "raw": "类型IV：分布系数一pH图像",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型V：浓度比值的对数图像题型",
+    "page": 444,
+    "raw": "类型V：浓度比值的对数图像题型",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型VI：多坐标曲线",
+    "page": 447,
+    "raw": "类型VI：多坐标曲线..",
+    "inferred": false
+  },
+  {
+    "kind": "module",
+    "title": "模块3难溶电解质的溶解平衡",
+    "page": 450,
+    "raw": "模块3难溶电解质的溶解平衡",
+    "inferred": false
+  },
+  {
+    "kind": "section",
+    "title": "第1节溶解平衡的影响因素及其运用",
+    "page": 450,
+    "raw": "第1节溶解平衡的影响因素及其运用",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型I：验证溶解度大小的实验问题",
+    "page": 453,
+    "raw": "类型I：验证溶解度大小的实验问题",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型Ⅱ:K的影响因素",
+    "page": 454,
+    "raw": "类型Ⅱ:K的影响因素",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型Ⅲ：K的计算和运用",
+    "page": 454,
+    "raw": "类型Ⅲ：K的计算和运用",
+    "inferred": false
+  },
+  {
+    "kind": "section",
+    "title": "第2节沉淀溶解平衡图像分析",
+    "page": 456,
+    "raw": "第2节沉淀溶解平衡图像分析",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型I:pM-pH关系图",
+    "page": 459,
+    "raw": "类型I:pM-pH关系图",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型Ⅱ：离子浓度的负对数关系图",
+    "page": 460,
+    "raw": "类型Ⅱ：离子浓度的负对数关系图",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型Ⅲ：沉淀滴定曲线图",
+    "page": 463,
+    "raw": "类型Ⅲ：沉淀滴定曲线图.",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型IV：分布系数-pH关系图与沉淀溶解平衡的综合",
+    "page": 466,
+    "raw": "类型IV：分布系数-pH关系图与沉淀溶解平衡的综合",
+    "inferred": false
+  },
+  {
+    "kind": "chapter",
+    "title": "第11章电化学",
+    "page": 469,
+    "raw": "第11章电化学·",
+    "inferred": false
+  },
+  {
+    "kind": "module",
+    "title": "模块1原电池",
+    "page": 469,
+    "raw": "模块1原电池",
+    "inferred": false
+  },
+  {
+    "kind": "section",
+    "title": "第1节原电池基本概念",
+    "page": 469,
+    "raw": "第1节原电池基本概念",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型I：基本概念的易错辨析",
+    "page": 471,
+    "raw": "类型I：基本概念的易错辨析",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型Ⅱ：原电池工作原理",
+    "page": 472,
+    "raw": "类型Ⅱ：原电池工作原理··.",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型Ⅲ：设计原电池",
+    "page": 473,
+    "raw": "类型Ⅲ：设计原电池·",
+    "inferred": false
+  },
+  {
+    "kind": "section",
+    "title": "第2节原电池电极反应式的书写",
+    "page": 473,
+    "raw": "第2节原电池电极反应式的书写",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型I：燃料电池电极反应式书写",
+    "page": 474,
+    "raw": "类型I：燃料电池电极反应式书写",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型Ⅱ：二次电池电极反应式书写",
+    "page": 475,
+    "raw": "类型Ⅱ：二次电池电极反应式书写",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型Ⅲ：新型原电池装置的电极反应式书写",
+    "page": 476,
+    "raw": "类型Ⅲ：新型原电池装置的电极反应式书写",
+    "inferred": false
+  },
+  {
+    "kind": "section",
+    "title": "第3节常见化学电源 -次电池、二次电池、燃料电池",
+    "page": 477,
+    "raw": "第3节常见化学电源",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型I：化学电源基本概念",
+    "page": 481,
+    "raw": "类型I：化学电源基本概念",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型Ⅱ：一次电池",
+    "page": 481,
+    "raw": "类型Ⅱ：一次电池·",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型Ⅲ：新型二次电池",
+    "page": 482,
+    "raw": "类型Ⅲ：新型二次电池·",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型IV：新型燃料电池",
+    "page": 484,
+    "raw": "类型IV：新型燃料电池.·.",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型V：微生物燃料电池",
+    "page": 486,
+    "raw": "类型V：微生物燃料电池··.",
+    "inferred": false
+  },
+  {
+    "kind": "section",
+    "title": "第4节高频考查的原电池题型",
+    "page": 487,
+    "raw": "第4节高频考查的原电池题型",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型I：原电池中电解质溶液pH变化问题",
+    "page": 487,
+    "raw": "类型I：原电池中电解质溶液pH变化问题",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型Ⅱ：浓差电池",
+    "page": 488,
+    "raw": "类型Ⅱ：浓差电池·",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型Ⅲ：含双极膜的原电池问题",
+    "page": 489,
+    "raw": "类型Ⅲ：含双极膜的原电池问题",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型IV：多室原电池问题",
+    "page": 490,
+    "raw": "类型IV：多室原电池问题.",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型V：有机化学与原电池综合题型",
+    "page": 491,
+    "raw": "类型V：有机化学与原电池综合题型",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型VI：晶胞与原电池综合题型",
+    "page": 492,
+    "raw": "类型VI：晶胞与原电池综合题型·",
+    "inferred": false
+  },
+  {
+    "kind": "module",
+    "title": "模块2电解池",
+    "page": 494,
+    "raw": "模块2电解池",
+    "inferred": false
+  },
+  {
+    "kind": "section",
+    "title": "第1节电解池基本概念",
+    "page": 494,
+    "raw": "第1节电解池基本概念",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型I：基本概念的易错辨析",
+    "page": 495,
+    "raw": "类型I：基本概念的易错辨析",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型Ⅱ：电解池工作原理",
+    "page": 495,
+    "raw": "类型Ⅱ：电解池工作原理",
+    "inferred": false
+  },
+  {
+    "kind": "section",
+    "title": "第2节电解池电极方程式的书写",
+    "page": 497,
+    "raw": "第2节电解池电极方程式的书写",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型I：基础电极反应式书写",
+    "page": 498,
+    "raw": "类型I：基础电极反应式书写·",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型Ⅱ：根据装置图信息书写电极反应式",
+    "page": 499,
+    "raw": "类型Ⅱ：根据装置图信息书写电极反应式",
+    "inferred": false
+  },
+  {
+    "kind": "section",
+    "title": "第3节电解原理的应用",
+    "page": 500,
+    "raw": "第3节电解原理的应用",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型I：基本常识易错辨析",
+    "page": 503,
+    "raw": "类型I：基本常识易错辨析",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型Ⅱ：海水的电解应用",
+    "page": 503,
+    "raw": "类型Ⅱ：海水的电解应用··",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型Ⅲ：氯碱工业问题",
+    "page": 505,
+    "raw": "类型Ⅲ：氯碱工业问题",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型IV：电镀与电解精炼铜",
+    "page": 505,
+    "raw": "类型IV：电镀与电解精炼铜·.",
+    "inferred": false
+  },
+  {
+    "kind": "section",
+    "title": "第 4节高频考查的电解池题型",
+    "page": 506,
+    "raw": "第 4节高频考查的电解池题型",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型I：溶液质量变化量的计算",
+    "page": 506,
+    "raw": "类型I：溶液质量变化量的计算",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型Ⅱ：溶液pH变化问题",
+    "page": 507,
+    "raw": "类型Ⅱ：溶液pH变化问题.....",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型Ⅲ：电解池溶液复原问题",
+    "page": 508,
+    "raw": "类型Ⅲ：电解池溶液复原问题·",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型IV：多离子交换膜的电解池装置",
+    "page": 508,
+    "raw": "类型IV：多离子交换膜的电解池装置",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型V：有机化学与电解池综合题型",
+    "page": 509,
+    "raw": "类型V：有机化学与电解池综合题型",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型VI：原电池与电解池综合",
+    "page": 511,
+    "raw": "类型VI：原电池与电解池综合",
+    "inferred": false
+  },
+  {
+    "kind": "module",
+    "title": "模块3金属的腐蚀和防腐",
+    "page": 513,
+    "raw": "模块3金属的腐蚀和防腐",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型I：金属的腐蚀与防护基本概念",
+    "page": 514,
+    "raw": "类型I：金属的腐蚀与防护基本概念",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型Ⅱ：金属的电化学防腐",
+    "page": 514,
+    "raw": "类型Ⅱ：金属的电化学防腐",
+    "inferred": false
+  },
+  {
+    "kind": "chapter",
+    "title": "第12章有机化学基础",
+    "page": 516,
+    "raw": "第12章有机化学基础·",
+    "inferred": false
+  },
+  {
+    "kind": "module",
+    "title": "模块1有机化合物的分类与命名",
+    "page": 516,
+    "raw": "模块1有机化合物的分类与命名",
+    "inferred": false
+  },
+  {
+    "kind": "section",
+    "title": "第1节有机化合物的分类",
+    "page": 516,
+    "raw": "第1节有机化合物的分类",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型I：有机化合物的分类",
+    "page": 517,
+    "raw": "类型I：有机化合物的分类·",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型Ⅱ:有机化合物中官能团的识别",
+    "page": 518,
+    "raw": "类型Ⅱ:有机化合物中官能团的识别",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型Ⅲ：同系物",
+    "page": 519,
+    "raw": "类型Ⅲ：同系物",
+    "inferred": false
+  },
+  {
+    "kind": "section",
+    "title": "第2节有机化合物的命名",
+    "page": 520,
+    "raw": "第2节有机化合物的命名",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型I：烷烃、烯烃、炔烃的命名",
+    "page": 524,
+    "raw": "类型I：烷烃、烯烃、炔烃的命名",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型Ⅱ：烃的衍生物的命名",
+    "page": 525,
+    "raw": "类型Ⅱ：烃的衍生物的命名..",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型Ⅲ：芳香族化合物的命名",
+    "page": 526,
+    "raw": "类型Ⅲ：芳香族化合物的命名·.",
+    "inferred": false
+  },
+  {
+    "kind": "module",
+    "title": "模块2有机化合物实验式、分子式、分子结构的确定",
+    "page": 528,
+    "raw": "模块2有机化合物实验式、分子式、分子结构的确定",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型I：质谱图、红外光谱、核磁共振氢谱、X射线衍射基本概念",
+    "page": 529,
+    "raw": "类型I：质谱图、红外光谱、核磁共振氢谱、X射线衍射基本概念",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型Ⅱ：核磁共振氢谱图的波峰数与峰面积比问题",
+    "page": 530,
+    "raw": "类型Ⅱ：核磁共振氢谱图的波峰数与峰面积比问题·",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型Ⅲ：确定有机物实验式、分子式和分子结构问题",
+    "page": 532,
+    "raw": "类型Ⅲ：确定有机物实验式、分子式和分子结构问题",
+    "inferred": false
+  },
+  {
+    "kind": "module",
+    "title": "模块3烃",
+    "page": 534,
+    "raw": "模块3烃",
+    "inferred": false
+  },
+  {
+    "kind": "section",
+    "title": "第1节烷烃、烯烃、炔烃",
+    "page": 534,
+    "raw": "第1节烷烃、烯烃、炔烃",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型I：烷烃基本概念",
+    "page": 536,
+    "raw": "类型I：烷烃基本概念·",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型Ⅱ：烯烃、炔烃的基本概念",
+    "page": 537,
+    "raw": "类型Ⅱ：烯烃、炔烃的基本概念",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型Ⅲ：共轭烯烃问题",
+    "page": 538,
+    "raw": "类型Ⅲ：共轭烯烃问题·",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型IV：烯烃、炔烃和酸性KMnO溶液的反应问题",
+    "page": 539,
+    "raw": "类型IV：烯烃、炔烃和酸性KMnO溶液的反应问题",
+    "inferred": false
+  },
+  {
+    "kind": "section",
+    "title": "第2节芳香烃",
+    "page": 540,
+    "raw": "第2节芳香烃",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型I：苯及其同系物基本概念",
+    "page": 543,
+    "raw": "类型I：苯及其同系物基本概念",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型Ⅱ：芳香烃基本概念",
+    "page": 544,
+    "raw": "类型Ⅱ：芳香烃基本概念·",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型Ⅲ：烃类的重要实验",
+    "page": 545,
+    "raw": "类型Ⅲ：烃类的重要实验",
+    "inferred": false
+  },
+  {
+    "kind": "module",
+    "title": "模块4卤代烃",
+    "page": 546,
+    "raw": "模块4卤代烃",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型I：卤代烃的性质",
+    "page": 547,
+    "raw": "类型I：卤代烃的性质",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型Ⅱ：卤代烃中卤素原子的检验",
+    "page": 549,
+    "raw": "类型Ⅱ：卤代烃中卤素原子的检验",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型Ⅲ：卤代烃引入“相邻双官能团\"的应用",
+    "page": 549,
+    "raw": "类型Ⅲ：卤代烃引入“相邻双官能团\"的应用",
+    "inferred": false
+  },
+  {
+    "kind": "module",
+    "title": "模块5醇酚",
+    "page": 551,
+    "raw": "模块5醇酚",
+    "inferred": false
+  },
+  {
+    "kind": "section",
+    "title": "第1节醇",
+    "page": 551,
+    "raw": "第1节醇",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型I：醇的基本常识",
+    "page": 553,
+    "raw": "类型I：醇的基本常识·",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型Ⅱ:实验基础",
+    "page": 554,
+    "raw": "类型Ⅱ:实验基础·",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型Ⅲ：醇的催化氧化反应和消去反应问题",
+    "page": 555,
+    "raw": "类型Ⅲ：醇的催化氧化反应和消去反应问题",
+    "inferred": false
+  },
+  {
+    "kind": "section",
+    "title": "第2节酚",
+    "page": 556,
+    "raw": "第2节酚",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型I：酚的基本概念",
+    "page": 557,
+    "raw": "类型I：酚的基本概念",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型Ⅱ：苯酚的弱酸性问题",
+    "page": 558,
+    "raw": "类型Ⅱ：苯酚的弱酸性问题·",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型Ⅲ：分子中基团相互影响的问题",
+    "page": 559,
+    "raw": "类型Ⅲ：分子中基团相互影响的问题·",
+    "inferred": false
+  },
+  {
+    "kind": "module",
+    "title": "模块6醛酮",
+    "page": 560,
+    "raw": "模块6醛酮",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型I:醛 酮的基本常识",
+    "page": 562,
+    "raw": "类型I:醛 酮的基本常识",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型Ⅱ：醛与银氨溶液、新制Cu(OH)2反应问题",
+    "page": 565,
+    "raw": "类型Ⅱ：醛与银氨溶液、新制Cu(OH)2反应问题",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型Ⅲ：醛的计算题",
+    "page": 566,
+    "raw": "类型Ⅲ：醛的计算题.",
+    "inferred": false
+  },
+  {
+    "kind": "module",
+    "title": "模块7羧酸羧酸衍生物",
+    "page": 567,
+    "raw": "模块7羧酸羧酸衍生物",
+    "inferred": false
+  },
+  {
+    "kind": "section",
+    "title": "第1节　羧酸",
+    "page": 567,
+    "raw": "第1节　羧酸",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型I：羧酸的基本概念",
+    "page": 569,
+    "raw": "类型I：羧酸的基本概念.",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型Ⅱ：乙酸乙酯的制备实验",
+    "page": 571,
+    "raw": "类型Ⅱ：乙酸乙酯的制备实验",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型Ⅲ：常见羧酸- -草酸",
+    "page": 572,
+    "raw": "类型Ⅲ：常见羧酸-",
+    "inferred": false
+  },
+  {
+    "kind": "section",
+    "title": "第2节酯",
+    "page": 573,
+    "raw": "第2节酯",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型I：酯的水解问题",
+    "page": 574,
+    "raw": "类型I：酯的水解问题",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型Ⅱ:酚酯、甲酸酯的特殊性",
+    "page": 576,
+    "raw": "类型Ⅱ:酚酯、甲酸酯的特殊性",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型Ⅲ：含酯基有机物的综合考查",
+    "page": 578,
+    "raw": "类型Ⅲ：含酯基有机物的综合考查",
+    "inferred": false
+  },
+  {
+    "kind": "section",
+    "title": "第3节油脂",
+    "page": 579,
+    "raw": "第3节油脂",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型I：油脂的基本概念",
+    "page": 581,
+    "raw": "类型I：油脂的基本概念·",
+    "inferred": false
+  },
+  {
+    "kind": "section",
+    "title": "第4节胺酰胺",
+    "page": 582,
+    "raw": "第4节胺酰胺",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型I：胺与酰胺的基本概念",
+    "page": 583,
+    "raw": "类型I：胺与酰胺的基本概念",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型Ⅱ:给定有机物结构简式考查氨基、酰胺基性质",
+    "page": 584,
+    "raw": "类型Ⅱ:给定有机物结构简式考查氨基、酰胺基性质",
+    "inferred": false
+  },
+  {
+    "kind": "module",
+    "title": "模块8生物大分子",
+    "page": 585,
+    "raw": "模块8生物大分子",
+    "inferred": false
+  },
+  {
+    "kind": "section",
+    "title": "第1节 糖类",
+    "page": 585,
+    "raw": "第1节 糖类",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型I：糖类的基本概念",
+    "page": 586,
+    "raw": "类型I：糖类的基本概念·…",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型Ⅱ：糖类水解实验问题",
+    "page": 587,
+    "raw": "类型Ⅱ：糖类水解实验问题",
+    "inferred": false
+  },
+  {
+    "kind": "section",
+    "title": "第2节蛋白质与核酸",
+    "page": 589,
+    "raw": "第2节蛋白质与核酸",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型I：氨基酸、蛋白质、酶的基本概念",
+    "page": 591,
+    "raw": "类型I：氨基酸、蛋白质、酶的基本概念",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型Ⅱ：氨基酸的成肽与蛋白质的水解问题",
+    "page": 592,
+    "raw": "类型Ⅱ：氨基酸的成肽与蛋白质的水解问题",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型Ⅲ：核酸的基本概念",
+    "page": 593,
+    "raw": "类型Ⅲ：核酸的基本概念·",
+    "inferred": false
+  },
+  {
+    "kind": "module",
+    "title": "模块9合成高分子",
+    "page": 595,
+    "raw": "模块9合成高分子",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型I：加聚反应、缩聚反应方程式的书写方法",
+    "page": 599,
+    "raw": "类型I：加聚反应、缩聚反应方程式的书写方法",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型Ⅱ：高聚物单体的推断方法",
+    "page": 600,
+    "raw": "类型Ⅱ：高聚物单体的推断方法·",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型Ⅲ：聚合度问题",
+    "page": 601,
+    "raw": "类型Ⅲ：聚合度问题",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型IV：高分子材料",
+    "page": 602,
+    "raw": "类型IV：高分子材料.",
+    "inferred": false
+  },
+  {
+    "kind": "module",
+    "title": "模块10有机化合物中的原子共面、共线问题",
+    "page": 604,
+    "raw": "模块10有机化合物中的原子共面、共线问题",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型I：简单有机物的共面问题",
+    "page": 605,
+    "raw": "类型I：简单有机物的共面问题··",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型Ⅱ：有机物共面、共线综合题型",
+    "page": 606,
+    "raw": "类型Ⅱ：有机物共面、共线综合题型",
+    "inferred": false
+  },
+  {
+    "kind": "module",
+    "title": "模块11有机物的同分异构体",
+    "page": 607,
+    "raw": "模块11有机物的同分异构体",
+    "inferred": false
+  },
+  {
+    "kind": "section",
+    "title": "第1节不饱和度",
+    "page": 607,
+    "raw": "第1节不饱和度",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型工：用不饱和度判断分子式的正误或书写分子式",
+    "page": 608,
+    "raw": "类型工：用不饱和度判断分子式的正误或书写分子式",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型Ⅱ：用不饱和度推分子可能的结构",
+    "page": 609,
+    "raw": "类型Ⅱ：用不饱和度推分子可能的结构·",
+    "inferred": false
+  },
+  {
+    "kind": "section",
+    "title": "第 2 节脂肪烃、卤代烃的同分异构体问题",
+    "page": 609,
+    "raw": "第 2 节脂肪烃、卤代烃的同分异构体问题",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型I：同分异构体的常识辨析",
+    "page": 614,
+    "raw": "类型I：同分异构体的常识辨析….…",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型Ⅱ：卤代烃的同分异构体问题",
+    "page": 614,
+    "raw": "类型Ⅱ：卤代烃的同分异构体问题",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型Ⅲ：单烯烃的同分异构体问题",
+    "page": 615,
+    "raw": "类型Ⅲ：单烯烃的同分异构体问题",
+    "inferred": false
+  },
+  {
+    "kind": "section",
+    "title": "第3 节苯的同系物、稠环类芳香烃、联苯的同分异构体问题",
+    "page": 616,
+    "raw": "第3 节苯的同系物、稠环类芳香烃、联苯的同分异构体问题",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型I：苯及其同系物的同分异构体",
+    "page": 617,
+    "raw": "类型I：苯及其同系物的同分异构体",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型Ⅱ:萘、蒽卤代物的同分异构体",
+    "page": 618,
+    "raw": "类型Ⅱ:萘、蒽卤代物的同分异构体",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型Ⅲ：联苯的卤代物异构数问题",
+    "page": 619,
+    "raw": "类型Ⅲ：联苯的卤代物异构数问题··",
+    "inferred": false
+  },
+  {
+    "kind": "section",
+    "title": "第 4节烃的衍生物的同分异构体问题",
+    "page": 619,
+    "raw": "第 4节烃的衍生物的同分异构体问题",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型I：烃的衍生物的同分异构体常识辨析",
+    "page": 622,
+    "raw": "类型I：烃的衍生物的同分异构体常识辨析",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型Ⅱ：烃的含氧衍生物同分异构体的书写",
+    "page": 622,
+    "raw": "类型Ⅱ：烃的含氧衍生物同分异构体的书写",
+    "inferred": false
+  },
+  {
+    "kind": "section",
+    "title": "第5节限制条件下的同分异构体判断",
+    "page": 624,
+    "raw": "第5节限制条件下的同分异构体判断",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型I：明确官能团的同分异构体问题，",
+    "page": 627,
+    "raw": "类型I：明确官能团的同分异构体问题，",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型Ⅱ：未明确官能团的同分异构体问题",
+    "page": 628,
+    "raw": "类型Ⅱ：未明确官能团的同分异构体问题",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型Ⅲ：含酯基结构的同分异构体问题",
+    "page": 628,
+    "raw": "类型Ⅲ：含酯基结构的同分异构体问题",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型IV：含N原子的同分异构体问题",
+    "page": 630,
+    "raw": "类型IV：含N原子的同分异构体问题",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型V：异构体需考虑“吡啶\"的问题",
+    "page": 632,
+    "raw": "类型V：异构体需考虑“吡啶\"的问题",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型VI：异构体需考虑\"顺反异构\"的问题",
+    "page": 632,
+    "raw": "类型VI：异构体需考虑\"顺反异构\"的问题",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型\\Ⅱ：异构体需考虑\"手性碳\"的问题",
+    "page": 633,
+    "raw": "类型\\Ⅱ：异构体需考虑\"手性碳\"的问题·",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型I：异构体需考虑\"环状结构\"的问题",
+    "page": 634,
+    "raw": "类型I：异构体需考虑\"环状结构\"的问题",
+    "inferred": false
+  },
+  {
+    "kind": "module",
+    "title": "模块12有机合成与推断",
+    "page": 635,
+    "raw": "模块12有机合成与推断",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型I：以药物合成为载体的有机推断题",
+    "page": 643,
+    "raw": "类型I：以药物合成为载体的有机推断题",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型Ⅱ：涉及成环与开环的推断题型",
+    "page": 649,
+    "raw": "类型Ⅱ：涉及成环与开环的推断题型",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型Ⅲ：考查官能团保护的题型",
+    "page": 652,
+    "raw": "类型Ⅲ：考查官能团保护的题型",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型IV：常见的有机反应信息一",
+    "page": 654,
+    "raw": "类型IV：常见的有机反应信息一",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型V：常见的有机反应信息一第尔斯一阿尔德反应(D一A反应)",
+    "page": 656,
+    "raw": "类型V：常见的有机反应信息一第尔斯一阿尔德反应(D一A反应)",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型VI：常见的有机反应信息一 利用格氏试剂增长碳链",
+    "page": 659,
+    "raw": "类型VI：常见的有机反应信息一",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型Ⅲ：常见的有机反应信息一有机物的酰化",
+    "page": 663,
+    "raw": "类型Ⅲ：常见的有机反应信息一有机物的酰化",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型I：常见的有机反应信息一羧酸衍生物的醇解、氨解(亲核取代)",
+    "page": 667,
+    "raw": "类型I：常见的有机反应信息一羧酸衍生物的醇解、氨解(亲核取代)",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型IK：异构化问题",
+    "page": 671,
+    "raw": "类型IK：异构化问题··",
+    "inferred": false
+  },
+  {
+    "kind": "chapter",
+    "title": "第13章化学实验综合",
+    "page": 675,
+    "raw": "第13章化学实验综合",
+    "inferred": false
+  },
+  {
+    "kind": "module",
+    "title": "模块1化学实验基础",
+    "page": 675,
+    "raw": "模块1化学实验基础",
+    "inferred": false
+  },
+  {
+    "kind": "section",
+    "title": "第1节化学中常考的仪器",
+    "page": 675,
+    "raw": "第1节化学中常考的仪器",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型I：实验基本常识正误判断",
+    "page": 678,
+    "raw": "类型I：实验基本常识正误判断",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型Ⅱ：实验装置图的辨析",
+    "page": 679,
+    "raw": "类型Ⅱ：实验装置图的辨析·",
+    "inferred": false
+  },
+  {
+    "kind": "section",
+    "title": "第 2 节物质的保存、取用以及常见事故的安全处理",
+    "page": 680,
+    "raw": "第 2 节物质的保存、取用以及常见事故的安全处理",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型I：物质的保存与取用",
+    "page": 681,
+    "raw": "类型I：物质的保存与取用",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型Ⅱ：实验事故的安全处理",
+    "page": 682,
+    "raw": "类型Ⅱ：实验事故的安全处理",
+    "inferred": false
+  },
+  {
+    "kind": "section",
+    "title": "第3 节物质分离、提纯",
+    "page": 683,
+    "raw": "第3 节物质分离、提纯",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型I：分离、提纯的实验方法",
+    "page": 686,
+    "raw": "类型I：分离、提纯的实验方法",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型Ⅱ：分离、提纯实验的仪器使用",
+    "page": 687,
+    "raw": "类型Ⅱ：分离、提纯实验的仪器使用",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型Ⅲ：以中国传统文化为背景的分离、提纯问题",
+    "page": 688,
+    "raw": "类型Ⅲ：以中国传统文化为背景的分离、提纯问题",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型IV：物质分离流程图题型",
+    "page": 688,
+    "raw": "类型IV：物质分离流程图题型··",
+    "inferred": false
+  },
+  {
+    "kind": "section",
+    "title": "第 4节常见物质的检验、性质强弱比较",
+    "page": 690,
+    "raw": "第 4节常见物质的检验、性质强弱比较",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型I：物质的鉴别与检验",
+    "page": 694,
+    "raw": "类型I：物质的鉴别与检验…··.",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型Ⅱ：实验方案设计、操作、现象、结论综合题型",
+    "page": 697,
+    "raw": "类型Ⅱ：实验方案设计、操作、现象、结论综合题型",
+    "inferred": false
+  },
+  {
+    "kind": "section",
+    "title": "第5节常见物质的制备",
+    "page": 698,
+    "raw": "第5节常见物质的制备",
+    "inferred": true
+  },
+  {
+    "kind": "type",
+    "title": "类型I：常见气体制备与收集装置的正误判断",
+    "page": 704,
+    "raw": "类型I：常见气体制备与收集装置的正误判断",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型Ⅱ：气体的制备和检验试验",
+    "page": 704,
+    "raw": "类型Ⅱ：气体的制备和检验试验",
+    "inferred": false
+  },
+  {
+    "kind": "section",
+    "title": "第6节重点定量实验",
+    "page": 705,
+    "raw": "第6节重点定量实验",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型I：一定物质的量浓度溶液的配制",
+    "page": 705,
+    "raw": "类型I：一定物质的量浓度溶液的配制",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型Ⅱ：酸碱中和滴定",
+    "page": 707,
+    "raw": "类型Ⅱ：酸碱中和滴定·….",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型Ⅲ：氧化还原滴定",
+    "page": 711,
+    "raw": "类型Ⅲ：氧化还原滴定",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型IV:沉淀滴定",
+    "page": 713,
+    "raw": "类型IV:沉淀滴定·",
+    "inferred": false
+  },
+  {
+    "kind": "section",
+    "title": "第7节实验装置图综合判断",
+    "page": 715,
+    "raw": "第7节实验装置图综合判断",
+    "inferred": false
+  },
+  {
+    "kind": "module",
+    "title": "模块2化学实验综合",
+    "page": 720,
+    "raw": "模块2化学实验综合",
+    "inferred": false
+  },
+  {
+    "kind": "section",
+    "title": "第1节探究物质的制备",
+    "page": 720,
+    "raw": "第1节探究物质的制备",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型I：无机物的制备实验",
+    "page": 723,
+    "raw": "类型I：无机物的制备实验",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型Ⅱ:有机物的制备实验",
+    "page": 728,
+    "raw": "类型Ⅱ:有机物的制备实验·",
+    "inferred": false
+  },
+  {
+    "kind": "section",
+    "title": "第 2 节探究物质的组成、性质和含量",
+    "page": 730,
+    "raw": "第 2 节探究物质的组成、性质和含量",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型I：组成验证法",
+    "page": 732,
+    "raw": "类型I：组成验证法·.",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型Ⅱ：性质验证法",
+    "page": 734,
+    "raw": "类型Ⅱ：性质验证法",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型Ⅲ：重量分析法",
+    "page": 735,
+    "raw": "类型Ⅲ：重量分析法",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型IV：气体体积分析法",
+    "page": 737,
+    "raw": "类型IV：气体体积分析法.….",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型V：滴定分析法",
+    "page": 738,
+    "raw": "类型V：滴定分析法",
+    "inferred": false
+  },
+  {
+    "kind": "section",
+    "title": "第3节探究反应原理",
+    "page": 742,
+    "raw": "第3节探究反应原理",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型I：探究反应类型或反应机理",
+    "page": 743,
+    "raw": "类型I：探究反应类型或反应机理",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型Ⅱ：探究性质变化、强弱规律",
+    "page": 746,
+    "raw": "类型Ⅱ：探究性质变化、强弱规律",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型Ⅲ：探究影响速率的因素",
+    "page": 748,
+    "raw": "类型Ⅲ：探究影响速率的因素·",
+    "inferred": false
+  },
+  {
+    "kind": "chapter",
+    "title": "第14章阿伏加德罗常数",
+    "page": 751,
+    "raw": "第14章阿伏加德罗常数·",
+    "inferred": false
+  },
+  {
+    "kind": "module",
+    "title": "模块1物质组成问题",
+    "page": 751,
+    "raw": "模块1物质组成问题",
+    "inferred": false
+  },
+  {
+    "kind": "module",
+    "title": "模块2：",
+    "page": 754,
+    "raw": "模块2：",
+    "inferred": false
+  },
+  {
+    "kind": "module",
+    "title": "模块3： 物理性质问题",
+    "page": 757,
+    "raw": "模块3：",
+    "inferred": false
+  },
+  {
+    "kind": "module",
+    "title": "模块4化学性质问题",
+    "page": 759,
+    "raw": "模块4化学性质问题",
+    "inferred": false
+  },
+  {
+    "kind": "chapter",
+    "title": "第15章化学用语",
+    "page": 764,
+    "raw": "第15章化学用语·",
+    "inferred": false
+  },
+  {
+    "kind": "module",
+    "title": "模块1常考化学用语",
+    "page": 764,
+    "raw": "模块1常考化学用语",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型I：电子式的书写",
+    "page": 768,
+    "raw": "类型I：电子式的书写",
+    "inferred": false
+  },
+  {
+    "kind": "type",
+    "title": "类型Ⅱ：化学用语高考真题",
+    "page": 769,
+    "raw": "类型Ⅱ：化学用语高考真题·",
+    "inferred": false
+  },
+  {
+    "kind": "chapter",
+    "title": "第16章化学与生活",
+    "page": 771,
+    "raw": "第16章化学与生活·",
+    "inferred": false
+  },
+  {
+    "kind": "module",
+    "title": "模块1常见物质性质、原理的应用",
+    "page": 771,
+    "raw": "模块1常见物质性质、原理的应用",
+    "inferred": false
+  },
+  {
+    "kind": "module",
+    "title": "模块2化学与材料",
+    "page": 780,
+    "raw": "模块2化学与材料",
+    "inferred": false
+  },
+  {
+    "kind": "module",
+    "title": "模块3化学与资源开发利用",
+    "page": 783,
+    "raw": "模块3化学与资源开发利用",
+    "inferred": false
+  },
+  {
+    "kind": "module",
+    "title": "模块4化学与环境保护",
+    "page": 786,
+    "raw": "模块4化学与环境保护",
+    "inferred": false
+  },
+  {
+    "kind": "module",
+    "title": "模块5化学与传统文化",
+    "page": 788,
+    "raw": "模块5化学与传统文化",
+    "inferred": false
+  }
+]

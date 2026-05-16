@@ -1,0 +1,84 @@
+{
+  "centers": 1,
+  "failingCenters": 1,
+  "stickyFailures": 0,
+  "textOverlaps": 0,
+  "lineNodeOverlaps": 0,
+  "lineLabelOverlaps": 4,
+  "failures": [
+    {
+      "centerId": "n566",
+      "centerTitle": "模块1常考化学用语",
+      "text": [],
+      "sticky": [],
+      "lineNode": [],
+      "lineLabel": [
+        {
+          "centerId": "n566",
+          "edge": {
+            "source": "n566",
+            "target": "sum_n566_1",
+            "relation": "内容提要",
+            "index": 1
+          },
+          "label": {
+            "source": "n566",
+            "target": "sum_n566_11",
+            "relation": "内容提要",
+            "text": "内容提要",
+            "index": 11
+          }
+        },
+        {
+          "centerId": "n566",
+          "edge": {
+            "source": "n566",
+            "target": "sum_n566_3",
+            "relation": "内容提要",
+            "index": 3
+          },
+          "label": {
+            "source": "n566",
+            "target": "sum_n566_2",
+            "relation": "内容提要",
+            "text": "内容提要",
+            "index": 2
+          }
+        },
+        {
+          "centerId": "n566",
+          "edge": {
+            "source": "n566",
+            "target": "sum_n566_6",
+            "relation": "内容提要",
+            "index": 6
+          },
+          "label": {
+            "source": "n566",
+            "target": "sum_n566_9",
+            "relation": "内容提要",
+            "text": "内容提要",
+            "index": 9
+          }
+        },
+        {
+          "centerId": "n566",
+          "edge": {
+            "source": "n566",
+            "target": "sum_n566_7",
+            "relation": "内容提要",
+            "index": 7
+          },
+          "label": {
+            "source": "n566",
+            "target": "sum_n566_10",
+            "relation": "内容提要",
+            "text": "内容提要",
+            "index": 10
+          }
+        }
+      ]
+    }
+  ],
+  "screenshot": "build\\quality_n566.png"
+}

@@ -1,0 +1,224 @@
+{
+  "checked": 1446,
+  "failing": 17,
+  "counts": {
+    "node-label": 10,
+    "label-label": 9
+  },
+  "worst": [
+    {
+      "center": "n24",
+      "title": "第3章离子反应",
+      "issueCount": 2,
+      "issues": [
+        {
+          "kind": "node-label",
+          "a": "第3章离子反应",
+          "b": "化学用语支撑离子方程式"
+        },
+        {
+          "kind": "label-label",
+          "a": "离子反应延伸到离子平衡",
+          "b": "化学用语支撑离子方程式"
+        }
+      ]
+    },
+    {
+      "center": "n566",
+      "title": "模块1常考化学用语",
+      "issueCount": 2,
+      "issues": [
+        {
+          "kind": "node-label",
+          "a": "模块1常考化学用语",
+          "b": "内容提要"
+        },
+        {
+          "kind": "node-label",
+          "a": "注：离子化合物，共价化合物电子式的对比",
+          "b": "内容提要"
+        }
+      ]
+    },
+    {
+      "center": "n1",
+      "title": "2027广东高考化学一轮复习",
+      "issueCount": 1,
+      "issues": [
+        {
+          "kind": "node-label",
+          "a": "第3章离子反应",
+          "b": "守恒与氧化还原计算互通"
+        }
+      ]
+    },
+    {
+      "center": "n3",
+      "title": "模块1物质的组成与分类",
+      "issueCount": 1,
+      "issues": [
+        {
+          "kind": "node-label",
+          "a": "模块1物质的组成与分类",
+          "b": "内容提要"
+        }
+      ]
+    },
+    {
+      "center": "n42",
+      "title": "第4章氧化还原反应",
+      "issueCount": 1,
+      "issues": [
+        {
+          "kind": "label-label",
+          "a": "包含",
+          "b": "电子转移进入电化学"
+        }
+      ]
+    },
+    {
+      "center": "n53",
+      "title": "模块3氧化还原方程式配平",
+      "issueCount": 1,
+      "issues": [
+        {
+          "kind": "node-label",
+          "a": "内容提要",
+          "b": "内容提要"
+        }
+      ]
+    },
+    {
+      "center": "n114",
+      "title": "模块1碳、硅及其化合物",
+      "issueCount": 1,
+      "issues": [
+        {
+          "kind": "label-label",
+          "a": "内容提要",
+          "b": "内容提要"
+        }
+      ]
+    },
+    {
+      "center": "n123",
+      "title": "第1节氯及其化合物",
+      "issueCount": 1,
+      "issues": [
+        {
+          "kind": "label-label",
+          "a": "内容提要",
+          "b": "内容提要"
+        }
+      ]
+    },
+    {
+      "center": "n158",
+      "title": "第7章化学工艺流程",
+      "issueCount": 1,
+      "issues": [
+        {
+          "kind": "label-label",
+          "a": "包含",
+          "b": "反应原理支撑工业条件"
+        }
+      ]
+    },
+    {
+      "center": "n215",
+      "title": "第3节分子的手性",
+      "issueCount": 1,
+      "issues": [
+        {
+          "kind": "node-label",
+          "a": "内容提要",
+          "b": "内容提要"
+        }
+      ]
+    },
+    {
+      "center": "n296",
+      "title": "第3节化学平衡常数",
+      "issueCount": 1,
+      "issues": [
+        {
+          "kind": "node-label",
+          "a": "内容提要",
+          "b": "内容提要"
+        }
+      ]
+    },
+    {
+      "center": "n322",
+      "title": "第10章水溶液中的离子反应与平衡",
+      "issueCount": 1,
+      "issues": [
+        {
+          "kind": "label-label",
+          "a": "包含",
+          "b": "离子反应延伸到离子平衡"
+        }
+      ]
+    },
+    {
+      "center": "n350",
+      "title": "第3节溶液中的三大守恒",
+      "issueCount": 1,
+      "issues": [
+        {
+          "kind": "node-label",
+          "a": "注：（1）元素守恒可以研究一种或多种原子，如1mol/LNa",
+          "b": "内容提要"
+        }
+      ]
+    },
+    {
+      "center": "n371",
+      "title": "第11章电化学",
+      "issueCount": 1,
+      "issues": [
+        {
+          "kind": "label-label",
+          "a": "包含",
+          "b": "电子转移进入电化学"
+        }
+      ]
+    },
+    {
+      "center": "n422",
+      "title": "第2节有机化合物的命名",
+      "issueCount": 1,
+      "issues": [
+        {
+          "kind": "node-label",
+          "a": "内容提要",
+          "b": "内容提要"
+        }
+      ]
+    },
+    {
+      "center": "n436",
+      "title": "第2节芳香烃",
+      "issueCount": 1,
+      "issues": [
+        {
+          "kind": "label-label",
+          "a": "内容提要",
+          "b": "内容提要"
+        }
+      ]
+    },
+    {
+      "center": "n534",
+      "title": "第 4节常见物质的检验、性质强弱比较",
+      "issueCount": 1,
+      "issues": [
+        {
+          "kind": "label-label",
+          "a": "内容提要",
+          "b": "包含"
+        }
+      ]
+    }
+  ]
+}

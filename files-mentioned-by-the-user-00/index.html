@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>2027 广东高考化学知识关系网</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="app-shell">
+    <header class="topbar">
+      <div>
+        <h1>2027 广东高考化学知识关系网</h1>
+        <p id="statsLine">正在加载知识节点与关系边...</p>
+      </div>
+      <div id="searchPanel" class="search-panel">
+        <button id="toggleSearchPanel" class="panel-toggle" type="button">收起搜索</button>
+        <div class="search-wrap">
+          <input id="searchInput" type="search" placeholder="搜索章、模块、类型、例题、关键词" autocomplete="off">
+          <button id="clearSearch" type="button" title="清空搜索">×</button>
+        </div>
+      </div>
+    </header>
+
+    <section class="control-row">
+      <div id="breadcrumb" class="breadcrumb"></div>
+      <div class="buttons">
+        <button id="homeButton" type="button">中心主题</button>
+        <button id="backButton" type="button">返回</button>
+      </div>
+    </section>
+
+    <section class="main-grid">
+      <aside id="sidePanel" class="side-panel">
+        <div class="panel-head">
+          <strong>关系类型</strong>
+          <button id="toggleSidePanel" class="panel-toggle" type="button">收起</button>
+        </div>
+        <div class="side-panel-body">
+          <div id="relationFilters" class="relation-filters"></div>
+          <strong>搜索结果</strong>
+          <div id="searchResults" class="search-results"></div>
+        </div>
+      </aside>
+
+      <section id="networkCanvas" class="network-canvas" aria-label="化学知识关系网"></section>
+
+      <aside id="detailPanel" class="detail-panel" aria-live="polite"></aside>
+    </section>
+  </main>
+
+  <script src="network_data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

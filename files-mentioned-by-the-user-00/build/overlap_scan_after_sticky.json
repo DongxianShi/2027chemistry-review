@@ -1,0 +1,1836 @@
+{
+  "checked": 1446,
+  "failing": 98,
+  "worst": [
+    {
+      "center": "n1",
+      "title": "2027广东高考化学一轮复习",
+      "nodeCount": 17,
+      "labelCount": 29,
+      "issueCount": 20,
+      "issues": [
+        {
+          "kind": "node-label",
+          "a": "第3章离子反应",
+          "b": "守恒与氧化还原计算互通"
+        },
+        {
+          "kind": "node-label",
+          "a": "第4章氧化还原反应",
+          "b": "离子反应延伸到离子平衡"
+        },
+        {
+          "kind": "node-label",
+          "a": "第11章电化学",
+          "b": "实验验证金属化合物性质"
+        },
+        {
+          "kind": "line-node",
+          "a": 16,
+          "b": "第3章离子反应"
+        },
+        {
+          "kind": "line-node",
+          "a": 18,
+          "b": "第4章氧化还原反应"
+        },
+        {
+          "kind": "line-node",
+          "a": 19,
+          "b": "第8章物质结构与性质元素周期律"
+        },
+        {
+          "kind": "line-node",
+          "a": 22,
+          "b": "第9章化学反应原理"
+        },
+        {
+          "kind": "line-node",
+          "a": 24,
+          "b": "第11章电化学"
+        },
+        {
+          "kind": "line-node",
+          "a": 25,
+          "b": "第11章电化学"
+        },
+        {
+          "kind": "line-label",
+          "a": 6,
+          "b": "包含"
+        },
+        {
+          "kind": "line-label",
+          "a": 12,
+          "b": "浓度与水溶液平衡计算"
+        },
+        {
+          "kind": "line-label",
+          "a": 13,
+          "b": "浓度与水溶液平衡计算"
+        }
+      ]
+    },
+    {
+      "center": "n33",
+      "title": "模块3离子方程式正误判断的“七个注意”",
+      "nodeCount": 20,
+      "labelCount": 19,
+      "issueCount": 19,
+      "issues": [
+        {
+          "kind": "node-label",
+          "a": "类型V：判断是否“漏写”",
+          "b": "包含"
+        },
+        {
+          "kind": "node-label",
+          "a": "1.“折”的本质是：在水中物质完全以自由移动离子的形式存在。",
+          "b": "内容提要"
+        },
+        {
+          "kind": "label-label",
+          "a": "内容提要",
+          "b": "内容提要"
+        },
+        {
+          "kind": "line-node",
+          "a": 1,
+          "b": "第3章离子反应"
+        },
+        {
+          "kind": "line-node",
+          "a": 2,
+          "b": "3.铵盐与碱反应的产物是写成\"NH·HO\"还是\"NH”，关键看条"
+        },
+        {
+          "kind": "line-node",
+          "a": 3,
+          "b": "3.Ca（OH）：、CaSO、AgSO、MgCO等“微溶物”的处"
+        },
+        {
+          "kind": "line-node",
+          "a": 11,
+          "b": "1.“折”的本质是：在水中物质完全以自由移动离子的形式存在。"
+        },
+        {
+          "kind": "line-node",
+          "a": 14,
+          "b": "类型Ⅱ:判断配平或守恒是否正确"
+        },
+        {
+          "kind": "line-node",
+          "a": 17,
+          "b": "类型V：判断是否“漏写”"
+        },
+        {
+          "kind": "line-label",
+          "a": 0,
+          "b": "内容提要"
+        },
+        {
+          "kind": "line-label",
+          "a": 2,
+          "b": "内容提要"
+        },
+        {
+          "kind": "line-label",
+          "a": 3,
+          "b": "内容提要"
+        }
+      ]
+    },
+    {
+      "center": "n76",
+      "title": "第 2节 钠盐、碱金属",
+      "nodeCount": 20,
+      "labelCount": 19,
+      "issueCount": 16,
+      "issues": [
+        {
+          "kind": "node-label",
+          "a": "类型V：价类二维图",
+          "b": "包含"
+        },
+        {
+          "kind": "label-label",
+          "a": "内容提要",
+          "b": "内容提要"
+        },
+        {
+          "kind": "label-label",
+          "a": "内容提要",
+          "b": "内容提要"
+        },
+        {
+          "kind": "line-node",
+          "a": 1,
+          "b": "3.亚硝酸钠：NaNO是肉制品生产中最常使用的一种食品添加剂，由"
+        },
+        {
+          "kind": "line-node",
+          "a": 5,
+          "b": "模块1钠及其化合物、碱金属"
+        },
+        {
+          "kind": "line-node",
+          "a": 6,
+          "b": "(2)本质：某些金属及其化合物在灼烧时电子吸收热能发生跃迁成为激"
+        },
+        {
+          "kind": "line-node",
+          "a": 10,
+          "b": "三、碱金属（Li、Na、K、Rb、Cs)"
+        },
+        {
+          "kind": "line-node",
+          "a": 17,
+          "b": "类型V：价类二维图"
+        },
+        {
+          "kind": "line-label",
+          "a": 0,
+          "b": "内容提要"
+        },
+        {
+          "kind": "line-label",
+          "a": 1,
+          "b": "内容提要"
+        },
+        {
+          "kind": "line-label",
+          "a": 3,
+          "b": "包含"
+        },
+        {
+          "kind": "line-label",
+          "a": 5,
+          "b": "包含"
+        }
+      ]
+    },
+    {
+      "center": "n114",
+      "title": "模块1碳、硅及其化合物",
+      "nodeCount": 22,
+      "labelCount": 21,
+      "issueCount": 15,
+      "issues": [
+        {
+          "kind": "node-label",
+          "a": "2.化学性质：晶体硅性质较稳定，无定形硅有较强还原性，能与许多氧",
+          "b": "内容提要"
+        },
+        {
+          "kind": "node-label",
+          "a": "(2)SiO+CaCO, CaSiO,+CO↑",
+          "b": "内容提要"
+        },
+        {
+          "kind": "node-label",
+          "a": "3.几种常见含碳的酸",
+          "b": "内容提要"
+        },
+        {
+          "kind": "line-node",
+          "a": 1,
+          "b": "第6章非金属及其化合物"
+        },
+        {
+          "kind": "line-node",
+          "a": 3,
+          "b": "3.三大传统硅酸盐材料："
+        },
+        {
+          "kind": "line-node",
+          "a": 8,
+          "b": "(2)SiO+CaCO, CaSiO,+CO↑"
+        },
+        {
+          "kind": "line-node",
+          "a": 12,
+          "b": "2.化学性质：晶体硅性质较稳定，无定形硅有较强还原性，能与许多氧"
+        },
+        {
+          "kind": "line-node",
+          "a": 13,
+          "b": "2.无机非金属材料：主要包括传统无机非金属材料（陶瓷、玻璃、水泥"
+        },
+        {
+          "kind": "line-node",
+          "a": 19,
+          "b": "类型V：化学反应方程式的判断"
+        },
+        {
+          "kind": "line-label",
+          "a": 0,
+          "b": "内容提要"
+        },
+        {
+          "kind": "line-label",
+          "a": 3,
+          "b": "内容提要"
+        },
+        {
+          "kind": "line-label",
+          "a": 8,
+          "b": "内容提要"
+        }
+      ]
+    },
+    {
+      "center": "n97",
+      "title": "模块3铝、硼及其化合物",
+      "nodeCount": 18,
+      "labelCount": 17,
+      "issueCount": 13,
+      "issues": [
+        {
+          "kind": "node-label",
+          "a": "(3)电解铝的阳极是情性电极石墨，由于电解温度达1000℃，已经",
+          "b": "内容提要"
+        },
+        {
+          "kind": "line-node",
+          "a": 1,
+          "b": "3.铝的工业制备：工业上通过电解熔融的氧化铝以及冰晶石的混合物来"
+        },
+        {
+          "kind": "line-node",
+          "a": 2,
+          "b": "(3)电解铝的阳极是情性电极石墨，由于电解温度达1000℃，已经"
+        },
+        {
+          "kind": "line-node",
+          "a": 6,
+          "b": "2.AI(OH）溶于盐酸：AI（OH）+3H+=—AP++3HO"
+        },
+        {
+          "kind": "line-node",
+          "a": 10,
+          "b": "七、皱和铝互为对角线关系，Be、BeO、Be（OH）既可以和强酸"
+        },
+        {
+          "kind": "line-node",
+          "a": 14,
+          "b": "类型Ⅱ:离子方程式的正误判断"
+        },
+        {
+          "kind": "line-label",
+          "a": 1,
+          "b": "内容提要"
+        },
+        {
+          "kind": "line-label",
+          "a": 2,
+          "b": "内容提要"
+        },
+        {
+          "kind": "line-label",
+          "a": 4,
+          "b": "内容提要"
+        },
+        {
+          "kind": "line-label",
+          "a": 5,
+          "b": "内容提要"
+        },
+        {
+          "kind": "line-label",
+          "a": 9,
+          "b": "内容提要"
+        },
+        {
+          "kind": "line-label",
+          "a": 10,
+          "b": "内容提要"
+        }
+      ]
+    },
+    {
+      "center": "n180",
+      "title": "模块2：原子核外电子排布原理",
+      "nodeCount": 18,
+      "labelCount": 17,
+      "issueCount": 13,
+      "issues": [
+        {
+          "kind": "node-label",
+          "a": "2.原子结构示意图、电子排布式、电子排布图（或轨道表示式）",
+          "b": "内容提要"
+        },
+        {
+          "kind": "label-label",
+          "a": "内容提要",
+          "b": "包含"
+        },
+        {
+          "kind": "line-node",
+          "a": 2,
+          "b": "4.特殊的基态原子电子排布方式：基态aCr的电子排布式为1s²2"
+        },
+        {
+          "kind": "line-node",
+          "a": 3,
+          "b": "类型VI：根据电子排布方式判断能量高低"
+        },
+        {
+          "kind": "line-node",
+          "a": 9,
+          "b": "2.原子结构示意图、电子排布式、电子排布图（或轨道表示式）"
+        },
+        {
+          "kind": "line-node",
+          "a": 10,
+          "b": "3.原子轨道"
+        },
+        {
+          "kind": "line-label",
+          "a": 2,
+          "b": "内容提要"
+        },
+        {
+          "kind": "line-label",
+          "a": 3,
+          "b": "包含"
+        },
+        {
+          "kind": "line-label",
+          "a": 5,
+          "b": "内容提要"
+        },
+        {
+          "kind": "line-label",
+          "a": 9,
+          "b": "内容提要"
+        },
+        {
+          "kind": "line-label",
+          "a": 10,
+          "b": "内容提要"
+        },
+        {
+          "kind": "line-label",
+          "a": 13,
+          "b": "包含"
+        }
+      ]
+    },
+    {
+      "center": "n401",
+      "title": "第3节电解原理的应用",
+      "nodeCount": 14,
+      "labelCount": 13,
+      "issueCount": 13,
+      "issues": [
+        {
+          "kind": "node-label",
+          "a": "类型IV：电镀与电解精炼铜",
+          "b": "内容提要"
+        },
+        {
+          "kind": "node-label",
+          "a": "内容提要",
+          "b": "内容提要"
+        },
+        {
+          "kind": "node-label",
+          "a": "3.制备漂白液",
+          "b": "内容提要"
+        },
+        {
+          "kind": "node-label",
+          "a": "四、二次电池的充电：",
+          "b": "内容提要"
+        },
+        {
+          "kind": "line-node",
+          "a": 2,
+          "b": "类型IV：电镀与电解精炼铜"
+        },
+        {
+          "kind": "line-node",
+          "a": 4,
+          "b": "3.制备漂白液"
+        },
+        {
+          "kind": "line-node",
+          "a": 5,
+          "b": "内容提要"
+        },
+        {
+          "kind": "line-label",
+          "a": 0,
+          "b": "内容提要"
+        },
+        {
+          "kind": "line-label",
+          "a": 2,
+          "b": "包含"
+        },
+        {
+          "kind": "line-label",
+          "a": 4,
+          "b": "内容提要"
+        },
+        {
+          "kind": "line-label",
+          "a": 5,
+          "b": "内容提要"
+        },
+        {
+          "kind": "line-label",
+          "a": 6,
+          "b": "内容提要"
+        }
+      ]
+    },
+    {
+      "center": "n332",
+      "title": "第3节溶液酸碱性与 pH",
+      "nodeCount": 16,
+      "labelCount": 15,
+      "issueCount": 12,
+      "issues": [
+        {
+          "kind": "node-label",
+          "a": "1.本质法：用c（H+)、c（OH-)的相对大小表示。",
+          "b": "内容提要"
+        },
+        {
+          "kind": "node-label",
+          "a": "2.pH试纸",
+          "b": "内容提要"
+        },
+        {
+          "kind": "line-node",
+          "a": 2,
+          "b": "0. 1"
+        },
+        {
+          "kind": "line-node",
+          "a": 3,
+          "b": "2.pH试纸"
+        },
+        {
+          "kind": "line-node",
+          "a": 6,
+          "b": "3.pH计：可精确测定溶液的pH，能精确到小数点后2位。"
+        },
+        {
+          "kind": "line-node",
+          "a": 14,
+          "b": "类型Ⅱ:pH的计算"
+        },
+        {
+          "kind": "line-label",
+          "a": 2,
+          "b": "内容提要"
+        },
+        {
+          "kind": "line-label",
+          "a": 3,
+          "b": "内容提要"
+        },
+        {
+          "kind": "line-label",
+          "a": 5,
+          "b": "内容提要"
+        },
+        {
+          "kind": "line-label",
+          "a": 6,
+          "b": "内容提要"
+        },
+        {
+          "kind": "line-label",
+          "a": 9,
+          "b": "内容提要"
+        },
+        {
+          "kind": "line-label",
+          "a": 14,
+          "b": "包含"
+        }
+      ]
+    },
+    {
+      "center": "n53",
+      "title": "模块3氧化还原方程式配平",
+      "nodeCount": 14,
+      "labelCount": 13,
+      "issueCount": 11,
+      "issues": [
+        {
+          "kind": "node-label",
+          "a": "类型Ⅲ：反应物含\"角标\"的完全氧化还原反应",
+          "b": "包含"
+        },
+        {
+          "kind": "node-label",
+          "a": "类型V：歧化反应的配平",
+          "b": "包含"
+        },
+        {
+          "kind": "node-label",
+          "a": "二、氧化还原离子方程式配平步骤：",
+          "b": "内容提要"
+        },
+        {
+          "kind": "line-node",
+          "a": 5,
+          "b": "二、氧化还原离子方程式配平步骤："
+        },
+        {
+          "kind": "line-node",
+          "a": 9,
+          "b": "类型Ⅲ：反应物含\"角标\"的完全氧化还原反应"
+        },
+        {
+          "kind": "line-node",
+          "a": 11,
+          "b": "类型V：歧化反应的配平"
+        },
+        {
+          "kind": "line-label",
+          "a": 0,
+          "b": "内容提要"
+        },
+        {
+          "kind": "line-label",
+          "a": 3,
+          "b": "内容提要"
+        },
+        {
+          "kind": "line-label",
+          "a": 5,
+          "b": "内容提要"
+        },
+        {
+          "kind": "line-label",
+          "a": 7,
+          "b": "包含"
+        },
+        {
+          "kind": "line-label",
+          "a": 11,
+          "b": "包含"
+        }
+      ]
+    },
+    {
+      "center": "n107",
+      "title": "第2节 铅、铜、银",
+      "nodeCount": 18,
+      "labelCount": 17,
+      "issueCount": 11,
+      "issues": [
+        {
+          "kind": "node-label",
+          "a": "2.AgO：AgO是黑色固体，属于碱性氧化物，易溶于硝酸。氧化银",
+          "b": "内容提要"
+        },
+        {
+          "kind": "line-node",
+          "a": 3,
+          "b": "2.AgO：AgO是黑色固体，属于碱性氧化物，易溶于硝酸。氧化银"
+        },
+        {
+          "kind": "line-node",
+          "a": 4,
+          "b": "(1) 5PbO+2Mn²++4H+=5Pb²++2MnO +2"
+        },
+        {
+          "kind": "line-node",
+          "a": 8,
+          "b": "注：配制新制Cu（OH）时，Na2OH溶液需过量"
+        },
+        {
+          "kind": "line-node",
+          "a": 10,
+          "b": "内容提要"
+        },
+        {
+          "kind": "line-node",
+          "a": 14,
+          "b": "类型Ⅱ：化学与生活"
+        },
+        {
+          "kind": "line-label",
+          "a": 3,
+          "b": "内容提要"
+        },
+        {
+          "kind": "line-label",
+          "a": 4,
+          "b": "内容提要"
+        },
+        {
+          "kind": "line-label",
+          "a": 5,
+          "b": "内容提要"
+        },
+        {
+          "kind": "line-label",
+          "a": 10,
+          "b": "内容提要"
+        },
+        {
+          "kind": "line-label",
+          "a": 14,
+          "b": "包含"
+        }
+      ]
+    },
+    {
+      "center": "n191",
+      "title": "第 2 节元素周期律",
+      "nodeCount": 18,
+      "labelCount": 17,
+      "issueCount": 11,
+      "issues": [
+        {
+          "kind": "node-label",
+          "a": "1.在金属活动性顺序中位置越靠前，金属性越强",
+          "b": "内容提要"
+        },
+        {
+          "kind": "line-node",
+          "a": 1,
+          "b": "2.带相同电荷的离子：能层数越多，半径越大。"
+        },
+        {
+          "kind": "line-node",
+          "a": 5,
+          "b": "1.与H化合越容易或简单气态氢化物越稳定，非金属性越强"
+        },
+        {
+          "kind": "line-node",
+          "a": 7,
+          "b": "七、电负性"
+        },
+        {
+          "kind": "line-node",
+          "a": 10,
+          "b": "注：（1)比较鞋子半径时，一定要先利用“层多径大\"将粒子分类。在"
+        },
+        {
+          "kind": "line-node",
+          "a": 14,
+          "b": "类型Ⅱ：第一电离能的概念与变化规律"
+        },
+        {
+          "kind": "line-label",
+          "a": 1,
+          "b": "内容提要"
+        },
+        {
+          "kind": "line-label",
+          "a": 3,
+          "b": "内容提要"
+        },
+        {
+          "kind": "line-label",
+          "a": 5,
+          "b": "内容提要"
+        },
+        {
+          "kind": "line-label",
+          "a": 10,
+          "b": "内容提要"
+        },
+        {
+          "kind": "line-label",
+          "a": 14,
+          "b": "包含"
+        }
+      ]
+    },
+    {
+      "center": "n290",
+      "title": "第2 节影响平衡的因素",
+      "nodeCount": 16,
+      "labelCount": 15,
+      "issueCount": 11,
+      "issues": [
+        {
+          "kind": "node-label",
+          "a": "注：1.没有特殊说明，双认是改变容器体积而改变压强",
+          "b": "内容提要"
+        },
+        {
+          "kind": "node-label",
+          "a": "2.勒夏特列原理、楞次定律、生态平衡原理分别是化学、物理、生物中",
+          "b": "内容提要"
+        },
+        {
+          "kind": "label-label",
+          "a": "内容提要",
+          "b": "内容提要"
+        },
+        {
+          "kind": "line-node",
+          "a": 1,
+          "b": "3.恒温恒压体系，当稀有气体（或无关气体）占比越多，则参与反应的"
+        },
+        {
+          "kind": "line-node",
+          "a": 6,
+          "b": "注：1.没有特殊说明，双认是改变容器体积而改变压强"
+        },
+        {
+          "kind": "line-node",
+          "a": 7,
+          "b": "2.恒温恒容体系，反应物只有1种气体，其转化率的规律为“大大等等"
+        },
+        {
+          "kind": "line-node",
+          "a": 14,
+          "b": "类型IV：恒压体系含无关气体对转化率的影响问题"
+        },
+        {
+          "kind": "line-label",
+          "a": 1,
+          "b": "内容提要"
+        },
+        {
+          "kind": "line-label",
+          "a": 6,
+          "b": "内容提要"
+        },
+        {
+          "kind": "line-label",
+          "a": 7,
+          "b": "内容提要"
+        },
+        {
+          "kind": "line-label",
+          "a": 9,
+          "b": "内容提要"
+        }
+      ]
+    },
+    {
+      "center": "n296",
+      "title": "第3节化学平衡常数",
+      "nodeCount": 14,
+      "labelCount": 13,
+      "issueCount": 11,
+      "issues": [
+        {
+          "kind": "node-label",
+          "a": "类型IV:K。的计算",
+          "b": "包含"
+        },
+        {
+          "kind": "node-label",
+          "a": "类型VI:恒温恒容体系中K，的计算",
+          "b": "内容提要"
+        },
+        {
+          "kind": "node-label",
+          "a": "类型I：平衡体系含无关气体的K，计算",
+          "b": "包含"
+        },
+        {
+          "kind": "node-label",
+          "a": "类型Ⅲ：多反应体系中的平衡常数计算",
+          "b": "包含"
+        },
+        {
+          "kind": "line-node",
+          "a": 4,
+          "b": "类型VI:恒温恒容体系中K，的计算"
+        },
+        {
+          "kind": "line-node",
+          "a": 7,
+          "b": "类型Ⅲ：多反应体系中的平衡常数计算"
+        },
+        {
+          "kind": "line-node",
+          "a": 9,
+          "b": "类型IV:K。的计算"
+        },
+        {
+          "kind": "line-label",
+          "a": 0,
+          "b": "内容提要"
+        },
+        {
+          "kind": "line-label",
+          "a": 3,
+          "b": "内容提要"
+        },
+        {
+          "kind": "line-label",
+          "a": 4,
+          "b": "包含"
+        },
+        {
+          "kind": "line-label",
+          "a": 9,
+          "b": "包含"
+        }
+      ]
+    },
+    {
+      "center": "n341",
+      "title": "第1节盐类水解平衡、规律及其运用",
+      "nodeCount": 20,
+      "labelCount": 19,
+      "issueCount": 11,
+      "issues": [
+        {
+          "kind": "line-node",
+          "a": 1,
+          "b": "六、盐类水解常数（以碳酸钠水解为例：CO+HOHCO+OH）"
+        },
+        {
+          "kind": "line-node",
+          "a": 3,
+          "b": "(3)氢氟酸对应的盐溶液不能保存在玻璃瓶中，固为F水解产生HF会"
+        },
+        {
+          "kind": "line-node",
+          "a": 5,
+          "b": "七、盐类水解的运用"
+        },
+        {
+          "kind": "line-node",
+          "a": 6,
+          "b": "3.K的影响因素：K只受温度的影响，由于ΔH>0，K与温度正相关"
+        },
+        {
+          "kind": "line-node",
+          "a": 9,
+          "b": "模块2盐类的水解"
+        },
+        {
+          "kind": "line-label",
+          "a": 0,
+          "b": "内容提要"
+        },
+        {
+          "kind": "line-label",
+          "a": 1,
+          "b": "内容提要"
+        },
+        {
+          "kind": "line-label",
+          "a": 3,
+          "b": "内容提要"
+        },
+        {
+          "kind": "line-label",
+          "a": 5,
+          "b": "内容提要"
+        },
+        {
+          "kind": "line-label",
+          "a": 9,
+          "b": "内容提要"
+        },
+        {
+          "kind": "line-label",
+          "a": 11,
+          "b": "内容提要"
+        }
+      ]
+    },
+    {
+      "center": "n475",
+      "title": "第2节蛋白质与核酸",
+      "nodeCount": 14,
+      "labelCount": 13,
+      "issueCount": 11,
+      "issues": [
+        {
+          "kind": "node-label",
+          "a": "内容提要",
+          "b": "内容提要"
+        },
+        {
+          "kind": "node-label",
+          "a": "2.蛋白质的性质",
+          "b": "内容提要"
+        },
+        {
+          "kind": "node-label",
+          "a": "(4)两性：形成蛋白质的多肽是由多个氨基酸缩合形成的，在多肽链的",
+          "b": "内容提要"
+        },
+        {
+          "kind": "node-label",
+          "a": "3.核酸的结构",
+          "b": "内容提要"
+        },
+        {
+          "kind": "line-node",
+          "a": 2,
+          "b": "3.核酸的结构"
+        },
+        {
+          "kind": "line-node",
+          "a": 5,
+          "b": "(4)两性：形成蛋白质的多肽是由多个氨基酸缩合形成的，在多肽链的"
+        },
+        {
+          "kind": "line-node",
+          "a": 7,
+          "b": "2.蛋白质的性质"
+        },
+        {
+          "kind": "line-label",
+          "a": 0,
+          "b": "内容提要"
+        },
+        {
+          "kind": "line-label",
+          "a": 2,
+          "b": "内容提要"
+        },
+        {
+          "kind": "line-label",
+          "a": 5,
+          "b": "内容提要"
+        },
+        {
+          "kind": "line-label",
+          "a": 6,
+          "b": "内容提要"
+        }
+      ]
+    },
+    {
+      "center": "n511",
+      "title": "模块12有机合成与推断",
+      "nodeCount": 26,
+      "labelCount": 25,
+      "issueCount": 11,
+      "issues": [
+        {
+          "kind": "node-label",
+          "a": "类型I：以药物合成为载体的有机推断题",
+          "b": "包含"
+        },
+        {
+          "kind": "node-label",
+          "a": "4.与醛类先发生加成反应，再发生脱水缩合反应，生成酚醛树脂。",
+          "b": "内容提要"
+        },
+        {
+          "kind": "line-node",
+          "a": 3,
+          "b": "3.不对称烯烃与HX、HO.HOX等不对称试剂发生加成反应，其产"
+        },
+        {
+          "kind": "line-node",
+          "a": 8,
+          "b": "1.与溴水、澳的四氯化碳发生加成反应。"
+        },
+        {
+          "kind": "line-node",
+          "a": 12,
+          "b": "类型V：常见的有机反应信息一第尔斯一阿尔德反应(D一A反应)"
+        },
+        {
+          "kind": "line-node",
+          "a": 15,
+          "b": "4.与醛类先发生加成反应，再发生脱水缩合反应，生成酚醛树脂。"
+        },
+        {
+          "kind": "line-node",
+          "a": 17,
+          "b": "类型I：以药物合成为载体的有机推断题"
+        },
+        {
+          "kind": "line-node",
+          "a": 21,
+          "b": "类型IK：异构化问题"
+        },
+        {
+          "kind": "line-label",
+          "a": 3,
+          "b": "内容提要"
+        },
+        {
+          "kind": "line-label",
+          "a": 15,
+          "b": "内容提要"
+        },
+        {
+          "kind": "line-label",
+          "a": 17,
+          "b": "包含"
+        }
+      ]
+    },
+    {
+      "center": "n523",
+      "title": "第1节化学中常考的仪器",
+      "nodeCount": 14,
+      "labelCount": 13,
+      "issueCount": 11,
+      "issues": [
+        {
+          "kind": "node-label",
+          "a": "(1)使用前需查漏",
+          "b": "内容提要"
+        },
+        {
+          "kind": "node-label",
+          "a": "2.各种各样的烧瓶",
+          "b": "内容提要"
+        },
+        {
+          "kind": "node-label",
+          "a": "3.试纸的分类（pH计）",
+          "b": "内容提要"
+        },
+        {
+          "kind": "label-label",
+          "a": "包含",
+          "b": "内容提要"
+        },
+        {
+          "kind": "line-node",
+          "a": 4,
+          "b": "2.各种各样的烧瓶"
+        },
+        {
+          "kind": "line-node",
+          "a": 5,
+          "b": "3.试纸的分类（pH计）"
+        },
+        {
+          "kind": "line-node",
+          "a": 7,
+          "b": "模块1化学实验基础"
+        },
+        {
+          "kind": "line-node",
+          "a": 8,
+          "b": "(1)使用前需查漏"
+        },
+        {
+          "kind": "line-label",
+          "a": 4,
+          "b": "内容提要"
+        },
+        {
+          "kind": "line-label",
+          "a": 5,
+          "b": "内容提要"
+        },
+        {
+          "kind": "line-label",
+          "a": 8,
+          "b": "内容提要"
+        }
+      ]
+    },
+    {
+      "center": "n534",
+      "title": "第 4节常见物质的检验、性质强弱比较",
+      "nodeCount": 14,
+      "labelCount": 13,
+      "issueCount": 11,
+      "issues": [
+        {
+          "kind": "node-label",
+          "a": "1.可使有黑色氧化膜的灼热铜丝变得光亮，并产生有刺激性气味的物质",
+          "b": "内容提要"
+        },
+        {
+          "kind": "node-label",
+          "a": "1.定性；石蕊变蓝、酚肽变红；2.定量：用pH试纸或pH计测pH",
+          "b": "内容提要"
+        },
+        {
+          "kind": "line-node",
+          "a": 3,
+          "b": "1.可使有黑色氧化膜的灼热铜丝变得光亮，并产生有刺激性气味的物质"
+        },
+        {
+          "kind": "line-node",
+          "a": 8,
+          "b": "1.定性；石蕊变蓝、酚肽变红；2.定量：用pH试纸或pH计测pH"
+        },
+        {
+          "kind": "line-node",
+          "a": 10,
+          "b": "1.灼烧，有烧焦羽毛的气味"
+        },
+        {
+          "kind": "line-label",
+          "a": 0,
+          "b": "内容提要"
+        },
+        {
+          "kind": "line-label",
+          "a": 1,
+          "b": "内容提要"
+        },
+        {
+          "kind": "line-label",
+          "a": 2,
+          "b": "包含"
+        },
+        {
+          "kind": "line-label",
+          "a": 3,
+          "b": "内容提要"
+        },
+        {
+          "kind": "line-label",
+          "a": 7,
+          "b": "包含"
+        },
+        {
+          "kind": "line-label",
+          "a": 8,
+          "b": "内容提要"
+        }
+      ]
+    },
+    {
+      "center": "n85",
+      "title": "第1节铁单质、铁的氧化物、含铁的碱",
+      "nodeCount": 14,
+      "labelCount": 13,
+      "issueCount": 10,
+      "issues": [
+        {
+          "kind": "node-label",
+          "a": "类型IV:实验题型",
+          "b": "内容提要"
+        },
+        {
+          "kind": "node-label",
+          "a": "内容提要",
+          "b": "内容提要"
+        },
+        {
+          "kind": "node-label",
+          "a": "3.用途：",
+          "b": "内容提要"
+        },
+        {
+          "kind": "line-node",
+          "a": 4,
+          "b": "3.用途："
+        },
+        {
+          "kind": "line-node",
+          "a": 6,
+          "b": "内容提要"
+        },
+        {
+          "kind": "line-node",
+          "a": 7,
+          "b": "类型IV:实验题型"
+        },
+        {
+          "kind": "line-label",
+          "a": 4,
+          "b": "内容提要"
+        },
+        {
+          "kind": "line-label",
+          "a": 5,
+          "b": "内容提要"
+        },
+        {
+          "kind": "line-label",
+          "a": 6,
+          "b": "内容提要"
+        },
+        {
+          "kind": "line-label",
+          "a": 7,
+          "b": "包含"
+        }
+      ]
+    },
+    {
+      "center": "n104",
+      "title": "第1节 镁、钙、钡",
+      "nodeCount": 14,
+      "labelCount": 13,
+      "issueCount": 10,
+      "issues": [
+        {
+          "kind": "node-label",
+          "a": "内容提要",
+          "b": "内容提要"
+        },
+        {
+          "kind": "node-label",
+          "a": "(6)与盐:2Mg+TiCl。 2MgCla+Ti(该反应需要在",
+          "b": "内容提要"
+        },
+        {
+          "kind": "line-node",
+          "a": 5,
+          "b": "内容提要"
+        },
+        {
+          "kind": "line-node",
+          "a": 6,
+          "b": "3.Ca（OH）：是微溶的强碱，可以和酸、酸性氧化物等发生反应。"
+        },
+        {
+          "kind": "line-node",
+          "a": 9,
+          "b": "(6)与盐:2Mg+TiCl。 2MgCla+Ti(该反应需要在"
+        },
+        {
+          "kind": "line-label",
+          "a": 0,
+          "b": "内容提要"
+        },
+        {
+          "kind": "line-label",
+          "a": 2,
+          "b": "内容提要"
+        },
+        {
+          "kind": "line-label",
+          "a": 5,
+          "b": "内容提要"
+        },
+        {
+          "kind": "line-label",
+          "a": 7,
+          "b": "包含"
+        },
+        {
+          "kind": "line-label",
+          "a": 9,
+          "b": "内容提要"
+        }
+      ]
+    },
+    {
+      "center": "n148",
+      "title": "第1节氮气、氮的氧化物、氮的氢化物",
+      "nodeCount": 18,
+      "labelCount": 17,
+      "issueCount": 10,
+      "issues": [
+        {
+          "kind": "node-label",
+          "a": "内容提要",
+          "b": "内容提要"
+        },
+        {
+          "kind": "node-label",
+          "a": "2.NO的性质",
+          "b": "内容提要"
+        },
+        {
+          "kind": "label-label",
+          "a": "内容提要",
+          "b": "内容提要"
+        },
+        {
+          "kind": "line-node",
+          "a": 4,
+          "b": "2.NO的性质"
+        },
+        {
+          "kind": "line-node",
+          "a": 7,
+          "b": "注：氨水参加的化学方程式，反应物的化学式到底写NH还是NH·HO"
+        },
+        {
+          "kind": "line-node",
+          "a": 8,
+          "b": "注：①NO易与O：反应且密度与空气相近，不能用排空气法收集，主要"
+        },
+        {
+          "kind": "line-node",
+          "a": 9,
+          "b": "内容提要"
+        },
+        {
+          "kind": "line-label",
+          "a": 4,
+          "b": "内容提要"
+        },
+        {
+          "kind": "line-label",
+          "a": 5,
+          "b": "内容提要"
+        },
+        {
+          "kind": "line-label",
+          "a": 9,
+          "b": "内容提要"
+        }
+      ]
+    },
+    {
+      "center": "n275",
+      "title": "第 4 节影响化学反应速率的因素",
+      "nodeCount": 14,
+      "labelCount": 13,
+      "issueCount": 10,
+      "issues": [
+        {
+          "kind": "node-label",
+          "a": "四、温度对反应速率的影响—以N（g）+3H（g）2NH（g）ΔH",
+          "b": "内容提要"
+        },
+        {
+          "kind": "label-label",
+          "a": "内容提要",
+          "b": "内容提要"
+        },
+        {
+          "kind": "line-node",
+          "a": 1,
+          "b": "4.活化分子百分数"
+        },
+        {
+          "kind": "line-node",
+          "a": 4,
+          "b": "四、温度对反应速率的影响—以N（g）+3H（g）2NH（g）ΔH"
+        },
+        {
+          "kind": "line-node",
+          "a": 5,
+          "b": "2.活化分子：能量足够高，能发生有效碰撞的分子。"
+        },
+        {
+          "kind": "line-label",
+          "a": 1,
+          "b": "内容提要"
+        },
+        {
+          "kind": "line-label",
+          "a": 3,
+          "b": "内容提要"
+        },
+        {
+          "kind": "line-label",
+          "a": 4,
+          "b": "内容提要"
+        },
+        {
+          "kind": "line-label",
+          "a": 5,
+          "b": "内容提要"
+        },
+        {
+          "kind": "line-label",
+          "a": 8,
+          "b": "包含"
+        }
+      ]
+    },
+    {
+      "center": "n71",
+      "title": "第1节 钠单质、钠的氧化物、氢氧化钠、氢化钠",
+      "nodeCount": 18,
+      "labelCount": 17,
+      "issueCount": 9,
+      "issues": [
+        {
+          "kind": "node-label",
+          "a": "2.漂白性的归纳与总结：",
+          "b": "内容提要"
+        },
+        {
+          "kind": "label-label",
+          "a": "内容提要",
+          "b": "内容提要"
+        },
+        {
+          "kind": "line-node",
+          "a": 1,
+          "b": "二、氧化物"
+        },
+        {
+          "kind": "line-node",
+          "a": 8,
+          "b": "2.漂白性的归纳与总结："
+        },
+        {
+          "kind": "line-node",
+          "a": 9,
+          "b": "4.工业制备："
+        },
+        {
+          "kind": "line-node",
+          "a": 10,
+          "b": "(2)用作电光源，制作高压钠灯。该用途利用了钠在高压下能发出具有"
+        },
+        {
+          "kind": "line-label",
+          "a": 9,
+          "b": "内容提要"
+        },
+        {
+          "kind": "line-label",
+          "a": 10,
+          "b": "内容提要"
+        },
+        {
+          "kind": "line-label",
+          "a": 11,
+          "b": "内容提要"
+        }
+      ]
+    },
+    {
+      "center": "n141",
+      "title": "第 2节含硫的酸、盐及其他含硫化合物",
+      "nodeCount": 18,
+      "labelCount": 17,
+      "issueCount": 9,
+      "issues": [
+        {
+          "kind": "label-label",
+          "a": "内容提要",
+          "b": "内容提要"
+        },
+        {
+          "kind": "line-node",
+          "a": 1,
+          "b": "二、含硫的盐"
+        },
+        {
+          "kind": "line-node",
+          "a": 6,
+          "b": "注：稀硫酸不能用稀硝酸或浓碱酸代替，因为二者均具有强氧化性，会将"
+        },
+        {
+          "kind": "line-node",
+          "a": 7,
+          "b": "注：该反应违背“强酸制弱酸”的原理，但遵“溶解度大制溶解度小”的"
+        },
+        {
+          "kind": "line-node",
+          "a": 8,
+          "b": "注：常见酸的分类"
+        },
+        {
+          "kind": "line-node",
+          "a": 14,
+          "b": "类型Ⅱ：反应原理示意图"
+        },
+        {
+          "kind": "line-label",
+          "a": 1,
+          "b": "内容提要"
+        },
+        {
+          "kind": "line-label",
+          "a": 11,
+          "b": "内容提要"
+        },
+        {
+          "kind": "line-label",
+          "a": 14,
+          "b": "包含"
+        }
+      ]
+    },
+    {
+      "center": "n153",
+      "title": "第 2 节含氮的酸和盐、磷及其化合物",
+      "nodeCount": 16,
+      "labelCount": 15,
+      "issueCount": 9,
+      "issues": [
+        {
+          "kind": "node-label",
+          "a": "3.硝酸盐",
+          "b": "内容提要"
+        },
+        {
+          "kind": "node-label",
+          "a": "三、氮的价类二维图",
+          "b": "内容提要"
+        },
+        {
+          "kind": "line-node",
+          "a": 1,
+          "b": "二、含氮的盐"
+        },
+        {
+          "kind": "line-node",
+          "a": 7,
+          "b": "2.硝酸"
+        },
+        {
+          "kind": "line-node",
+          "a": 9,
+          "b": "三、氮的价类二维图"
+        },
+        {
+          "kind": "line-node",
+          "a": 10,
+          "b": "类型IV：化工流程"
+        },
+        {
+          "kind": "line-label",
+          "a": 5,
+          "b": "内容提要"
+        },
+        {
+          "kind": "line-label",
+          "a": 7,
+          "b": "内容提要"
+        },
+        {
+          "kind": "line-label",
+          "a": 9,
+          "b": "内容提要"
+        }
+      ]
+    },
+    {
+      "center": "n362",
+      "title": "第1节溶解平衡的影响因素及其运用",
+      "nodeCount": 16,
+      "labelCount": 15,
+      "issueCount": 9,
+      "issues": [
+        {
+          "kind": "label-label",
+          "a": "内容提要",
+          "b": "内容提要"
+        },
+        {
+          "kind": "line-node",
+          "a": 1,
+          "b": "二、溶解平街的影响因素（以AgCI为例）"
+        },
+        {
+          "kind": "line-node",
+          "a": 5,
+          "b": "2.K的应用"
+        },
+        {
+          "kind": "line-node",
+          "a": 8,
+          "b": "注：1.大多数固体的溶解平街ΔH>0.所以升温可以促进固体溶解，"
+        },
+        {
+          "kind": "line-node",
+          "a": 14,
+          "b": "类型Ⅱ:K的影响因素"
+        },
+        {
+          "kind": "line-label",
+          "a": 1,
+          "b": "内容提要"
+        },
+        {
+          "kind": "line-label",
+          "a": 2,
+          "b": "内容提要"
+        },
+        {
+          "kind": "line-label",
+          "a": 6,
+          "b": "内容提要"
+        },
+        {
+          "kind": "line-label",
+          "a": 14,
+          "b": "包含"
+        }
+      ]
+    },
+    {
+      "center": "n445",
+      "title": "第1节醇",
+      "nodeCount": 16,
+      "labelCount": 15,
+      "issueCount": 9,
+      "issues": [
+        {
+          "kind": "node-label",
+          "a": "1.直链饱和一元醇的沸点随着分子中碳原子数的递增而升高",
+          "b": "内容提要"
+        },
+        {
+          "kind": "node-label",
+          "a": "(3)与含氧酸发生酯化反应（酸脱羟基，醇脱）：醇断了a键，化学方",
+          "b": "内容提要"
+        },
+        {
+          "kind": "line-node",
+          "a": 1,
+          "b": "3.取代反应："
+        },
+        {
+          "kind": "line-node",
+          "a": 8,
+          "b": "(3)与含氧酸发生酯化反应（酸脱羟基，醇脱）：醇断了a键，化学方"
+        },
+        {
+          "kind": "line-node",
+          "a": 10,
+          "b": "1.直链饱和一元醇的沸点随着分子中碳原子数的递增而升高"
+        },
+        {
+          "kind": "line-node",
+          "a": 14,
+          "b": "类型Ⅱ:实验基础"
+        },
+        {
+          "kind": "line-label",
+          "a": 5,
+          "b": "内容提要"
+        },
+        {
+          "kind": "line-label",
+          "a": 10,
+          "b": "内容提要"
+        },
+        {
+          "kind": "line-label",
+          "a": 14,
+          "b": "包含"
+        }
+      ]
+    },
+    {
+      "center": "n350",
+      "title": "第3节溶液中的三大守恒",
+      "nodeCount": 14,
+      "labelCount": 13,
+      "issueCount": 8,
+      "issues": [
+        {
+          "kind": "node-label",
+          "a": "1.将元素荷守恒转化成不等式；2.利用元素守恒计算K。等。",
+          "b": "内容提要"
+        },
+        {
+          "kind": "label-label",
+          "a": "内容提要",
+          "b": "内容提要"
+        },
+        {
+          "kind": "line-node",
+          "a": 1,
+          "b": "1.c（H+)=c（OH)"
+        },
+        {
+          "kind": "line-node",
+          "a": 8,
+          "b": "1.将元素荷守恒转化成不等式；2.利用元素守恒计算K。等。"
+        },
+        {
+          "kind": "line-node",
+          "a": 9,
+          "b": "三、质子守恒"
+        },
+        {
+          "kind": "line-label",
+          "a": 3,
+          "b": "包含"
+        },
+        {
+          "kind": "line-label",
+          "a": 7,
+          "b": "内容提要"
+        },
+        {
+          "kind": "line-label",
+          "a": 8,
+          "b": "内容提要"
+        }
+      ]
+    },
+    {
+      "center": "n422",
+      "title": "第2节有机化合物的命名",
+      "nodeCount": 14,
+      "labelCount": 13,
+      "issueCount": 8,
+      "issues": [
+        {
+          "kind": "node-label",
+          "a": "2.系统命名法",
+          "b": "内容提要"
+        },
+        {
+          "kind": "node-label",
+          "a": "1.含官能团的有机物系统命名时，选主链、编号位要国绕官能团进行，",
+          "b": "内容提要"
+        },
+        {
+          "kind": "line-node",
+          "a": 8,
+          "b": "1.含官能团的有机物系统命名时，选主链、编号位要国绕官能团进行，"
+        },
+        {
+          "kind": "line-node",
+          "a": 9,
+          "b": "2.系统命名法"
+        },
+        {
+          "kind": "line-label",
+          "a": 0,
+          "b": "内容提要"
+        },
+        {
+          "kind": "line-label",
+          "a": 4,
+          "b": "内容提要"
+        },
+        {
+          "kind": "line-label",
+          "a": 8,
+          "b": "内容提要"
+        },
+        {
+          "kind": "line-label",
+          "a": 9,
+          "b": "内容提要"
+        }
+      ]
+    },
+    {
+      "center": "n69",
+      "title": "第5章金属及其化合物",
+      "nodeCount": 9,
+      "labelCount": 11,
+      "issueCount": 5,
+      "issues": [
+        {
+          "kind": "node-label",
+          "a": "第7章化学工艺流程",
+          "b": "金属元素进入工艺流程"
+        },
+        {
+          "kind": "label-label",
+          "a": "实验验证金属化合物性质",
+          "b": "生活材料联系元素化合物"
+        },
+        {
+          "kind": "line-node",
+          "a": 6,
+          "b": "第16章化学与生活"
+        },
+        {
+          "kind": "line-label",
+          "a": 6,
+          "b": "包含"
+        },
+        {
+          "kind": "line-label",
+          "a": 8,
+          "b": "包含"
+        }
+      ]
+    }
+  ]
+}

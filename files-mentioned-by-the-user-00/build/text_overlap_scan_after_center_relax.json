@@ -1,0 +1,255 @@
+{
+  "checked": 1446,
+  "failing": 20,
+  "counts": {
+    "node-label": 18,
+    "label-label": 3
+  },
+  "worst": [
+    {
+      "center": "n24",
+      "title": "第3章离子反应",
+      "issueCount": 2,
+      "issues": [
+        {
+          "kind": "node-label",
+          "a": "第3章离子反应",
+          "b": "化学用语支撑离子方程式"
+        },
+        {
+          "kind": "label-label",
+          "a": "离子反应延伸到离子平衡",
+          "b": "化学用语支撑离子方程式"
+        }
+      ]
+    },
+    {
+      "center": "n1",
+      "title": "2027广东高考化学一轮复习",
+      "issueCount": 1,
+      "issues": [
+        {
+          "kind": "node-label",
+          "a": "第3章离子反应",
+          "b": "守恒与氧化还原计算互通"
+        }
+      ]
+    },
+    {
+      "center": "n3",
+      "title": "模块1物质的组成与分类",
+      "issueCount": 1,
+      "issues": [
+        {
+          "kind": "node-label",
+          "a": "模块1物质的组成与分类",
+          "b": "内容提要"
+        }
+      ]
+    },
+    {
+      "center": "n42",
+      "title": "第4章氧化还原反应",
+      "issueCount": 1,
+      "issues": [
+        {
+          "kind": "node-label",
+          "a": "第4章氧化还原反应",
+          "b": "守恒与氧化还原计算互通"
+        }
+      ]
+    },
+    {
+      "center": "n53",
+      "title": "模块3氧化还原方程式配平",
+      "issueCount": 1,
+      "issues": [
+        {
+          "kind": "node-label",
+          "a": "内容提要",
+          "b": "内容提要"
+        }
+      ]
+    },
+    {
+      "center": "n104",
+      "title": "第1节 镁、钙、钡",
+      "issueCount": 1,
+      "issues": [
+        {
+          "kind": "node-label",
+          "a": "注：水解反应的产物很容易推导，绝大多数直接采用\"异性相吸”原",
+          "b": "内容提要"
+        }
+      ]
+    },
+    {
+      "center": "n129",
+      "title": "第2节卤族元素",
+      "issueCount": 1,
+      "issues": [
+        {
+          "kind": "node-label",
+          "a": "第2节卤族元素",
+          "b": "内容提要"
+        }
+      ]
+    },
+    {
+      "center": "n158",
+      "title": "第7章化学工艺流程",
+      "issueCount": 1,
+      "issues": [
+        {
+          "kind": "label-label",
+          "a": "包含",
+          "b": "反应原理支撑工业条件"
+        }
+      ]
+    },
+    {
+      "center": "n207",
+      "title": "模块5分子结构与物质的性质",
+      "issueCount": 1,
+      "issues": [
+        {
+          "kind": "node-label",
+          "a": "第3节分子的手性",
+          "b": "包含"
+        }
+      ]
+    },
+    {
+      "center": "n286",
+      "title": "模块3化学平衡",
+      "issueCount": 1,
+      "issues": [
+        {
+          "kind": "node-label",
+          "a": "第6节平衡图像分析",
+          "b": "包含"
+        }
+      ]
+    },
+    {
+      "center": "n296",
+      "title": "第3节化学平衡常数",
+      "issueCount": 1,
+      "issues": [
+        {
+          "kind": "node-label",
+          "a": "内容提要",
+          "b": "内容提要"
+        }
+      ]
+    },
+    {
+      "center": "n313",
+      "title": "第6节平衡图像分析",
+      "issueCount": 1,
+      "issues": [
+        {
+          "kind": "node-label",
+          "a": "第6节平衡图像分析",
+          "b": "包含"
+        }
+      ]
+    },
+    {
+      "center": "n322",
+      "title": "第10章水溶液中的离子反应与平衡",
+      "issueCount": 1,
+      "issues": [
+        {
+          "kind": "label-label",
+          "a": "包含",
+          "b": "离子反应延伸到离子平衡"
+        }
+      ]
+    },
+    {
+      "center": "n350",
+      "title": "第3节溶液中的三大守恒",
+      "issueCount": 1,
+      "issues": [
+        {
+          "kind": "node-label",
+          "a": "注：（1）元素守恒可以研究一种或多种原子，如1mol/LNa",
+          "b": "内容提要"
+        }
+      ]
+    },
+    {
+      "center": "n406",
+      "title": "第 4节高频考查的电解池题型",
+      "issueCount": 1,
+      "issues": [
+        {
+          "kind": "node-label",
+          "a": "第 4节高频考查的电解池题型",
+          "b": "包含"
+        }
+      ]
+    },
+    {
+      "center": "n416",
+      "title": "第12章有机化学基础",
+      "issueCount": 1,
+      "issues": [
+        {
+          "kind": "node-label",
+          "a": "第8章物质结构与性质元素周期律",
+          "b": "结构决定有机性质"
+        }
+      ]
+    },
+    {
+      "center": "n422",
+      "title": "第2节有机化合物的命名",
+      "issueCount": 1,
+      "issues": [
+        {
+          "kind": "node-label",
+          "a": "内容提要",
+          "b": "内容提要"
+        }
+      ]
+    },
+    {
+      "center": "n522",
+      "title": "模块1化学实验基础",
+      "issueCount": 1,
+      "issues": [
+        {
+          "kind": "node-label",
+          "a": "第6节重点定量实验",
+          "b": "包含"
+        }
+      ]
+    },
+    {
+      "center": "n546",
+      "title": "模块2化学实验综合",
+      "issueCount": 1,
+      "issues": [
+        {
+          "kind": "node-label",
+          "a": "第3节探究反应原理",
+          "b": "包含"
+        }
+      ]
+    },
+    {
+      "center": "n566",
+      "title": "模块1常考化学用语",
+      "issueCount": 1,
+      "issues": [
+        {
+          "kind": "node-label",
+          "a": "模块1常考化学用语",
+          "b": "内容提要"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,270 @@
+{
+  "checked": 1446,
+  "failing": 23,
+  "counts": {
+    "label-label": 10,
+    "node-label": 17
+  },
+  "worst": [
+    {
+      "center": "n534",
+      "title": "第 4节常见物质的检验、性质强弱比较",
+      "issueCount": 3,
+      "issues": [
+        {
+          "kind": "label-label",
+          "a": "包含",
+          "b": "内容提要"
+        },
+        {
+          "kind": "label-label",
+          "a": "内容提要",
+          "b": "包含"
+        },
+        {
+          "kind": "label-label",
+          "a": "内容提要",
+          "b": "内容提要"
+        }
+      ]
+    },
+    {
+      "center": "n24",
+      "title": "第3章离子反应",
+      "issueCount": 2,
+      "issues": [
+        {
+          "kind": "node-label",
+          "a": "第3章离子反应",
+          "b": "化学用语支撑离子方程式"
+        },
+        {
+          "kind": "label-label",
+          "a": "离子反应延伸到离子平衡",
+          "b": "化学用语支撑离子方程式"
+        }
+      ]
+    },
+    {
+      "center": "n566",
+      "title": "模块1常考化学用语",
+      "issueCount": 2,
+      "issues": [
+        {
+          "kind": "node-label",
+          "a": "模块1常考化学用语",
+          "b": "内容提要"
+        },
+        {
+          "kind": "node-label",
+          "a": "注：离子化合物，共价化合物电子式的对比",
+          "b": "内容提要"
+        }
+      ]
+    },
+    {
+      "center": "n1",
+      "title": "2027广东高考化学一轮复习",
+      "issueCount": 1,
+      "issues": [
+        {
+          "kind": "node-label",
+          "a": "第3章离子反应",
+          "b": "守恒与氧化还原计算互通"
+        }
+      ]
+    },
+    {
+      "center": "n3",
+      "title": "模块1物质的组成与分类",
+      "issueCount": 1,
+      "issues": [
+        {
+          "kind": "node-label",
+          "a": "模块1物质的组成与分类",
+          "b": "内容提要"
+        }
+      ]
+    },
+    {
+      "center": "n28",
+      "title": "模块2“与量有关\"的离子方程式书写",
+      "issueCount": 1,
+      "issues": [
+        {
+          "kind": "node-label",
+          "a": "模块2“与量有关\"的离子方程式书写",
+          "b": "内容提要"
+        }
+      ]
+    },
+    {
+      "center": "n42",
+      "title": "第4章氧化还原反应",
+      "issueCount": 1,
+      "issues": [
+        {
+          "kind": "label-label",
+          "a": "包含",
+          "b": "电子转移进入电化学"
+        }
+      ]
+    },
+    {
+      "center": "n61",
+      "title": "模块4新情景下氧化还原反应方程式的书写",
+      "issueCount": 1,
+      "issues": [
+        {
+          "kind": "node-label",
+          "a": "模块4新情景下氧化还原反应方程式的书写",
+          "b": "内容提要"
+        }
+      ]
+    },
+    {
+      "center": "n114",
+      "title": "模块1碳、硅及其化合物",
+      "issueCount": 1,
+      "issues": [
+        {
+          "kind": "node-label",
+          "a": "模块1碳、硅及其化合物",
+          "b": "内容提要"
+        }
+      ]
+    },
+    {
+      "center": "n123",
+      "title": "第1节氯及其化合物",
+      "issueCount": 1,
+      "issues": [
+        {
+          "kind": "label-label",
+          "a": "内容提要",
+          "b": "内容提要"
+        }
+      ]
+    },
+    {
+      "center": "n129",
+      "title": "第2节卤族元素",
+      "issueCount": 1,
+      "issues": [
+        {
+          "kind": "node-label",
+          "a": "第2节卤族元素",
+          "b": "内容提要"
+        }
+      ]
+    },
+    {
+      "center": "n158",
+      "title": "第7章化学工艺流程",
+      "issueCount": 1,
+      "issues": [
+        {
+          "kind": "label-label",
+          "a": "包含",
+          "b": "反应原理支撑工业条件"
+        }
+      ]
+    },
+    {
+      "center": "n176",
+      "title": "模块1 元素、核素、同位素",
+      "issueCount": 1,
+      "issues": [
+        {
+          "kind": "node-label",
+          "a": "模块1 元素、核素、同位素",
+          "b": "内容提要"
+        }
+      ]
+    },
+    {
+      "center": "n215",
+      "title": "第3节分子的手性",
+      "issueCount": 1,
+      "issues": [
+        {
+          "kind": "label-label",
+          "a": "包含",
+          "b": "内容提要"
+        }
+      ]
+    },
+    {
+      "center": "n322",
+      "title": "第10章水溶液中的离子反应与平衡",
+      "issueCount": 1,
+      "issues": [
+        {
+          "kind": "label-label",
+          "a": "包含",
+          "b": "离子反应延伸到离子平衡"
+        }
+      ]
+    },
+    {
+      "center": "n347",
+      "title": "第2节粒子浓度大小比较",
+      "issueCount": 1,
+      "issues": [
+        {
+          "kind": "node-label",
+          "a": "第2节粒子浓度大小比较",
+          "b": "内容提要"
+        }
+      ]
+    },
+    {
+      "center": "n350",
+      "title": "第3节溶液中的三大守恒",
+      "issueCount": 1,
+      "issues": [
+        {
+          "kind": "node-label",
+          "a": "注：（1）元素守恒可以研究一种或多种原子，如1mol/LNa",
+          "b": "内容提要"
+        }
+      ]
+    },
+    {
+      "center": "n366",
+      "title": "第2节沉淀溶解平衡图像分析",
+      "issueCount": 1,
+      "issues": [
+        {
+          "kind": "node-label",
+          "a": "第2节沉淀溶解平衡图像分析",
+          "b": "内容提要"
+        }
+      ]
+    },
+    {
+      "center": "n416",
+      "title": "第12章有机化学基础",
+      "issueCount": 1,
+      "issues": [
+        {
+          "kind": "node-label",
+          "a": "第12章有机化学基础",
+          "b": "包含"
+        }
+      ]
+    },
+    {
+      "center": "n436",
+      "title": "第2节芳香烃",
+      "issueCount": 1,
+      "issues": [
+        {
+          "kind": "label-label",
+          "a": "内容提要",
+          "b": "内容提要"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1068 @@
+{
+  "checked": 1446,
+  "failing": 107,
+  "counts": {
+    "node-label": 17,
+    "line-node": 252,
+    "label-label": 2,
+    "line-label": 164,
+    "node-node": 6
+  },
+  "worst": [
+    {
+      "center": "n1",
+      "title": "2027广东高考化学一轮复习",
+      "nodeCount": 17,
+      "labelCount": 29,
+      "edgeCount": 29,
+      "issueCount": 21,
+      "issues": [
+        {
+          "kind": "node-label",
+          "a": "第3章离子反应",
+          "b": "守恒与氧化还原计算互通"
+        },
+        {
+          "kind": "line-node",
+          "a": 0,
+          "b": "第16章化学与生活"
+        },
+        {
+          "kind": "line-node",
+          "a": 12,
+          "b": "第14章阿伏加德罗常数"
+        },
+        {
+          "kind": "line-node",
+          "a": 14,
+          "b": "第14章阿伏加德罗常数"
+        },
+        {
+          "kind": "line-node",
+          "a": 16,
+          "b": "第3章离子反应"
+        },
+        {
+          "kind": "line-node",
+          "a": 18,
+          "b": "第4章氧化还原反应"
+        },
+        {
+          "kind": "line-node",
+          "a": 19,
+          "b": "第8章物质结构与性质元素周期律"
+        },
+        {
+          "kind": "line-node",
+          "a": 22,
+          "b": "第9章化学反应原理"
+        },
+        {
+          "kind": "line-node",
+          "a": 24,
+          "b": "第11章电化学"
+        },
+        {
+          "kind": "line-node",
+          "a": 25,
+          "b": "第11章电化学"
+        }
+      ]
+    },
+    {
+      "center": "n226",
+      "title": "模块8晶胞计算题型",
+      "nodeCount": 25,
+      "labelCount": 24,
+      "edgeCount": 24,
+      "issueCount": 17,
+      "issues": [
+        {
+          "kind": "line-node",
+          "a": 0,
+          "b": "4.Zn²+和S²-最短距离："
+        },
+        {
+          "kind": "line-node",
+          "a": 1,
+          "b": "二、晶体密度的计算"
+        },
+        {
+          "kind": "line-node",
+          "a": 4,
+          "b": "2.计算晶胞中微粒间的距离或晶胞参数"
+        },
+        {
+          "kind": "line-node",
+          "a": 5,
+          "b": "2.每个Cs+配位数（距离最近的CI-）为8、每个Cl配位数"
+        },
+        {
+          "kind": "line-node",
+          "a": 6,
+          "b": "4.每个Na+距离最近的Na+为12个、每个Cl距离最近的"
+        },
+        {
+          "kind": "line-node",
+          "a": 7,
+          "b": "4.Zn²+和S²-最短距离："
+        },
+        {
+          "kind": "line-node",
+          "a": 8,
+          "b": "4.每个Na+距离最近的Na+为12个、每个Cl距离最近的"
+        },
+        {
+          "kind": "line-node",
+          "a": 13,
+          "b": "4.Zn²+和S²-最短距离："
+        },
+        {
+          "kind": "line-node",
+          "a": 14,
+          "b": "2.每个Cs+配位数（距离最近的CI-）为8、每个Cl配位数"
+        },
+        {
+          "kind": "line-node",
+          "a": 19,
+          "b": "类型V：晶体结构的缺陷与掺杂问题"
+        }
+      ]
+    },
+    {
+      "center": "n511",
+      "title": "模块12有机合成与推断",
+      "nodeCount": 26,
+      "labelCount": 25,
+      "edgeCount": 25,
+      "issueCount": 14,
+      "issues": [
+        {
+          "kind": "line-node",
+          "a": 6,
+          "b": "4.与醛类先发生加成反应，再发生脱水缩合反应，生成酚醛树脂。"
+        },
+        {
+          "kind": "line-node",
+          "a": 8,
+          "b": "1.与溴水、澳的四氯化碳发生加成反应。"
+        },
+        {
+          "kind": "line-node",
+          "a": 9,
+          "b": "3.在加热条件下以及浓硫酸环境中，与浓硝酸发生硝化反应，苯环"
+        },
+        {
+          "kind": "line-node",
+          "a": 12,
+          "b": "类型V：常见的有机反应信息一第尔斯一阿尔德反应(D一A反应)"
+        },
+        {
+          "kind": "line-node",
+          "a": 13,
+          "b": "1.与溴水、澳的四氯化碳发生加成反应。"
+        },
+        {
+          "kind": "line-node",
+          "a": 14,
+          "b": "1.与溴水、澳的四氯化碳发生加成反应。"
+        },
+        {
+          "kind": "line-node",
+          "a": 17,
+          "b": "类型I：以药物合成为载体的有机推断题"
+        },
+        {
+          "kind": "line-node",
+          "a": 18,
+          "b": "类型Ⅲ：常见的有机反应信息一有机物的酰化"
+        },
+        {
+          "kind": "line-node",
+          "a": 19,
+          "b": "类型IK：异构化问题"
+        },
+        {
+          "kind": "line-node",
+          "a": 21,
+          "b": "类型Ⅲ：常见的有机反应信息一有机物的酰化"
+        }
+      ]
+    },
+    {
+      "center": "n523",
+      "title": "第1节化学中常考的仪器",
+      "nodeCount": 14,
+      "labelCount": 13,
+      "edgeCount": 13,
+      "issueCount": 13,
+      "issues": [
+        {
+          "kind": "node-label",
+          "a": "2.各种各样的烧瓶",
+          "b": "内容提要"
+        },
+        {
+          "kind": "label-label",
+          "a": "内容提要",
+          "b": "内容提要"
+        },
+        {
+          "kind": "line-node",
+          "a": 0,
+          "b": "4.温度计水银球的位置"
+        },
+        {
+          "kind": "line-node",
+          "a": 4,
+          "b": "2.各种各样的烧瓶"
+        },
+        {
+          "kind": "line-node",
+          "a": 5,
+          "b": "3.试纸的分类（pH计）"
+        },
+        {
+          "kind": "line-node",
+          "a": 6,
+          "b": "(1)使用前需查漏"
+        },
+        {
+          "kind": "line-node",
+          "a": 7,
+          "b": "3.试纸的分类（pH计）"
+        },
+        {
+          "kind": "line-node",
+          "a": 8,
+          "b": "(1)使用前需查漏"
+        },
+        {
+          "kind": "line-label",
+          "a": 3,
+          "b": "内容提要"
+        },
+        {
+          "kind": "line-label",
+          "a": 4,
+          "b": "内容提要"
+        }
+      ]
+    },
+    {
+      "center": "n114",
+      "title": "模块1碳、硅及其化合物",
+      "nodeCount": 22,
+      "labelCount": 21,
+      "edgeCount": 21,
+      "issueCount": 12,
+      "issues": [
+        {
+          "kind": "line-node",
+          "a": 1,
+          "b": "3.三大传统硅酸盐材料："
+        },
+        {
+          "kind": "line-node",
+          "a": 3,
+          "b": "3.三大传统硅酸盐材料："
+        },
+        {
+          "kind": "line-node",
+          "a": 8,
+          "b": "(2)SiO+CaCO, CaSiO,+CO↑"
+        },
+        {
+          "kind": "line-node",
+          "a": 11,
+          "b": "三、硅酸以及硅酸盐"
+        },
+        {
+          "kind": "line-node",
+          "a": 12,
+          "b": "2.化学性质：晶体硅性质较稳定，无定形硅有较强还原性，能与许"
+        },
+        {
+          "kind": "line-node",
+          "a": 19,
+          "b": "(2)SiO+CaCO, CaSiO,+CO↑"
+        },
+        {
+          "kind": "line-node",
+          "a": 20,
+          "b": "类型Ⅲ：方法的运用"
+        },
+        {
+          "kind": "line-label",
+          "a": 0,
+          "b": "内容提要"
+        },
+        {
+          "kind": "line-label",
+          "a": 1,
+          "b": "内容提要"
+        },
+        {
+          "kind": "line-label",
+          "a": 6,
+          "b": "内容提要"
+        }
+      ]
+    },
+    {
+      "center": "n135",
+      "title": "第1节硫单质、硫的氧化物",
+      "nodeCount": 21,
+      "labelCount": 20,
+      "edgeCount": 20,
+      "issueCount": 12,
+      "issues": [
+        {
+          "kind": "line-node",
+          "a": 5,
+          "b": "(2)SO+CaO=CaSO"
+        },
+        {
+          "kind": "line-node",
+          "a": 6,
+          "b": "模块3硫及其化合物"
+        },
+        {
+          "kind": "line-node",
+          "a": 7,
+          "b": "(1)与金属单质的反应：①Fe与S混合加热，生成黑色固体：F"
+        },
+        {
+          "kind": "line-node",
+          "a": 12,
+          "b": "8.SO通入BaCl:溶液（或CaCl溶液）没有明显现象，根"
+        },
+        {
+          "kind": "line-node",
+          "a": 14,
+          "b": "模块3硫及其化合物"
+        },
+        {
+          "kind": "line-node",
+          "a": 19,
+          "b": "(1)与金属单质的反应：①Fe与S混合加热，生成黑色固体：F"
+        },
+        {
+          "kind": "line-label",
+          "a": 0,
+          "b": "内容提要"
+        },
+        {
+          "kind": "line-label",
+          "a": 1,
+          "b": "内容提要"
+        },
+        {
+          "kind": "line-label",
+          "a": 5,
+          "b": "内容提要"
+        },
+        {
+          "kind": "line-label",
+          "a": 6,
+          "b": "内容提要"
+        }
+      ]
+    },
+    {
+      "center": "n85",
+      "title": "第1节铁单质、铁的氧化物、含铁的碱",
+      "nodeCount": 14,
+      "labelCount": 13,
+      "edgeCount": 13,
+      "issueCount": 11,
+      "issues": [
+        {
+          "kind": "node-label",
+          "a": "注：①铁和氯气、氧气反应需要一定的引发条件，要么需要水的存在",
+          "b": "内容提要"
+        },
+        {
+          "kind": "node-label",
+          "a": "3.用途：",
+          "b": "内容提要"
+        },
+        {
+          "kind": "line-node",
+          "a": 0,
+          "b": "注：①铁和氯气、氧气反应需要一定的引发条件，要么需要水的存在"
+        },
+        {
+          "kind": "line-node",
+          "a": 4,
+          "b": "3.用途："
+        },
+        {
+          "kind": "line-node",
+          "a": 5,
+          "b": "注：①铁和氯气、氧气反应需要一定的引发条件，要么需要水的存在"
+        },
+        {
+          "kind": "line-node",
+          "a": 6,
+          "b": "模块2铁及其化合物、第VⅢ族元素钴和镍"
+        },
+        {
+          "kind": "line-node",
+          "a": 7,
+          "b": "类型IV:实验题型"
+        },
+        {
+          "kind": "line-label",
+          "a": 0,
+          "b": "内容提要"
+        },
+        {
+          "kind": "line-label",
+          "a": 3,
+          "b": "内容提要"
+        },
+        {
+          "kind": "line-label",
+          "a": 4,
+          "b": "内容提要"
+        }
+      ]
+    },
+    {
+      "center": "n250",
+      "title": "第1节反应热与变",
+      "nodeCount": 23,
+      "labelCount": 22,
+      "edgeCount": 22,
+      "issueCount": 11,
+      "issues": [
+        {
+          "kind": "line-node",
+          "a": 1,
+          "b": "二、反应热、焓变"
+        },
+        {
+          "kind": "line-node",
+          "a": 6,
+          "b": "注：①上述公式中，只有用自身能量或生盛培计算反应热时才是\"生"
+        },
+        {
+          "kind": "line-node",
+          "a": 7,
+          "b": "模块1化学反应中的能量变化"
+        },
+        {
+          "kind": "line-node",
+          "a": 13,
+          "b": "3.燃烧热与中和热的辨析："
+        },
+        {
+          "kind": "line-node",
+          "a": 15,
+          "b": "类型I：利用活化能计算△H"
+        },
+        {
+          "kind": "line-node",
+          "a": 17,
+          "b": "类型V：利用盖斯定律计算△H"
+        },
+        {
+          "kind": "line-node",
+          "a": 19,
+          "b": "类型VⅢI：根据题目信息计算△H"
+        },
+        {
+          "kind": "line-label",
+          "a": 1,
+          "b": "内容提要"
+        },
+        {
+          "kind": "line-label",
+          "a": 2,
+          "b": "内容提要"
+        },
+        {
+          "kind": "line-label",
+          "a": 10,
+          "b": "内容提要"
+        }
+      ]
+    },
+    {
+      "center": "n148",
+      "title": "第1节氮气、氮的氧化物、氮的氢化物",
+      "nodeCount": 18,
+      "labelCount": 17,
+      "edgeCount": 17,
+      "issueCount": 10,
+      "issues": [
+        {
+          "kind": "line-node",
+          "a": 0,
+          "b": "注：将蘸氢水的玻璃棒靠近蘸有挥发性酸（韭酸、硝酸、醋酸）的玻"
+        },
+        {
+          "kind": "line-node",
+          "a": 2,
+          "b": "类型IV：实验题型"
+        },
+        {
+          "kind": "line-node",
+          "a": 3,
+          "b": "注：将蘸氢水的玻璃棒靠近蘸有挥发性酸（韭酸、硝酸、醋酸）的玻"
+        },
+        {
+          "kind": "line-node",
+          "a": 7,
+          "b": "注：①NO易与O：反应且密度与空气相近，不能用排空气法收集，"
+        },
+        {
+          "kind": "line-node",
+          "a": 9,
+          "b": "内容提要"
+        },
+        {
+          "kind": "line-node",
+          "a": 13,
+          "b": "类型Ⅱ：阿伏加德罗常数"
+        },
+        {
+          "kind": "line-node",
+          "a": 15,
+          "b": "类型Ⅱ：阿伏加德罗常数"
+        },
+        {
+          "kind": "line-label",
+          "a": 2,
+          "b": "包含"
+        },
+        {
+          "kind": "line-label",
+          "a": 3,
+          "b": "内容提要"
+        },
+        {
+          "kind": "line-label",
+          "a": 4,
+          "b": "内容提要"
+        }
+      ]
+    },
+    {
+      "center": "n166",
+      "title": "模块2常考元素的化工流程题",
+      "nodeCount": 25,
+      "labelCount": 24,
+      "edgeCount": 24,
+      "issueCount": 10,
+      "issues": [
+        {
+          "kind": "line-node",
+          "a": 0,
+          "b": "4.调节pH所用的碱性物质可以是目标金属元素（避免引入杂质）"
+        },
+        {
+          "kind": "line-node",
+          "a": 13,
+          "b": "1.若酸浸或碱浸过程，Al元素和目标元素就已经分离，则不需要"
+        },
+        {
+          "kind": "line-node",
+          "a": 14,
+          "b": "1.SiO：在高温条件下会与碱性氧化物、两性氧化物或碳酸盐反"
+        },
+        {
+          "kind": "line-node",
+          "a": 15,
+          "b": "1.SiO：在高温条件下会与碱性氧化物、两性氧化物或碳酸盐反"
+        },
+        {
+          "kind": "line-node",
+          "a": 18,
+          "b": "类型IV：以V元素为主线的工艺流程题"
+        },
+        {
+          "kind": "line-node",
+          "a": 20,
+          "b": "类型Vl：以Cu、Ag、Au元素为主线的工艺流程题"
+        },
+        {
+          "kind": "line-node",
+          "a": 21,
+          "b": "类型IV：以V元素为主线的工艺流程题"
+        },
+        {
+          "kind": "line-label",
+          "a": 5,
+          "b": "内容提要"
+        },
+        {
+          "kind": "line-label",
+          "a": 7,
+          "b": "内容提要"
+        },
+        {
+          "kind": "line-label",
+          "a": 15,
+          "b": "内容提要"
+        }
+      ]
+    },
+    {
+      "center": "n401",
+      "title": "第3节电解原理的应用",
+      "nodeCount": 14,
+      "labelCount": 13,
+      "edgeCount": 13,
+      "issueCount": 10,
+      "issues": [
+        {
+          "kind": "node-label",
+          "a": "3.制备漂白液",
+          "b": "内容提要"
+        },
+        {
+          "kind": "line-node",
+          "a": 0,
+          "b": "四、二次电池的充电："
+        },
+        {
+          "kind": "line-node",
+          "a": 2,
+          "b": "类型IV：电镀与电解精炼铜"
+        },
+        {
+          "kind": "line-node",
+          "a": 4,
+          "b": "3.制备漂白液"
+        },
+        {
+          "kind": "line-node",
+          "a": 5,
+          "b": "内容提要"
+        },
+        {
+          "kind": "line-node",
+          "a": 6,
+          "b": "四、二次电池的充电："
+        },
+        {
+          "kind": "line-label",
+          "a": 3,
+          "b": "内容提要"
+        },
+        {
+          "kind": "line-label",
+          "a": 4,
+          "b": "内容提要"
+        },
+        {
+          "kind": "line-label",
+          "a": 6,
+          "b": "包含"
+        },
+        {
+          "kind": "line-label",
+          "a": 8,
+          "b": "包含"
+        }
+      ]
+    },
+    {
+      "center": "n534",
+      "title": "第 4节常见物质的检验、性质强弱比较",
+      "nodeCount": 14,
+      "labelCount": 13,
+      "edgeCount": 13,
+      "issueCount": 10,
+      "issues": [
+        {
+          "kind": "node-label",
+          "a": "1.可使有黑色氧化膜的灼热铜丝变得光亮，并产生有刺激性气味的",
+          "b": "内容提要"
+        },
+        {
+          "kind": "line-node",
+          "a": 0,
+          "b": "2.用HNO酸化，或滴加Ba（NO），不能排除H2SO4F，"
+        },
+        {
+          "kind": "line-node",
+          "a": 1,
+          "b": "模块1化学实验基础"
+        },
+        {
+          "kind": "line-node",
+          "a": 2,
+          "b": "类型Ⅱ：实验方案设计、操作、现象、结论综合题型"
+        },
+        {
+          "kind": "line-node",
+          "a": 3,
+          "b": "1.可使有黑色氧化膜的灼热铜丝变得光亮，并产生有刺激性气味的"
+        },
+        {
+          "kind": "line-node",
+          "a": 8,
+          "b": "1.定性；石蕊变蓝、酚肽变红；2.定量：用pH试纸或pH计测"
+        },
+        {
+          "kind": "line-label",
+          "a": 3,
+          "b": "内容提要"
+        },
+        {
+          "kind": "line-label",
+          "a": 4,
+          "b": "内容提要"
+        },
+        {
+          "kind": "line-label",
+          "a": 7,
+          "b": "内容提要"
+        },
+        {
+          "kind": "line-label",
+          "a": 8,
+          "b": "包含"
+        }
+      ]
+    },
+    {
+      "center": "n566",
+      "title": "模块1常考化学用语",
+      "nodeCount": 15,
+      "labelCount": 14,
+      "edgeCount": 14,
+      "issueCount": 10,
+      "issues": [
+        {
+          "kind": "line-node",
+          "a": 0,
+          "b": "注：离子化合物，共价化合物电子式的对比"
+        },
+        {
+          "kind": "line-node",
+          "a": 1,
+          "b": "5.结构式：用\"一”表示一个共用电子对的式子称为结构式，如甲"
+        },
+        {
+          "kind": "line-node",
+          "a": 6,
+          "b": "1.若阳离子失去的电子数能使阴离子达到稳定结构，则相同的阴离"
+        },
+        {
+          "kind": "line-node",
+          "a": 7,
+          "b": "注：①分子式因为表示分子的真实组成，所以不能写成原子个数最简"
+        },
+        {
+          "kind": "line-node",
+          "a": 12,
+          "b": "类型Ⅱ：化学用语高考真题"
+        },
+        {
+          "kind": "line-label",
+          "a": 1,
+          "b": "内容提要"
+        },
+        {
+          "kind": "line-label",
+          "a": 3,
+          "b": "内容提要"
+        },
+        {
+          "kind": "line-label",
+          "a": 5,
+          "b": "内容提要"
+        },
+        {
+          "kind": "line-label",
+          "a": 6,
+          "b": "内容提要"
+        },
+        {
+          "kind": "line-label",
+          "a": 8,
+          "b": "内容提要"
+        }
+      ]
+    },
+    {
+      "center": "n33",
+      "title": "模块3离子方程式正误判断的“七个注意”",
+      "nodeCount": 20,
+      "labelCount": 19,
+      "edgeCount": 19,
+      "issueCount": 9,
+      "issues": [
+        {
+          "kind": "line-node",
+          "a": 1,
+          "b": "3.Ca（OH）：、CaSO、AgSO、MgCO等“微溶物”"
+        },
+        {
+          "kind": "line-node",
+          "a": 2,
+          "b": "3.铵盐与碱反应的产物是写成\"NH·HO\"还是\"NH”，关键"
+        },
+        {
+          "kind": "line-node",
+          "a": 3,
+          "b": "3.Ca（OH）：、CaSO、AgSO、MgCO等“微溶物”"
+        },
+        {
+          "kind": "line-node",
+          "a": 4,
+          "b": "七、注意反应物的“稀、浓\"和“温度”"
+        },
+        {
+          "kind": "line-node",
+          "a": 11,
+          "b": "1.“折”的本质是：在水中物质完全以自由移动离子的形式存在。"
+        },
+        {
+          "kind": "line-node",
+          "a": 15,
+          "b": "类型Ⅲ：判断是否存在浓度或温度造成的\"量变引起质变\""
+        },
+        {
+          "kind": "line-label",
+          "a": 0,
+          "b": "内容提要"
+        },
+        {
+          "kind": "line-label",
+          "a": 1,
+          "b": "内容提要"
+        },
+        {
+          "kind": "line-label",
+          "a": 4,
+          "b": "内容提要"
+        }
+      ]
+    },
+    {
+      "center": "n71",
+      "title": "第1节 钠单质、钠的氧化物、氢氧化钠、氢化钠",
+      "nodeCount": 18,
+      "labelCount": 17,
+      "edgeCount": 17,
+      "issueCount": 9,
+      "issues": [
+        {
+          "kind": "line-node",
+          "a": 0,
+          "b": "四、氢化钠"
+        },
+        {
+          "kind": "line-node",
+          "a": 2,
+          "b": "类型IV：新型物质的性质推导"
+        },
+        {
+          "kind": "line-node",
+          "a": 3,
+          "b": "四、氢化钠"
+        },
+        {
+          "kind": "line-node",
+          "a": 8,
+          "b": "2.漂白性的归纳与总结："
+        },
+        {
+          "kind": "line-node",
+          "a": 10,
+          "b": "(2)用作电光源，制作高压钠灯。该用途利用了钠在高压下能发出"
+        },
+        {
+          "kind": "line-node",
+          "a": 13,
+          "b": "类型Ⅱ:阿伏加德罗常数"
+        },
+        {
+          "kind": "line-node",
+          "a": 15,
+          "b": "类型Ⅱ:阿伏加德罗常数"
+        },
+        {
+          "kind": "line-label",
+          "a": 1,
+          "b": "内容提要"
+        },
+        {
+          "kind": "line-label",
+          "a": 2,
+          "b": "包含"
+        }
+      ]
+    },
+    {
+      "center": "n141",
+      "title": "第 2节含硫的酸、盐及其他含硫化合物",
+      "nodeCount": 18,
+      "labelCount": 17,
+      "edgeCount": 17,
+      "issueCount": 9,
+      "issues": [
+        {
+          "kind": "line-node",
+          "a": 0,
+          "b": "注：一般情况下，HS的氧化产物为S；若氧化剂的氧化性极强，也"
+        },
+        {
+          "kind": "line-node",
+          "a": 1,
+          "b": "二、含硫的盐"
+        },
+        {
+          "kind": "line-node",
+          "a": 6,
+          "b": "模块3硫及其化合物"
+        },
+        {
+          "kind": "line-node",
+          "a": 8,
+          "b": "注：常见酸的分类"
+        },
+        {
+          "kind": "line-node",
+          "a": 16,
+          "b": "类型IV：化工流程"
+        },
+        {
+          "kind": "line-label",
+          "a": 0,
+          "b": "内容提要"
+        },
+        {
+          "kind": "line-label",
+          "a": 3,
+          "b": "内容提要"
+        },
+        {
+          "kind": "line-label",
+          "a": 7,
+          "b": "内容提要"
+        },
+        {
+          "kind": "line-label",
+          "a": 10,
+          "b": "内容提要"
+        }
+      ]
+    },
+    {
+      "center": "n341",
+      "title": "第1节盐类水解平衡、规律及其运用",
+      "nodeCount": 20,
+      "labelCount": 19,
+      "edgeCount": 19,
+      "issueCount": 9,
+      "issues": [
+        {
+          "kind": "line-node",
+          "a": 5,
+          "b": "七、盐类水解的运用"
+        },
+        {
+          "kind": "line-node",
+          "a": 9,
+          "b": "模块2盐类的水解"
+        },
+        {
+          "kind": "line-node",
+          "a": 16,
+          "b": "类型Ⅱ：水解方程式的书写"
+        },
+        {
+          "kind": "line-label",
+          "a": 1,
+          "b": "内容提要"
+        },
+        {
+          "kind": "line-label",
+          "a": 5,
+          "b": "内容提要"
+        },
+        {
+          "kind": "line-label",
+          "a": 6,
+          "b": "内容提要"
+        },
+        {
+          "kind": "line-label",
+          "a": 8,
+          "b": "内容提要"
+        },
+        {
+          "kind": "line-label",
+          "a": 9,
+          "b": "内容提要"
+        },
+        {
+          "kind": "line-label",
+          "a": 11,
+          "b": "内容提要"
+        }
+      ]
+    },
+    {
+      "center": "n416",
+      "title": "第12章有机化学基础",
+      "nodeCount": 15,
+      "labelCount": 14,
+      "edgeCount": 14,
+      "issueCount": 9,
+      "issues": [
+        {
+          "kind": "node-label",
+          "a": "模块9合成高分子",
+          "b": "结构决定有机性质"
+        },
+        {
+          "kind": "line-node",
+          "a": 0,
+          "b": "模块9合成高分子"
+        },
+        {
+          "kind": "line-node",
+          "a": 6,
+          "b": "2027广东高考化学一轮复习"
+        },
+        {
+          "kind": "line-node",
+          "a": 7,
+          "b": "模块5醇酚"
+        },
+        {
+          "kind": "line-node",
+          "a": 8,
+          "b": "2027广东高考化学一轮复习"
+        },
+        {
+          "kind": "line-node",
+          "a": 12,
+          "b": "模块1有机化合物的分类与命名"
+        },
+        {
+          "kind": "line-node",
+          "a": 13,
+          "b": "模块9合成高分子"
+        },
+        {
+          "kind": "line-label",
+          "a": 1,
+          "b": "包含"
+        },
+        {
+          "kind": "line-label",
+          "a": 13,
+          "b": "包含"
+        }
+      ]
+    }
+  ]
+}

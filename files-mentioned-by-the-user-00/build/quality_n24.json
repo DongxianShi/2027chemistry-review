@@ -1,0 +1,52 @@
+{
+  "centers": 1,
+  "failingCenters": 1,
+  "stickyFailures": 0,
+  "textOverlaps": 0,
+  "lineNodeOverlaps": 0,
+  "lineLabelOverlaps": 2,
+  "failures": [
+    {
+      "centerId": "n24",
+      "centerTitle": "第3章离子反应",
+      "text": [],
+      "sticky": [],
+      "lineNode": [],
+      "lineLabel": [
+        {
+          "centerId": "n24",
+          "edge": {
+            "source": "n1",
+            "target": "n24",
+            "relation": "包含",
+            "index": 0
+          },
+          "label": {
+            "source": "n24",
+            "target": "n322",
+            "relation": "离子反应延伸到离子平衡",
+            "text": "离子反应延伸到离子平衡",
+            "index": 5
+          }
+        },
+        {
+          "centerId": "n24",
+          "edge": {
+            "source": "n565",
+            "target": "n24",
+            "relation": "化学用语支撑离子方程式",
+            "index": 6
+          },
+          "label": {
+            "source": "n24",
+            "target": "n322",
+            "relation": "离子反应延伸到离子平衡",
+            "text": "离子反应延伸到离子平衡",
+            "index": 5
+          }
+        }
+      ]
+    }
+  ],
+  "screenshot": "build\\quality_n24.png"
+}
