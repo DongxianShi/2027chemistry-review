@@ -299,22 +299,26 @@ function updatePanelToggleLabels() {
     const collapsed = pathPanel.classList.contains("collapsed");
     pathBtn.textContent = collapsed ? "⌘ 展开路径" : "⌘ 收起路径";
     pathBtn.title = collapsed ? "展开路径显示" : "收起路径显示";
+    pathBtn.setAttribute("aria-label", pathBtn.title);
   }
   if (searchBtn) {
     const collapsed = searchPanel.classList.contains("collapsed");
     searchBtn.textContent = collapsed ? "⌕ 展开搜索" : "⌕ 收起搜索";
     searchBtn.title = collapsed ? "展开搜索栏目" : "收起搜索栏目";
+    searchBtn.setAttribute("aria-label", searchBtn.title);
   }
   if (sideBtn) {
     const collapsed = sidePanel.classList.contains("collapsed");
-    sideBtn.textContent = collapsed ? "☷ 展开" : "☷ 收起";
+    sideBtn.textContent = collapsed ? "☷ 展开关系" : "☷ 收起关系";
     sideBtn.title = collapsed ? "展开关系类型栏目" : "收起关系类型栏目";
+    sideBtn.setAttribute("aria-label", sideBtn.title);
   }
   const detailBtn = document.getElementById("toggleDetailPanel");
   if (detailBtn) {
     const collapsed = detailPanel.classList.contains("collapsed");
-    detailBtn.textContent = collapsed ? "◎ 展开" : "◎ 收起";
+    detailBtn.textContent = collapsed ? "◎ 展开当前" : "◎ 收起当前";
     detailBtn.title = collapsed ? "展开当前中心栏目" : "收起当前中心栏目";
+    detailBtn.setAttribute("aria-label", detailBtn.title);
   }
 }
 
