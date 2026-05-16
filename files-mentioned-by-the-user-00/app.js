@@ -235,7 +235,9 @@ function render() {
     stage.appendChild(nodeEl);
   });
   if (expandedNodeId && layout.positions.has(expandedNodeId)) {
-    stage.appendChild(renderInlineExpansion(expandedNodeId, layout));
+    const expansion = renderInlineExpansion(expandedNodeId, layout);
+    stage.appendChild(expansion.connector);
+    stage.appendChild(expansion.card);
   }
   canvas.appendChild(stage);
   renderDetail(selectedId);
@@ -1523,7 +1525,41 @@ function renderInlineExpansion(id, layout) {
   if (node.kind === "page") card.appendChild(renderInlinePage(node));
   else card.appendChild(renderInlineExample(node));
 
-  return card;
+  return { card, connector: renderExpansionConnector(anchor, pos, size) };
+}
+
+function renderExpansionConnector(anchor, pos, size) {
+  const start = connectionPoint(anchor, pos.x + size.w / 2, pos.y + size.h / 2);
+  const end = connectionPoint(pos, anchor.x + anchor.w / 2, anchor.y + anchor.h / 2);
+  const left = Math.min(start.x, end.x) - 42;
+  const top = Math.min(start.y, end.y) - 42;
+  const width = Math.abs(end.x - start.x) + 84;
+  const height = Math.abs(end.y - start.y) + 84;
+  const sx = start.x - left;
+  const sy = start.y - top;
+  const ex = end.x - left;
+  const ey = end.y - top;
+  const cx = (sx + ex) / 2;
+  const cy = (sy + ey) / 2 - Math.max(28, Math.abs(ex - sx) * 0.08);
+
+  const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+  svg.setAttribute("class", "inline-branch-connector");
+  svg.style.left = `${left}px`;
+  svg.style.top = `${top}px`;
+  svg.style.width = `${width}px`;
+  svg.style.height = `${height}px`;
+  svg.setAttribute("viewBox", `0 0 ${width} ${height}`);
+
+  const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
+  path.setAttribute("d", `M ${sx} ${sy} Q ${cx} ${cy}, ${ex} ${ey}`);
+  svg.appendChild(path);
+
+  const label = document.createElementNS("http://www.w3.org/2000/svg", "text");
+  label.setAttribute("x", `${(sx + ex) / 2}`);
+  label.setAttribute("y", `${(sy + ey) / 2 - 8}`);
+  label.textContent = "展开截图";
+  svg.appendChild(label);
+  return svg;
 }
 
 function expansionSize(node, layout) {
