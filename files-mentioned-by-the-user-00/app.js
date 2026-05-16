@@ -910,6 +910,40 @@ function buildPathObstacles(plans) {
   return obstacles;
 }
 
+function edgeFocusBounds(plan) {
+  const boxes = [];
+  const sourceBox = lastLayout?.positions.get(plan.edge.source);
+  const targetBox = lastLayout?.positions.get(plan.edge.target);
+  if (sourceBox) boxes.push(sourceBox);
+  if (targetBox) boxes.push(targetBox);
+  for (let i = 0; i <= 24; i += 1) {
+    const point = quadraticPoint(plan.start, plan.control, plan.end, i / 24);
+    boxes.push({ x: point.x, y: point.y, w: 1, h: 1 });
+  }
+  const left = Math.min(...boxes.map(box => box.x));
+  const top = Math.min(...boxes.map(box => box.y));
+  const right = Math.max(...boxes.map(box => box.x + box.w));
+  const bottom = Math.max(...boxes.map(box => box.y + box.h));
+  return { x: left, y: top, w: right - left, h: bottom - top };
+}
+
+function focusViewOnBounds(bounds) {
+  if (!bounds || !Number.isFinite(bounds.x)) return;
+  const safe = viewSafeScreenRect();
+  const pad = 88;
+  const world = {
+    x: bounds.x - pad,
+    y: bounds.y - pad,
+    w: bounds.w + pad * 2,
+    h: bounds.h + pad * 2
+  };
+  const nextScale = clamp(Math.min(view.scale, safe.w / world.w, safe.h / world.h), 0.44, 1.2);
+  view.scale = nextScale;
+  view.tx = safe.left + (safe.w - world.w * nextScale) / 2 - world.x * nextScale;
+  view.ty = safe.top + (safe.h - world.h * nextScale) / 2 - world.y * nextScale;
+  view.needsFit = false;
+}
+
 function renderEdge(plan, labelBoxes, pathObstacles, muted = false) {
   const { edge, start, control, end, direct, labelText } = plan;
   const pathGroup = document.createElementNS("http://www.w3.org/2000/svg", "g");
