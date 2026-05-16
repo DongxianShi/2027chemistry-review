@@ -1,0 +1,20 @@
+chemistry_method.pdf
+*.pdf
+publish/
+
+# Local QA screenshots and browser profiles are not required by GitHub Pages.
+build/edge-cdp-profile-*/
+build/quality_*.json
+build/quality_*.png
+build/network_check*.png
+build/filter_*.png
+build/motion_check*.png
+build/*_scan*.json
+build/*_n322.png
+build/*_n566.png
+build/inspect_*.png
+build/sticky_*.png
+build/adaptive_edges_*.png
+build/center_only_*.png
+build/curved_direct_*.png
+build/direct_curve_*.png

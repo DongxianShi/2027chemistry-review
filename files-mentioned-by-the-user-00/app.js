@@ -4,9 +4,12 @@ const nodes = new Map(GRAPH.nodes.map(node => [node.id, node]));
 const edges = GRAPH.edges;
 const adjacency = new Map();
 const historyStack = [];
+const pageNodeByPage = new Map();
+const pathNodeByKey = new Map();
 
 const CENTERABLE = new Set(["root", "chapter", "module", "section", "type", "summary"]);
 const LEAF = new Set(["example", "page"]);
+const EXPANDABLE = new Set(["example", "page"]);
 const RELATION_ORDER = ["包含", "内容提要", "对应例题", "原页", "原页截图", "相关"];
 const COLORS = {
   root: "#4863ff",
@@ -41,6 +44,13 @@ for (const edge of edges) {
   addAdj(edge.target, edge);
 }
 
+for (const node of nodes.values()) {
+  if (node.kind === "page" && node.page) pageNodeByPage.set(node.page, node.id);
+  if (node.centerable && CENTERABLE.has(node.kind) && node.path && node.path.length) {
+    pathNodeByKey.set(pathKey(node.path), node.id);
+  }
+}
+
 const canvas = document.getElementById("networkCanvas");
 const detailPanel = document.getElementById("detailPanel");
 const sidePanel = document.getElementById("sidePanel");
@@ -51,9 +61,13 @@ const searchInput = document.getElementById("searchInput");
 const clearSearch = document.getElementById("clearSearch");
 const relationFilters = document.getElementById("relationFilters");
 const searchResults = document.getElementById("searchResults");
+const pathPanel = document.getElementById("pathPanel");
+const togglePathPanel = document.getElementById("togglePathPanel");
 let resizeTimer = null;
 let stageEl = null;
 let lastLayout = null;
+let focusedEdgeKey = null;
+let expandedNodeId = null;
 
 init();
 
@@ -74,6 +88,8 @@ function init() {
   document.getElementById("backButton").addEventListener("click", () => {
     const previous = historyStack.pop();
     if (previous) {
+      focusedEdgeKey = null;
+      expandedNodeId = null;
       centerId = previous;
       selectedId = previous;
       resetView();
@@ -81,6 +97,7 @@ function init() {
       render();
     }
   });
+  updatePanelToggleLabels();
   searchInput.addEventListener("input", event => {
     searchQuery = event.target.value.trim();
     renderSearch();
@@ -128,6 +145,8 @@ function renderRelationFilters() {
 function setActiveRelation(relation) {
   if (activeRelation === relation) return;
   clearFilterVisualState();
+  focusedEdgeKey = null;
+  expandedNodeId = null;
   activeRelation = relation;
   renderRelationFilters();
   render();
@@ -160,6 +179,7 @@ function render() {
 
   const stage = document.createElement("div");
   stage.className = "graph-stage";
+  if (expandedNodeId) stage.classList.add("has-expansion");
   stage.style.width = `${layout.width}px`;
   stage.style.height = `${layout.height}px`;
   stageEl = stage;
@@ -179,16 +199,21 @@ function render() {
     .map(box => ({ x: box.x - 18, y: box.y - 18, w: box.w + 36, h: box.h + 36 }));
   labelBoxes.push(...panelBoxes());
   const edgePlans = layout.edges.map((edge, index) => edgePlan(edge, layout.positions, index));
-  const mutedEdgePlans = edgePlans.filter(plan => edgeMutedForFilter(layout, plan));
-  const activeEdgePlans = edgePlans.filter(plan => !edgeMutedForFilter(layout, plan));
+  const mutedEdgePlans = edgePlans.filter(plan => edgeMutedForState(layout, plan));
+  const activeEdgePlans = edgePlans.filter(plan => !edgeMutedForState(layout, plan));
   const pathObstacles = buildPathObstacles(edgePlans);
   const pathLayer = document.createElementNS("http://www.w3.org/2000/svg", "g");
   pathLayer.setAttribute("class", "edge-path-layer");
   const labelLayer = document.createElementNS("http://www.w3.org/2000/svg", "g");
   labelLayer.setAttribute("class", "edge-label-layer");
   [...mutedEdgePlans, ...activeEdgePlans].forEach((plan, index) => {
-    const muted = edgeMutedForFilter(layout, plan);
+    const muted = edgeMutedForState(layout, plan);
+    const focused = focusedEdgeKey === plan.key;
     const rendered = renderEdge(plan, labelBoxes, pathObstacles, muted);
+    if (focused) {
+      rendered.pathGroup.classList.add("edge-focused-group");
+      rendered.labelGroup.classList.add("edge-label-focused");
+    }
     const edgeDelay = Math.min(index * 12, 260);
     rendered.pathGroup.style.setProperty("--edge-delay", `${edgeDelay}ms`);
     rendered.labelGroup.style.setProperty("--label-delay", `${edgeDelay + 80}ms`);
@@ -198,13 +223,17 @@ function render() {
   svg.append(pathLayer, labelLayer);
   stage.appendChild(svg);
 
-  const mutedNodeIds = nodeIdsToDraw.filter(id => nodeMutedForFilter(layout, id));
-  const activeNodeIds = nodeIdsToDraw.filter(id => !nodeMutedForFilter(layout, id));
+  const mutedNodeIds = nodeIdsToDraw.filter(id => nodeMutedForState(layout, id));
+  const activeNodeIds = nodeIdsToDraw.filter(id => !nodeMutedForState(layout, id));
   [...mutedNodeIds, ...activeNodeIds].forEach((id, index) => {
-    const nodeEl = renderNode(id, layout.positions.get(id), layout.roles.get(id), nodeMutedForFilter(layout, id));
+    const nodeEl = renderNode(id, layout.positions.get(id), layout.roles.get(id), nodeMutedForState(layout, id));
+    if (focusedEdgeKey && !nodeMutedForState(layout, id)) nodeEl.classList.add("edge-focus-node");
     nodeEl.style.setProperty("--node-delay", `${Math.min(index * 18, 320)}ms`);
     stage.appendChild(nodeEl);
   });
+  if (expandedNodeId && layout.positions.has(expandedNodeId)) {
+    stage.appendChild(renderInlineExpansion(expandedNodeId, layout));
+  }
   canvas.appendChild(stage);
   renderDetail(selectedId);
 }
@@ -217,7 +246,39 @@ function edgeMutedForFilter(layout, plan) {
   return activeRelation !== "all" && !layout.matches.edges.has(plan.key);
 }
 
+function focusedEdge() {
+  if (!focusedEdgeKey) return null;
+  return edges.find(edge => edgeKey(edge) === focusedEdgeKey) || null;
+}
+
+function nodeMutedForState(layout, id) {
+  const edge = focusedEdge();
+  if (edge) return id !== edge.source && id !== edge.target;
+  if (expandedNodeId) return !nodeConnectedToExpanded(id);
+  return nodeMutedForFilter(layout, id);
+}
+
+function edgeMutedForState(layout, plan) {
+  if (focusedEdgeKey) return plan.key !== focusedEdgeKey;
+  if (expandedNodeId) return plan.edge.source !== expandedNodeId && plan.edge.target !== expandedNodeId;
+  return edgeMutedForFilter(layout, plan);
+}
+
+function nodeConnectedToExpanded(id) {
+  if (!expandedNodeId) return false;
+  if (id === expandedNodeId) return true;
+  return (adjacency.get(expandedNodeId) || []).some(edge => edge.source === id || edge.target === id);
+}
+
 function initPanelToggles() {
+  if (togglePathPanel) {
+    togglePathPanel.addEventListener("click", () => {
+      pathPanel.classList.toggle("collapsed");
+      updatePanelToggleLabels();
+      view.needsFit = true;
+      render();
+    });
+  }
   document.getElementById("toggleSearchPanel").addEventListener("click", () => {
     searchPanel.classList.toggle("collapsed");
     updatePanelToggleLabels();
@@ -233,10 +294,28 @@ function initPanelToggles() {
 function updatePanelToggleLabels() {
   const searchBtn = document.getElementById("toggleSearchPanel");
   const sideBtn = document.getElementById("toggleSidePanel");
-  if (searchBtn) searchBtn.textContent = searchPanel.classList.contains("collapsed") ? "展开搜索" : "收起搜索";
-  if (sideBtn) sideBtn.textContent = sidePanel.classList.contains("collapsed") ? "展开" : "收起";
+  const pathBtn = document.getElementById("togglePathPanel");
+  if (pathBtn) {
+    const collapsed = pathPanel.classList.contains("collapsed");
+    pathBtn.textContent = collapsed ? "⌘ 展开路径" : "⌘ 收起路径";
+    pathBtn.title = collapsed ? "展开路径显示" : "收起路径显示";
+  }
+  if (searchBtn) {
+    const collapsed = searchPanel.classList.contains("collapsed");
+    searchBtn.textContent = collapsed ? "⌕ 展开搜索" : "⌕ 收起搜索";
+    searchBtn.title = collapsed ? "展开搜索栏目" : "收起搜索栏目";
+  }
+  if (sideBtn) {
+    const collapsed = sidePanel.classList.contains("collapsed");
+    sideBtn.textContent = collapsed ? "☷ 展开" : "☷ 收起";
+    sideBtn.title = collapsed ? "展开关系类型栏目" : "收起关系类型栏目";
+  }
   const detailBtn = document.getElementById("toggleDetailPanel");
-  if (detailBtn) detailBtn.textContent = detailPanel.classList.contains("collapsed") ? "展开" : "收起";
+  if (detailBtn) {
+    const collapsed = detailPanel.classList.contains("collapsed");
+    detailBtn.textContent = collapsed ? "◎ 展开" : "◎ 收起";
+    detailBtn.title = collapsed ? "展开当前中心栏目" : "收起当前中心栏目";
+  }
 }
 
 function renderArrowMarkers() {
@@ -280,7 +359,7 @@ function initViewportControls() {
   }, { passive: false });
 
   canvas.addEventListener("pointerdown", event => {
-    if (event.button !== 0 || event.target.closest(".net-node, .side-panel, .detail-panel, input, button")) return;
+    if (event.button !== 0 || event.target.closest(".net-node, .inline-expansion, .side-panel, .detail-panel, input, button, .edge-click-target")) return;
     view.dragging = true;
     view.dragMoved = false;
     view.startX = event.clientX;
@@ -310,6 +389,11 @@ function endDrag(event) {
   view.dragging = false;
   canvas.classList.remove("dragging");
   if (canvas.hasPointerCapture(event.pointerId)) canvas.releasePointerCapture(event.pointerId);
+  if (!view.dragMoved && (focusedEdgeKey || expandedNodeId) && !event.target.closest(".net-node, .inline-expansion, .side-panel, .detail-panel, input, button, .edge-click-target")) {
+    focusedEdgeKey = null;
+    expandedNodeId = null;
+    render();
+  }
 }
 
 function applyViewTransform() {
@@ -829,9 +913,27 @@ function buildPathObstacles(plans) {
 function renderEdge(plan, labelBoxes, pathObstacles, muted = false) {
   const { edge, start, control, end, direct, labelText } = plan;
   const pathGroup = document.createElementNS("http://www.w3.org/2000/svg", "g");
+  pathGroup.dataset.source = edge.source;
+  pathGroup.dataset.target = edge.target;
+  pathGroup.dataset.relation = edge.relation;
   const title = document.createElementNS("http://www.w3.org/2000/svg", "title");
   title.textContent = labelText;
   pathGroup.appendChild(title);
+
+  const hitPath = document.createElementNS("http://www.w3.org/2000/svg", "path");
+  hitPath.setAttribute("d", `M ${start.x} ${start.y} Q ${control.x} ${control.y}, ${end.x} ${end.y}`);
+  hitPath.setAttribute("class", "edge-click-target");
+  hitPath.dataset.source = edge.source;
+  hitPath.dataset.target = edge.target;
+  hitPath.dataset.relation = edge.relation;
+  hitPath.addEventListener("click", event => {
+    event.stopPropagation();
+    focusedEdgeKey = plan.key;
+    expandedNodeId = null;
+    selectedId = edge.target === centerId ? edge.source : edge.target;
+    render();
+  });
+  pathGroup.appendChild(hitPath);
 
   const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
   path.setAttribute("id", plan.id);
@@ -1022,6 +1124,7 @@ function renderNode(id, pos, role = "related", muted = false) {
   if (muted) card.classList.add("filter-muted");
   if (id === centerId) card.classList.add("center");
   if (id === selectedId) card.classList.add("selected");
+  if (id === expandedNodeId) card.classList.add("expanded-source");
   if (nodeMatchesSearch(node)) card.classList.add("match");
   card.title = node.title;
   card.dataset.id = id;
@@ -1043,9 +1146,11 @@ function renderNode(id, pos, role = "related", muted = false) {
   card.appendChild(kind);
 
   card.addEventListener("click", () => {
+    focusedEdgeKey = null;
     selectedId = id;
     if (node.centerable && id !== centerId && CENTERABLE.has(node.kind)) focusNode(id, true);
-    else renderDetail(id);
+    else if (EXPANDABLE.has(node.kind)) openLeafNode(id, { toggle: true, focusHost: false });
+    else renderDetail(id, true);
   });
 
   return card;
@@ -1063,11 +1168,11 @@ function nodeBackground(node, role) {
   return "#f1eadb";
 }
 
-function renderDetail(id) {
+function renderDetail(id, forceOpen = false) {
   const node = nodes.get(id) || nodes.get(centerId);
   const wasCollapsed = detailPanel.classList.contains("collapsed");
   detailPanel.innerHTML = "";
-  detailPanel.classList.toggle("collapsed", wasCollapsed);
+  detailPanel.classList.toggle("collapsed", forceOpen ? false : wasCollapsed);
 
   const head = document.createElement("div");
   head.className = "panel-head";
@@ -1113,14 +1218,100 @@ function renderDetail(id) {
   body.appendChild(renderTextBlock(text));
 
   if (node.kind === "page" && node.image) body.appendChild(renderPageImage(node));
-  if (node.kind !== "page" && node.pages && node.pages.length) {
-    const pages = document.createElement("div");
-    pages.className = "page-links";
-    pages.textContent = `关联原页：${compactPages(node.pages)}`;
-    body.appendChild(pages);
-  }
+  const examples = relatedExamples(node.id);
+  const pages = relatedPages(node);
+  if (examples.length) body.appendChild(renderNodeLinks("对应例题", examples, "example"));
+  if (node.kind !== "page" && pages.length) body.appendChild(renderPageLinks(pages));
   detailPanel.appendChild(body);
   updatePanelToggleLabels();
+}
+
+function relatedExamples(id) {
+  const result = [];
+  const seen = new Set();
+  for (const edge of adjacency.get(id) || []) {
+    const otherId = edge.source === id ? edge.target : edge.source;
+    const other = nodes.get(otherId);
+    if (!other || other.kind !== "example" || seen.has(otherId)) continue;
+    seen.add(otherId);
+    result.push(otherId);
+  }
+  return result.slice(0, 24);
+}
+
+function relatedPages(node) {
+  const result = new Set();
+  [node.pages, node.summaryPages, node.examplePages].forEach(list => {
+    if (Array.isArray(list)) list.forEach(page => result.add(page));
+  });
+  if (node.page) result.add(node.page);
+  for (const edge of adjacency.get(node.id) || []) {
+    const otherId = edge.source === node.id ? edge.target : edge.source;
+    const other = nodes.get(otherId);
+    if (other && other.kind === "page" && other.page) result.add(other.page);
+  }
+  return [...result].filter(Boolean).sort((a, b) => a - b);
+}
+
+function renderNodeLinks(title, ids, kind) {
+  const wrap = document.createElement("div");
+  wrap.className = `resource-links ${kind || ""}`;
+  const label = document.createElement("strong");
+  label.textContent = title;
+  wrap.appendChild(label);
+  const list = document.createElement("div");
+  list.className = "resource-link-list";
+  ids.forEach(id => {
+    const node = nodes.get(id);
+    if (!node) return;
+    const btn = document.createElement("button");
+    btn.type = "button";
+    btn.textContent = node.title;
+    btn.title = node.title;
+    btn.addEventListener("click", () => {
+      if (EXPANDABLE.has(node.kind)) openLeafNode(id, { toggle: false, focusHost: true });
+      else {
+        selectedId = id;
+        focusedEdgeKey = null;
+        expandedNodeId = null;
+        renderDetail(id, true);
+      }
+    });
+    list.appendChild(btn);
+  });
+  wrap.appendChild(list);
+  return wrap;
+}
+
+function renderPageLinks(pages) {
+  const wrap = document.createElement("div");
+  wrap.className = "resource-links page-links";
+  const label = document.createElement("strong");
+  label.textContent = "关联原页";
+  wrap.appendChild(label);
+
+  const summary = document.createElement("span");
+  summary.className = "resource-summary";
+  summary.textContent = compactPages(pages);
+  wrap.appendChild(summary);
+
+  const list = document.createElement("div");
+  list.className = "resource-link-list";
+  [...new Set(pages)].sort((a, b) => a - b).forEach(page => {
+    const pageNodeId = pageNodeByPage.get(page);
+    const btn = document.createElement("button");
+    btn.type = "button";
+    btn.textContent = `第 ${page} 页`;
+    btn.disabled = !pageNodeId;
+    btn.title = pageNodeId ? `打开第 ${page} 页截图` : `第 ${page} 页截图未生成`;
+    btn.addEventListener("click", () => {
+      if (!pageNodeId) return;
+      openLeafNode(pageNodeId, { toggle: false, focusHost: true });
+    });
+    list.appendChild(btn);
+  });
+  wrap.appendChild(list);
+  return wrap;
 }
 
 function renderTextBlock(text) {
@@ -1151,12 +1342,286 @@ function renderPageImage(node) {
   img.alt = node.title;
   const cap = document.createElement("figcaption");
   cap.textContent = `${node.title} 原书截图，可用于核对苯环、结构式、表格和复杂图示。`;
+  img.addEventListener("error", () => {
+    box.classList.add("missing");
+    cap.textContent = `${node.title} 的截图资源未随网站发布，请确认 build/page_images 目录已上传到 GitHub。`;
+  });
   box.append(img, cap);
   return box;
 }
 
+function openLeafNode(id, options = {}) {
+  const node = nodes.get(id);
+  if (!node) return;
+  const { toggle = true, focusHost = false } = options;
+  const host = focusHost ? nearestCenterable(id) : null;
+
+  focusedEdgeKey = null;
+  selectedId = id;
+  if (host && host !== centerId) {
+    if (centerId !== host) historyStack.push(centerId);
+    centerId = host;
+    resetView();
+    window.location.hash = `center=${host}`;
+    renderRelationFilters();
+  }
+  expandedNodeId = expandedNodeId === id && toggle ? null : id;
+  render();
+}
+
+function renderInlineExpansion(id, layout) {
+  const node = nodes.get(id);
+  const anchor = layout.positions.get(id);
+  const size = expansionSize(node, layout);
+  const pos = expansionPosition(anchor, size, layout);
+
+  const card = document.createElement("article");
+  card.className = `inline-expansion inline-${node.kind}`;
+  card.dataset.id = id;
+  card.style.left = `${pos.x}px`;
+  card.style.top = `${pos.y}px`;
+  card.style.width = `${size.w}px`;
+  card.style.minHeight = `${size.h}px`;
+
+  const head = document.createElement("div");
+  head.className = "inline-expansion-head";
+  const title = document.createElement("div");
+  title.className = "inline-expansion-title";
+  title.textContent = node.title;
+  const close = document.createElement("button");
+  close.type = "button";
+  close.title = "收起展开内容";
+  close.textContent = "×";
+  close.addEventListener("click", event => {
+    event.stopPropagation();
+    expandedNodeId = null;
+    render();
+  });
+  head.append(title, close);
+  card.appendChild(head);
+
+  const meta = document.createElement("div");
+  meta.className = "inline-expansion-meta";
+  meta.textContent = expansionMeta(node);
+  card.appendChild(meta);
+
+  if (node.kind === "page") card.appendChild(renderInlinePage(node));
+  else card.appendChild(renderInlineExample(node));
+
+  return card;
+}
+
+function expansionSize(node, layout) {
+  const narrow = layout.width < 1200;
+  if (node.kind === "page") return { w: narrow ? 400 : 520, h: narrow ? 540 : 650 };
+  return { w: narrow ? 500 : 650, h: narrow ? 360 : 430 };
+}
+
+function expansionPosition(anchor, size, layout) {
+  const gap = 26;
+  const safe = visibleStageRect(layout, size);
+  const baseCandidates = [
+    { x: anchor.x + anchor.w + gap, y: anchor.y + anchor.h / 2 - size.h / 2 },
+    { x: anchor.x - size.w - gap, y: anchor.y + anchor.h / 2 - size.h / 2 },
+    { x: anchor.x + anchor.w / 2 - size.w / 2, y: anchor.y + anchor.h + gap },
+    { x: anchor.x + anchor.w / 2 - size.w / 2, y: anchor.y - size.h - gap },
+    { x: safe.right - size.w, y: safe.top },
+    { x: safe.left, y: safe.bottom - size.h }
+  ];
+  const gridX = [safe.left, safe.left + safe.w * 0.28, safe.left + safe.w * 0.55, safe.right - size.w];
+  const gridY = [safe.top, safe.top + safe.h * 0.25, safe.top + safe.h * 0.55, safe.bottom - size.h];
+  gridX.forEach(x => gridY.forEach(y => baseCandidates.push({ x, y })));
+  const shiftedCandidates = [];
+  const shifts = [-140, -90, -45, 0, 45, 90, 140];
+  baseCandidates.forEach(candidate => {
+    shifts.forEach(dx => shifts.forEach(dy => shiftedCandidates.push({ x: candidate.x + dx, y: candidate.y + dy })));
+  });
+  const seen = new Set();
+  const candidates = shiftedCandidates.map(candidate => ({
+    x: clamp(candidate.x, safe.left, safe.right - size.w),
+    y: clamp(candidate.y, safe.top, safe.bottom - size.h),
+    w: size.w,
+    h: size.h
+  })).filter(candidate => {
+    const key = `${Math.round(candidate.x)}:${Math.round(candidate.y)}`;
+    if (seen.has(key)) return false;
+    seen.add(key);
+    return true;
+  });
+  const obstacles = [...layout.positions.entries()]
+    .filter(([id]) => id !== expandedNodeId)
+    .map(([, box]) => box);
+  candidates.sort((a, b) => expansionPenalty(a, obstacles, safe) - expansionPenalty(b, obstacles, safe));
+  return candidates[0];
+}
+
+function visibleStageRect(layout, size) {
+  const screen = viewSafeScreenRect();
+  let left = (screen.left - view.tx) / view.scale;
+  let top = (screen.top - view.ty) / view.scale;
+  let right = (screen.right - view.tx) / view.scale;
+  let bottom = (screen.bottom - view.ty) / view.scale;
+  left = clamp(left, 0, layout.width - 1);
+  top = clamp(top, 0, layout.height - 1);
+  right = clamp(right, left + 1, layout.width);
+  bottom = clamp(bottom, top + 1, layout.height);
+  if (right - left < size.w + 36 || bottom - top < size.h + 36) {
+    return safeRect(layout.width, layout.height);
+  }
+  return { left, top, right, bottom, w: right - left, h: bottom - top };
+}
+
+function expansionPenalty(box, obstacles, safe) {
+  return outsidePenalty(box, safe) * 8 + obstacles.reduce((sum, obstacle) => sum + overlapPenalty(box, obstacle, 18), 0);
+}
+
+function expansionMeta(node) {
+  if (node.kind === "page") return `书内页 ${node.page} · 原页截图`;
+  const pages = Array.isArray(node.pages) && node.pages.length ? compactPages(node.pages) : "未定位";
+  return `例题截图 · 来源页 ${pages}`;
+}
+
+function renderInlinePage(node) {
+  const figure = document.createElement("figure");
+  figure.className = "inline-media inline-page-frame";
+  const img = document.createElement("img");
+  img.src = node.image;
+  img.alt = `${node.title} 原页截图`;
+  const cap = document.createElement("figcaption");
+  cap.textContent = "完整原页截图";
+  img.addEventListener("error", () => {
+    figure.classList.add("missing");
+    cap.textContent = "原页截图未随网站发布，请确认 build/page_images 已上传。";
+  });
+  figure.append(img, cap);
+  return figure;
+}
+
+function renderInlineExample(node) {
+  const crop = exampleCropSpec(node);
+  if (!crop) {
+    const fallback = document.createElement("div");
+    fallback.className = "inline-text-fallback";
+    fallback.appendChild(renderTextBlock(node.text || "该例题暂无可定位截图。"));
+    return fallback;
+  }
+
+  const figure = document.createElement("figure");
+  figure.className = "inline-media inline-example-crop";
+  const frame = document.createElement("div");
+  frame.className = "crop-frame";
+  frame.dataset.cropStart = crop.startRatio;
+  frame.dataset.cropEnd = crop.endRatio;
+
+  const img = document.createElement("img");
+  img.src = crop.image;
+  img.alt = `${node.title} 对应页局部截图`;
+  img.addEventListener("load", () => fitCropFrame(frame, img));
+  img.addEventListener("error", () => {
+    figure.classList.add("missing");
+    frame.textContent = "例题截图未随网站发布，请确认 build/page_images 已上传。";
+  });
+  frame.appendChild(img);
+
+  const cap = document.createElement("figcaption");
+  cap.textContent = `第 ${crop.page} 页 OCR 定位局部`;
+  figure.append(frame, cap);
+  requestAnimationFrame(() => fitCropFrame(frame, img));
+  return figure;
+}
+
+function fitCropFrame(frame, img) {
+  if (!img.naturalWidth || !frame.clientWidth) return;
+  const startRatio = Number(frame.dataset.cropStart) || 0;
+  const endRatio = Number(frame.dataset.cropEnd) || 1;
+  const scaledHeight = img.naturalHeight * (frame.clientWidth / img.naturalWidth);
+  const start = clamp(startRatio * scaledHeight, 0, Math.max(0, scaledHeight - 120));
+  const end = clamp(endRatio * scaledHeight, start + 150, scaledHeight);
+  const height = clamp(end - start, 220, Math.min(500, Math.max(240, scaledHeight - start)));
+  frame.style.height = `${height}px`;
+  img.style.transform = `translateY(${-start}px)`;
+}
+
+function exampleCropSpec(node) {
+  const page = Array.isArray(node.pages) && node.pages.length ? node.pages[0] : null;
+  const pageNode = page ? nodes.get(pageNodeByPage.get(page)) : null;
+  if (!pageNode || !pageNode.image) return null;
+  const pageLines = textLines(pageNode.text);
+  const exampleLines = textLines(node.text);
+  if (!pageLines.length || !exampleLines.length) {
+    return { page, image: pageNode.image, startRatio: 0.08, endRatio: 0.92 };
+  }
+
+  const startLine = exampleLines.find(line => /^【?例\d+】?/.test(line)) || exampleLines[0];
+  let startIndex = findLineIndex(pageLines, startLine, 0);
+  if (startIndex < 0) startIndex = findLineIndex(pageLines, exampleLines[0], 0);
+  if (startIndex < 0) startIndex = Math.max(0, Math.floor(pageLines.length * 0.58));
+
+  const lastLine = [...exampleLines].reverse().find(line => normalizedLine(line).length >= 8) || exampleLines[exampleLines.length - 1];
+  const lastIndex = findLineIndex(pageLines, lastLine, startIndex);
+  const nextBoundary = pageLines.findIndex((line, index) => index > startIndex + 2 && isExampleBoundary(line));
+  let endIndex = lastIndex > startIndex ? lastIndex + 2 : nextBoundary > startIndex ? nextBoundary - 1 : pageLines.length - 1;
+  endIndex = clamp(endIndex, startIndex + 4, pageLines.length - 1);
+
+  const bodyStart = 0.055;
+  const bodyRange = 0.89;
+  const startRatio = clamp(bodyStart + (startIndex / pageLines.length) * bodyRange - 0.016, 0, 0.92);
+  const endRatio = clamp(bodyStart + ((endIndex + 1) / pageLines.length) * bodyRange + 0.045, startRatio + 0.18, 1);
+  return { page, image: pageNode.image, startRatio, endRatio };
+}
+
+function textLines(text) {
+  return cleanDisplayText(text)
+    .split("\n")
+    .map(line => line.trim())
+    .filter(line => line && !/^\d{3}$/.test(line));
+}
+
+function findLineIndex(lines, target, fromIndex = 0) {
+  const wanted = normalizedLine(target);
+  if (!wanted) return -1;
+  let best = -1;
+  let bestScore = 0;
+  lines.forEach((line, index) => {
+    if (index < fromIndex) return;
+    const current = normalizedLine(line);
+    if (!current) return;
+    const score = lineMatchScore(current, wanted);
+    if (score > bestScore) {
+      bestScore = score;
+      best = index;
+    }
+  });
+  return bestScore >= 0.48 ? best : -1;
+}
+
+function lineMatchScore(line, target) {
+  if (line.includes(target) || target.includes(line)) return 1;
+  const shortTarget = target.slice(0, Math.min(18, target.length));
+  if (shortTarget.length >= 6 && line.includes(shortTarget)) return 0.86;
+  let hits = 0;
+  const step = Math.max(2, Math.floor(target.length / 8));
+  for (let i = 0; i < target.length; i += step) {
+    const token = target.slice(i, i + step);
+    if (token.length >= 2 && line.includes(token)) hits += 1;
+  }
+  return hits / Math.max(1, Math.ceil(target.length / step));
+}
+
+function normalizedLine(line) {
+  return String(line || "")
+    .replace(/[^\u4e00-\u9fa5A-Za-z0-9ⅠⅡⅢⅣⅤⅥIVX√×()+\-+=]/g, "")
+    .toLowerCase();
+}
+
+function isExampleBoundary(line) {
+  return /^类型/.test(line) || /^【?例\d+】?/.test(line) || /^【反思】/.test(line);
+}
+
 function focusNode(id, pushHistory) {
   if (!nodes.has(id)) return;
+  focusedEdgeKey = null;
+  expandedNodeId = null;
   if (pushHistory && centerId !== id) historyStack.push(centerId);
   centerId = id;
   selectedId = id;
@@ -1170,16 +1635,33 @@ function renderBreadcrumb() {
   const node = nodes.get(centerId);
   breadcrumb.innerHTML = "";
   const path = node.path && node.path.length ? node.path : [node.title];
-  path.slice(-5).forEach((part, idx) => {
-    const span = document.createElement("span");
-    span.textContent = part;
-    breadcrumb.appendChild(span);
-    if (idx < path.slice(-5).length - 1) {
+  const visiblePath = path.slice(-6);
+  visiblePath.forEach((part, idx) => {
+    const fullIndex = path.length - visiblePath.length + idx;
+    const prefix = path.slice(0, fullIndex + 1);
+    const targetId = pathNodeByKey.get(pathKey(prefix));
+    const item = document.createElement(targetId ? "button" : "span");
+    item.className = "breadcrumb-item";
+    item.textContent = part;
+    if (targetId) {
+      item.type = "button";
+      item.title = `切换到：${part}`;
+      item.addEventListener("click", () => {
+        focusedEdgeKey = null;
+        focusNode(targetId, true);
+      });
+    }
+    breadcrumb.appendChild(item);
+    if (idx < visiblePath.length - 1) {
       const sep = document.createElement("b");
       sep.textContent = ">";
       breadcrumb.appendChild(sep);
     }
   });
+}
+
+function pathKey(parts) {
+  return parts.join("\u001f");
 }
 
 function renderSearch() {
@@ -1217,7 +1699,22 @@ function renderSearch() {
     snippet.innerHTML = `${escapeHtml(hit.label)}：${highlightTermHTML(hit.snippet)}`;
 
     btn.append(title, meta, snippet);
-    btn.addEventListener("click", () => focusNode(node.centerable ? node.id : nearestCenterable(node.id), true));
+    btn.addEventListener("click", () => {
+      focusedEdgeKey = null;
+      if (node.centerable && CENTERABLE.has(node.kind)) {
+        focusNode(node.id, true);
+        return;
+      }
+      if (EXPANDABLE.has(node.kind)) {
+        openLeafNode(node.id, { toggle: false, focusHost: true });
+        return;
+      }
+      const host = nearestCenterable(node.id);
+      if (host && host !== centerId) focusNode(host, true);
+      selectedId = node.id;
+      expandedNodeId = null;
+      renderDetail(node.id, true);
+    });
     searchResults.appendChild(btn);
   });
   render();
