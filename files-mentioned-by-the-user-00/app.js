@@ -812,7 +812,7 @@ function edgePlan(edge, positions, index) {
   });
   const labelT = direct
     ? (edge.source === centerId ? 0.68 : edge.target === centerId ? 0.32 : 0.5)
-    : 0.5;
+    : (semantic ? [0.34, 0.43, 0.57, 0.66][Math.abs(index) % 4] : 0.5);
   return {
     edge,
     id: `edge_path_${index}`,
