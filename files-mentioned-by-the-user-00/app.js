@@ -1419,7 +1419,7 @@ function lineBreakShouldStay(line, previous = "") {
   if (/^注[:：]/.test(line)) return true;
   if (/^(第\d+章|模块\d+|第\d+节|类型|内容提要)/.test(line)) return true;
   if (/^[一二三四五六七八九十]+[、.．]/.test(line)) return true;
-  if (/^\(?\d+\)?[.．、]/.test(line)) return true;
+  if (/^[（(]?\d+[）)][.．、]?/.test(line) || /^\d+[.．、]/.test(line)) return true;
   if (/^[A-D][.．]/.test(line)) return true;
   if (/^[a-z][.．]/i.test(line)) return true;
   if (/[。；：:）)]$/.test(previous) && !shortConceptLine(line)) return true;
