@@ -1432,16 +1432,37 @@ function renderPageImage(node) {
   const box = document.createElement("figure");
   box.className = "page-image";
   const img = document.createElement("img");
-  img.src = node.image;
-  img.alt = node.title;
+  img.src = imageForPageNode(node);
+  img.alt = displayTitle(node);
   const cap = document.createElement("figcaption");
-  cap.textContent = `${node.title} 原书截图，可用于核对苯环、结构式、表格和复杂图示。`;
+  cap.textContent = `${displayTitle(node)} 原书截图，可用于核对苯环、结构式、表格和复杂图示。`;
   img.addEventListener("error", () => {
+    if (tryFallbackImage(img, node.image)) return;
     box.classList.add("missing");
-    cap.textContent = `${node.title} 的截图资源未随网站发布，请确认 build/page_images 目录已上传到 GitHub。`;
+    cap.textContent = `${displayTitle(node)} 的截图资源未随网站发布，请确认 build/page_images 目录已上传到 GitHub。`;
   });
   box.append(img, cap);
   return box;
+}
+
+function imageForPageNode(node) {
+  if (node && node.page) return imageForPageNumber(node.page);
+  return node?.image || "";
+}
+
+function imageForPageNumber(page) {
+  return `build/page_images_hd/page_${String(page).padStart(3, "0")}.jpg`;
+}
+
+function fallbackImageForPageNumber(page) {
+  return `build/page_images/page_${String(page).padStart(3, "0")}.jpg`;
+}
+
+function tryFallbackImage(img, fallback) {
+  if (!fallback || img.dataset.fallbackUsed === "1" || img.src.endsWith(fallback)) return false;
+  img.dataset.fallbackUsed = "1";
+  img.src = fallback;
+  return true;
 }
 
 function openLeafNode(id, options = {}) {
