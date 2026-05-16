@@ -1236,7 +1236,7 @@ function renderDetail(id, forceOpen = false) {
   const body = document.createElement("div");
   body.className = "detail-body";
   const h = document.createElement("h2");
-  h.textContent = node.title;
+  h.textContent = displayTitle(node);
   body.appendChild(h);
 
   const meta = document.createElement("div");
@@ -1257,7 +1257,7 @@ function renderDetail(id, forceOpen = false) {
   body.appendChild(centerTip);
 
   const text = node.text || "该节点主要作为关系入口，点击周围节点继续切换中心或查看例题、原页。";
-  body.appendChild(renderTextBlock(text));
+  body.appendChild(renderTextBlock(text, { flow: true, collapsible: true }));
 
   if (node.kind === "page" && node.image) body.appendChild(renderPageImage(node));
   const examples = relatedExamples(node.id);
@@ -1356,24 +1356,76 @@ function renderPageLinks(pages) {
   return wrap;
 }
 
-function renderTextBlock(text) {
+function renderTextBlock(text, options = {}) {
+  const { flow = false, collapsible = false } = options;
   const wrap = document.createElement("div");
   wrap.className = "text-block";
-  cleanDisplayText(text)
+  const lines = displayTextLines(text, { flow });
+  const visibleCount = collapsible && lines.length > 28 ? 20 : lines.length;
+  lines.slice(0, visibleCount).forEach(line => appendTextLine(wrap, line));
+  if (visibleCount < lines.length) {
+    const details = document.createElement("details");
+    details.className = "text-more";
+    const summary = document.createElement("summary");
+    summary.textContent = `▸ 展开剩余 ${lines.length - visibleCount} 条内容`;
+    details.appendChild(summary);
+    details.addEventListener("toggle", () => {
+      summary.textContent = details.open ? "▾ 收起补充内容" : `▸ 展开剩余 ${lines.length - visibleCount} 条内容`;
+    });
+    const more = document.createElement("div");
+    more.className = "text-more-body";
+    lines.slice(visibleCount).forEach(line => appendTextLine(more, line));
+    details.appendChild(more);
+    wrap.appendChild(details);
+  }
+  return wrap;
+}
+
+function appendTextLine(wrap, line) {
+  const div = document.createElement("div");
+  div.className = "text-line";
+  if (/^注[:：]/.test(line)) div.classList.add("note-line");
+  if (/^【?例\d*/.test(line) || /^解析[:：]/.test(line) || /^答案[:：]/.test(line) || /^【反思】/.test(line)) {
+    div.classList.add("example-line");
+  }
+  div.innerHTML = formatChemistry(line);
+  wrap.appendChild(div);
+}
+
+function displayTextLines(text, options = {}) {
+  const { flow = false } = options;
+  const raw = cleanDisplayText(text)
     .split("\n")
     .map(line => line.trim())
-    .filter(Boolean)
-    .forEach(line => {
-      const div = document.createElement("div");
-      div.className = "text-line";
-      if (/^注[:：]/.test(line)) div.classList.add("note-line");
-      if (/^【?例\d*/.test(line) || /^解析[:：]/.test(line) || /^答案[:：]/.test(line) || /^【反思】/.test(line)) {
-        div.classList.add("example-line");
-      }
-      div.innerHTML = formatChemistry(line);
-      wrap.appendChild(div);
-    });
-  return wrap;
+    .filter(Boolean);
+  if (!flow) return raw;
+  const result = [];
+  for (const line of raw) {
+    if (!result.length || lineBreakShouldStay(line, result[result.length - 1])) {
+      result.push(line);
+      continue;
+    }
+    const previous = result[result.length - 1];
+    const joiner = shortConceptLine(line) || shortConceptLine(previous) ? "、" : "";
+    result[result.length - 1] = `${previous}${joiner}${line}`;
+  }
+  return result;
+}
+
+function lineBreakShouldStay(line, previous = "") {
+  if (/^【?例\d*/.test(line) || /^解析[:：]/.test(line) || /^答案[:：]/.test(line) || /^【反思】/.test(line)) return true;
+  if (/^注[:：]/.test(line)) return true;
+  if (/^(第\d+章|模块\d+|第\d+节|类型|内容提要)/.test(line)) return true;
+  if (/^[一二三四五六七八九十]+[、.．]/.test(line)) return true;
+  if (/^\(?\d+\)?[.．、]/.test(line)) return true;
+  if (/^[A-D][.．]/.test(line)) return true;
+  if (/^[a-z][.．]/i.test(line)) return true;
+  if (/[。；：:）)]$/.test(previous) && !shortConceptLine(line)) return true;
+  return false;
+}
+
+function shortConceptLine(line) {
+  return normalizedLine(line).length > 0 && normalizedLine(line).length <= 5 && !/[。；，,：:()（）]/.test(line);
 }
 
 function renderPageImage(node) {
