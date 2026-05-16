@@ -931,6 +931,7 @@ function renderEdge(plan, labelBoxes, pathObstacles, muted = false) {
     focusedEdgeKey = plan.key;
     expandedNodeId = null;
     selectedId = edge.target === centerId ? edge.source : edge.target;
+    focusViewOnBounds(edgeFocusBounds(plan));
     render();
   });
   pathGroup.appendChild(hitPath);
