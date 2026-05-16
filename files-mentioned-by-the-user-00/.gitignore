@@ -1,9 +1,16 @@
 chemistry_method.pdf
 *.pdf
 publish/
+node_modules/
+package-lock.json
+build/pdf_render.html
+build/pdf_render_test.html
+build/page_005_hd_test.jpg
 
 # Local QA screenshots and browser profiles are not required by GitHub Pages.
 build/edge-cdp-profile-*/
+build/edge-pdf-render-*/
+build/pdf-render-test-*/
 build/quality_*.json
 build/quality_*.png
 build/network_check*.png
