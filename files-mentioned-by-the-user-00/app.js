@@ -46,8 +46,11 @@ for (const edge of edges) {
 
 for (const node of nodes.values()) {
   if (node.kind === "page" && node.page) pageNodeByPage.set(node.page, node.id);
-  if (node.centerable && CENTERABLE.has(node.kind) && node.path && node.path.length) {
-    pathNodeByKey.set(pathKey(node.path), node.id);
+}
+
+for (const node of nodes.values()) {
+  if (node.centerable && CENTERABLE.has(node.kind)) {
+    pathNodeByKey.set(pathKey(nodePath(node)), node.id);
   }
 }
 
