@@ -314,7 +314,7 @@ button {
 
 .detail-panel {
   right: 12px;
-  width: 306px;
+  width: min(390px, calc(100% - 250px));
 }
 
 .panel-head {
