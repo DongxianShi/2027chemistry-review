@@ -845,6 +845,26 @@ button {
   gap: 4px;
 }
 
+.text-more {
+  margin-top: 4px;
+}
+
+.text-more summary {
+  min-height: 28px;
+  border: 1px solid rgba(132, 223, 243, 0.28);
+  border-radius: 8px;
+  padding: 4px 8px;
+  background: rgba(18, 70, 86, 0.52);
+  color: #dff7fb;
+  cursor: pointer;
+}
+
+.text-more-body {
+  display: grid;
+  gap: 4px;
+  margin-top: 6px;
+}
+
 .text-line {
   overflow-wrap: break-word;
   word-break: normal;
