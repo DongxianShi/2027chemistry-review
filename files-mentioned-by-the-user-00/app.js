@@ -1728,8 +1728,8 @@ function focusNode(id, pushHistory) {
 function renderBreadcrumb() {
   const node = nodes.get(centerId);
   breadcrumb.innerHTML = "";
-  const path = node.path && node.path.length ? node.path : [node.title];
-  const visiblePath = path.slice(-6);
+  const path = nodePath(node);
+  const visiblePath = path;
   visiblePath.forEach((part, idx) => {
     const fullIndex = path.length - visiblePath.length + idx;
     const prefix = path.slice(0, fullIndex + 1);
@@ -1760,6 +1760,26 @@ function pathKey(parts) {
   return parts.join("\u001f");
 }
 
+function nodePath(node) {
+  if (!node) return [];
+  if (node.path && node.path.length > 1) return node.path.map(part => cleanDisplayTitle(part));
+  if (node.parent && nodes.has(node.parent)) return [...nodePath(nodes.get(node.parent)), displayTitle(node)];
+  if (node.path && node.path.length) return node.path.map(part => cleanDisplayTitle(part));
+  return [displayTitle(node)];
+}
+
+function displayTitle(node) {
+  if (!node) return "";
+  const cleanedTitle = cleanDisplayTitle(node.title || "");
+  if (!/[.…]{2,}/.test(node.title || "")) return cleanedTitle;
+  const firstLine = displayTextLines(node.text || "", { flow: false }).find(line => normalizedLine(line).length >= 4);
+  return cleanDisplayTitle(firstLine || cleanedTitle);
+}
+
+function cleanDisplayTitle(title) {
+  return cleanDisplayText(title).replace(/[.…]{2,}/g, "");
+}
+
 function renderSearch() {
   searchResults.innerHTML = "";
   if (!searchQuery) {
@@ -1784,7 +1804,7 @@ function renderSearch() {
 
     const title = document.createElement("span");
     title.className = "search-result-title";
-    title.innerHTML = highlightTermHTML(node.title);
+    title.innerHTML = highlightTermHTML(displayTitle(node));
 
     const meta = document.createElement("span");
     meta.className = "search-result-meta";
@@ -1834,9 +1854,9 @@ function searchHit(node) {
   const query = searchQuery.trim();
   if (!query) return null;
   const fields = [
-    { label: "标题", value: node.title || "" },
+    { label: "标题", value: displayTitle(node) || "" },
     { label: "正文", value: cleanDisplayText(node.text || "") },
-    { label: "路径", value: (node.path || []).join(" > ") },
+    { label: "路径", value: nodePath(node).join(" > ") },
     { label: "标签", value: (node.tags || []).join("、") }
   ];
   const q = query.toLowerCase();
@@ -1855,8 +1875,8 @@ function searchSnippet(value, index, length) {
   const radiusAfter = 38;
   const start = Math.max(0, index - radiusBefore);
   const end = Math.min(value.length, index + length + radiusAfter);
-  const prefix = start > 0 ? "…" : "";
-  const suffix = end < value.length ? "…" : "";
+  const prefix = start > 0 ? "前文 " : "";
+  const suffix = end < value.length ? " 后文可展开查看" : "";
   return `${prefix}${value.slice(start, end)}${suffix}`;
 }
 
