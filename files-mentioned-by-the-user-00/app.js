@@ -1681,6 +1681,8 @@ function renderBreadcrumb() {
     const targetId = pathNodeByKey.get(pathKey(prefix));
     const item = document.createElement(targetId ? "button" : "span");
     item.className = "breadcrumb-item";
+    if (targetId) item.classList.add("breadcrumb-clickable");
+    if (targetId === centerId) item.classList.add("breadcrumb-current");
     item.textContent = part;
     if (targetId) {
       item.type = "button";
