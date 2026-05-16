@@ -239,10 +239,10 @@ button {
 
 .breadcrumb button {
   min-height: 28px;
-  border: 1px solid transparent;
+  border: 1px solid rgba(139, 231, 255, 0.24);
   border-radius: 7px;
   padding: 3px 6px;
-  background: transparent;
+  background: rgba(22, 75, 91, 0.24);
   color: inherit;
 }
 
@@ -250,6 +250,15 @@ button {
   border-color: rgba(139, 231, 255, 0.48);
   background: rgba(34, 99, 119, 0.42);
   color: #f1fdff;
+}
+
+.breadcrumb-clickable {
+  cursor: pointer;
+}
+
+.breadcrumb-current {
+  border-color: rgba(255, 232, 158, 0.42) !important;
+  background: rgba(255, 232, 158, 0.1) !important;
 }
 
 .path-toggle {
