@@ -1179,7 +1179,7 @@ function renderNode(id, pos, role = "related", muted = false) {
 
   const title = document.createElement("span");
   title.className = "node-title";
-  title.innerHTML = searchQuery ? highlightTermHTML(node.title) : escapeHtml(node.title);
+  title.innerHTML = searchQuery ? highlightTermHTML(displayTitle(node)) : escapeHtml(displayTitle(node));
   card.appendChild(title);
 
   const kind = document.createElement("span");
@@ -1481,7 +1481,7 @@ function renderInlineExpansion(id, layout) {
   head.className = "inline-expansion-head";
   const title = document.createElement("div");
   title.className = "inline-expansion-title";
-  title.textContent = node.title;
+  title.textContent = displayTitle(node);
   const close = document.createElement("button");
   close.type = "button";
   close.title = "收起展开内容";
