@@ -1980,6 +1980,7 @@ function highlightTermHTML(value) {
 
 function cleanDisplayText(text) {
   return String(text || "")
+    .replace(/[.…]{2,}/g, "")
     .replaceAll("NaCI", "NaCl")
     .replaceAll("HCI", "HCl")
     .replaceAll("KCI", "KCl")
