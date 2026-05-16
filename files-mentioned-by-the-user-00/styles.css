@@ -231,10 +231,9 @@ button {
 }
 
 .breadcrumb-item {
-  max-width: min(34vw, 320px);
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+  max-width: min(54vw, 680px);
+  overflow-wrap: break-word;
+  white-space: normal;
 }
 
 .breadcrumb button {
@@ -780,14 +779,11 @@ button {
 
 .node-title {
   min-width: 0;
-  overflow-wrap: anywhere;
+  overflow-wrap: break-word;
   font-weight: 700;
   line-height: 1.18;
   font-size: 12px;
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 2;
-  overflow: hidden;
+  display: block;
   position: relative;
   z-index: 1;
 }
@@ -850,7 +846,8 @@ button {
 }
 
 .text-line {
-  overflow-wrap: anywhere;
+  overflow-wrap: break-word;
+  word-break: normal;
 }
 
 .note-line {
@@ -904,9 +901,8 @@ sup {
   padding: 4px 8px;
   background: rgba(18, 70, 86, 0.72);
   color: var(--text);
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+  white-space: normal;
+  overflow-wrap: break-word;
 }
 
 .resource-link-list button:hover {
