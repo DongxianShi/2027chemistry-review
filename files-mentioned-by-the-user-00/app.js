@@ -201,7 +201,7 @@ function render() {
     .filter(Boolean)
     .map(box => ({ x: box.x - 18, y: box.y - 18, w: box.w + 36, h: box.h + 36 }));
   labelBoxes.push(...panelBoxes());
-  const edgePlans = layout.edges.map((edge, index) => edgePlan(edge, layout.positions, index));
+  const edgePlans = buildEdgePlans(layout.edges, layout.positions);
   const mutedEdgePlans = edgePlans.filter(plan => edgeMutedForState(layout, plan));
   const activeEdgePlans = edgePlans.filter(plan => !edgeMutedForState(layout, plan));
   const pathObstacles = buildPathObstacles(edgePlans);
@@ -762,7 +762,15 @@ function scaledSize(w, h, scale) {
   return { w: Math.round(w * scale), h: Math.round(h * scale) };
 }
 
-function edgePlan(edge, positions, index) {
+function buildEdgePlans(edgeList, positions) {
+  const plans = [];
+  edgeList.forEach((edge, index) => {
+    plans.push(edgePlan(edge, positions, index, plans));
+  });
+  return plans;
+}
+
+function edgePlan(edge, positions, index, priorPlans = []) {
   const a = positions.get(edge.source);
   const b = positions.get(edge.target);
   const ac = boxCenter(a);
@@ -808,7 +816,8 @@ function edgePlan(edge, positions, index) {
     directLane,
     directCurve,
     indirectCurve,
-    lane
+    lane,
+    priorPlans
   });
   const labelT = direct
     ? (edge.source === centerId ? 0.68 : edge.target === centerId ? 0.32 : 0.5)
@@ -822,7 +831,8 @@ function edgePlan(edge, positions, index) {
     end,
     direct,
     labelT,
-    labelText: relationLabel(edge.relation)
+    labelText: relationLabel(edge.relation),
+    samples: quadraticSamples(start, control, end, 30)
   };
 }
 
@@ -842,7 +852,8 @@ function chooseEdgeControl(context) {
     directLane,
     directCurve,
     indirectCurve,
-    lane
+    lane,
+    priorPlans
   } = context;
   const candidates = [];
   const push = (x, y, bias) => candidates.push({ x, y, bias });
@@ -877,7 +888,7 @@ function chooseEdgeControl(context) {
   let best = candidates[0];
   let bestScore = Infinity;
   candidates.forEach(candidate => {
-    const score = edgeControlScore(edge, positions, start, candidate, end) + candidate.bias;
+    const score = edgeControlScore(edge, positions, start, candidate, end, priorPlans) + candidate.bias;
     if (score < bestScore) {
       best = candidate;
       bestScore = score;
@@ -886,7 +897,7 @@ function chooseEdgeControl(context) {
   return { x: best.x, y: best.y };
 }
 
-function edgeControlScore(edge, positions, start, control, end) {
+function edgeControlScore(edge, positions, start, control, end, priorPlans = []) {
   let score = 0;
   for (let i = 2; i < 38; i += 1) {
     const point = quadraticPoint(start, control, end, i / 38);
@@ -904,10 +915,29 @@ function edgeControlScore(edge, positions, start, control, end) {
         score += 2600 + (1 - Math.min(1, normalized)) * 1200;
       }
     });
+    priorPlans.forEach(prior => {
+      if (prior.edge.source === edge.source && prior.edge.target === edge.target) return;
+      const sharedEndpoint = [edge.source, edge.target].some(id => id === prior.edge.source || id === prior.edge.target);
+      prior.samples.forEach(priorPoint => {
+        const distance = Math.hypot(point.x - priorPoint.x, point.y - priorPoint.y);
+        const clearance = sharedEndpoint ? 24 : 34;
+        if (distance >= clearance) return;
+        score += (clearance - distance) * (sharedEndpoint ? 18 : 26);
+        if (distance < (sharedEndpoint ? 12 : 18)) score += sharedEndpoint ? 420 : 900;
+      });
+    });
   }
   const mid = quadraticPoint(start, control, end, 0.5);
   score += Math.hypot(mid.x - control.x, mid.y - control.y) * 0.001;
   return score;
+}
+
+function quadraticSamples(start, control, end, count) {
+  const points = [];
+  for (let i = 3; i <= count - 3; i += 2) {
+    points.push(quadraticPoint(start, control, end, i / count));
+  }
+  return points;
 }
 
 function buildPathObstacles(plans) {
