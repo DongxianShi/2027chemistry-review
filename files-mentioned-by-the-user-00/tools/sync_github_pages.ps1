@@ -34,7 +34,11 @@ function Copy-SiteFiles {
   Copy-Item -LiteralPath (Join-Path $SourceDir.Path ".nojekyll") -Destination (Join-Path $RepoRoot.Path ".nojekyll") -Force
 
   Copy-Item -LiteralPath (Join-Path $SourceDir.Path "tools\sync_github_pages.ps1") -Destination (Join-Path $TargetDir "tools\sync_github_pages.ps1") -Force
+  Copy-Item -LiteralPath (Join-Path $SourceDir.Path "tools\render_hd_pages.mjs") -Destination (Join-Path $TargetDir "tools\render_hd_pages.mjs") -Force
   Copy-Item -LiteralPath (Join-Path $SourceDir.Path "build\page_images") -Destination (Join-Path $TargetDir "build") -Recurse -Force
+  if (Test-Path (Join-Path $SourceDir.Path "build\page_images_hd")) {
+    Copy-Item -LiteralPath (Join-Path $SourceDir.Path "build\page_images_hd") -Destination (Join-Path $TargetDir "build") -Recurse -Force
+  }
 
   $pdf = Join-Path $TargetDir "chemistry_method.pdf"
   if (Test-Path $pdf) {
@@ -69,12 +73,16 @@ function Get-SourceSignature {
     ".gitignore",
     ".nojekyll",
     "DEPLOYMENT.md",
-    "tools\sync_github_pages.ps1"
+    "tools\sync_github_pages.ps1",
+    "tools\render_hd_pages.mjs"
   )
   $items = foreach ($path in $paths) {
     Get-Item -LiteralPath (Join-Path $SourceDir.Path $path)
   }
   $items += Get-ChildItem -LiteralPath (Join-Path $SourceDir.Path "build\page_images") -File -Recurse
+  if (Test-Path (Join-Path $SourceDir.Path "build\page_images_hd")) {
+    $items += Get-ChildItem -LiteralPath (Join-Path $SourceDir.Path "build\page_images_hd") -File -Recurse
+  }
   ($items | Sort-Object FullName | ForEach-Object { "$($_.FullName)|$($_.Length)|$($_.LastWriteTimeUtc.Ticks)" }) -join "`n"
 }
 
