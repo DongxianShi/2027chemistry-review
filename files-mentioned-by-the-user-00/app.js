@@ -552,12 +552,12 @@ function nodeRole(center, id, directEdges) {
 }
 
 function layoutSpread(count) {
-  if (count > 38) return 3.05;
-  if (count > 30) return 2.68;
-  if (count > 22) return 2.34;
-  if (count > 14) return 1.98;
-  if (count > 8) return 1.58;
-  return 1.42;
+  if (count > 38) return 3.85;
+  if (count > 30) return 3.35;
+  if (count > 22) return 2.9;
+  if (count > 14) return 2.42;
+  if (count > 8) return 1.95;
+  return 1.62;
 }
 
 function filteredEdges(edgeList) {
@@ -665,7 +665,7 @@ function neighborRank(center, edge, node) {
 }
 
 function splitRings(ids) {
-  if (ids.length <= 12) return [ids];
+  if (ids.length <= 30) return [ids];
   const innerCount = ids.length <= 24 ? Math.ceil(ids.length * 0.46) : Math.ceil(ids.length * 0.38);
   const inner = [];
   const outer = [];
@@ -810,7 +810,9 @@ function edgePlan(edge, positions, index) {
     indirectCurve,
     lane
   });
-  const labelT = 0.5;
+  const labelT = direct
+    ? (edge.source === centerId ? 0.68 : edge.target === centerId ? 0.32 : 0.5)
+    : 0.5;
   return {
     edge,
     id: `edge_path_${index}`,
@@ -846,12 +848,12 @@ function chooseEdgeControl(context) {
   const push = (x, y, bias) => candidates.push({ x, y, bias });
 
   if (direct) {
-    const semantic = relationGroup(edge.relation) === "鐩稿叧涓荤嚎";
+    const semantic = relationGroup(edge.relation) === "相关主线";
     const outwardSign = normalX * outwardX + normalY * outwardY >= 0 ? 1 : -1;
     const signs = semantic
       ? [outwardSign, -outwardSign]
       : (directLane >= 0 ? [1, -1] : [-1, 1]);
-    const multipliers = [1, 1.45, 1.9, 2.45, 3.05];
+    const multipliers = [1, 1.45, 1.9, 2.45, 3.05, 3.75, 4.55];
     signs.forEach(sign => {
       multipliers.forEach((multiplier, order) => {
         const offset = sign * directCurve * multiplier;
@@ -886,11 +888,11 @@ function chooseEdgeControl(context) {
 
 function edgeControlScore(edge, positions, start, control, end) {
   let score = 0;
-  for (let i = 2; i < 24; i += 1) {
-    const point = quadraticPoint(start, control, end, i / 24);
+  for (let i = 2; i < 38; i += 1) {
+    const point = quadraticPoint(start, control, end, i / 38);
     positions.forEach((box, id) => {
       if (id === edge.source || id === edge.target) return;
-      const pad = 10;
+      const pad = 18;
       if (
         point.x >= box.x - pad &&
         point.x <= box.x + box.w + pad &&
@@ -899,7 +901,7 @@ function edgeControlScore(edge, positions, start, control, end) {
       ) {
         const center = boxCenter(box);
         const normalized = Math.hypot(point.x - center.x, point.y - center.y) / Math.max(1, Math.hypot(box.w, box.h));
-        score += 1000 + (1 - Math.min(1, normalized)) * 500;
+        score += 2600 + (1 - Math.min(1, normalized)) * 1200;
       }
     });
   }
@@ -911,9 +913,9 @@ function edgeControlScore(edge, positions, start, control, end) {
 function buildPathObstacles(plans) {
   const obstacles = [];
   plans.forEach(plan => {
-    for (let i = 1; i < 28; i += 1) {
-      const point = quadraticPoint(plan.start, plan.control, plan.end, i / 28);
-      obstacles.push({ x: point.x - 12, y: point.y - 12, w: 24, h: 24, key: plan.key });
+    for (let i = 1; i < 42; i += 1) {
+      const point = quadraticPoint(plan.start, plan.control, plan.end, i / 42);
+      obstacles.push({ x: point.x - 20, y: point.y - 20, w: 40, h: 40, key: plan.key });
     }
   });
   return obstacles;
@@ -1011,12 +1013,12 @@ function placeLabelOnPath(plan, labelBoxes, pathObstacles) {
     const labelScore = labelBoxes.reduce((sum, existing) => sum + overlapPenalty(existing, box, 26), 0);
     const lineScore = pathObstacles.reduce((sum, existing) => {
       if (existing.key === plan.key) return sum;
-      return sum + overlapPenalty(existing, box, 22) * 0.75;
+      return sum + overlapPenalty(existing, box, 34) * 1.35;
     }, 0);
     const stageScore = outsidePenalty(box, stageBox) * 36;
     const endpointScore = (Math.max(0, 0.12 - t) + Math.max(0, t - 0.88)) * 260;
     const driftScore = Math.abs(t - plan.labelT) * 18;
-    const score = labelScore * 5 + lineScore + stageScore + endpointScore + driftScore;
+    const score = labelScore * 5 + lineScore * 1.8 + stageScore + endpointScore + driftScore;
     const placed = { x: rawPoint.x, y: rawPoint.y, angle, width, height };
     if (!labelScore && !lineScore && !stageScore) {
       labelBoxes.push(box);
@@ -1075,8 +1077,28 @@ function labelAxisBox(point, width, height, angle) {
 }
 
 function labelCandidates(plan) {
-  const values = [0.5, 0.44, 0.56, 0.38, 0.62, 0.32, 0.68, 0.26, 0.74, 0.2, 0.8, 0.14, 0.86];
-  for (let value = 0.1; value <= 0.9; value += 0.025) values.push(Number(value.toFixed(3)));
+  const seed = plan.labelT;
+  const values = [
+    seed,
+    seed - 0.06,
+    seed + 0.06,
+    seed - 0.12,
+    seed + 0.12,
+    seed - 0.18,
+    seed + 0.18,
+    0.5,
+    0.42,
+    0.58,
+    0.34,
+    0.66,
+    0.26,
+    0.74,
+    0.18,
+    0.82,
+    0.1,
+    0.9
+  ].filter(value => value >= 0.08 && value <= 0.92);
+  for (let value = 0.08; value <= 0.92; value += 0.018) values.push(Number(value.toFixed(3)));
   return values.sort((a, b) => Math.abs(a - plan.labelT) - Math.abs(b - plan.labelT));
 }
 
