@@ -984,7 +984,7 @@ sup {
   color: #f5fdff;
   font-weight: 800;
   line-height: 1.25;
-  overflow-wrap: anywhere;
+  overflow-wrap: break-word;
 }
 
 .inline-expansion-head button {
