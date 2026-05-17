@@ -199,7 +199,7 @@ function render() {
   const labelBoxes = nodeIdsToDraw
     .map(id => layout.positions.get(id))
     .filter(Boolean)
-    .map(box => ({ x: box.x - 30, y: box.y - 30, w: box.w + 60, h: box.h + 60 }));
+    .map(box => ({ x: box.x - 22, y: box.y - 22, w: box.w + 44, h: box.h + 44, type: "node" }));
   labelBoxes.push(...panelBoxes());
   const edgePlans = layout.edges.map((edge, index) => edgePlan(edge, layout.positions, index));
   const mutedEdgePlans = edgePlans.filter(plan => edgeMutedForState(layout, plan));
@@ -217,6 +217,7 @@ function render() {
     labelPlacements.set(plan.key, placedLabel);
     edgeLabelBoxes.push({
       ...labelAxisBox(placedLabel, placedLabel.width, placedLabel.height, placedLabel.angle),
+      type: "label",
       key: plan.key
     });
   });
@@ -491,7 +492,8 @@ function panelBoxes() {
       x: (rect.left - canvasRect.left - view.tx - 6) / view.scale,
       y: (rect.top - canvasRect.top - view.ty - 6) / view.scale,
       w: (rect.width + 12) / view.scale,
-      h: (rect.height + 12) / view.scale
+      h: (rect.height + 12) / view.scale,
+      type: "panel"
     }));
 }
 
@@ -1072,7 +1074,14 @@ function placeLabelOnPath(plan, labelBoxes, pathObstacles) {
     const tangent = quadraticTangent(plan.start, plan.control, plan.end, t);
     const angle = readableAngle(Math.atan2(tangent.y, tangent.x) * 180 / Math.PI);
     const box = labelAxisBox(rawPoint, width, height, angle);
-    const labelScore = labelBoxes.reduce((sum, existing) => sum + overlapPenalty(existing, box, 34), 0);
+    const nodeScore = labelBoxes.reduce((sum, existing) => {
+      if (existing.type !== "node" && existing.type !== "panel") return sum;
+      return sum + overlapPenalty(existing, box, 16);
+    }, 0);
+    const labelScore = labelBoxes.reduce((sum, existing) => {
+      if (existing.type === "node" || existing.type === "panel") return sum;
+      return sum + overlapPenalty(existing, box, 24);
+    }, 0);
     const lineScore = pathObstacles.reduce((sum, existing) => {
       if (existing.key === plan.key) return sum;
       return sum + overlapPenalty(existing, box, 34) * 1.35;
@@ -1080,10 +1089,10 @@ function placeLabelOnPath(plan, labelBoxes, pathObstacles) {
     const stageScore = outsidePenalty(box, stageBox) * 36;
     const endpointScore = (Math.max(0, 0.12 - t) + Math.max(0, t - 0.88)) * 260;
     const driftScore = Math.abs(t - plan.labelT) * 18;
-    const score = labelScore * 5 + lineScore * 1.8 + stageScore + endpointScore + driftScore;
+    const score = nodeScore * 80 + labelScore * 8 + lineScore * 1.8 + stageScore + endpointScore + driftScore;
     const placed = { x: rawPoint.x, y: rawPoint.y, angle, width, height, t };
-    if (!labelScore && !lineScore && !stageScore) {
-      labelBoxes.push(box);
+    if (!nodeScore && !labelScore && !lineScore && !stageScore) {
+      labelBoxes.push({ ...box, type: "label" });
       return placed;
     }
     if (!best || score < best.score) {
@@ -1091,12 +1100,12 @@ function placeLabelOnPath(plan, labelBoxes, pathObstacles) {
     }
   }
   if (best) {
-    labelBoxes.push(best.box);
+    labelBoxes.push({ ...best.box, type: "label" });
     return best.placed;
   }
   const midpoint = quadraticPoint(plan.start, plan.control, plan.end, plan.labelT);
   const fallback = { x: midpoint.x, y: midpoint.y, angle: 0, width, height, t: plan.labelT };
-  labelBoxes.push(labelAxisBox(midpoint, width, height, 0));
+  labelBoxes.push({ ...labelAxisBox(midpoint, width, height, 0), type: "label" });
   return fallback;
 }
 
