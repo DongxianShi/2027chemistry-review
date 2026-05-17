@@ -201,7 +201,7 @@ function render() {
     .filter(Boolean)
     .map(box => ({ x: box.x - 18, y: box.y - 18, w: box.w + 36, h: box.h + 36 }));
   labelBoxes.push(...panelBoxes());
-  const edgePlans = buildEdgePlans(layout.edges, layout.positions);
+  const edgePlans = layout.edges.map((edge, index) => edgePlan(edge, layout.positions, index));
   const mutedEdgePlans = edgePlans.filter(plan => edgeMutedForState(layout, plan));
   const activeEdgePlans = edgePlans.filter(plan => !edgeMutedForState(layout, plan));
   const pathObstacles = buildPathObstacles(edgePlans);
