@@ -199,7 +199,7 @@ function render() {
   const labelBoxes = nodeIdsToDraw
     .map(id => layout.positions.get(id))
     .filter(Boolean)
-    .map(box => ({ x: box.x - 18, y: box.y - 18, w: box.w + 36, h: box.h + 36 }));
+    .map(box => ({ x: box.x - 30, y: box.y - 30, w: box.w + 60, h: box.h + 60 }));
   labelBoxes.push(...panelBoxes());
   const edgePlans = layout.edges.map((edge, index) => edgePlan(edge, layout.positions, index));
   const mutedEdgePlans = edgePlans.filter(plan => edgeMutedForState(layout, plan));
@@ -1072,7 +1072,7 @@ function placeLabelOnPath(plan, labelBoxes, pathObstacles) {
     const tangent = quadraticTangent(plan.start, plan.control, plan.end, t);
     const angle = readableAngle(Math.atan2(tangent.y, tangent.x) * 180 / Math.PI);
     const box = labelAxisBox(rawPoint, width, height, angle);
-    const labelScore = labelBoxes.reduce((sum, existing) => sum + overlapPenalty(existing, box, 26), 0);
+    const labelScore = labelBoxes.reduce((sum, existing) => sum + overlapPenalty(existing, box, 34), 0);
     const lineScore = pathObstacles.reduce((sum, existing) => {
       if (existing.key === plan.key) return sum;
       return sum + overlapPenalty(existing, box, 34) * 1.35;
