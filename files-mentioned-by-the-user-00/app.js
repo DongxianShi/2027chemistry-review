@@ -1729,8 +1729,8 @@ function renderExpansionConnector(anchor, pos, size) {
 
 function expansionSize(node, layout) {
   const narrow = layout.width < 1200;
-  if (node.kind === "page") return { w: narrow ? 400 : 520, h: narrow ? 540 : 650 };
-  return { w: narrow ? 500 : 650, h: narrow ? 360 : 430 };
+  if (node.kind === "page") return { w: narrow ? 480 : 620, h: narrow ? 540 : 650 };
+  return { w: narrow ? 620 : 760, h: narrow ? 390 : 460 };
 }
 
 function expansionPosition(anchor, size, layout) {
