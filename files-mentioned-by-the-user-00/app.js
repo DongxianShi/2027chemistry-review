@@ -361,15 +361,15 @@ function renderArrowMarkers() {
 function createArrowMarker(id, fill) {
   const marker = document.createElementNS("http://www.w3.org/2000/svg", "marker");
   marker.setAttribute("id", id);
-  marker.setAttribute("viewBox", "0 0 10 10");
-  marker.setAttribute("refX", "9");
-  marker.setAttribute("refY", "5");
-  marker.setAttribute("markerWidth", "8");
-  marker.setAttribute("markerHeight", "8");
+  marker.setAttribute("viewBox", "0 0 12 12");
+  marker.setAttribute("refX", "10.8");
+  marker.setAttribute("refY", "6");
+  marker.setAttribute("markerWidth", "11");
+  marker.setAttribute("markerHeight", "11");
   marker.setAttribute("markerUnits", "userSpaceOnUse");
   marker.setAttribute("orient", "auto");
   const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
-  path.setAttribute("d", "M 0 0 L 10 5 L 0 10 z");
+  path.setAttribute("d", "M 0 0 L 12 6 L 0 12 z");
   path.setAttribute("fill", fill);
   marker.appendChild(path);
   return marker;
