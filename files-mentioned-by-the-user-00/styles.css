@@ -1157,6 +1157,13 @@ sup {
   border-radius: 8px;
   background: #fff;
   overscroll-behavior: contain;
+  cursor: grab;
+  touch-action: none;
+}
+
+.graph-canvas.dragging .content-crop-frame,
+.content-crop-frame:active {
+  cursor: grabbing;
 }
 
 .content-crop-frame img {
