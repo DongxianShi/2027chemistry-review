@@ -209,10 +209,21 @@ function render() {
   pathLayer.setAttribute("class", "edge-path-layer");
   const labelLayer = document.createElementNS("http://www.w3.org/2000/svg", "g");
   labelLayer.setAttribute("class", "edge-label-layer");
-  [...mutedEdgePlans, ...activeEdgePlans].forEach((plan, index) => {
+  const orderedEdgePlans = [...mutedEdgePlans, ...activeEdgePlans];
+  const labelPlacements = new Map();
+  const edgeLabelBoxes = [];
+  orderedEdgePlans.forEach(plan => {
+    const placedLabel = placeLabelOnPath(plan, labelBoxes, pathObstacles);
+    labelPlacements.set(plan.key, placedLabel);
+    edgeLabelBoxes.push({
+      ...labelAxisBox(placedLabel, placedLabel.width, placedLabel.height, placedLabel.angle),
+      key: plan.key
+    });
+  });
+  orderedEdgePlans.forEach((plan, index) => {
     const muted = edgeMutedForState(layout, plan);
     const focused = focusedEdgeKey === plan.key;
-    const rendered = renderEdge(plan, labelBoxes, pathObstacles, muted);
+    const rendered = renderEdge(plan, labelPlacements.get(plan.key), edgeLabelBoxes, muted);
     if (focused) {
       rendered.pathGroup.classList.add("edge-focused-group");
       rendered.labelGroup.classList.add("edge-label-focused");
@@ -989,7 +1000,7 @@ function focusViewOnBounds(bounds) {
   view.needsFit = false;
 }
 
-function renderEdge(plan, labelBoxes, pathObstacles, muted = false) {
+function renderEdge(plan, placedLabel, edgeLabelBoxes, muted = false) {
   const { edge, start, control, end, direct, labelText } = plan;
   const pathGroup = document.createElementNS("http://www.w3.org/2000/svg", "g");
   pathGroup.dataset.source = edge.source;
@@ -1015,17 +1026,29 @@ function renderEdge(plan, labelBoxes, pathObstacles, muted = false) {
   });
   pathGroup.appendChild(hitPath);
 
-  const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
-  path.setAttribute("id", plan.id);
-  path.setAttribute("d", `M ${start.x} ${start.y} Q ${control.x} ${control.y}, ${end.x} ${end.y}`);
-  path.setAttribute("class", `edge edge-${edgeClass(edge.relation)} ${direct ? "edge-direct" : "edge-indirect"} ${muted ? "edge-muted" : "edge-active"}`);
-  path.setAttribute("marker-end", muted ? "url(#arrow-muted)" : "url(#arrow-main)");
-  path.dataset.source = edge.source;
-  path.dataset.target = edge.target;
-  path.dataset.relation = edge.relation;
-  pathGroup.appendChild(path);
+  const visibleSegments = pathSegmentsAvoidingLabels(plan, edgeLabelBoxes);
+  visibleSegments.forEach((segment, index) => {
+    const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
+    path.setAttribute("d", segment.d);
+    path.setAttribute("class", `edge-visible edge-${edgeClass(edge.relation)} ${direct ? "edge-direct" : "edge-indirect"} ${muted ? "edge-muted" : "edge-active"}`);
+    if (segment.endsAtEnd && index === visibleSegments.length - 1) {
+      path.setAttribute("marker-end", muted ? "url(#arrow-muted)" : "url(#arrow-main)");
+    }
+    path.dataset.source = edge.source;
+    path.dataset.target = edge.target;
+    path.dataset.relation = edge.relation;
+    pathGroup.appendChild(path);
+  });
 
-  const placedLabel = placeLabelOnPath(plan, labelBoxes, pathObstacles);
+  const carrier = document.createElementNS("http://www.w3.org/2000/svg", "path");
+  carrier.setAttribute("id", plan.id);
+  carrier.setAttribute("d", labelCarrierPath(plan, placedLabel));
+  carrier.setAttribute("class", `edge edge-carrier edge-${edgeClass(edge.relation)} ${direct ? "edge-direct" : "edge-indirect"} ${muted ? "edge-muted" : "edge-active"}`);
+  carrier.dataset.source = edge.source;
+  carrier.dataset.target = edge.target;
+  carrier.dataset.relation = edge.relation;
+  pathGroup.appendChild(carrier);
+
   const labelGroup = renderEdgeLabel(labelText, placedLabel, muted);
   labelGroup.dataset.source = edge.source;
   labelGroup.dataset.target = edge.target;
@@ -1053,7 +1076,7 @@ function placeLabelOnPath(plan, labelBoxes, pathObstacles) {
     const endpointScore = (Math.max(0, 0.12 - t) + Math.max(0, t - 0.88)) * 260;
     const driftScore = Math.abs(t - plan.labelT) * 18;
     const score = labelScore * 5 + lineScore * 1.8 + stageScore + endpointScore + driftScore;
-    const placed = { x: rawPoint.x, y: rawPoint.y, angle, width, height };
+    const placed = { x: rawPoint.x, y: rawPoint.y, angle, width, height, t };
     if (!labelScore && !lineScore && !stageScore) {
       labelBoxes.push(box);
       return placed;
@@ -1067,9 +1090,66 @@ function placeLabelOnPath(plan, labelBoxes, pathObstacles) {
     return best.placed;
   }
   const midpoint = quadraticPoint(plan.start, plan.control, plan.end, plan.labelT);
-  const fallback = { x: midpoint.x, y: midpoint.y, angle: 0, width, height };
+  const fallback = { x: midpoint.x, y: midpoint.y, angle: 0, width, height, t: plan.labelT };
   labelBoxes.push(labelAxisBox(midpoint, width, height, 0));
   return fallback;
+}
+
+function pathSegmentsAvoidingLabels(plan, edgeLabelBoxes) {
+  const points = [];
+  const blockers = edgeLabelBoxes.filter(box => box.key !== plan.key);
+  const steps = 132;
+  for (let i = 0; i <= steps; i += 1) {
+    const t = i / steps;
+    const point = quadraticPoint(plan.start, plan.control, plan.end, t);
+    const blocked = i > 2 && i < steps - 2 && blockers.some(box => pointInBox(point, box, 9));
+    points.push({ ...point, t, blocked });
+  }
+  const segments = [];
+  let current = [];
+  points.forEach(point => {
+    if (point.blocked) {
+      pushSegment(current, segments);
+      current = [];
+    } else {
+      current.push(point);
+    }
+  });
+  pushSegment(current, segments);
+  if (!segments.length) {
+    return [{ d: quadraticPathD(plan.start, plan.control, plan.end), endsAtEnd: true }];
+  }
+  return segments.map(segment => ({
+    d: polylinePathD(segment),
+    endsAtEnd: segment[segment.length - 1].t >= 0.985
+  }));
+}
+
+function pushSegment(points, segments) {
+  if (points.length >= 2) segments.push(points);
+}
+
+function polylinePathD(points) {
+  return points.map((point, index) => `${index ? "L" : "M"} ${point.x} ${point.y}`).join(" ");
+}
+
+function quadraticPathD(start, control, end) {
+  return `M ${start.x} ${start.y} Q ${control.x} ${control.y}, ${end.x} ${end.y}`;
+}
+
+function labelCarrierPath(plan, placedLabel) {
+  const t = clamp(placedLabel.t ?? plan.labelT, 0.03, 0.97);
+  const start = quadraticPoint(plan.start, plan.control, plan.end, Math.max(0, t - 0.012));
+  const end = quadraticPoint(plan.start, plan.control, plan.end, Math.min(1, t + 0.012));
+  const control = quadraticPoint(plan.start, plan.control, plan.end, t);
+  return quadraticPathD(start, control, end);
+}
+
+function pointInBox(point, box, pad = 0) {
+  return point.x >= box.x - pad &&
+    point.x <= box.x + box.w + pad &&
+    point.y >= box.y - pad &&
+    point.y <= box.y + box.h + pad;
 }
 
 function renderEdgeLabel(text, placedLabel, muted) {
