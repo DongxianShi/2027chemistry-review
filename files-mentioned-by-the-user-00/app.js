@@ -1729,8 +1729,8 @@ function renderExpansionConnector(anchor, pos, size) {
 
 function expansionSize(node, layout) {
   const narrow = layout.width < 1200;
-  if (node.kind === "page") return { w: narrow ? 480 : 620, h: narrow ? 540 : 650 };
-  return { w: narrow ? 620 : 760, h: narrow ? 390 : 460 };
+  if (node.kind === "page") return { w: narrow ? 400 : 520, h: narrow ? 540 : 650 };
+  return { w: narrow ? 500 : 650, h: narrow ? 360 : 430 };
 }
 
 function expansionPosition(anchor, size, layout) {
@@ -1819,7 +1819,16 @@ function renderContentCropFigure(node, src, captionText, fallbackFactory) {
   img.loading = "lazy";
   img.decoding = "async";
   const cap = document.createElement("figcaption");
-  cap.textContent = captionText;
+  const zoom = document.createElement("button");
+  zoom.type = "button";
+  zoom.className = "crop-toggle";
+  zoom.textContent = "▾ 放大阅读";
+  zoom.addEventListener("click", event => {
+    event.stopPropagation();
+    const zoomed = frame.classList.toggle("is-zoomed");
+    zoom.textContent = zoomed ? "▴ 适应窗口" : "▾ 放大阅读";
+  });
+  cap.append(captionText, zoom);
   img.addEventListener("error", () => {
     if (typeof fallbackFactory === "function") {
       const fallback = fallbackFactory();
