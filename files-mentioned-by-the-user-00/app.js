@@ -393,35 +393,52 @@ function initViewportControls() {
 
   canvas.addEventListener("pointerdown", event => {
     if (event.button !== 0 || event.target.closest(".net-node, .inline-expansion, .side-panel, .detail-panel, input, button, .edge-click-target")) return;
-    view.dragging = true;
-    view.dragMoved = false;
-    view.startX = event.clientX;
-    view.startY = event.clientY;
-    view.startTx = view.tx;
-    view.startTy = view.ty;
-    canvas.classList.add("dragging");
-    canvas.setPointerCapture(event.pointerId);
+    startViewportDrag(event, canvas);
   });
 
-  canvas.addEventListener("pointermove", event => {
-    if (!view.dragging) return;
-    const dx = event.clientX - view.startX;
-    const dy = event.clientY - view.startY;
-    if (Math.hypot(dx, dy) > 3) view.dragMoved = true;
-    view.tx = view.startTx + dx;
-    view.ty = view.startTy + dy;
-    applyViewTransform();
-  });
+  canvas.addEventListener("pointermove", event => updateViewportDrag(event));
+  window.addEventListener("pointermove", event => updateViewportDrag(event));
 
   canvas.addEventListener("pointerup", event => endDrag(event));
   canvas.addEventListener("pointercancel", event => endDrag(event));
+  window.addEventListener("pointerup", event => endDrag(event));
+  window.addEventListener("pointercancel", event => endDrag(event));
+}
+
+function startViewportDrag(event, captureEl = canvas) {
+  view.dragging = true;
+  view.dragMoved = false;
+  view.captureEl = captureEl;
+  view.startX = event.clientX;
+  view.startY = event.clientY;
+  view.startTx = view.tx;
+  view.startTy = view.ty;
+  canvas.classList.add("dragging");
+  try {
+    captureEl.setPointerCapture?.(event.pointerId);
+  } catch {}
+  event.preventDefault();
+}
+
+function updateViewportDrag(event) {
+  if (!view.dragging) return;
+  const dx = event.clientX - view.startX;
+  const dy = event.clientY - view.startY;
+  if (Math.hypot(dx, dy) > 3) view.dragMoved = true;
+  view.tx = view.startTx + dx;
+  view.ty = view.startTy + dy;
+  applyViewTransform();
 }
 
 function endDrag(event) {
   if (!view.dragging) return;
   view.dragging = false;
   canvas.classList.remove("dragging");
-  if (canvas.hasPointerCapture(event.pointerId)) canvas.releasePointerCapture(event.pointerId);
+  const captureEl = view.captureEl || canvas;
+  try {
+    if (captureEl.hasPointerCapture?.(event.pointerId)) captureEl.releasePointerCapture(event.pointerId);
+  } catch {}
+  view.captureEl = null;
   if (!view.dragMoved && (focusedEdgeKey || expandedNodeId) && !event.target.closest(".net-node, .inline-expansion, .side-panel, .detail-panel, input, button, .edge-click-target")) {
     focusedEdgeKey = null;
     expandedNodeId = null;
@@ -1814,6 +1831,12 @@ function renderContentCropFigure(node, src, captionText, fallbackFactory) {
   figure.className = "inline-media inline-content-crop";
   const frame = document.createElement("div");
   frame.className = "content-crop-frame";
+  frame.title = "按住拖动可移动整个网图视野；滚轮仍可滚动或缩放页面";
+  frame.addEventListener("pointerdown", event => {
+    if (event.button !== 0 || event.target.closest("button, input, textarea, select, a")) return;
+    event.stopPropagation();
+    startViewportDrag(event, frame);
+  });
   const img = document.createElement("img");
   img.src = src;
   img.alt = `${displayTitle(node)} 截图`;
