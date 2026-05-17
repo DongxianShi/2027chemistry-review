@@ -704,10 +704,12 @@ button {
   align-items: center;
   gap: 6px;
   padding: 6px 8px;
-  border: 1px solid rgba(227, 250, 255, 0.28);
-  border-radius: 10px;
+  border: 1px solid rgba(227, 250, 255, 0.34);
+  border-radius: 8px;
   color: #10232b;
-  box-shadow: 0 0 18px rgba(111, 226, 255, 0.16);
+  box-shadow:
+    0 10px 24px rgba(0, 0, 0, 0.14),
+    0 0 0 1px rgba(255, 255, 255, 0.18) inset;
   text-align: left;
   overflow: hidden;
   cursor: pointer;
@@ -747,7 +749,10 @@ button {
 
 .net-node:hover {
   border-color: rgba(237, 253, 255, 0.68);
-  box-shadow: 0 10px 28px rgba(3, 21, 28, 0.24), 0 0 24px rgba(119, 228, 255, 0.2);
+  box-shadow:
+    0 14px 30px rgba(3, 21, 28, 0.28),
+    0 0 24px rgba(119, 228, 255, 0.22),
+    0 0 0 1px rgba(255, 255, 255, 0.28) inset;
 }
 
 .net-node:hover::before {
@@ -762,10 +767,13 @@ button {
 .net-node.center {
   --node-final-opacity: 1;
   z-index: 5;
-  background: #4b63ff !important;
+  background:
+    linear-gradient(135deg, #5064ff, #2e9bf0 54%, #23c7ad) !important;
   color: #fff;
   border-color: rgba(255, 255, 255, 0.78);
-  box-shadow: 0 0 34px rgba(122, 220, 255, 0.5);
+  box-shadow:
+    0 18px 42px rgba(0, 0, 0, 0.22),
+    0 0 34px rgba(122, 220, 255, 0.46);
   animation:
     nodeEnter 420ms var(--ease-snap) both,
     centerBreath 2600ms var(--ease-soft) infinite;
