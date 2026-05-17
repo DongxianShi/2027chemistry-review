@@ -493,7 +493,8 @@ button {
   pointer-events: none;
 }
 
-.edge {
+.edge,
+.edge-visible {
   fill: none;
   stroke: var(--edge);
   stroke-width: 2.2;
@@ -504,6 +505,10 @@ button {
     stroke 220ms var(--ease-out),
     stroke-width 220ms var(--ease-out),
     filter 220ms var(--ease-out);
+}
+
+.edge-carrier {
+  pointer-events: none;
 }
 
 .edge-click-target {
