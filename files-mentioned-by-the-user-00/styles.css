@@ -1,19 +1,23 @@
 :root {
   color-scheme: dark;
-  --bg: #071f27;
-  --panel: rgba(9, 42, 52, 0.86);
-  --panel-2: rgba(15, 61, 75, 0.82);
-  --line: rgba(144, 224, 239, 0.28);
-  --line-bright: rgba(146, 232, 255, 0.76);
-  --text: #e7fbff;
-  --muted: #99c6cf;
+  --bg: #071b20;
+  --panel: rgba(8, 34, 41, 0.88);
+  --panel-2: rgba(17, 56, 62, 0.84);
+  --glass: rgba(255, 255, 255, 0.055);
+  --line: rgba(153, 226, 235, 0.26);
+  --line-bright: rgba(158, 235, 244, 0.78);
+  --text: #edfaff;
+  --muted: #a4c8ce;
   --blue: #7ddcff;
   --blue-deep: #3aa6ff;
+  --mint: #9ff1d2;
+  --gold: #f5d47b;
+  --plum: #d8b7ff;
   --edge: rgba(128, 230, 255, 0.72);
   --edge-soft: rgba(128, 230, 255, 0.35);
   --warn: #ffe2a8;
   --rose: #ffc4d1;
-  --shadow: 0 0 30px rgba(60, 211, 255, 0.12);
+  --shadow: 0 18px 54px rgba(0, 0, 0, 0.28), 0 0 0 1px rgba(255, 255, 255, 0.035) inset;
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
   --ease-soft: cubic-bezier(0.22, 0.72, 0.18, 1);
   --ease-snap: cubic-bezier(0.2, 0.85, 0.24, 1.2);
@@ -32,9 +36,9 @@ body {
 body {
   margin: 0;
   background:
-    radial-gradient(circle at 32% 22%, rgba(74, 202, 228, 0.22), transparent 34%),
-    radial-gradient(circle at 72% 68%, rgba(51, 120, 146, 0.22), transparent 34%),
-    linear-gradient(135deg, #082631, #06151b 62%, #030a0f);
+    linear-gradient(115deg, rgba(38, 112, 122, 0.24), transparent 38%),
+    linear-gradient(245deg, rgba(152, 102, 70, 0.16), transparent 42%),
+    linear-gradient(180deg, #09262a 0%, #07181c 54%, #04090d 100%);
   color: var(--text);
   font-family: "Microsoft YaHei", "PingFang SC", "Noto Sans CJK SC", Arial, sans-serif;
   font-size: 14px;
@@ -63,9 +67,11 @@ button {
 .side-panel,
 .network-canvas {
   border: 1px solid var(--line);
-  background: var(--panel);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.05), transparent 46%),
+    var(--panel);
   box-shadow: var(--shadow);
-  backdrop-filter: blur(8px);
+  backdrop-filter: blur(12px);
   transition:
     border-color 220ms var(--ease-out),
     background 260ms var(--ease-out),
@@ -75,7 +81,9 @@ button {
 
 .detail-panel {
   border: 1px solid var(--line);
-  background: rgba(9, 42, 52, 0.98);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.065), transparent 34%),
+    rgba(8, 32, 39, 0.98);
   box-shadow: var(--shadow);
   transition:
     border-color 220ms var(--ease-out),
