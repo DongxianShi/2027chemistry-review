@@ -32,6 +32,7 @@ const view = {
   ty: 0,
   dragging: false,
   dragMoved: false,
+  captureEl: null,
   startX: 0,
   startY: 0,
   startTx: 0,
