@@ -377,7 +377,7 @@ function initViewportControls() {
     const worldX = (mouseX - view.tx) / view.scale;
     const worldY = (mouseY - view.ty) / view.scale;
     const factor = event.deltaY < 0 ? 1.1 : 0.9;
-    const nextScale = clamp(view.scale * factor, 0.58, 2.05);
+    const nextScale = clamp(view.scale * factor, 0.28, 2.05);
     view.tx = mouseX - worldX * nextScale;
     view.ty = mouseY - worldY * nextScale;
     view.scale = nextScale;
