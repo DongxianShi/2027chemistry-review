@@ -1,0 +1,97 @@
+﻿:root {
+  color-scheme: dark;
+  --bg: #071b20;
+  --panel: rgba(8, 34, 41, 0.88);
+  --panel-2: rgba(17, 56, 62, 0.84);
+  --glass: rgba(255, 255, 255, 0.055);
+  --line: rgba(153, 226, 235, 0.26);
+  --line-bright: rgba(158, 235, 244, 0.78);
+  --text: #edfaff;
+  --muted: #a4c8ce;
+  --blue: #7ddcff;
+  --blue-deep: #3aa6ff;
+  --mint: #9ff1d2;
+  --gold: #f5d47b;
+  --plum: #d8b7ff;
+  --edge: rgba(128, 230, 255, 0.72);
+  --edge-soft: rgba(128, 230, 255, 0.35);
+  --warn: #ffe2a8;
+  --rose: #ffc4d1;
+  --shadow: 0 18px 54px rgba(0, 0, 0, 0.28), 0 0 0 1px rgba(255, 255, 255, 0.035) inset;
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-soft: cubic-bezier(0.22, 0.72, 0.18, 1);
+  --ease-snap: cubic-bezier(0.2, 0.85, 0.24, 1.2);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  margin: 0;
+  background:
+    linear-gradient(115deg, rgba(38, 112, 122, 0.24), transparent 38%),
+    linear-gradient(245deg, rgba(152, 102, 70, 0.16), transparent 42%),
+    linear-gradient(180deg, #09262a 0%, #07181c 54%, #04090d 100%);
+  color: var(--text);
+  font-family: "Microsoft YaHei", "PingFang SC", "Noto Sans CJK SC", Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+:root[data-theme="light"] {
+  color-scheme: light;
+  --bg: #f7fbfd;
+  --panel: rgba(255, 255, 255, 0.92);
+  --panel-2: rgba(237, 247, 250, 0.94);
+  --glass: rgba(20, 94, 112, 0.045);
+  --line: rgba(33, 112, 132, 0.2);
+  --line-bright: rgba(26, 129, 160, 0.54);
+  --text: #17323b;
+  --muted: #5f7f88;
+  --blue: #126b93;
+  --blue-deep: #0f6db8;
+  --edge: rgba(20, 128, 158, 0.68);
+  --edge-soft: rgba(20, 128, 158, 0.28);
+  --shadow: 0 14px 36px rgba(24, 74, 91, 0.12), 0 0 0 1px rgba(255, 255, 255, 0.8) inset;
+}
+
+:root[data-theme="light"] body {
+  background:
+    linear-gradient(115deg, rgba(130, 207, 220, 0.18), transparent 38%),
+    linear-gradient(180deg, #f8fcfd 0%, #eef7fa 100%);
+}
+
+:root[data-theme="light"] .network-canvas {
+  background:
+    linear-gradient(rgba(15, 75, 90, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(15, 75, 90, 0.035) 1px, transparent 1px),
+    #f8fcfd;
+  background-size: 42px 42px;
+}
+
+:root[data-theme="light"] .detail-panel,
+:root[data-theme="light"] .side-panel,
+:root[data-theme="light"] .library-panel,
+:root[data-theme="light"] .home-panel,
+:root[data-theme="light"] .doc-panel,
+:root[data-theme="light"] .topbar,
+:root[data-theme="light"] .control-row {
+  color: var(--text);
+}
+
+button,
+input {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+

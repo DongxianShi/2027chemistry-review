@@ -16,7 +16,9 @@
         <p id="statsLine">正在加载知识节点与资源索引</p>
       </div>
       <nav class="top-nav" aria-label="站点导航">
-        <button id="graphNavButton" type="button" class="top-nav-link active">知识图谱</button>
+        <button id="homeNavButton" type="button" class="top-nav-link active">首页</button>
+        <button id="docsNavButton" type="button" class="top-nav-link">章节模式</button>
+        <button id="graphNavButton" type="button" class="top-nav-link">知识图谱</button>
         <button id="libraryNavButton" type="button" class="top-nav-link">资料库</button>
         <button id="themeToggle" type="button" class="top-nav-link">深色</button>
       </nav>
@@ -29,6 +31,32 @@
       </div>
     </header>
 
+    <section id="homePanel" class="home-panel" aria-label="学习入口">
+      <div class="home-copy">
+        <p class="site-eyebrow">从复习任务进入，而不是只从图谱进入</p>
+        <h2>选择今天的学习方式</h2>
+        <p>章节模式适合系统复习，知识图谱适合串联关系，原书页适合核对公式、图示和例题版面，题型入口适合查漏补缺。</p>
+      </div>
+      <div class="entry-grid">
+        <button type="button" class="entry-card" data-study-entry="chapters">
+          <strong>按章节复习</strong>
+          <span>左侧章节目录 · 中间正文 · 右侧关联资源</span>
+        </button>
+        <button type="button" class="entry-card" data-study-entry="graph">
+          <strong>按知识图谱串联</strong>
+          <span>查看章、模块、题型、原页之间的直接关系</span>
+        </button>
+        <button type="button" class="entry-card" data-study-entry="pages">
+          <strong>按原书页核对</strong>
+          <span>快速打开高清原页和内容提要截图</span>
+        </button>
+        <button type="button" class="entry-card" data-study-entry="types">
+          <strong>按题型/易错点学习</strong>
+          <span>聚焦常考方式、易错点和对应例题</span>
+        </button>
+      </div>
+    </section>
+
     <section id="libraryPanel" class="library-panel" aria-label="资料库概览" hidden>
       <div class="library-head">
         <div>
@@ -38,6 +66,18 @@
         <button id="closeLibraryPanel" type="button" class="panel-toggle">回到图谱</button>
       </div>
       <div id="libraryGrid" class="library-grid"></div>
+    </section>
+
+    <section id="docPanel" class="doc-panel" aria-label="章节文档模式" hidden>
+      <aside class="doc-sidebar">
+        <div class="panel-head">
+          <strong>章节目录</strong>
+          <button id="toggleDocSidebar" class="panel-toggle" type="button" title="收起章节目录">☰ 收起</button>
+        </div>
+        <nav id="docModeToc" class="doc-mode-toc" aria-label="章节文档目录"></nav>
+      </aside>
+      <article id="docArticle" class="doc-article" aria-live="polite"></article>
+      <aside id="docRelated" class="doc-related" aria-label="本页相关资源"></aside>
     </section>
 
     <section id="pathPanel" class="control-row path-panel">

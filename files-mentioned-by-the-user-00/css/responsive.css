@@ -1,0 +1,141 @@
+﻿@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-delay: 0ms !important;
+    animation-duration: 1ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 1ms !important;
+  }
+
+  .network-canvas::before {
+    display: none;
+  }
+}
+
+@media (max-width: 1180px) {
+  .side-panel {
+    left: 10px;
+    width: 210px;
+    max-height: 45%;
+  }
+
+  .detail-panel {
+    top: auto;
+    right: 10px;
+    bottom: 10px;
+    width: min(330px, calc(100% - 232px));
+    max-height: 45%;
+  }
+}
+
+@media (max-width: 760px) {
+  body {
+    overflow: auto;
+  }
+
+  .app-shell {
+    height: auto;
+    min-height: 100vh;
+  }
+
+  .topbar,
+  .control-row {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .top-nav {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+
+  .library-panel {
+    max-height: none;
+  }
+
+  .home-panel {
+    grid-template-columns: 1fr;
+    padding: 14px;
+  }
+
+  .entry-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .doc-panel {
+    display: block;
+    overflow: visible;
+  }
+
+  .doc-sidebar,
+  .doc-article,
+  .doc-related {
+    max-height: none;
+    overflow: visible;
+  }
+
+  .doc-sidebar {
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .doc-mode-toc {
+    max-height: 42vh;
+    overflow: auto;
+  }
+
+  .doc-article {
+    padding: 18px;
+  }
+
+  .doc-related {
+    border-left: 0;
+    border-top: 1px solid var(--line);
+  }
+
+  .doc-panel.toc-collapsed {
+    display: block;
+  }
+
+  .doc-panel.toc-collapsed .doc-mode-toc {
+    display: none;
+  }
+
+  .search-wrap {
+    grid-template-columns: minmax(0, 1fr) 34px;
+  }
+
+  .main-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    min-height: 0;
+  }
+
+  .network-canvas {
+    position: relative;
+    min-height: 520px;
+    order: 2;
+  }
+
+  .side-panel,
+  .detail-panel {
+    position: relative;
+    top: auto;
+    left: auto;
+    right: auto;
+    bottom: auto;
+    width: auto;
+    max-height: none;
+  }
+
+  .side-panel {
+    order: 1;
+  }
+
+  .detail-panel {
+    order: 3;
+  }
+}

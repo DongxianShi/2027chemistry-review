@@ -1,0 +1,3060 @@
+const GRAPH = window.NETWORK_DATA;
+
+const nodes = new Map(GRAPH.nodes.map(node => [node.id, node]));
+const edges = GRAPH.edges;
+const adjacency = new Map();
+const historyStack = [];
+const pageNodeByPage = new Map();
+const pathNodeByKey = new Map();
+
+const CENTERABLE = new Set(["root", "chapter", "module", "section", "type", "summary"]);
+const LEAF = new Set(["example", "page"]);
+const EXPANDABLE = new Set(["example", "page"]);
+const RELATION_ORDER = ["层级结构", "框架提要", "例题训练", "原页核对", "跨章关联"];
+const COLORS = {
+  root: "#4863ff",
+  chapter: "#e8eef7",
+  module: "#dff7f3",
+  section: "#fff2d4",
+  type: "#e9f8ef",
+  summary: "#eef5ff",
+  example: "#ffeef2",
+  page: "#f2f4f7"
+};
+
+let centerId = GRAPH.rootId;
+let selectedId = GRAPH.rootId;
+let activeRelation = "all";
+let searchQuery = "";
+const view = {
+  scale: 1,
+  tx: 0,
+  ty: 0,
+  dragging: false,
+  dragMoved: false,
+  captureEl: null,
+  startX: 0,
+  startY: 0,
+  startTx: 0,
+  startTy: 0,
+  needsFit: true
+};
+
+for (const edge of edges) {
+  addAdj(edge.source, edge);
+  addAdj(edge.target, edge);
+}
+
+for (const node of nodes.values()) {
+  if (node.kind === "page" && node.page) pageNodeByPage.set(node.page, node.id);
+}
+
+for (const node of nodes.values()) {
+  if (node.centerable && CENTERABLE.has(node.kind)) {
+    pathNodeByKey.set(pathKey(nodePath(node)), node.id);
+  }
+}
+
+const canvas = document.getElementById("networkCanvas");
+const detailPanel = document.getElementById("detailPanel");
+const sidePanel = document.getElementById("sidePanel");
+const searchPanel = document.getElementById("searchPanel");
+const statsLine = document.getElementById("statsLine");
+const breadcrumb = document.getElementById("breadcrumb");
+const searchInput = document.getElementById("searchInput");
+const clearSearch = document.getElementById("clearSearch");
+const relationFilters = document.getElementById("relationFilters");
+const searchResults = document.getElementById("searchResults");
+const pathPanel = document.getElementById("pathPanel");
+const togglePathPanel = document.getElementById("togglePathPanel");
+const libraryPanel = document.getElementById("libraryPanel");
+const libraryGrid = document.getElementById("libraryGrid");
+const docToc = document.getElementById("docToc");
+const homePanel = document.getElementById("homePanel");
+const docPanel = document.getElementById("docPanel");
+const docModeToc = document.getElementById("docModeToc");
+const docArticle = document.getElementById("docArticle");
+const docRelated = document.getElementById("docRelated");
+const mainGrid = document.querySelector(".main-grid");
+const homeNavButton = document.getElementById("homeNavButton");
+const docsNavButton = document.getElementById("docsNavButton");
+const libraryNavButton = document.getElementById("libraryNavButton");
+const graphNavButton = document.getElementById("graphNavButton");
+const themeToggle = document.getElementById("themeToggle");
+const toggleDocSidebar = document.getElementById("toggleDocSidebar");
+let resizeTimer = null;
+let stageEl = null;
+let lastLayout = null;
+let lastRenderedCenterId = null;
+let focusedEdgeKey = null;
+let expandedNodeId = null;
+let siteMode = "graph";
+
+init();
+
+function init() {
+  const hash = new URLSearchParams(window.location.hash.slice(1));
+  const hashCenter = hash.get("center");
+  if (hashCenter && nodes.has(hashCenter) && nodes.get(hashCenter).centerable) {
+    centerId = hashCenter;
+    selectedId = hashCenter;
+  }
+  statsLine.textContent = `节点 ${GRAPH.stats.nodes} 个 · 关系 ${GRAPH.stats.edges} 条 · 层级单元 ${GRAPH.stats.hierarchy} 个 · 原页缓存 ${GRAPH.stats.pages} 页`;
+  initViewportControls();
+  initPanelToggles();
+  initKnowledgeShell();
+  renderRelationFilters();
+  render();
+  setSiteMode(hashCenter ? "graph" : "home", { skipRender: true });
+
+  document.getElementById("homeButton").addEventListener("click", () => focusNode(GRAPH.rootId, false));
+  document.getElementById("backButton").addEventListener("click", () => {
+    const previous = historyStack.pop();
+    if (previous) {
+      focusedEdgeKey = null;
+      expandedNodeId = null;
+      centerId = previous;
+      selectedId = previous;
+      resetView();
+      renderRelationFilters();
+      render();
+    }
+  });
+  updatePanelToggleLabels();
+  searchInput.addEventListener("input", event => {
+    searchQuery = event.target.value.trim();
+    renderSearch();
+  });
+  clearSearch.addEventListener("click", () => {
+    searchQuery = "";
+    searchInput.value = "";
+    renderSearch();
+  });
+  window.addEventListener("resize", () => {
+    window.clearTimeout(resizeTimer);
+    resizeTimer = window.setTimeout(() => {
+      if (siteMode === "graph") render();
+      else renderDocMode();
+    }, 120);
+  });
+}
+
+function addAdj(id, edge) {
+  if (!adjacency.has(id)) adjacency.set(id, []);
+  adjacency.get(id).push(edge);
+}
+
+function initKnowledgeShell() {
+  initTheme();
+  renderDocToc();
+  renderLibraryPanel();
+  renderDocMode();
+  homeNavButton?.addEventListener("click", () => setSiteMode("home"));
+  docsNavButton?.addEventListener("click", () => setSiteMode("docs"));
+  libraryNavButton?.addEventListener("click", () => setSiteMode("library"));
+  graphNavButton?.addEventListener("click", () => setSiteMode("graph"));
+  document.getElementById("closeLibraryPanel")?.addEventListener("click", () => setSiteMode("graph"));
+  document.querySelectorAll("[data-study-entry]").forEach(button => {
+    button.addEventListener("click", () => {
+      const entry = button.dataset.studyEntry;
+      if (entry === "chapters") setSiteMode("docs");
+      if (entry === "graph") setSiteMode("graph");
+      if (entry === "pages") {
+        setSiteMode("library");
+        focusFirstNodeOfKind("page");
+      }
+      if (entry === "types") focusFirstNodeOfKind("type", "docs");
+    });
+  });
+  toggleDocSidebar?.addEventListener("click", () => {
+    docPanel?.classList.toggle("toc-collapsed");
+  });
+  themeToggle?.addEventListener("click", () => {
+    const current = document.documentElement.dataset.theme === "light" ? "dark" : "light";
+    setTheme(current);
+  });
+}
+
+function initTheme() {
+  if (window.ChemKBTheme) {
+    window.ChemKBTheme.init(themeToggle);
+    return;
+  }
+  const saved = localStorage.getItem("chem-review-theme");
+  const preferredLight = window.matchMedia?.("(prefers-color-scheme: light)").matches;
+  setTheme(saved || (preferredLight ? "light" : "dark"));
+}
+
+function setTheme(theme) {
+  if (window.ChemKBTheme) {
+    window.ChemKBTheme.set(theme, themeToggle);
+    return;
+  }
+  document.documentElement.dataset.theme = theme;
+  localStorage.setItem("chem-review-theme", theme);
+  if (themeToggle) themeToggle.textContent = theme === "light" ? "浅色" : "深色";
+}
+
+function showLibraryPanel(show) {
+  setSiteMode(show ? "library" : "graph");
+}
+
+function setSiteMode(mode, options = {}) {
+  const nextMode = ["home", "docs", "graph", "library"].includes(mode) ? mode : "graph";
+  siteMode = nextMode;
+  document.body.dataset.mode = nextMode;
+  if (homePanel) homePanel.hidden = nextMode !== "home";
+  if (docPanel) docPanel.hidden = !(nextMode === "home" || nextMode === "docs");
+  if (libraryPanel) libraryPanel.hidden = nextMode !== "library";
+  if (pathPanel) pathPanel.hidden = nextMode !== "graph";
+  if (mainGrid) mainGrid.hidden = nextMode !== "graph";
+  [
+    [homeNavButton, "home"],
+    [docsNavButton, "docs"],
+    [graphNavButton, "graph"],
+    [libraryNavButton, "library"]
+  ].forEach(([button, value]) => button?.classList.toggle("active", nextMode === value));
+  if (nextMode === "graph") {
+    view.needsFit = true;
+    if (!options.skipRender) render();
+    return;
+  }
+  renderDocMode();
+}
+
+function chapterNodes() {
+  return [...nodes.values()]
+    .filter(node => node.kind === "chapter")
+    .sort((a, b) => (a.page || 0) - (b.page || 0));
+}
+
+function childrenOf(parentId, kind) {
+  return (adjacency.get(parentId) || [])
+    .map(edge => edge.source === parentId ? edge.target : edge.source)
+    .map(id => nodes.get(id))
+    .filter(node => node && (!kind || node.kind === kind))
+    .sort((a, b) => (a.page || 0) - (b.page || 0));
+}
+
+function renderDocToc() {
+  if (!docToc) return;
+  docToc.innerHTML = "";
+  chapterNodes().forEach(chapter => {
+    const item = document.createElement("details");
+    item.className = "doc-toc-section";
+    if (chapter.id === centerId || nodePath(nodes.get(centerId)).includes(chapter.title)) item.open = true;
+    const summary = document.createElement("summary");
+    summary.textContent = displayTitle(chapter);
+    summary.addEventListener("click", event => {
+      if (event.target.tagName === "SUMMARY" && !item.open) {
+        event.preventDefault();
+        item.open = true;
+        focusNode(chapter.id, true);
+      }
+    });
+    const list = document.createElement("div");
+    list.className = "doc-toc-children";
+    childrenOf(chapter.id, "module").slice(0, 10).forEach(module => {
+      const btn = document.createElement("button");
+      btn.type = "button";
+      btn.textContent = displayTitle(module);
+      btn.className = module.id === centerId ? "active" : "";
+      btn.addEventListener("click", () => focusNode(module.id, true));
+      list.appendChild(btn);
+    });
+    item.append(summary, list);
+    docToc.appendChild(item);
+  });
+}
+
+function renderLibraryPanel() {
+  if (!libraryGrid) return;
+  libraryGrid.innerHTML = "";
+  libraryGrid.appendChild(resourceCard({
+    title: "知识关系网",
+    meta: `${GRAPH.stats.nodes} 个节点 · ${GRAPH.stats.edges} 条关系`,
+    body: "用于从章节、模块、题型、内容提要、例题和原页之间切换，适合建立一轮复习知识体系。",
+    actions: [{ label: "进入图谱", run: () => showLibraryPanel(false) }]
+  }));
+  const pdfAction = { label: "检测中", disabled: true, run: null };
+  const pdfCard = resourceCard({
+    title: "原书 PDF",
+    meta: "本地资源优先，GitHub Pages 不强制发布大 PDF",
+    body: "如果当前环境中存在 PDF，可直接打开；公开站点未上传 PDF 时，请使用高清原页截图和例题截图核对内容。",
+    actions: [pdfAction]
+  });
+  libraryGrid.appendChild(pdfCard);
+  updatePdfCardAction(pdfCard);
+  libraryGrid.appendChild(resourceCard({
+    title: "高清原页截图",
+    meta: `${GRAPH.stats.pages} 页缓存 · build/page_images_hd`,
+    body: "适合核对结构式、表格、装置图和复杂排版。原页节点展开时会优先显示裁边后的高清图片。",
+    actions: [{ label: "查看原页索引", run: () => focusFirstNodeOfKind("page") }]
+  }));
+  libraryGrid.appendChild(resourceCard({
+    title: "例题截图",
+    meta: "按题型合并裁剪 · build/content_crops",
+    body: "例题节点展开时显示同一题型的完整题目、解析和答案，尽量避免题目与答案错配。",
+    actions: [{ label: "查看例题索引", run: () => focusFirstNodeOfKind("example") }]
+  }));
+  chapterNodes().forEach(chapter => {
+    const modules = childrenOf(chapter.id, "module");
+    libraryGrid.appendChild(resourceCard({
+      title: displayTitle(chapter),
+      meta: `${modules.length} 个模块 · 起始页 ${chapter.page || "未标注"}`,
+      body: learningGuideForNode(chapter).intro,
+      actions: [{ label: "打开章节", run: () => focusNode(chapter.id, true) }]
+    }));
+  });
+}
+
+function resourceCard({ title, meta, body, actions }) {
+  if (window.ChemKBLibrary) {
+    const renderedActions = actions.map(action => window.ChemKBLibrary.actionButton(action.label, () => {
+      showLibraryPanel(false);
+      action.run?.();
+    }, { disabled: action.disabled }));
+    return window.ChemKBLibrary.card({ title, meta, body, actions: renderedActions });
+  }
+  const card = document.createElement("article");
+  card.className = "resource-card";
+  const h = document.createElement("h3");
+  h.textContent = title;
+  const m = document.createElement("p");
+  m.className = "resource-card-meta";
+  m.textContent = meta;
+  const b = document.createElement("p");
+  b.textContent = body;
+  const actionWrap = document.createElement("div");
+  actionWrap.className = "resource-card-actions";
+  actions.forEach(action => {
+    const btn = document.createElement("button");
+    btn.type = "button";
+    btn.textContent = action.label;
+    btn.disabled = Boolean(action.disabled);
+    if (action.run) btn.addEventListener("click", () => {
+      showLibraryPanel(false);
+      action.run();
+    });
+    actionWrap.appendChild(btn);
+  });
+  card.append(h, m, b, actionWrap);
+  return card;
+}
+
+function updatePdfCardAction(card) {
+  const btn = card.querySelector("button");
+  fetch("chemistry_method.pdf", { method: "HEAD" })
+    .then(response => {
+      if (!response.ok) throw new Error("pdf unavailable");
+      btn.textContent = "打开 PDF";
+      btn.disabled = false;
+      btn.addEventListener("click", () => window.open("chemistry_method.pdf", "_blank", "noopener"));
+    })
+    .catch(() => {
+      btn.textContent = "PDF 未随 Pages 发布";
+      btn.disabled = true;
+    });
+}
+
+function focusFirstNodeOfKind(kind, mode = "graph") {
+  const node = [...nodes.values()].find(item => item.kind === kind);
+  if (!node) return;
+  if (mode === "docs" && node.centerable) {
+    selectDocNode(node.id);
+    setSiteMode("docs");
+    return;
+  }
+  if (EXPANDABLE.has(node.kind)) openLeafNode(node.id, { toggle: false, focusHost: true });
+  else focusNode(node.id, true);
+}
+
+function selectDocNode(id) {
+  const node = nodes.get(id);
+  if (!node) return;
+  selectedId = id;
+  if (node.centerable && CENTERABLE.has(node.kind)) {
+    centerId = id;
+    focusedEdgeKey = null;
+    expandedNodeId = null;
+    window.ChemKBDocMode?.setActive(id);
+    renderRelationFilters();
+  }
+  renderDocMode();
+}
+
+function renderDocMode() {
+  window.ChemKBDocMode?.render({
+    nodes,
+    edges,
+    rootId: GRAPH.rootId,
+    selectedId,
+    centerId,
+    elements: {
+      panel: docPanel,
+      toc: docModeToc,
+      article: docArticle,
+      related: docRelated
+    },
+    displayTitle,
+    nodePath,
+    childrenOf,
+    relatedExamples,
+    relatedPages,
+    pageNodeByPage,
+    onSelect: selectDocNode,
+    onOpenGraph: id => focusNode(id, true),
+    onOpenLeaf: id => openLeafNode(id, { toggle: false, focusHost: true })
+  });
+}
+
+function renderRelationFilters() {
+  const relationCounts = new Map();
+  const currentEdges = currentNetworkEdges(centerId);
+  for (const edge of currentEdges) {
+    const group = relationGroup(edge.relation);
+    relationCounts.set(group, (relationCounts.get(group) || 0) + 1);
+  }
+  if (activeRelation !== "all" && !relationCounts.has(activeRelation)) activeRelation = "all";
+  const relations = ["all", "层级结构", "框架提要", "例题训练", "原页核对", "跨章关联"]
+    .filter(relation => relation === "all" || relationCounts.has(relation));
+  relationFilters.innerHTML = "";
+  relations.forEach(relation => {
+    const btn = document.createElement("button");
+    btn.type = "button";
+    btn.className = "filter-button";
+    if (activeRelation === relation) btn.classList.add("active");
+    btn.textContent = relation === "all" ? `全部关系 ${currentEdges.length}` : `${relationFilterLabel(relation)} ${relationCounts.get(relation)}`;
+    btn.title = relationFilterTitle(relation);
+    btn.addEventListener("click", () => {
+      setActiveRelation(relation);
+    });
+    relationFilters.appendChild(btn);
+  });
+}
+
+function setActiveRelation(relation) {
+  if (activeRelation === relation) return;
+  clearFilterVisualState();
+  focusedEdgeKey = null;
+  expandedNodeId = null;
+  activeRelation = relation;
+  renderRelationFilters();
+  render();
+}
+
+function relationFilterTitle(relation) {
+  const titles = {
+    all: "显示当前网络中的全部关系",
+    "层级结构": "章、模块、小节、题型之间的归属关系，用来确认复习位置",
+    "框架提要": "内容提要拆出的概念、注释、图示和方法框架",
+    "例题训练": "题型、考点与配套例题截图之间的训练关系",
+    "原页核对": "OCR 文本、高清截图和原书页之间的核对关系",
+    "跨章关联": "守恒、结构、反应原理、实验与元素化合物之间的迁移关系"
+  };
+  return titles[relation] || relation;
+}
+
+function relationFilterLabel(relation) {
+  const labels = {
+    "层级结构": "章节归属",
+    "框架提要": "提要框架",
+    "例题训练": "题型训练",
+    "原页核对": "原页核对",
+    "跨章关联": "跨章迁移"
+  };
+  return labels[relation] || relation;
+}
+
+function clearFilterVisualState() {
+  canvas.querySelectorAll(".filter-muted").forEach(el => el.classList.remove("filter-muted"));
+  canvas.querySelectorAll(".edge-muted").forEach(el => {
+    el.classList.remove("edge-muted");
+    el.classList.add("edge-active");
+    el.setAttribute("marker-end", "url(#arrow-main)");
+  });
+  canvas.querySelectorAll(".edge-label-muted").forEach(el => el.classList.remove("edge-label-muted"));
+}
+
+function currentNetworkEdges(id) {
+  const directEdges = filteredEdges(adjacency.get(id) || []);
+  const neighbors = uniqueNeighborIds(id, directEdges);
+  const visible = new Set([id, ...neighbors]);
+  return edges
+    .filter(edge => edgeVisibleInNetwork(edge, id, visible))
+    .slice(0, 220);
+}
+
+function render() {
+  renderBreadcrumb();
+  renderDocToc();
+  renderDocMode();
+  const softUpdate = lastRenderedCenterId === centerId;
+  const layout = buildLayout(centerId);
+  lastLayout = layout;
+  canvas.innerHTML = "";
+
+  const stage = document.createElement("div");
+  stage.className = "graph-stage";
+  if (softUpdate) stage.classList.add("is-soft-update");
+  if (expandedNodeId) stage.classList.add("has-expansion");
+  if (focusedEdgeKey) stage.classList.add("has-edge-focus");
+  stage.style.width = `${layout.width}px`;
+  stage.style.height = `${layout.height}px`;
+  stageEl = stage;
+  if (view.needsFit) fitViewToLayout(layout);
+  applyViewTransform();
+
+  const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+  svg.setAttribute("class", "edge-layer");
+  svg.setAttribute("width", layout.width);
+  svg.setAttribute("height", layout.height);
+  svg.setAttribute("viewBox", `0 0 ${layout.width} ${layout.height}`);
+  svg.appendChild(renderArrowMarkers());
+  const nodeIdsToDraw = layout.nodeIds;
+  const labelBoxes = nodeIdsToDraw
+    .map(id => layout.positions.get(id))
+    .filter(Boolean)
+    .map(box => ({ x: box.x - 22, y: box.y - 22, w: box.w + 44, h: box.h + 44, type: "node" }));
+  labelBoxes.push(...panelBoxes());
+  const edgePlans = layout.edges.map((edge, index) => edgePlan(edge, layout.positions, index));
+  const mutedEdgePlans = edgePlans.filter(plan => edgeMutedForState(layout, plan));
+  const activeEdgePlans = edgePlans.filter(plan => !edgeMutedForState(layout, plan));
+  const pathObstacles = buildPathObstacles(edgePlans);
+  const pathLayer = document.createElementNS("http://www.w3.org/2000/svg", "g");
+  pathLayer.setAttribute("class", "edge-path-layer");
+  const labelLayer = document.createElementNS("http://www.w3.org/2000/svg", "g");
+  labelLayer.setAttribute("class", "edge-label-layer");
+  const orderedEdgePlans = [...mutedEdgePlans, ...activeEdgePlans];
+  const labelPlacements = new Map();
+  const edgeLabelBoxes = [];
+  orderedEdgePlans.forEach(plan => {
+    const placedLabel = placeLabelOnPath(plan, labelBoxes, pathObstacles);
+    labelPlacements.set(plan.key, placedLabel);
+    edgeLabelBoxes.push({
+      ...labelAxisBox(placedLabel, placedLabel.width, placedLabel.height, placedLabel.angle),
+      type: "label",
+      key: plan.key
+    });
+  });
+  orderedEdgePlans.forEach((plan, index) => {
+    const muted = edgeMutedForState(layout, plan);
+    const focused = focusedEdgeKey === plan.key;
+    const rendered = renderEdge(plan, labelPlacements.get(plan.key), edgeLabelBoxes, muted);
+    if (focused) {
+      rendered.pathGroup.classList.add("edge-focused-group");
+      rendered.labelGroup.classList.add("edge-label-focused");
+    }
+    const edgeDelay = Math.min(index * 12, 260);
+    rendered.pathGroup.style.setProperty("--edge-delay", `${edgeDelay}ms`);
+    rendered.labelGroup.style.setProperty("--label-delay", `${edgeDelay + 80}ms`);
+    pathLayer.appendChild(rendered.pathGroup);
+    labelLayer.appendChild(rendered.labelGroup);
+  });
+  svg.append(pathLayer, labelLayer);
+  stage.appendChild(svg);
+
+  const mutedNodeIds = nodeIdsToDraw.filter(id => nodeMutedForState(layout, id));
+  const activeNodeIds = nodeIdsToDraw.filter(id => !nodeMutedForState(layout, id));
+  [...mutedNodeIds, ...activeNodeIds].forEach((id, index) => {
+    const nodeEl = renderNode(id, layout.positions.get(id), layout.roles.get(id), nodeMutedForState(layout, id));
+    if (focusedEdgeKey && !nodeMutedForState(layout, id)) nodeEl.classList.add("edge-focus-node");
+    nodeEl.style.setProperty("--node-delay", `${Math.min(index * 18, 320)}ms`);
+    stage.appendChild(nodeEl);
+  });
+  if (expandedNodeId && layout.positions.has(expandedNodeId)) {
+    const expansion = renderInlineExpansion(expandedNodeId, layout);
+    stage.appendChild(expansion.connector);
+    stage.appendChild(expansion.card);
+  }
+  canvas.appendChild(stage);
+  detailPanel.classList.toggle("soft-update", softUpdate);
+  renderDetail(selectedId);
+  lastRenderedCenterId = centerId;
+}
+
+function nodeMutedForFilter(layout, id) {
+  return activeRelation !== "all" && id !== centerId && !layout.matches.nodes.has(id);
+}
+
+function edgeMutedForFilter(layout, plan) {
+  return activeRelation !== "all" && !layout.matches.edges.has(plan.key);
+}
+
+function focusedEdge() {
+  if (!focusedEdgeKey) return null;
+  return edges.find(edge => edgeKey(edge) === focusedEdgeKey) || null;
+}
+
+function nodeMutedForState(layout, id) {
+  const edge = focusedEdge();
+  if (edge) return id !== edge.source && id !== edge.target;
+  if (expandedNodeId) return !nodeConnectedToExpanded(id);
+  return nodeMutedForFilter(layout, id);
+}
+
+function edgeMutedForState(layout, plan) {
+  if (focusedEdgeKey) return plan.key !== focusedEdgeKey;
+  if (expandedNodeId) return plan.edge.source !== expandedNodeId && plan.edge.target !== expandedNodeId;
+  return edgeMutedForFilter(layout, plan);
+}
+
+function nodeConnectedToExpanded(id) {
+  if (!expandedNodeId) return false;
+  if (id === expandedNodeId) return true;
+  return (adjacency.get(expandedNodeId) || []).some(edge => edge.source === id || edge.target === id);
+}
+
+function initPanelToggles() {
+  if (togglePathPanel) {
+    togglePathPanel.addEventListener("click", () => {
+      pathPanel.classList.toggle("collapsed");
+      updatePanelToggleLabels();
+      view.needsFit = true;
+      render();
+    });
+  }
+  document.getElementById("toggleSearchPanel").addEventListener("click", () => {
+    searchPanel.classList.toggle("collapsed");
+    updatePanelToggleLabels();
+  });
+  document.getElementById("toggleSidePanel").addEventListener("click", () => {
+    sidePanel.classList.toggle("collapsed");
+    updatePanelToggleLabels();
+    view.needsFit = true;
+    render();
+  });
+}
+
+function updatePanelToggleLabels() {
+  const searchBtn = document.getElementById("toggleSearchPanel");
+  const sideBtn = document.getElementById("toggleSidePanel");
+  const pathBtn = document.getElementById("togglePathPanel");
+  if (pathBtn) {
+    const collapsed = pathPanel.classList.contains("collapsed");
+    pathBtn.textContent = collapsed ? "⌘ 展开路径" : "⌘ 收起路径";
+    pathBtn.title = collapsed ? "展开路径显示" : "收起路径显示";
+    pathBtn.setAttribute("aria-label", pathBtn.title);
+  }
+  if (searchBtn) {
+    const collapsed = searchPanel.classList.contains("collapsed");
+    searchBtn.textContent = collapsed ? "⌕ 展开搜索" : "⌕ 收起搜索";
+    searchBtn.title = collapsed ? "展开搜索栏目" : "收起搜索栏目";
+    searchBtn.setAttribute("aria-label", searchBtn.title);
+  }
+  if (sideBtn) {
+    const collapsed = sidePanel.classList.contains("collapsed");
+    sideBtn.textContent = collapsed ? "☷ 展开目录" : "☷ 收起目录";
+    sideBtn.title = collapsed ? "展开学习目录和关系筛选" : "收起学习目录和关系筛选";
+    sideBtn.setAttribute("aria-label", sideBtn.title);
+  }
+  const detailBtn = document.getElementById("toggleDetailPanel");
+  if (detailBtn) {
+    const collapsed = detailPanel.classList.contains("collapsed");
+    detailBtn.textContent = collapsed ? "◎ 展开当前" : "◎ 收起当前";
+    detailBtn.title = collapsed ? "展开当前中心栏目" : "收起当前中心栏目";
+    detailBtn.setAttribute("aria-label", detailBtn.title);
+  }
+}
+
+function renderArrowMarkers() {
+  const defs = document.createElementNS("http://www.w3.org/2000/svg", "defs");
+  defs.appendChild(createArrowMarker("arrow-main", "#78dfff"));
+  defs.appendChild(createArrowMarker("arrow-hierarchy", "#78dfff"));
+  defs.appendChild(createArrowMarker("arrow-summary", "#8fb7ff"));
+  defs.appendChild(createArrowMarker("arrow-example", "#ff98ba"));
+  defs.appendChild(createArrowMarker("arrow-page", "#cfd8e3"));
+  defs.appendChild(createArrowMarker("arrow-semantic", "#f3c96a"));
+  defs.appendChild(createArrowMarker("arrow-muted", "rgba(92, 118, 124, 0.54)"));
+  return defs;
+}
+
+function createArrowMarker(id, fill) {
+  const marker = document.createElementNS("http://www.w3.org/2000/svg", "marker");
+  marker.setAttribute("id", id);
+  marker.setAttribute("viewBox", "0 0 12 12");
+  marker.setAttribute("refX", "10.8");
+  marker.setAttribute("refY", "6");
+  marker.setAttribute("markerWidth", "11");
+  marker.setAttribute("markerHeight", "11");
+  marker.setAttribute("markerUnits", "userSpaceOnUse");
+  marker.setAttribute("orient", "auto");
+  const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
+  path.setAttribute("d", "M 0 0 L 12 6 L 0 12 z");
+  path.setAttribute("fill", fill);
+  marker.appendChild(path);
+  return marker;
+}
+
+function initViewportControls() {
+  canvas.addEventListener("wheel", event => {
+    event.preventDefault();
+    const rect = canvas.getBoundingClientRect();
+    const mouseX = event.clientX - rect.left;
+    const mouseY = event.clientY - rect.top;
+    const worldX = (mouseX - view.tx) / view.scale;
+    const worldY = (mouseY - view.ty) / view.scale;
+    const factor = event.deltaY < 0 ? 1.1 : 0.9;
+    const nextScale = clamp(view.scale * factor, 0.28, 2.05);
+    view.tx = mouseX - worldX * nextScale;
+    view.ty = mouseY - worldY * nextScale;
+    view.scale = nextScale;
+    applyViewTransform();
+  }, { passive: false });
+
+  canvas.addEventListener("pointerdown", event => {
+    if (event.button !== 0 || event.target.closest(".net-node, .inline-expansion, .side-panel, .detail-panel, input, button, .edge-click-target")) return;
+    startViewportDrag(event, canvas);
+  });
+
+  canvas.addEventListener("pointermove", event => updateViewportDrag(event));
+  window.addEventListener("pointermove", event => updateViewportDrag(event));
+
+  canvas.addEventListener("pointerup", event => endDrag(event));
+  canvas.addEventListener("pointercancel", event => endDrag(event));
+  window.addEventListener("pointerup", event => endDrag(event));
+  window.addEventListener("pointercancel", event => endDrag(event));
+}
+
+function startViewportDrag(event, captureEl = canvas) {
+  view.dragging = true;
+  view.dragMoved = false;
+  view.captureEl = captureEl;
+  view.startX = event.clientX;
+  view.startY = event.clientY;
+  view.startTx = view.tx;
+  view.startTy = view.ty;
+  canvas.classList.add("dragging");
+  try {
+    captureEl.setPointerCapture?.(event.pointerId);
+  } catch {}
+  event.preventDefault();
+}
+
+function updateViewportDrag(event) {
+  if (!view.dragging) return;
+  const dx = event.clientX - view.startX;
+  const dy = event.clientY - view.startY;
+  if (Math.hypot(dx, dy) > 3) view.dragMoved = true;
+  view.tx = view.startTx + dx;
+  view.ty = view.startTy + dy;
+  applyViewTransform();
+}
+
+function endDrag(event) {
+  if (!view.dragging) return;
+  view.dragging = false;
+  canvas.classList.remove("dragging");
+  const captureEl = view.captureEl || canvas;
+  try {
+    if (captureEl.hasPointerCapture?.(event.pointerId)) captureEl.releasePointerCapture(event.pointerId);
+  } catch {}
+  view.captureEl = null;
+  if (!view.dragMoved && (focusedEdgeKey || expandedNodeId) && !event.target.closest(".net-node, .inline-expansion, .side-panel, .detail-panel, input, button, .edge-click-target")) {
+    focusedEdgeKey = null;
+    expandedNodeId = null;
+    render();
+  }
+}
+
+function applyViewTransform() {
+  if (!stageEl) return;
+  stageEl.style.transform = `translate(${view.tx}px, ${view.ty}px) scale(${view.scale})`;
+}
+
+function resetView() {
+  view.scale = 0.9;
+  view.tx = 0;
+  view.ty = 0;
+  view.needsFit = true;
+  applyViewTransform();
+}
+
+function fitViewToLayout(layout) {
+  const safe = viewSafeScreenRect();
+  const bounds = layoutContentBounds(layout);
+  const availableW = Math.max(520, safe.w);
+  const availableH = Math.max(420, safe.h);
+  const scale = clamp(Math.min(availableW / bounds.w, availableH / bounds.h), 0.3, 0.96);
+  view.scale = scale;
+  view.tx = safe.left + (safe.w - bounds.w * scale) / 2 - bounds.left * scale;
+  view.ty = safe.top + (safe.h - bounds.h * scale) / 2 - bounds.top * scale;
+  view.needsFit = false;
+}
+
+function layoutContentBounds(layout) {
+  const boxes = [...layout.positions.values()];
+  const pad = 76;
+  const left = Math.max(0, Math.min(...boxes.map(box => box.x)) - pad);
+  const top = Math.max(0, Math.min(...boxes.map(box => box.y)) - pad);
+  const right = Math.min(layout.width, Math.max(...boxes.map(box => box.x + box.w)) + pad);
+  const bottom = Math.min(layout.height, Math.max(...boxes.map(box => box.y + box.h)) + pad);
+  return { left, top, right, bottom, w: right - left, h: bottom - top };
+}
+
+function viewSafeScreenRect() {
+  const canvasRect = canvas.getBoundingClientRect();
+  const safe = {
+    left: 18,
+    top: 14,
+    right: canvasRect.width - 18,
+    bottom: canvasRect.height - 14
+  };
+  [sidePanel, detailPanel].forEach(panel => {
+    if (!panel || panel.classList.contains("collapsed")) return;
+    const rect = panel.getBoundingClientRect();
+    const left = rect.left - canvasRect.left;
+    const right = rect.right - canvasRect.left;
+    const midpoint = canvasRect.width / 2;
+    if (left < midpoint) safe.left = Math.max(safe.left, right + 18);
+    else safe.right = Math.min(safe.right, left - 18);
+  });
+  if (safe.right - safe.left < 480) {
+    safe.left = 18;
+    safe.right = canvasRect.width - 18;
+  }
+  safe.w = safe.right - safe.left;
+  safe.h = safe.bottom - safe.top;
+  return safe;
+}
+
+function panelBoxes() {
+  const canvasRect = canvas.getBoundingClientRect();
+  return [document.querySelector(".side-panel"), detailPanel]
+    .filter(Boolean)
+    .map(panel => panel.getBoundingClientRect())
+    .map(rect => ({
+      x: (rect.left - canvasRect.left - view.tx - 6) / view.scale,
+      y: (rect.top - canvasRect.top - view.ty - 6) / view.scale,
+      w: (rect.width + 12) / view.scale,
+      h: (rect.height + 12) / view.scale,
+      type: "panel"
+    }));
+}
+
+function buildLayout(id) {
+  const center = nodes.get(id);
+  const directEdges = filteredEdges(adjacency.get(id) || []);
+  const neighbors = uniqueNeighborIds(id, directEdges);
+  const roles = buildNodeRoles(id, neighbors, directEdges);
+  const rect = canvas.getBoundingClientRect();
+  const baseWidth = Math.max(760, Math.floor(rect.width || window.innerWidth - 28));
+  const baseHeight = Math.max(560, Math.floor(rect.height || window.innerHeight - 150));
+  const spread = layoutSpread(neighbors.length);
+  const width = Math.round(baseWidth * spread);
+  const height = Math.round(baseHeight * Math.max(1.14, spread * 0.9));
+  const safe = safeRect(width, height);
+  const cx = safe.left + safe.w / 2;
+  const cy = safe.top + safe.h / 2;
+  const scale = layoutScale(neighbors.length, width, height);
+  const positions = new Map();
+  const centerSize = sizeFor(center, true, scale, "center");
+  positions.set(id, {
+    x: clamp(cx - centerSize.w / 2, safe.left, safe.right - centerSize.w),
+    y: clamp(cy - centerSize.h / 2, safe.top, safe.bottom - centerSize.h),
+    ...centerSize
+  });
+
+  placeRadialNodes(id, neighbors, directEdges, roles, positions, safe, cx, cy, scale);
+  relaxPositions([id, ...neighbors], positions, safe, new Set([id]));
+
+  const visible = new Set([id, ...neighbors]);
+  const visibleEdges = edges
+    .filter(edge => edgeVisibleInNetwork(edge, id, visible))
+    .slice(0, 220);
+  const matches = buildFilterMatches(visible, visibleEdges);
+
+  return { width, height, positions, roles, matches, nodeIds: [...visible], edges: visibleEdges };
+}
+
+function edgeVisibleInNetwork(edge, id, visible) {
+  if (!visible.has(edge.source) || !visible.has(edge.target)) return false;
+  return edge.source === id || edge.target === id || relationGroup(edge.relation) === "相关主线";
+}
+
+function buildFilterMatches(visible, visibleEdges) {
+  if (activeRelation === "all") {
+    return {
+      nodes: new Set(visible),
+      edges: new Set(visibleEdges.map(edgeKey))
+    };
+  }
+  const matchedNodes = new Set([centerId]);
+  const matchedEdges = new Set();
+  visibleEdges.forEach(edge => {
+    if (relationGroup(edge.relation) !== activeRelation) return;
+    matchedEdges.add(edgeKey(edge));
+    matchedNodes.add(edge.source);
+    matchedNodes.add(edge.target);
+  });
+  return { nodes: matchedNodes, edges: matchedEdges };
+}
+
+function buildNodeRoles(center, ids, directEdges) {
+  const roles = new Map([[center, "center"]]);
+  ids.forEach(id => roles.set(id, nodeRole(center, id, directEdges)));
+  return roles;
+}
+
+function nodeRole(center, id, directEdges) {
+  const related = directEdges.filter(edge => (edge.source === center && edge.target === id) || (edge.source === id && edge.target === center));
+  if (related.some(edge => edge.relation === "包含" && edge.source === center)) return "contained";
+  if (related.some(edge => edge.relation === "包含" && edge.target === center)) return "parent";
+  if (related.some(edge => ["内容提要", "对应例题", "原页", "原页截图"].includes(edge.relation))) return "support";
+  return "related";
+}
+
+function layoutSpread(count) {
+  if (count > 38) return 3.1;
+  if (count > 30) return 2.78;
+  if (count > 22) return 2.48;
+  if (count > 14) return 2.04;
+  if (count > 8) return 1.68;
+  return 1.46;
+}
+
+function filteredEdges(edgeList) {
+  return edgeList
+    .sort((a, b) => edgePriority(b) - edgePriority(a))
+    .slice(0, 42);
+}
+
+function uniqueNeighborIds(id, directEdges) {
+  const result = [];
+  const seen = new Set();
+  for (const edge of directEdges) {
+    const other = edge.source === id ? edge.target : edge.source;
+    if (!seen.has(other) && nodes.has(other)) {
+      seen.add(other);
+      result.push(other);
+    }
+  }
+  return result;
+}
+
+function groupNeighbors(center, ids, directEdges) {
+  const edgeByOther = new Map();
+  for (const edge of directEdges) edgeByOther.set(edge.source === center ? edge.target : edge.source, edge);
+  const left = [];
+  const right = [];
+  const top = [];
+  const bottom = [];
+
+  ids.forEach(id => {
+    const node = nodes.get(id);
+    const edge = edgeByOther.get(id);
+    if (edge && edge.relation === "包含" && edge.target === center) left.push(id);
+    else if (edge && ["包含", "内容提要", "对应例题", "原页", "原页截图"].includes(edge.relation)) right.push(id);
+    else if (node.kind === "page" || node.kind === "example") bottom.push(id);
+    else top.push(id);
+  });
+  return { left, right, top, bottom };
+}
+
+function safeRect(width, height) {
+  const wide = width >= 1180;
+  const left = wide ? 234 : 24;
+  const rightGap = wide ? 330 : 24;
+  const right = width - rightGap;
+  const top = 22;
+  const bottom = height - 22;
+  if (right - left < 520) {
+    return { left: 24, top, right: width - 24, bottom, w: width - 48, h: bottom - top };
+  }
+  return { left, top, right, bottom, w: right - left, h: bottom - top };
+}
+
+function layoutScale(count, width, height) {
+  const areaPressure = Math.max(0, count - 12) * 0.012;
+  const widthPressure = width < 1150 ? 0.08 : 0;
+  const heightPressure = height < 700 ? 0.06 : 0;
+  return clamp(1 - areaPressure - widthPressure - heightPressure, 0.72, 1);
+}
+
+function placeRadialNodes(center, ids, directEdges, roles, positions, safe, cx, cy, scale) {
+  if (!ids.length) return;
+  const ordered = orderedNeighbors(center, ids, directEdges);
+  const rings = splitRings(ordered);
+  const ringCount = rings.length;
+
+  rings.forEach((ringIds, ringIndex) => {
+    const ringRatio = ringCount === 1 ? 0.78 : ringIndex === 0 ? 0.56 : 0.86;
+    const rx = Math.max(170, safe.w * ringRatio * 0.5);
+    const ry = Math.max(145, safe.h * ringRatio * 0.5);
+    const offset = ringIndex === 0 ? 0 : 0.5;
+    ringIds.forEach((nodeId, idx) => {
+      const node = nodes.get(nodeId);
+      const size = sizeFor(node, false, scale, roles.get(nodeId));
+      const angle = angleForNode(center, nodeId, directEdges, idx, ringIds.length, offset);
+      const x = cx + Math.cos(angle) * rx - size.w / 2;
+      const y = cy + Math.sin(angle) * ry - size.h / 2;
+      positions.set(nodeId, {
+        x: clamp(x, safe.left, safe.right - size.w),
+        y: clamp(y, safe.top, safe.bottom - size.h),
+        ...size
+      });
+    });
+  });
+}
+
+function orderedNeighbors(center, ids, directEdges) {
+  const edgeByOther = new Map();
+  for (const edge of directEdges) edgeByOther.set(edge.source === center ? edge.target : edge.source, edge);
+  return [...ids].sort((a, b) => {
+    const rank = neighborRank(center, edgeByOther.get(a), nodes.get(a)) - neighborRank(center, edgeByOther.get(b), nodes.get(b));
+    if (rank !== 0) return rank;
+    return String(nodes.get(a).title).localeCompare(String(nodes.get(b).title), "zh-Hans-CN");
+  });
+}
+
+function neighborRank(center, edge, node) {
+  if (edge && edge.relation === "包含" && edge.target === center) return 0;
+  if (edge && edge.relation === "包含") return 1;
+  if (edge && edge.relation === "内容提要") return 2;
+  if (node.kind === "summary") return 3;
+  if (node.kind === "example") return 4;
+  if (node.kind === "page") return 5;
+  return 6;
+}
+
+function splitRings(ids) {
+  if (ids.length <= 24) return [ids];
+  const innerCount = ids.length <= 32 ? Math.ceil(ids.length * 0.42) : Math.ceil(ids.length * 0.36);
+  const inner = [];
+  const outer = [];
+  ids.forEach((id, index) => {
+    if (inner.length < innerCount && index % 2 === 0) inner.push(id);
+    else outer.push(id);
+  });
+  ids.forEach(id => {
+    if (!inner.includes(id) && !outer.includes(id)) {
+      (inner.length < innerCount ? inner : outer).push(id);
+    }
+  });
+  return [inner, outer.filter(Boolean)].filter(ring => ring.length);
+}
+
+function angleForNode(center, nodeId, directEdges, idx, count, offset) {
+  const edge = directEdges.find(item => (item.source === center && item.target === nodeId) || (item.source === nodeId && item.target === center));
+  if (edge && edge.relation === "包含" && edge.target === center) return Math.PI;
+  return -Math.PI / 2 + ((idx + offset) / Math.max(1, count)) * Math.PI * 2;
+}
+
+function relaxPositions(ids, positions, safe, pinned = new Set()) {
+  const ordered = [...ids];
+  const pad = 68;
+  for (let pass = 0; pass < 28; pass += 1) {
+    let moved = false;
+    for (let i = 0; i < ordered.length; i += 1) {
+      for (let j = i + 1; j < ordered.length; j += 1) {
+        const a = positions.get(ordered[i]);
+        const b = positions.get(ordered[j]);
+        if (!a || !b || !overlaps(a, b, pad)) continue;
+        const acx = a.x + a.w / 2;
+        const acy = a.y + a.h / 2;
+        const bcx = b.x + b.w / 2;
+        const bcy = b.y + b.h / 2;
+        const dx = bcx - acx || 1;
+        const dy = bcy - acy || 1;
+        const len = Math.hypot(dx, dy) || 1;
+        const push = 24;
+        if (!pinned.has(ordered[i])) {
+          a.x = clamp(a.x - (dx / len) * push, safe.left, safe.right - a.w);
+          a.y = clamp(a.y - (dy / len) * push, safe.top, safe.bottom - a.h);
+        }
+        if (!pinned.has(ordered[j])) {
+          b.x = clamp(b.x + (dx / len) * push, safe.left, safe.right - b.w);
+          b.y = clamp(b.y + (dy / len) * push, safe.top, safe.bottom - b.h);
+        }
+        moved = true;
+      }
+    }
+    if (!moved) break;
+  }
+}
+
+function overlaps(a, b, pad) {
+  return !(
+    a.x + a.w + pad < b.x ||
+    b.x + b.w + pad < a.x ||
+    a.y + a.h + pad < b.y ||
+    b.y + b.h + pad < a.y
+  );
+}
+
+function overlapPenalty(a, b, pad = 0) {
+  const left = Math.max(a.x - pad, b.x);
+  const right = Math.min(a.x + a.w + pad, b.x + b.w);
+  const top = Math.max(a.y - pad, b.y);
+  const bottom = Math.min(a.y + a.h + pad, b.y + b.h);
+  if (right <= left || bottom <= top) return 0;
+  return (right - left) * (bottom - top);
+}
+
+function outsidePenalty(box, bounds) {
+  const left = Math.max(0, bounds.left - box.x);
+  const right = Math.max(0, box.x + box.w - bounds.right);
+  const top = Math.max(0, bounds.top - box.y);
+  const bottom = Math.max(0, box.y + box.h - bounds.bottom);
+  return left * box.h + right * box.h + top * box.w + bottom * box.w;
+}
+
+function sizeFor(node, isCenter, scale = 1, role = "related") {
+  if (isCenter) return scaledSize(230, 86, scale);
+  if (role === "contained") return scaledSize(198, 58, scale);
+  if (role === "parent") return scaledSize(156, 44, scale);
+  if (role === "support") {
+    if (node.kind === "page") return scaledSize(118, 38, scale);
+    if (node.kind === "example") return scaledSize(164, 46, scale);
+    return scaledSize(168, 46, scale);
+  }
+  return scaledSize(148, 42, scale);
+}
+
+function scaledSize(w, h, scale) {
+  return { w: Math.round(w * scale), h: Math.round(h * scale) };
+}
+
+function buildEdgePlans(edgeList, positions) {
+  const plans = [];
+  edgeList.forEach((edge, index) => {
+    plans.push(edgePlan(edge, positions, index, plans));
+  });
+  return plans;
+}
+
+function edgePlan(edge, positions, index, priorPlans = []) {
+  const a = positions.get(edge.source);
+  const b = positions.get(edge.target);
+  const ac = boxCenter(a);
+  const bc = boxCenter(b);
+  const start = connectionPoint(a, bc.x, bc.y);
+  const end = connectionPoint(b, ac.x, ac.y);
+  const dx = end.x - start.x;
+  const dy = end.y - start.y;
+  const len = Math.hypot(dx, dy) || 1;
+  const normalX = -dy / len;
+  const normalY = dx / len;
+  const direct = edge.source === centerId || edge.target === centerId;
+  const midX = (start.x + end.x) / 2;
+  const midY = (start.y + end.y) / 2;
+  const centerBox = positions.get(centerId);
+  const graphCenter = centerBox ? boxCenter(centerBox) : { x: midX, y: midY };
+  const outX = midX - graphCenter.x;
+  const outY = midY - graphCenter.y;
+  const outLen = Math.hypot(outX, outY);
+  const lane = (index % 7) - 3;
+  const outwardX = outLen > 12 ? outX / outLen : normalX;
+  const outwardY = outLen > 12 ? outY / outLen : normalY;
+  const semantic = relationGroup(edge.relation) === "相关主线";
+  const directLane = lane || (index % 2 ? 1 : -1);
+  const directCurve = semantic
+    ? Math.min(300, Math.max(110, len * 0.24) + Math.abs(lane) * 24)
+    : Math.min(105, Math.max(42, len * 0.1) + Math.abs(lane) * 10);
+  const indirectCurve = semantic
+    ? Math.min(430, Math.max(170, len * 0.36) + Math.abs(lane) * 42)
+    : Math.min(300, Math.max(110, len * 0.28) + Math.abs(lane) * 28);
+  const control = chooseEdgeControl({
+    edge,
+    positions,
+    start,
+    end,
+    midX,
+    midY,
+    normalX,
+    normalY,
+    outwardX,
+    outwardY,
+    direct,
+    directLane,
+    directCurve,
+    indirectCurve,
+    lane,
+    priorPlans
+  });
+  const labelT = direct
+    ? (
+      semantic
+        ? (edge.source === centerId ? 0.72 : edge.target === centerId ? 0.28 : 0.5)
+        : (edge.source === centerId ? 0.56 : edge.target === centerId ? 0.44 : 0.5)
+    )
+    : (semantic ? [0.62, 0.7, 0.78, 0.86][Math.abs(index) % 4] : 0.5);
+  return {
+    edge,
+    id: `edge_path_${index}`,
+    key: edgeKey(edge),
+    start,
+    control,
+    end,
+    direct,
+    labelT,
+    labelText: relationLabel(edge.relation, edge),
+    samples: quadraticSamples(start, control, end, 30)
+  };
+}
+
+function chooseEdgeControl(context) {
+  const {
+    edge,
+    positions,
+    start,
+    end,
+    midX,
+    midY,
+    normalX,
+    normalY,
+    outwardX,
+    outwardY,
+    direct,
+    directLane,
+    directCurve,
+    indirectCurve,
+    lane,
+    priorPlans
+  } = context;
+  const candidates = [];
+  const push = (x, y, bias) => candidates.push({ x, y, bias });
+
+  if (direct) {
+    const semantic = relationGroup(edge.relation) === "相关主线";
+    const outwardSign = normalX * outwardX + normalY * outwardY >= 0 ? 1 : -1;
+    const signs = semantic
+      ? [outwardSign, -outwardSign]
+      : (directLane >= 0 ? [1, -1] : [-1, 1]);
+    const multipliers = [0.72, 1, 1.28, 1.65, 2.05, 2.55];
+    signs.forEach(sign => {
+      multipliers.forEach((multiplier, order) => {
+        const offset = sign * directCurve * multiplier;
+        push(midX + normalX * offset, midY + normalY * offset, order + (sign === signs[0] ? 0 : 0.35));
+      });
+    });
+    push(midX, midY, 8);
+  } else {
+    const laneOffsets = [lane, lane + 2, lane - 2, lane + 4, lane - 4, 0];
+    const semantic = relationGroup(edge.relation) === "相关主线";
+    const signs = semantic ? [1, -1] : [1];
+    signs.forEach((sign, signOrder) => {
+      [0.72, 1, 1.28, 1.62, 2.02].forEach((multiplier, order) => {
+        laneOffsets.forEach((laneOffset, laneOrder) => {
+          push(
+            midX + outwardX * indirectCurve * multiplier * sign + normalX * laneOffset * 44,
+            midY + outwardY * indirectCurve * multiplier * sign + normalY * laneOffset * 44,
+            order + signOrder * 0.22 + laneOrder * 0.08
+          );
+        });
+      });
+    });
+  }
+
+  let best = candidates[0];
+  let bestScore = Infinity;
+  candidates.forEach(candidate => {
+    const score = edgeControlScore(edge, positions, start, candidate, end, priorPlans) + candidate.bias;
+    if (score < bestScore) {
+      best = candidate;
+      bestScore = score;
+    }
+  });
+  return { x: best.x, y: best.y };
+}
+
+function edgeControlScore(edge, positions, start, control, end, priorPlans = []) {
+  let score = 0;
+  for (let i = 2; i < 38; i += 1) {
+    const point = quadraticPoint(start, control, end, i / 38);
+    positions.forEach((box, id) => {
+      if (id === edge.source || id === edge.target) return;
+      const pad = 18;
+      if (
+        point.x >= box.x - pad &&
+        point.x <= box.x + box.w + pad &&
+        point.y >= box.y - pad &&
+        point.y <= box.y + box.h + pad
+      ) {
+        const center = boxCenter(box);
+        const normalized = Math.hypot(point.x - center.x, point.y - center.y) / Math.max(1, Math.hypot(box.w, box.h));
+        score += 2600 + (1 - Math.min(1, normalized)) * 1200;
+      }
+    });
+    priorPlans.forEach(prior => {
+      if (prior.edge.source === edge.source && prior.edge.target === edge.target) return;
+      const sharedEndpoint = [edge.source, edge.target].some(id => id === prior.edge.source || id === prior.edge.target);
+      prior.samples.forEach(priorPoint => {
+        const distance = Math.hypot(point.x - priorPoint.x, point.y - priorPoint.y);
+        const clearance = sharedEndpoint ? 24 : 34;
+        if (distance >= clearance) return;
+        score += (clearance - distance) * (sharedEndpoint ? 18 : 26);
+        if (distance < (sharedEndpoint ? 12 : 18)) score += sharedEndpoint ? 420 : 900;
+      });
+    });
+  }
+  const mid = quadraticPoint(start, control, end, 0.5);
+  score += Math.hypot(mid.x - control.x, mid.y - control.y) * 0.001;
+  return score;
+}
+
+function quadraticSamples(start, control, end, count) {
+  const points = [];
+  for (let i = 3; i <= count - 3; i += 2) {
+    points.push(quadraticPoint(start, control, end, i / count));
+  }
+  return points;
+}
+
+function buildPathObstacles(plans) {
+  const obstacles = [];
+  plans.forEach(plan => {
+    for (let i = 1; i < 42; i += 1) {
+      const point = quadraticPoint(plan.start, plan.control, plan.end, i / 42);
+      obstacles.push({ x: point.x - 20, y: point.y - 20, w: 40, h: 40, key: plan.key });
+    }
+  });
+  return obstacles;
+}
+
+function edgeFocusBounds(plan) {
+  const boxes = [];
+  const sourceBox = lastLayout?.positions.get(plan.edge.source);
+  const targetBox = lastLayout?.positions.get(plan.edge.target);
+  if (sourceBox) boxes.push(sourceBox);
+  if (targetBox) boxes.push(targetBox);
+  for (let i = 0; i <= 24; i += 1) {
+    const point = quadraticPoint(plan.start, plan.control, plan.end, i / 24);
+    boxes.push({ x: point.x, y: point.y, w: 1, h: 1 });
+  }
+  const left = Math.min(...boxes.map(box => box.x));
+  const top = Math.min(...boxes.map(box => box.y));
+  const right = Math.max(...boxes.map(box => box.x + box.w));
+  const bottom = Math.max(...boxes.map(box => box.y + box.h));
+  return { x: left, y: top, w: right - left, h: bottom - top };
+}
+
+function focusViewOnBounds(bounds) {
+  if (!bounds || !Number.isFinite(bounds.x)) return;
+  const safe = viewSafeScreenRect();
+  const pad = 88;
+  const world = {
+    x: bounds.x - pad,
+    y: bounds.y - pad,
+    w: bounds.w + pad * 2,
+    h: bounds.h + pad * 2
+  };
+  const nextScale = clamp(Math.min(view.scale, safe.w / world.w, safe.h / world.h), 0.44, 1.2);
+  view.scale = nextScale;
+  view.tx = safe.left + (safe.w - world.w * nextScale) / 2 - world.x * nextScale;
+  view.ty = safe.top + (safe.h - world.h * nextScale) / 2 - world.y * nextScale;
+  view.needsFit = false;
+}
+
+function renderEdge(plan, placedLabel, edgeLabelBoxes, muted = false) {
+  const { edge, start, control, end, direct, labelText } = plan;
+  const pathGroup = document.createElementNS("http://www.w3.org/2000/svg", "g");
+  pathGroup.dataset.source = edge.source;
+  pathGroup.dataset.target = edge.target;
+  pathGroup.dataset.relation = edge.relation;
+  const title = document.createElementNS("http://www.w3.org/2000/svg", "title");
+  title.textContent = labelText;
+  pathGroup.appendChild(title);
+
+  const hitPath = document.createElementNS("http://www.w3.org/2000/svg", "path");
+  hitPath.setAttribute("d", `M ${start.x} ${start.y} Q ${control.x} ${control.y}, ${end.x} ${end.y}`);
+  hitPath.setAttribute("class", "edge-click-target");
+  hitPath.dataset.source = edge.source;
+  hitPath.dataset.target = edge.target;
+  hitPath.dataset.relation = edge.relation;
+  hitPath.addEventListener("click", event => {
+    event.stopPropagation();
+    focusedEdgeKey = plan.key;
+    expandedNodeId = null;
+    selectedId = edge.target === centerId ? edge.source : edge.target;
+    render();
+  });
+  pathGroup.appendChild(hitPath);
+
+  const visiblePath = document.createElementNS("http://www.w3.org/2000/svg", "path");
+  visiblePath.setAttribute("d", quadraticPathD(start, control, end));
+  visiblePath.setAttribute("class", `edge-visible edge-${edgeClass(edge.relation)} ${direct ? "edge-direct" : "edge-indirect"} ${muted ? "edge-muted" : "edge-active"}`);
+  visiblePath.setAttribute("marker-end", `url(#${arrowMarkerId(edge, muted)})`);
+  visiblePath.dataset.source = edge.source;
+  visiblePath.dataset.target = edge.target;
+  visiblePath.dataset.relation = edge.relation;
+  pathGroup.appendChild(visiblePath);
+
+  const carrier = document.createElementNS("http://www.w3.org/2000/svg", "path");
+  carrier.setAttribute("id", plan.id);
+  carrier.setAttribute("d", labelCarrierPath(plan, placedLabel));
+  carrier.setAttribute("class", `edge edge-carrier edge-${edgeClass(edge.relation)} ${direct ? "edge-direct" : "edge-indirect"} ${muted ? "edge-muted" : "edge-active"}`);
+  carrier.dataset.source = edge.source;
+  carrier.dataset.target = edge.target;
+  carrier.dataset.relation = edge.relation;
+  pathGroup.appendChild(carrier);
+
+  const labelGroup = renderEdgeLabel(labelText, placedLabel, muted);
+  labelGroup.dataset.source = edge.source;
+  labelGroup.dataset.target = edge.target;
+  labelGroup.dataset.relation = edge.relation;
+  return { pathGroup, labelGroup };
+}
+
+function placeLabelOnPath(plan, labelBoxes, pathObstacles) {
+  const width = labelWidth(plan.labelText);
+  const height = 22;
+  const stageBox = stageBoxFromPositions();
+  const candidates = labelCandidates(plan);
+  let best = null;
+  for (const t of candidates) {
+    const rawPoint = quadraticPoint(plan.start, plan.control, plan.end, t);
+    const tangent = quadraticTangent(plan.start, plan.control, plan.end, t);
+    const angle = readableAngle(Math.atan2(tangent.y, tangent.x) * 180 / Math.PI);
+    const box = labelAxisBox(rawPoint, width, height, angle);
+    const nodeScore = labelBoxes.reduce((sum, existing) => {
+      if (existing.type !== "node" && existing.type !== "panel") return sum;
+      return sum + overlapPenalty(existing, box, 16);
+    }, 0);
+    const labelScore = labelBoxes.reduce((sum, existing) => {
+      if (existing.type === "node" || existing.type === "panel") return sum;
+      return sum + overlapPenalty(existing, box, 32);
+    }, 0);
+    const lineScore = pathObstacles.reduce((sum, existing) => {
+      if (existing.key === plan.key) return sum;
+      return sum + overlapPenalty(existing, box, 34) * 1.35;
+    }, 0);
+    const stageScore = outsidePenalty(box, stageBox) * 36;
+    const endpointScore = (Math.max(0, 0.12 - t) + Math.max(0, t - 0.88)) * 260;
+    const driftScore = Math.abs(t - plan.labelT) * 18;
+    const score = nodeScore * 90 + labelScore * 22 + lineScore * 1.35 + stageScore + endpointScore + driftScore;
+    const placed = { x: rawPoint.x, y: rawPoint.y, angle, width, height, t };
+    if (!nodeScore && !labelScore && !lineScore && !stageScore) {
+      labelBoxes.push({ ...box, type: "label" });
+      return placed;
+    }
+    if (!best || score < best.score) {
+      best = { score, box, placed };
+    }
+  }
+  if (best) {
+    labelBoxes.push({ ...best.box, type: "label" });
+    return best.placed;
+  }
+  const midpoint = quadraticPoint(plan.start, plan.control, plan.end, plan.labelT);
+  const fallback = { x: midpoint.x, y: midpoint.y, angle: 0, width, height, t: plan.labelT };
+  labelBoxes.push({ ...labelAxisBox(midpoint, width, height, 0), type: "label" });
+  return fallback;
+}
+
+function pathSegmentsAvoidingLabels(plan, edgeLabelBoxes) {
+  const points = [];
+  const blockers = edgeLabelBoxes.filter(box => box.key !== plan.key);
+  const steps = 132;
+  for (let i = 0; i <= steps; i += 1) {
+    const t = i / steps;
+    const point = quadraticPoint(plan.start, plan.control, plan.end, t);
+    const blocked = i > 2 && i < steps - 2 && blockers.some(box => pointInBox(point, box, 9));
+    points.push({ ...point, t, blocked });
+  }
+  const segments = [];
+  let current = [];
+  points.forEach(point => {
+    if (point.blocked) {
+      pushSegment(current, segments);
+      current = [];
+    } else {
+      current.push(point);
+    }
+  });
+  pushSegment(current, segments);
+  if (!segments.length) {
+    return [{ d: quadraticPathD(plan.start, plan.control, plan.end), endsAtEnd: true }];
+  }
+  return segments.map(segment => ({
+    d: polylinePathD(segment),
+    endsAtEnd: segment[segment.length - 1].t >= 0.985
+  }));
+}
+
+function pushSegment(points, segments) {
+  if (points.length >= 2) segments.push(points);
+}
+
+function polylinePathD(points) {
+  return points.map((point, index) => `${index ? "L" : "M"} ${point.x} ${point.y}`).join(" ");
+}
+
+function quadraticPathD(start, control, end) {
+  return `M ${start.x} ${start.y} Q ${control.x} ${control.y}, ${end.x} ${end.y}`;
+}
+
+function labelCarrierPath(plan, placedLabel) {
+  const t = clamp(placedLabel.t ?? plan.labelT, 0.03, 0.97);
+  const start = quadraticPoint(plan.start, plan.control, plan.end, Math.max(0, t - 0.012));
+  const end = quadraticPoint(plan.start, plan.control, plan.end, Math.min(1, t + 0.012));
+  const control = quadraticPoint(plan.start, plan.control, plan.end, t);
+  return quadraticPathD(start, control, end);
+}
+
+function arrowMarkerId(edge, muted) {
+  return muted ? "arrow-muted" : `arrow-${edgeClass(edge.relation)}`;
+}
+
+function pointInBox(point, box, pad = 0) {
+  return point.x >= box.x - pad &&
+    point.x <= box.x + box.w + pad &&
+    point.y >= box.y - pad &&
+    point.y <= box.y + box.h + pad;
+}
+
+function renderEdgeLabel(text, placedLabel, muted) {
+  const wrap = document.createElementNS("http://www.w3.org/2000/svg", "g");
+  wrap.setAttribute("class", `edge-label-wrap ${muted ? "edge-label-wrap-muted" : ""}`);
+
+  const inner = document.createElementNS("http://www.w3.org/2000/svg", "g");
+  inner.setAttribute("transform", `translate(${placedLabel.x} ${placedLabel.y}) rotate(${placedLabel.angle})`);
+
+  const bg = document.createElementNS("http://www.w3.org/2000/svg", "rect");
+  bg.setAttribute("class", "edge-label-bg");
+  bg.setAttribute("x", -placedLabel.width / 2);
+  bg.setAttribute("y", -placedLabel.height / 2);
+  bg.setAttribute("width", placedLabel.width);
+  bg.setAttribute("height", placedLabel.height);
+  bg.setAttribute("rx", "5");
+
+  const label = document.createElementNS("http://www.w3.org/2000/svg", "text");
+  label.setAttribute("x", "0");
+  label.setAttribute("y", "0");
+  label.setAttribute("class", `edge-label ${muted ? "edge-label-muted" : ""}`);
+  label.setAttribute("dominant-baseline", "middle");
+  label.textContent = text;
+
+  inner.append(bg, label);
+  wrap.appendChild(inner);
+  return wrap;
+}
+
+function labelWidth(text) {
+  return Math.max(38, String(text).length * 10.6 + 16);
+}
+
+function labelAxisBox(point, width, height, angle) {
+  const radians = Math.abs(angle) * Math.PI / 180;
+  const w = Math.abs(Math.cos(radians)) * width + Math.abs(Math.sin(radians)) * height;
+  const h = Math.abs(Math.sin(radians)) * width + Math.abs(Math.cos(radians)) * height;
+  return { x: point.x - w / 2, y: point.y - h / 2, w, h };
+}
+
+function labelCandidates(plan) {
+  const seed = plan.labelT;
+  const values = [
+    seed,
+    seed - 0.06,
+    seed + 0.06,
+    seed - 0.12,
+    seed + 0.12,
+    seed - 0.18,
+    seed + 0.18,
+    0.5,
+    0.42,
+    0.58,
+    0.34,
+    0.66,
+    0.26,
+    0.74,
+    0.18,
+    0.82,
+    0.1,
+    0.9
+  ].filter(value => value >= 0.08 && value <= 0.92);
+  for (let value = 0.08; value <= 0.92; value += 0.018) values.push(Number(value.toFixed(3)));
+  return values.sort((a, b) => Math.abs(a - plan.labelT) - Math.abs(b - plan.labelT));
+}
+
+function readableAngle(angle) {
+  let result = angle;
+  if (result > 90) result -= 180;
+  if (result < -90) result += 180;
+  return result;
+}
+
+function placeLabel(point, text, labelBoxes, dirX, dirY, positions) {
+  const width = Math.min(190, Math.max(30, text.length * 11));
+  const height = 16;
+  const stageBox = stageBoxFromPositions(positions);
+  const distances = [0, 18, 34, 52, 72, 96, -18, -34, -52];
+  for (const distance of distances) {
+    const candidate = {
+      x: clamp(point.x + dirX * distance, stageBox.left + 12 + width / 2, stageBox.right - 12 - width / 2),
+      y: clamp(point.y + dirY * distance, stageBox.top + 18, stageBox.bottom - 20)
+    };
+    const box = { x: candidate.x - width / 2, y: candidate.y - height + 2, w: width, h: height };
+    if (!labelBoxes.some(existing => overlaps(existing, box, 3))) {
+      labelBoxes.push(box);
+      return candidate;
+    }
+  }
+  const fallback = { x: point.x, y: point.y };
+  labelBoxes.push({ x: fallback.x - width / 2, y: fallback.y - height + 2, w: width, h: height });
+  return fallback;
+}
+
+function stageBoxFromPositions() {
+  if (lastLayout) {
+    return {
+      left: 24,
+      top: 22,
+      right: lastLayout.width - 24,
+      bottom: lastLayout.height - 22,
+      w: lastLayout.width - 48,
+      h: lastLayout.height - 44
+    };
+  }
+  const rect = canvas.getBoundingClientRect();
+  const width = Math.max(760, Math.floor(rect.width || window.innerWidth - 28));
+  const height = Math.max(560, Math.floor(rect.height || window.innerHeight - 150));
+  return { left: 24, top: 22, right: width - 24, bottom: height - 22, w: width - 48, h: height - 44 };
+}
+
+function boxCenter(box) {
+  return { x: box.x + box.w / 2, y: box.y + box.h / 2 };
+}
+
+function connectionPoint(box, towardX, towardY) {
+  const center = boxCenter(box);
+  const dx = towardX - center.x;
+  const dy = towardY - center.y;
+  if (!dx && !dy) return center;
+  const scale = Math.min(
+    Math.abs((box.w / 2) / (dx || 0.0001)),
+    Math.abs((box.h / 2) / (dy || 0.0001))
+  );
+  return { x: center.x + dx * scale, y: center.y + dy * scale };
+}
+
+function quadraticPoint(start, control, end, t) {
+  const one = 1 - t;
+  return {
+    x: one * one * start.x + 2 * one * t * control.x + t * t * end.x,
+    y: one * one * start.y + 2 * one * t * control.y + t * t * end.y
+  };
+}
+
+function quadraticTangent(start, control, end, t) {
+  return {
+    x: 2 * (1 - t) * (control.x - start.x) + 2 * t * (end.x - control.x),
+    y: 2 * (1 - t) * (control.y - start.y) + 2 * t * (end.y - control.y)
+  };
+}
+
+function clamp(value, min, max) {
+  return Math.min(max, Math.max(min, value));
+}
+
+function renderNode(id, pos, role = "related", muted = false) {
+  const node = nodes.get(id);
+  const card = document.createElement("button");
+  card.type = "button";
+  card.className = `net-node net-${node.kind} role-${role}`;
+  if (muted) card.classList.add("filter-muted");
+  if (id === centerId) card.classList.add("center");
+  if (id === selectedId) card.classList.add("selected");
+  if (id === expandedNodeId) card.classList.add("expanded-source");
+  if (nodeMatchesSearch(node)) card.classList.add("match");
+  card.title = displayTitle(node);
+  card.dataset.id = id;
+  card.dataset.kind = node.kind;
+  card.style.left = `${pos.x}px`;
+  card.style.top = `${pos.y}px`;
+  card.style.width = `${pos.w}px`;
+  card.style.height = `${pos.h}px`;
+  card.style.background = nodeBackground(node, role);
+
+  const title = document.createElement("span");
+  title.className = "node-title";
+  title.innerHTML = searchQuery ? highlightTermHTML(displayTitle(node)) : escapeHtml(displayTitle(node));
+  card.appendChild(title);
+
+  const kind = document.createElement("span");
+  kind.className = "node-kind";
+  kind.textContent = node.kindLabel || node.kind;
+  card.appendChild(kind);
+
+  card.addEventListener("click", () => {
+    focusedEdgeKey = null;
+    selectedId = id;
+    if (node.centerable && id !== centerId && CENTERABLE.has(node.kind)) focusNode(id, true);
+    else if (EXPANDABLE.has(node.kind)) openLeafNode(id, { toggle: true, focusHost: false });
+    else renderDetail(id, true);
+  });
+
+  return card;
+}
+
+function nodeBackground(node, role) {
+  if (role === "center") return COLORS.root;
+  if (role === "contained") return "#dff7f3";
+  if (role === "parent") return "#dce8f4";
+  if (role === "support") {
+    if (node.kind === "example") return "#ffeef2";
+    if (node.kind === "page") return "#eef1f4";
+    return "#eef5ff";
+  }
+  return "#f1eadb";
+}
+
+function renderDetail(id, forceOpen = false) {
+  const node = nodes.get(id) || nodes.get(centerId);
+  const wasCollapsed = detailPanel.classList.contains("collapsed");
+  detailPanel.innerHTML = "";
+  detailPanel.classList.toggle("collapsed", forceOpen ? false : wasCollapsed);
+
+  const head = document.createElement("div");
+  head.className = "panel-head";
+  const heading = document.createElement("strong");
+  heading.textContent = "学习卡片";
+  const toggle = document.createElement("button");
+  toggle.id = "toggleDetailPanel";
+  toggle.className = "panel-toggle";
+  toggle.type = "button";
+  toggle.addEventListener("click", () => {
+    detailPanel.classList.toggle("collapsed");
+    updatePanelToggleLabels();
+    view.needsFit = true;
+    render();
+  });
+  head.append(heading, toggle);
+  detailPanel.appendChild(head);
+
+  const body = document.createElement("div");
+  body.className = "detail-body";
+  const h = document.createElement("h2");
+  h.textContent = displayTitle(node);
+  body.appendChild(h);
+
+  const meta = document.createElement("div");
+  meta.className = "meta-line";
+  meta.textContent = `${node.kindLabel || node.kind}${node.page ? ` · 书内页 ${node.page}` : ""}`;
+  body.appendChild(meta);
+
+  const centerTip = document.createElement("div");
+  centerTip.className = "detail-actions";
+  if (node.centerable && CENTERABLE.has(node.kind)) {
+    const btn = document.createElement("button");
+    btn.type = "button";
+    btn.textContent = id === centerId ? "当前中心" : "切换为中心";
+    btn.disabled = id === centerId;
+    btn.addEventListener("click", () => focusNode(id, true));
+    centerTip.appendChild(btn);
+  }
+  body.appendChild(centerTip);
+
+  body.appendChild(renderLearningGuide(node));
+
+  if (node.kind === "page" && node.image) body.appendChild(renderPageImage(node));
+  const concepts = relatedConcepts(node.id);
+  const examples = relatedExamples(node.id);
+  const pages = relatedPages(node);
+  if (concepts.length) body.appendChild(renderNodeLinks("关联知识", concepts, "concept"));
+  if (examples.length) body.appendChild(renderNodeLinks("相关题型/例题", examples, "example"));
+  if (node.kind !== "page" && pages.length) body.appendChild(renderPageLinks(pages));
+  detailPanel.appendChild(body);
+  updatePanelToggleLabels();
+}
+
+function renderLearningGuide(node) {
+  const guide = learningGuideForNode(node);
+  const wrap = document.createElement("section");
+  wrap.className = "learning-guide";
+
+  const intro = document.createElement("p");
+  intro.className = "guide-intro";
+  intro.textContent = guide.intro;
+  wrap.appendChild(intro);
+
+  guide.sections.forEach(section => {
+    const block = document.createElement("div");
+    block.className = "guide-section";
+    const title = document.createElement("strong");
+    title.textContent = section.title;
+    const list = document.createElement("ul");
+    list.className = "guide-list";
+    section.items.forEach(item => {
+      const li = document.createElement("li");
+      li.textContent = item;
+      list.appendChild(li);
+    });
+    block.append(title, list);
+    wrap.appendChild(block);
+  });
+
+  const note = document.createElement("div");
+  note.className = "guide-note";
+  note.textContent = "右侧说明按高考复习逻辑重新整理；原页和例题按钮用于核对版面、结构式、表格与复杂图示。";
+  wrap.appendChild(note);
+  return wrap;
+}
+
+function learningGuideForNode(node) {
+  const title = displayTitle(node);
+  const path = nodePath(node).map(cleanGuideText);
+  const context = `${path.join(" ")} ${cleanGuideText(title)}`;
+  const role = guideRole(node, title);
+  const topic = topicGuide(context);
+  const detail = detailGuide(context);
+  return {
+    intro: `${role}：${topic.scope}`,
+    sections: [
+      { title: "核心概念", items: uniqueGuideItems([...topic.core, ...detail.core]).slice(0, 5) },
+      { title: "常考方式", items: uniqueGuideItems([...detail.method, ...topic.method]).slice(0, 4) },
+      { title: "易错点", items: uniqueGuideItems([...topic.traps, ...detail.traps]).slice(0, 4) },
+      { title: "关联知识", items: relationHintsForNode(node, context).slice(0, 4) }
+    ]
+  };
+}
+
+function guideRole(node, title) {
+  if (node.kind === "root") return "总框架";
+  if (node.kind === "chapter") return "章节主线";
+  if (node.kind === "module") return "模块定位";
+  if (node.kind === "section") return "小节定位";
+  if (node.kind === "type") return title.startsWith("类型") ? "题型定位" : "考点定位";
+  if (node.kind === "summary") return "内容提要";
+  if (node.kind === "example") return "例题节点";
+  if (node.kind === "page") return "原页节点";
+  return "知识节点";
+}
+
+function topicGuide(context) {
+  const fallback = {
+    scope: "把本单元放回“概念、规律、模型、题型”四层结构中复习，先明确对象，再判断条件，最后选择方法。",
+    core: [
+      "先分清研究对象：物质、微粒、反应、能量变化、平衡体系或实验操作。",
+      "概念题重在边界条件，计算题重在守恒关系，实验题重在目的、现象和结论的对应。",
+      "同一知识点常与离子反应、氧化还原、平衡、电化学和实验现象交叉命题。"
+    ],
+    traps: [
+      "不要只背结论，要同时记住结论成立的条件。",
+      "看到熟悉名词时先核对对象是否变了，例如溶液、胶体、晶体、气体或有机物环境不同。",
+      "符号、单位、状态、强弱、电荷和物料来源经常是扣分点。"
+    ],
+    method: [
+      "读题时圈出对象、条件、目标量和限制词。",
+      "先用定性规律判断方向，再用守恒、平衡或结构模型进行定量或验证。",
+      "做完后回查单位、电荷、原子个数、价态变化和答案是否符合常识。"
+    ]
+  };
+
+  const rules = [
+    [/物质组成|物质的组成|物质的分类|分类法|物质的转化|胶体|单质|氧化物|分散系/, {
+      scope: "本单元解决“物质是什么、属于哪类、能怎样转化”的问题，是后续离子反应、氧化还原和元素化合物推断的基础。",
+      core: [
+        "宏观看元素和物质类别，微观看原子、分子、离子与电子结构。",
+        "分类标准必须唯一且明确，混合物、纯净物、单质、化合物、氧化物、酸碱盐不能混用标准。",
+        "物质转化要同时考虑物质类别、元素价态和反应条件。"
+      ],
+      traps: [
+        "只含一种元素不一定是纯净物，例如同素异形体混合。",
+        "金属阳离子存在不必然说明物质是离子晶体，金属晶体也有金属阳离子和自由电子。",
+        "酸性氧化物、碱性氧化物与是否溶于水不是同一判断标准。"
+      ],
+      method: [
+        "先判纯净物或混合物，再判元素组成，最后判类别和性质。",
+        "转化题优先写出核心元素价态和物质类别变化。",
+        "遇到胶体题，抓住粒径范围、丁达尔效应、聚沉和渗析。"
+      ]
+    }],
+    [/化学计量|物质的量|摩尔|气体|浓度|守恒|阿伏加德罗/, {
+      scope: "本单元把宏观质量、体积、浓度与微观粒子数连接起来，是化学计算的共同语言。",
+      core: [
+        "物质的量 n 是核心桥梁，常用关系有 n=m/M、n=V/Vm、c=n/V、N=nNA。",
+        "守恒思想优先于套公式，常见守恒包括原子守恒、电荷守恒、电子守恒和质量守恒。",
+        "气体摩尔体积必须看温度和压强，溶液浓度必须看溶液体积而不是溶剂体积。"
+      ],
+      traps: [
+        "标准状况下并非所有物质都是气体，水、苯、四氯化碳等状态要特别判断。",
+        "阿伏加德罗常数题常在可逆反应、电离水解、胶体粒子、共价键数和晶体结构上设陷阱。",
+        "混合物平均摩尔质量不能直接等于各物质摩尔质量的算术平均。"
+      ],
+      method: [
+        "先统一单位，再建立 n 的转换链。",
+        "混合体系优先设物质的量，再用守恒列方程。",
+        "NA 判断题逐项核对物质状态、反应程度、微粒种类和系数关系。"
+      ]
+    }],
+    [/离子反应|电解质|离子方程式|沉淀|弱电解质|强电解质/, {
+      scope: "本单元关注溶液中离子是否存在、是否反应、如何用离子方程式准确表达。",
+      core: [
+        "强电解质在水溶液中按实际离子书写，弱电解质、难溶物、气体、单质和氧化物通常保留化学式。",
+        "离子反应发生的本质是离子浓度降低或生成更稳定的物质。",
+        "离子方程式必须同时满足客观事实、原子守恒、电荷守恒和拆写规则。"
+      ],
+      traps: [
+        "微溶物在反应物和生成物位置的写法可能不同，要结合题意判断。",
+        "与量有关的离子方程式不能忽略滴加顺序和物质配比。",
+        "共存题要同时检查复分解、氧化还原、络合、水解促进和酸碱环境。"
+      ],
+      method: [
+        "先列出真实存在的离子，再判断哪些离子能反应。",
+        "方程式写完后检查电荷、原子、沉淀气体弱电解质和反应条件。",
+        "量变题先设少量物质为 1 mol，再按比例分配离子。"
+      ]
+    }],
+    [/氧化还原|化合价|电子|还原剂|氧化剂|配平/, {
+      scope: "本单元研究电子转移与价态变化，是元素化合物、电化学和工艺流程的核心工具。",
+      core: [
+        "氧化还原反应的本质是电子转移，外在表现是元素化合价改变。",
+        "氧化剂得电子被还原，还原剂失电子被氧化。",
+        "配平的核心是电子得失守恒，同时满足原子守恒和电荷守恒。"
+      ],
+      traps: [
+        "同一元素可能同时升价和降价，歧化与归中要分清。",
+        "酸性、碱性和中性环境下 H、O 的配平方式不同。",
+        "不要把氧化性、还原性强弱与反应速率或稳定性直接等同。"
+      ],
+      method: [
+        "标价态，找升降，定氧化剂和还原剂。",
+        "用电子守恒配主线，再补原子和电荷。",
+        "陌生方程式从题给物质和环境出发，不凭记忆硬写。"
+      ]
+    }],
+    [/金属|钠|镁|铝|铁|铜|铬|锰|钴|镍|非金属|氯|硫|氮|硅|碳/, {
+      scope: "元素化合物复习要把代表物、价态变化、特征反应和实验现象连成网络。",
+      core: [
+        "以元素价态为主线整理单质、氧化物、酸碱盐和配合物之间的转化。",
+        "特征颜色、沉淀、气体和溶液变化常是推断题突破口。",
+        "两性物质、变价元素和强氧化性物质要单独建立条件清单。"
+      ],
+      traps: [
+        "现象不能替代结论，必须说明由什么现象推出什么物质或离子。",
+        "过量、少量、先后顺序会改变产物。",
+        "元素性质既受周期位置影响，也受化合价和介质影响。"
+      ],
+      method: [
+        "先画价态轴，再补典型物质和反应条件。",
+        "推断题优先利用颜色、气味、沉淀溶解和气体检验。",
+        "陌生流程题把每一步看成除杂、转化、沉淀、氧化还原或调 pH。"
+      ]
+    }],
+    [/工艺流程|流程|除杂|浸出|焙烧|萃取|结晶|调pH/, {
+      scope: "工艺流程题考查把基础反应放入真实生产步骤中分析目的、条件和产物。",
+      core: [
+        "每一步都要回答目的：溶解、氧化、还原、沉淀、除杂、分离或提高产率。",
+        "调 pH 常用于控制离子沉淀顺序，温度和试剂用量常影响速率、平衡和选择性。",
+        "滤渣、滤液、循环物质和副产物要分别追踪。"
+      ],
+      traps: [
+        "不要把流程箭头当成一步反应，常常包含过滤、洗涤、蒸发、结晶等操作。",
+        "过量试剂可能引入新杂质，除杂要考虑不能消耗目标成分。",
+        "陌生物质也要回到价态、溶解性和守恒分析。"
+      ],
+      method: [
+        "从目标产物倒推目标元素的去向。",
+        "逐框标出主要离子、价态和固液归属。",
+        "答原因时使用“目的加原理加结果”的句式。"
+      ]
+    }],
+    [/物质结构|元素周期律|晶体|晶胞|共价键|杂化|分子间|配位|电负性/, {
+      scope: "结构性质题用微粒结构解释宏观性质，常与周期律、晶体、键和分子空间构型结合。",
+      core: [
+        "原子结构决定周期位置，周期位置反映半径、电离能、电负性和金属性非金属性变化。",
+        "化学键、分子构型、极性和分子间作用力共同影响熔沸点、溶解性和稳定性。",
+        "晶胞计算抓住均摊、配位数、密度和空间几何关系。"
+      ],
+      traps: [
+        "熔沸点比较要先判断晶体类型，再比较相互作用强弱。",
+        "氢键不是化学键，但会显著影响沸点、溶解性和分子聚集。",
+        "晶胞图中顶点、棱、面心、体心的贡献不同，不能直接数图中球数。"
+      ],
+      method: [
+        "先判微粒类型和作用力，再解释性质。",
+        "构型题按价层电子对数、孤电子对和杂化类型推进。",
+        "晶胞题先算一个晶胞实际含有的微粒数，再代入几何或密度关系。"
+      ]
+    }],
+    [/反应原理|化学平衡|速率|热化学|焓变|熵变|平衡常数/, {
+      scope: "反应原理题围绕方向、限度、速率和能量变化建立定量模型。",
+      core: [
+        "速率描述快慢，平衡描述限度，二者不能混为一谈。",
+        "勒夏特列原理判断移动方向，平衡常数用于定量判断反应进行程度。",
+        "焓变、熵变和温度共同影响反应自发性。"
+      ],
+      traps: [
+        "催化剂改变速率，不改变平衡常数和平衡转化率。",
+        "改变固体或纯液体用量通常不改变平衡常数表达式。",
+        "图像题要分清横纵坐标、起点、斜率、平台和转折含义。"
+      ],
+      method: [
+        "先判断研究的是速率、平衡、能量还是自发性。",
+        "列三段式时保持浓度、压强或物质的量口径一致。",
+        "图像题用关键点和极限情况校验结论。"
+      ]
+    }],
+    [/水溶液|电离平衡|水解|pH|缓冲|沉淀溶解|Ksp|滴定/, {
+      scope: "水溶液平衡题把弱电解质电离、水解、酸碱中和和沉淀溶解统一到平衡思想中。",
+      core: [
+        "弱酸弱碱看电离，盐溶液看水解，沉淀体系看 Ksp。",
+        "pH 本质上反映氢离子浓度，不能只凭酸碱名称判断。",
+        "多平衡体系要找主导平衡，再分析外界条件对各平衡的影响。"
+      ],
+      traps: [
+        "稀释弱酸弱碱时电离程度增大，但离子浓度不一定增大。",
+        "酸式盐溶液酸碱性取决于电离和水解相对强弱。",
+        "沉淀转化方向由离子浓度和 Ksp 共同决定。"
+      ],
+      method: [
+        "先写主要平衡方程式，再列关键浓度关系。",
+        "酸碱滴定题抓住起点、半中和点、等量点和过量区。",
+        "沉淀题使用 Q 与 Ksp 比较是否生成或溶解。"
+      ]
+    }],
+    [/电化学|原电池|电解池|电极|腐蚀|电势|离子交换膜/, {
+      scope: "电化学题把氧化还原反应拆到两个电极上，用电子和离子迁移闭合回路。",
+      core: [
+        "原电池把化学能转化为电能，电解池把电能转化为化学能。",
+        "负极发生氧化，正极发生还原；电解池阳极氧化，阴极还原。",
+        "电子走外电路，离子在电解质或膜中迁移以维持电荷平衡。"
+      ],
+      traps: [
+        "正负极和阴阳极不是同一套命名标准，要先判断装置类型。",
+        "电极反应式必须同时满足原子守恒、电荷守恒和介质条件。",
+        "放电顺序受离子性质、浓度、电极材料和过电势影响。"
+      ],
+      method: [
+        "先判原电池或电解池，再定氧化还原半反应。",
+        "把电子数作为计算主线，连接电量、物质的量和产物量。",
+        "膜装置题追踪离子迁移方向和两侧溶液变化。"
+      ]
+    }],
+    [/有机|烃|醇|酚|醛|羧酸|酯|官能团|同分异构|高分子/, {
+      scope: "有机化学用官能团和碳骨架解释性质、反应类型、合成路线和同分异构。",
+      core: [
+        "官能团决定主要化学性质，碳骨架影响同分异构和物理性质。",
+        "常见反应类型包括取代、加成、消去、氧化、还原、酯化、缩聚和加聚。",
+        "合成路线题要围绕官能团转化和碳链变化设计。"
+      ],
+      traps: [
+        "同系物要求结构相似且组成相差若干个 CH2。",
+        "同分异构不仅看分子式相同，还要确认结构不同。",
+        "有机反应条件非常关键，同一物质在不同条件下产物可能不同。"
+      ],
+      method: [
+        "先标官能团，再判断反应位点和反应类型。",
+        "推断题用分子式、不饱和度、特征反应和谱图信息共同约束。",
+        "同分异构计数按碳骨架、官能团位置和对称性逐层排除重复。"
+      ]
+    }],
+    [/实验|仪器|检验|分离|提纯|制备|探究|误差|安全/, {
+      scope: "实验综合题考查操作目的、装置功能、现象解释、数据处理和误差分析。",
+      core: [
+        "每个仪器和操作都要对应一个明确目的。",
+        "气体制备实验通常包含发生、除杂、干燥、收集、尾气处理和防倒吸。",
+        "定量实验要关注称量、读数、滴定终点、损失和副反应。"
+      ],
+      traps: [
+        "检验试剂要有明确现象，且现象不能被其他离子干扰。",
+        "洗涤沉淀要说明洗去什么杂质以及如何检验洗净。",
+        "误差分析必须指向测得量偏大或偏小，不能只说有误差。"
+      ],
+      method: [
+        "按实验目的拆分装置功能。",
+        "回答操作原因时使用“防止、除去、保证、提高、避免”这类目的词。",
+        "数据题先写反应关系，再把实验读数转化为物质的量。"
+      ]
+    }],
+    [/化学用语|电子式|结构式|方程式|离子式|热化学方程式/, {
+      scope: "化学用语是表达化学思想的格式系统，重点是准确、规范、守恒。",
+      core: [
+        "化学式、结构式、电子式和方程式表达层次不同，不能相互替代。",
+        "方程式必须保证原子守恒，离子方程式还要保证电荷守恒。",
+        "热化学方程式要写状态、系数和对应焓变。"
+      ],
+      traps: [
+        "离子符号的电荷、原子团括号和下标容易出错。",
+        "电子式要区分离子化合物和共价化合物的表示方式。",
+        "可逆号、沉淀气体符号和反应条件要与事实一致。"
+      ],
+      method: [
+        "写完后逐项检查元素个数、电荷、状态和条件。",
+        "结构表达先定成键顺序，再补孤电子对或电荷。",
+        "陌生方程式优先用守恒和环境条件推导。"
+      ]
+    }],
+    [/化学与生活|材料|环境|能源|食品|医药|安全/, {
+      scope: "化学与生活题考查用基础化学概念解释材料、环境、能源、食品和安全问题。",
+      core: [
+        "生活情境题本质仍是物质性质、反应类型和应用条件。",
+        "材料题关注组成、结构、性能和用途之间的对应。",
+        "环境与能源题常涉及氧化还原、燃烧、催化、污染控制和资源循环。"
+      ],
+      traps: [
+        "日常说法不一定等于化学概念，要回到物质组成和反应事实。",
+        "天然、合成、无机、有机、高分子等分类标准不能混用。",
+        "安全题要关注毒性、腐蚀性、可燃性、爆炸性和污染风险。"
+      ],
+      method: [
+        "把情境语言翻译为化学物质和反应。",
+        "用性质决定用途、结构决定性能的逻辑作答。",
+        "遇到陌生材料时先判断主要成分和可能的官能团或离子。"
+      ]
+    }]
+  ];
+
+  const match = rules.find(([pattern]) => pattern.test(context));
+  return match ? match[1] : fallback;
+}
+
+function detailGuide(context) {
+  const core = [];
+  const traps = [];
+  const method = [];
+  if (/类型|例题/.test(context)) {
+    core.push("本单元更接近题型训练，重点不是记住题面，而是提炼同类题的判断入口。");
+    traps.push("不要被题面中的熟悉关键词带偏，先确认它考的是概念、守恒、结构、平衡还是实验。");
+    method.push("做完例题后把题眼、所用规律和易错选项整理成三行笔记。");
+  }
+  if (/内容提要/.test(context)) {
+    core.push("内容提要适合用来建立框架，先看层级关系，再补细节和例题。");
+    traps.push("框架图只能提示方向，具体判断仍要回到条件和例题。");
+    method.push("先按一级标题背主线，再用例题检验每个分支是否真正会用。");
+  }
+  if (/原页|书内页/.test(context)) {
+    core.push("原页节点用于核对图片、结构式、表格和复杂排版，不建议把它当作主要背诵入口。");
+    traps.push("截图中的复杂符号要结合对应知识节点理解，避免孤立抄写。");
+    method.push("先回到相关类型或内容提要节点，再打开原页核对细节。");
+  }
+  if (/例题/.test(context)) {
+    core.push("例题节点用于训练审题、建模和校验，重点是题目条件到解法的转换。");
+    traps.push("答案不是复习终点，错因和条件变化才是提分点。");
+    method.push("先独立做，再对照截图分析每一步为什么成立。");
+  }
+  return { core, traps, method };
+}
+
+function uniqueGuideItems(items) {
+  const seen = new Set();
+  return items.filter(item => {
+    const key = cleanGuideText(item);
+    if (!key || seen.has(key)) return false;
+    seen.add(key);
+    return true;
+  });
+}
+
+function cleanGuideText(text) {
+  return String(text || "").replace(/\s+/g, " ").trim();
+}
+
+function relationHintsForNode(node, context) {
+  const direct = relatedConcepts(node.id)
+    .map(id => nodes.get(id))
+    .filter(Boolean)
+    .map(item => `${displayTitle(item)}：${relationLabelForPair(node.id, item.id)}。`);
+  const fallback = [
+    "用章节目录确认本知识点所在位置，用知识图谱确认跨模块联系。",
+    "与离子反应、氧化还原、物质结构、平衡和实验题的联系要主动回看。",
+    "把相似概念放在一起辨析，尤其关注适用条件、反应环境和符号表达。"
+  ];
+  if (/电化学|氧化还原|电子/.test(context)) fallback.unshift("电子转移、价态变化、电极反应和守恒关系需要合并判断。");
+  if (/有机|烃|醇|酸|酯|苯/.test(context)) fallback.unshift("官能团性质、反应条件、同分异构和实验鉴别要联动复习。");
+  return uniqueGuideItems([...direct, ...fallback]);
+}
+
+function relationLabelForPair(sourceId, targetId) {
+  const edge = (adjacency.get(sourceId) || []).find(item => item.source === targetId || item.target === targetId);
+  return edge ? relationLabel(edge.relation, edge) : "直接关联";
+}
+
+function relatedConcepts(id) {
+  const result = [];
+  const seen = new Set();
+  for (const edge of adjacency.get(id) || []) {
+    const otherId = edge.source === id ? edge.target : edge.source;
+    const other = nodes.get(otherId);
+    if (!other || seen.has(otherId)) continue;
+    if (other.kind === "example" || other.kind === "page") continue;
+    seen.add(otherId);
+    result.push(otherId);
+  }
+  return result.slice(0, 12);
+}
+
+function relatedExamples(id) {
+  const result = [];
+  const seen = new Set();
+  for (const edge of adjacency.get(id) || []) {
+    const otherId = edge.source === id ? edge.target : edge.source;
+    const other = nodes.get(otherId);
+    if (!other || other.kind !== "example" || seen.has(otherId)) continue;
+    seen.add(otherId);
+    result.push(otherId);
+  }
+  return result.slice(0, 24);
+}
+
+function relatedPages(node) {
+  const result = new Set();
+  [node.pages, node.summaryPages, node.examplePages].forEach(list => {
+    if (Array.isArray(list)) list.forEach(page => result.add(page));
+  });
+  if (node.page) result.add(node.page);
+  for (const edge of adjacency.get(node.id) || []) {
+    const otherId = edge.source === node.id ? edge.target : edge.source;
+    const other = nodes.get(otherId);
+    if (other && other.kind === "page" && other.page) result.add(other.page);
+  }
+  return [...result].filter(Boolean).sort((a, b) => a - b);
+}
+
+function renderNodeLinks(title, ids, kind) {
+  const wrap = document.createElement("div");
+  wrap.className = `resource-links ${kind || ""}`;
+  const label = document.createElement("strong");
+  label.textContent = title;
+  wrap.appendChild(label);
+  const list = document.createElement("div");
+  list.className = "resource-link-list";
+  ids.forEach(id => {
+    const node = nodes.get(id);
+    if (!node) return;
+    const btn = document.createElement("button");
+    btn.type = "button";
+    btn.textContent = displayTitle(node);
+    btn.title = displayTitle(node);
+    btn.addEventListener("click", () => {
+      if (EXPANDABLE.has(node.kind)) openLeafNode(id, { toggle: false, focusHost: true });
+      else {
+        selectedId = id;
+        focusedEdgeKey = null;
+        expandedNodeId = null;
+        renderDetail(id, true);
+      }
+    });
+    list.appendChild(btn);
+  });
+  wrap.appendChild(list);
+  return wrap;
+}
+
+function renderPageLinks(pages) {
+  const wrap = document.createElement("div");
+  wrap.className = "resource-links page-links";
+  const label = document.createElement("strong");
+  label.textContent = "对应原书页 / 高清截图入口";
+  wrap.appendChild(label);
+
+  const summary = document.createElement("span");
+  summary.className = "resource-summary";
+  summary.textContent = compactPages(pages);
+  wrap.appendChild(summary);
+
+  const list = document.createElement("div");
+  list.className = "resource-link-list";
+  [...new Set(pages)].sort((a, b) => a - b).forEach(page => {
+    const pageNodeId = pageNodeByPage.get(page);
+    const btn = document.createElement("button");
+    btn.type = "button";
+    btn.textContent = `第 ${page} 页`;
+    btn.disabled = !pageNodeId;
+    btn.title = pageNodeId ? `打开第 ${page} 页截图` : `第 ${page} 页截图未生成`;
+    btn.addEventListener("click", () => {
+      if (!pageNodeId) return;
+      openLeafNode(pageNodeId, { toggle: false, focusHost: true });
+    });
+    list.appendChild(btn);
+  });
+  wrap.appendChild(list);
+  return wrap;
+}
+
+function renderTextBlock(text, options = {}) {
+  const { flow = false, collapsible = false } = options;
+  const wrap = document.createElement("div");
+  wrap.className = "text-block";
+  const lines = displayTextLines(text, { flow });
+  const visibleCount = collapsible && lines.length > 28 ? 20 : lines.length;
+  lines.slice(0, visibleCount).forEach(line => appendTextLine(wrap, line));
+  if (visibleCount < lines.length) {
+    const details = document.createElement("details");
+    details.className = "text-more";
+    const summary = document.createElement("summary");
+    summary.textContent = `▸ 展开剩余 ${lines.length - visibleCount} 条内容`;
+    details.appendChild(summary);
+    details.addEventListener("toggle", () => {
+      summary.textContent = details.open ? "▾ 收起补充内容" : `▸ 展开剩余 ${lines.length - visibleCount} 条内容`;
+    });
+    const more = document.createElement("div");
+    more.className = "text-more-body";
+    lines.slice(visibleCount).forEach(line => appendTextLine(more, line));
+    details.appendChild(more);
+    wrap.appendChild(details);
+  }
+  return wrap;
+}
+
+function appendTextLine(wrap, line) {
+  const div = document.createElement("div");
+  div.className = "text-line";
+  if (/^注[:：]/.test(line)) div.classList.add("note-line");
+  if (/^【?例\d*/.test(line) || /^解析[:：]/.test(line) || /^答案[:：]/.test(line) || /^【反思】/.test(line)) {
+    div.classList.add("example-line");
+  }
+  div.innerHTML = formatChemistry(line);
+  wrap.appendChild(div);
+}
+
+function displayTextLines(text, options = {}) {
+  const { flow = false } = options;
+  const raw = cleanDisplayText(text)
+    .split("\n")
+    .map(line => line.trim())
+    .filter(Boolean);
+  if (!flow) return raw;
+  const result = [];
+  for (const line of raw) {
+    if (!result.length || lineBreakShouldStay(line, result[result.length - 1])) {
+      result.push(line);
+      continue;
+    }
+    const previous = result[result.length - 1];
+    const joiner = shortConceptLine(line) || shortConceptLine(previous) ? "、" : "";
+    result[result.length - 1] = `${previous}${joiner}${line}`;
+  }
+  return result;
+}
+
+function lineBreakShouldStay(line, previous = "") {
+  if (/^【?例\d*/.test(line) || /^解析[:：]/.test(line) || /^答案[:：]/.test(line) || /^【反思】/.test(line)) return true;
+  if (/^注[:：]/.test(line)) return true;
+  if (/^(第\d+章|模块\d+|第\d+节|类型|内容提要)/.test(line)) return true;
+  if (/^[一二三四五六七八九十]+[、.．]/.test(line)) return true;
+  if (/^[（(]?\d+[）)][.．、]?/.test(line) || /^\d+[.．、]/.test(line)) return true;
+  if (/^[A-D][.．]/.test(line)) return true;
+  if (/^[a-z][.．]/i.test(line)) return true;
+  if (/[。；：:）)]$/.test(previous) && !shortConceptLine(line)) return true;
+  return false;
+}
+
+function shortConceptLine(line) {
+  return normalizedLine(line).length > 0 && normalizedLine(line).length <= 5 && !/[。；，,：:()（）]/.test(line);
+}
+
+function renderPageImage(node) {
+  const box = document.createElement("figure");
+  box.className = "page-image";
+  const img = document.createElement("img");
+  img.src = contentCropSrc(node) || imageForPageNode(node);
+  img.alt = displayTitle(node);
+  const cap = document.createElement("figcaption");
+  cap.textContent = `${displayTitle(node)} 原书截图，已裁去空白边距，可用于核对苯环、结构式、表格和复杂图示。`;
+  img.addEventListener("error", () => {
+    if (tryFallbackImage(img, imageForPageNode(node))) return;
+    if (tryFallbackImage(img, node.image)) return;
+    box.classList.add("missing");
+    cap.textContent = `${displayTitle(node)} 的截图资源未随网站发布，请确认 build/page_images 目录已上传到 GitHub。`;
+  });
+  box.append(img, cap);
+  return box;
+}
+
+function imageForPageNode(node) {
+  if (node && node.page) return imageForPageNumber(node.page);
+  return node?.image || "";
+}
+
+function imageForPageNumber(page) {
+  return `build/page_images_hd/page_${String(page).padStart(3, "0")}.jpg`;
+}
+
+function fallbackImageForPageNumber(page) {
+  return `build/page_images/page_${String(page).padStart(3, "0")}.jpg`;
+}
+
+function tryFallbackImage(img, fallback) {
+  if (!fallback || img.dataset.fallbackUsed === "1" || img.src.endsWith(fallback)) return false;
+  img.dataset.fallbackUsed = "1";
+  img.src = fallback;
+  return true;
+}
+
+function openLeafNode(id, options = {}) {
+  const node = nodes.get(id);
+  if (!node) return;
+  if (siteMode !== "graph") setSiteMode("graph", { skipRender: true });
+  const { toggle = true, focusHost = false } = options;
+  const host = focusHost ? nearestCenterable(id) : null;
+
+  focusedEdgeKey = null;
+  selectedId = id;
+  if (host && host !== centerId) {
+    if (centerId !== host) historyStack.push(centerId);
+    centerId = host;
+    resetView();
+    window.location.hash = `center=${host}`;
+    renderRelationFilters();
+  }
+  expandedNodeId = expandedNodeId === id && toggle ? null : id;
+  render();
+}
+
+function renderInlineExpansion(id, layout) {
+  const node = nodes.get(id);
+  const anchor = layout.positions.get(id);
+  const size = expansionSize(node, layout);
+  const pos = expansionPosition(anchor, size, layout);
+
+  const card = document.createElement("article");
+  card.className = `inline-expansion inline-${node.kind}`;
+  card.dataset.id = id;
+  card.style.left = `${pos.x}px`;
+  card.style.top = `${pos.y}px`;
+  card.style.width = `${size.w}px`;
+  card.style.minHeight = `${size.h}px`;
+
+  const head = document.createElement("div");
+  head.className = "inline-expansion-head";
+  const title = document.createElement("div");
+  title.className = "inline-expansion-title";
+  title.textContent = displayTitle(node);
+  const close = document.createElement("button");
+  close.type = "button";
+  close.title = "收起展开内容";
+  close.textContent = "×";
+  close.addEventListener("click", event => {
+    event.stopPropagation();
+    expandedNodeId = null;
+    render();
+  });
+  head.append(title, close);
+  card.appendChild(head);
+
+  const meta = document.createElement("div");
+  meta.className = "inline-expansion-meta";
+  meta.textContent = expansionMeta(node);
+  card.appendChild(meta);
+
+  if (node.kind === "page") card.appendChild(renderInlinePage(node));
+  else card.appendChild(renderInlineExample(node));
+
+  return { card, connector: renderExpansionConnector(anchor, pos, size) };
+}
+
+function renderExpansionConnector(anchor, pos, size) {
+  const start = connectionPoint(anchor, pos.x + size.w / 2, pos.y + size.h / 2);
+  const end = connectionPoint(pos, anchor.x + anchor.w / 2, anchor.y + anchor.h / 2);
+  const left = Math.min(start.x, end.x) - 42;
+  const top = Math.min(start.y, end.y) - 42;
+  const width = Math.abs(end.x - start.x) + 84;
+  const height = Math.abs(end.y - start.y) + 84;
+  const sx = start.x - left;
+  const sy = start.y - top;
+  const ex = end.x - left;
+  const ey = end.y - top;
+  const cx = (sx + ex) / 2;
+  const cy = (sy + ey) / 2 - Math.max(28, Math.abs(ex - sx) * 0.08);
+
+  const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+  svg.setAttribute("class", "inline-branch-connector");
+  svg.style.left = `${left}px`;
+  svg.style.top = `${top}px`;
+  svg.style.width = `${width}px`;
+  svg.style.height = `${height}px`;
+  svg.setAttribute("viewBox", `0 0 ${width} ${height}`);
+
+  const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
+  path.setAttribute("d", `M ${sx} ${sy} Q ${cx} ${cy}, ${ex} ${ey}`);
+  svg.appendChild(path);
+
+  const label = document.createElementNS("http://www.w3.org/2000/svg", "text");
+  label.setAttribute("x", `${(sx + ex) / 2}`);
+  label.setAttribute("y", `${(sy + ey) / 2 - 8}`);
+  label.textContent = "展开截图";
+  svg.appendChild(label);
+  return svg;
+}
+
+function expansionSize(node, layout) {
+  const narrow = layout.width < 1200;
+  if (node.kind === "page") return { w: narrow ? 400 : 520, h: narrow ? 540 : 650 };
+  return { w: narrow ? 500 : 650, h: narrow ? 360 : 430 };
+}
+
+function expansionPosition(anchor, size, layout) {
+  const gap = 26;
+  const safe = visibleStageRect(layout, size);
+  const baseCandidates = [
+    { x: anchor.x + anchor.w + gap, y: anchor.y + anchor.h / 2 - size.h / 2 },
+    { x: anchor.x - size.w - gap, y: anchor.y + anchor.h / 2 - size.h / 2 },
+    { x: anchor.x + anchor.w / 2 - size.w / 2, y: anchor.y + anchor.h + gap },
+    { x: anchor.x + anchor.w / 2 - size.w / 2, y: anchor.y - size.h - gap },
+    { x: safe.right - size.w, y: safe.top },
+    { x: safe.left, y: safe.bottom - size.h }
+  ];
+  const gridX = [safe.left, safe.left + safe.w * 0.28, safe.left + safe.w * 0.55, safe.right - size.w];
+  const gridY = [safe.top, safe.top + safe.h * 0.25, safe.top + safe.h * 0.55, safe.bottom - size.h];
+  gridX.forEach(x => gridY.forEach(y => baseCandidates.push({ x, y })));
+  const shiftedCandidates = [];
+  const shifts = [-140, -90, -45, 0, 45, 90, 140];
+  baseCandidates.forEach(candidate => {
+    shifts.forEach(dx => shifts.forEach(dy => shiftedCandidates.push({ x: candidate.x + dx, y: candidate.y + dy })));
+  });
+  const seen = new Set();
+  const candidates = shiftedCandidates.map(candidate => ({
+    x: clamp(candidate.x, safe.left, safe.right - size.w),
+    y: clamp(candidate.y, safe.top, safe.bottom - size.h),
+    w: size.w,
+    h: size.h
+  })).filter(candidate => {
+    const key = `${Math.round(candidate.x)}:${Math.round(candidate.y)}`;
+    if (seen.has(key)) return false;
+    seen.add(key);
+    return true;
+  });
+  const obstacles = [...layout.positions.entries()]
+    .filter(([id]) => id !== expandedNodeId)
+    .map(([, box]) => box);
+  candidates.sort((a, b) => expansionPenalty(a, obstacles, safe) - expansionPenalty(b, obstacles, safe));
+  return candidates[0];
+}
+
+function visibleStageRect(layout, size) {
+  const screen = viewSafeScreenRect();
+  let left = (screen.left - view.tx) / view.scale;
+  let top = (screen.top - view.ty) / view.scale;
+  let right = (screen.right - view.tx) / view.scale;
+  let bottom = (screen.bottom - view.ty) / view.scale;
+  left = clamp(left, 0, layout.width - 1);
+  top = clamp(top, 0, layout.height - 1);
+  right = clamp(right, left + 1, layout.width);
+  bottom = clamp(bottom, top + 1, layout.height);
+  if (right - left < size.w + 36 || bottom - top < size.h + 36) {
+    return safeRect(layout.width, layout.height);
+  }
+  return { left, top, right, bottom, w: right - left, h: bottom - top };
+}
+
+function expansionPenalty(box, obstacles, safe) {
+  return outsidePenalty(box, safe) * 8 + obstacles.reduce((sum, obstacle) => sum + overlapPenalty(box, obstacle, 18), 0);
+}
+
+function expansionMeta(node) {
+  if (node.kind === "page") return `书内页 ${node.page} · 原页截图`;
+  const pages = Array.isArray(node.pages) && node.pages.length ? compactPages(node.pages) : "未定位";
+  return `例题截图 · 来源页 ${pages}`;
+}
+
+function contentCropSrc(node) {
+  if (!node) return "";
+  if (node.kind === "page" && node.page) {
+    return `build/content_crops/page_${String(node.page).padStart(3, "0")}.jpg`;
+  }
+  if (node.kind === "example" && node.id) {
+    return `build/content_crops/${node.id}.jpg`;
+  }
+  return "";
+}
+
+function renderContentCropFigure(node, src, captionText, fallbackFactory) {
+  const figure = document.createElement("figure");
+  figure.className = "inline-media inline-content-crop";
+  const frame = document.createElement("div");
+  frame.className = "content-crop-frame";
+  frame.title = "按住拖动可移动整个网图视野；滚轮仍可滚动或缩放页面";
+  frame.addEventListener("pointerdown", event => {
+    if (event.button !== 0 || event.target.closest("button, input, textarea, select, a")) return;
+    event.stopPropagation();
+    startViewportDrag(event, frame);
+  });
+  const img = document.createElement("img");
+  img.src = src;
+  img.alt = `${displayTitle(node)} 截图`;
+  img.loading = "eager";
+  img.decoding = "async";
+  const cap = document.createElement("figcaption");
+  const zoom = document.createElement("button");
+  zoom.type = "button";
+  zoom.className = "crop-toggle";
+  zoom.textContent = "▾ 放大阅读";
+  zoom.addEventListener("click", event => {
+    event.stopPropagation();
+    const zoomed = frame.classList.toggle("is-zoomed");
+    zoom.textContent = zoomed ? "▴ 适应窗口" : "▾ 放大阅读";
+  });
+  cap.append(captionText, zoom);
+  img.addEventListener("error", () => {
+    if (typeof fallbackFactory === "function") {
+      const fallback = fallbackFactory();
+      if (fallback) {
+        figure.replaceWith(fallback);
+        return;
+      }
+    }
+    figure.classList.add("missing");
+    frame.textContent = "截图资源未随网站发布，请重新生成 build/content_crops 后同步网站。";
+    cap.textContent = "截图缺失";
+  });
+  frame.appendChild(img);
+  figure.append(frame, cap);
+  return figure;
+}
+
+function renderInlinePage(node) {
+  return renderContentCropFigure(node, contentCropSrc(node), "已裁去空白边距的原页截图", () => {
+    const figure = document.createElement("figure");
+    figure.className = "inline-media inline-page-frame";
+    const img = document.createElement("img");
+    img.src = imageForPageNode(node);
+    img.alt = `${displayTitle(node)} 原页截图`;
+    const cap = document.createElement("figcaption");
+    cap.textContent = "完整原页截图";
+    img.addEventListener("error", () => {
+      if (tryFallbackImage(img, node.image)) return;
+      figure.classList.add("missing");
+      cap.textContent = "原页截图未随网站发布，请确认 build/page_images 或 build/page_images_hd 已上传。";
+    });
+    figure.append(img, cap);
+    return figure;
+  });
+}
+
+function renderInlineExample(node) {
+  const crop = exampleCropSpec(node);
+  const contentCrop = contentCropSrc(node);
+  if (contentCrop) {
+    return renderContentCropFigure(node, contentCrop, "例题组截图：从本类型起点到下一类型起点前，已按页纵向合并", () => {
+      if (!crop) return null;
+      return renderLegacyExampleCrop(node, crop);
+    });
+  }
+  if (!crop) {
+    const fallback = document.createElement("div");
+    fallback.className = "inline-text-fallback";
+    fallback.appendChild(renderTextBlock(node.text || "该例题暂无可定位截图。"));
+    return fallback;
+  }
+  return renderLegacyExampleCrop(node, crop);
+}
+
+function renderLegacyExampleCrop(node, crop) {
+  const figure = document.createElement("figure");
+  figure.className = "inline-media inline-example-crop";
+  const frame = document.createElement("div");
+  frame.className = "crop-frame";
+  frame.dataset.cropStart = crop.startRatio;
+  frame.dataset.cropEnd = crop.endRatio;
+
+  const img = document.createElement("img");
+  img.src = crop.image;
+  img.alt = `${displayTitle(node)} 对应页局部截图`;
+  img.addEventListener("load", () => fitCropFrame(frame, img));
+  img.addEventListener("error", () => {
+    if (tryFallbackImage(img, crop.fallback)) return;
+    figure.classList.add("missing");
+    frame.textContent = "例题截图未随网站发布，请确认 build/page_images 或 build/page_images_hd 已上传。";
+  });
+  frame.appendChild(img);
+
+  const cap = document.createElement("figcaption");
+  const toggle = document.createElement("button");
+  toggle.type = "button";
+  toggle.className = "crop-toggle";
+  toggle.textContent = "▾ 显示完整页";
+  toggle.addEventListener("click", () => {
+    const full = frame.classList.toggle("full-page");
+    toggle.textContent = full ? "▴ 回到裁剪区域" : "▾ 显示完整页";
+    if (full) showFullFrame(frame, img);
+    else fitCropFrame(frame, img);
+  });
+  cap.append(`第 ${crop.page} 页高清裁剪区域`, toggle);
+  figure.append(frame, cap);
+  requestAnimationFrame(() => fitCropFrame(frame, img));
+  return figure;
+}
+
+function fitCropFrame(frame, img) {
+  if (!img.naturalWidth || !frame.clientWidth) return;
+  frame.classList.remove("full-page");
+  const startRatio = Number(frame.dataset.cropStart) || 0;
+  const endRatio = Number(frame.dataset.cropEnd) || 1;
+  const scaledHeight = img.naturalHeight * (frame.clientWidth / img.naturalWidth);
+  const start = clamp(startRatio * scaledHeight, 0, Math.max(0, scaledHeight - 120));
+  const end = clamp(endRatio * scaledHeight, start + 150, scaledHeight);
+  const height = clamp(end - start, 280, Math.min(650, Math.max(320, scaledHeight - start)));
+  frame.style.height = `${height}px`;
+  img.style.transform = `translateY(${-start}px)`;
+}
+
+function showFullFrame(frame, img) {
+  if (!img.naturalWidth || !frame.clientWidth) return;
+  const scaledHeight = img.naturalHeight * (frame.clientWidth / img.naturalWidth);
+  frame.style.height = `${Math.min(680, scaledHeight)}px`;
+  img.style.transform = "translateY(0)";
+}
+
+function exampleCropSpec(node) {
+  const page = Array.isArray(node.pages) && node.pages.length ? node.pages[0] : null;
+  const pageNode = page ? nodes.get(pageNodeByPage.get(page)) : null;
+  if (!pageNode || !pageNode.image) return null;
+  const pageLines = textLines(pageNode.text);
+  const exampleLines = textLines(node.text);
+  if (!pageLines.length || !exampleLines.length) {
+    return { page, image: imageForPageNumber(page), fallback: pageNode.image || fallbackImageForPageNumber(page), startRatio: 0.04, endRatio: 0.96 };
+  }
+
+  const startLine = exampleLines.find(line => /^【?例\d+】?/.test(line)) || exampleLines[0];
+  let startIndex = findLineIndex(pageLines, startLine, 0);
+  if (startIndex < 0) startIndex = findLineIndex(pageLines, exampleLines[0], 0);
+  if (startIndex < 0) startIndex = Math.max(0, Math.floor(pageLines.length * 0.58));
+
+  const lastLine = [...exampleLines].reverse().find(line => normalizedLine(line).length >= 8) || exampleLines[exampleLines.length - 1];
+  const lastIndex = findLineIndex(pageLines, lastLine, startIndex);
+  const nextBoundary = pageLines.findIndex((line, index) => index > startIndex + 2 && isExampleBoundary(line));
+  let endIndex = lastIndex > startIndex ? lastIndex + 2 : nextBoundary > startIndex ? nextBoundary - 1 : pageLines.length - 1;
+  endIndex = clamp(endIndex, startIndex + 4, pageLines.length - 1);
+
+  const bodyStart = 0.055;
+  const bodyRange = 0.89;
+  const startRatio = clamp(bodyStart + (startIndex / pageLines.length) * bodyRange - 0.06, 0, 0.9);
+  const endRatio = clamp(bodyStart + ((endIndex + 1) / pageLines.length) * bodyRange + 0.12, startRatio + 0.3, 1);
+  return { page, image: imageForPageNumber(page), fallback: pageNode.image || fallbackImageForPageNumber(page), startRatio, endRatio };
+}
+
+function textLines(text) {
+  return cleanDisplayText(text)
+    .split("\n")
+    .map(line => line.trim())
+    .filter(line => line && !/^\d{3}$/.test(line));
+}
+
+function findLineIndex(lines, target, fromIndex = 0) {
+  const wanted = normalizedLine(target);
+  if (!wanted) return -1;
+  let best = -1;
+  let bestScore = 0;
+  lines.forEach((line, index) => {
+    if (index < fromIndex) return;
+    const current = normalizedLine(line);
+    if (!current) return;
+    const score = lineMatchScore(current, wanted);
+    if (score > bestScore) {
+      bestScore = score;
+      best = index;
+    }
+  });
+  return bestScore >= 0.48 ? best : -1;
+}
+
+function lineMatchScore(line, target) {
+  if (line.includes(target) || target.includes(line)) return 1;
+  const shortTarget = target.slice(0, Math.min(18, target.length));
+  if (shortTarget.length >= 6 && line.includes(shortTarget)) return 0.86;
+  let hits = 0;
+  const step = Math.max(2, Math.floor(target.length / 8));
+  for (let i = 0; i < target.length; i += step) {
+    const token = target.slice(i, i + step);
+    if (token.length >= 2 && line.includes(token)) hits += 1;
+  }
+  return hits / Math.max(1, Math.ceil(target.length / step));
+}
+
+function normalizedLine(line) {
+  return String(line || "")
+    .replace(/[^\u4e00-\u9fa5A-Za-z0-9ⅠⅡⅢⅣⅤⅥIVX√×()+\-+=]/g, "")
+    .toLowerCase();
+}
+
+function isExampleBoundary(line) {
+  return /^类型/.test(line) || /^【?例\d+】?/.test(line) || /^【反思】/.test(line);
+}
+
+function focusNode(id, pushHistory) {
+  if (!nodes.has(id)) return;
+  if (siteMode !== "graph") setSiteMode("graph", { skipRender: true });
+  focusedEdgeKey = null;
+  expandedNodeId = null;
+  if (pushHistory && centerId !== id) historyStack.push(centerId);
+  centerId = id;
+  selectedId = id;
+  resetView();
+  window.location.hash = `center=${id}`;
+  renderRelationFilters();
+  render();
+}
+
+function renderBreadcrumb() {
+  const node = nodes.get(centerId);
+  breadcrumb.innerHTML = "";
+  const path = nodePath(node);
+  const visiblePath = path;
+  visiblePath.forEach((part, idx) => {
+    const fullIndex = path.length - visiblePath.length + idx;
+    const prefix = path.slice(0, fullIndex + 1);
+    const targetId = pathNodeByKey.get(pathKey(prefix));
+    const item = document.createElement(targetId ? "button" : "span");
+    item.className = "breadcrumb-item";
+    if (targetId) item.classList.add("breadcrumb-clickable");
+    if (targetId === centerId) item.classList.add("breadcrumb-current");
+    item.textContent = part;
+    if (targetId) {
+      item.type = "button";
+      item.title = `切换到：${part}`;
+      item.addEventListener("click", () => {
+        focusedEdgeKey = null;
+        focusNode(targetId, true);
+      });
+    }
+    breadcrumb.appendChild(item);
+    if (idx < visiblePath.length - 1) {
+      const sep = document.createElement("b");
+      sep.textContent = ">";
+      breadcrumb.appendChild(sep);
+    }
+  });
+}
+
+function pathKey(parts) {
+  return parts.join("\u001f");
+}
+
+function nodePath(node) {
+  if (!node) return [];
+  if (node.path && node.path.length > 1) return node.path.map(part => cleanDisplayTitle(part));
+  if (node.parent && nodes.has(node.parent)) return [...nodePath(nodes.get(node.parent)), displayTitle(node)];
+  if (node.path && node.path.length) return node.path.map(part => cleanDisplayTitle(part));
+  return [displayTitle(node)];
+}
+
+function displayTitle(node) {
+  if (!node) return "";
+  const cleanedTitle = cleanDisplayTitle(node.title || "");
+  if (!/[.…]{2,}/.test(node.title || "")) return cleanedTitle;
+  const firstLine = displayTextLines(node.text || "", { flow: false }).find(line => normalizedLine(line).length >= 4);
+  return cleanDisplayTitle(firstLine || cleanedTitle);
+}
+
+function cleanDisplayTitle(title) {
+  return cleanDisplayText(title).replace(/[.…]{2,}/g, "");
+}
+
+function renderSearch() {
+  searchResults.innerHTML = "";
+  if (!searchQuery) {
+    searchResults.innerHTML = '<p class="muted">输入关键词后，可直接跳转到匹配节点。</p>';
+    render();
+    return;
+  }
+  const matches = GRAPH.nodes
+    .map(node => ({ node, hit: searchHit(node) }))
+    .filter(item => item.hit)
+    .slice(0, 40);
+  if (!matches.length) {
+    searchResults.innerHTML = '<p class="muted">未找到匹配节点。</p>';
+    render();
+    return;
+  }
+  matches.forEach(({ node, hit }, index) => {
+    const btn = document.createElement("button");
+    btn.type = "button";
+    btn.className = "search-result-item";
+    btn.style.setProperty("--result-delay", `${Math.min(index * 18, 280)}ms`);
+
+    const title = document.createElement("span");
+    title.className = "search-result-title";
+    title.innerHTML = highlightTermHTML(displayTitle(node));
+
+    const meta = document.createElement("span");
+    meta.className = "search-result-meta";
+    meta.textContent = node.kindLabel || node.kind;
+
+    const snippet = document.createElement("span");
+    snippet.className = "search-result-snippet";
+    snippet.innerHTML = `${escapeHtml(hit.label)}：${highlightTermHTML(hit.snippet)}`;
+
+    btn.append(title, meta, snippet);
+    btn.addEventListener("click", () => {
+      focusedEdgeKey = null;
+      if (node.centerable && CENTERABLE.has(node.kind)) {
+        focusNode(node.id, true);
+        return;
+      }
+      if (EXPANDABLE.has(node.kind)) {
+        openLeafNode(node.id, { toggle: false, focusHost: true });
+        return;
+      }
+      const host = nearestCenterable(node.id);
+      if (host && host !== centerId) focusNode(host, true);
+      selectedId = node.id;
+      expandedNodeId = null;
+      renderDetail(node.id, true);
+    });
+    searchResults.appendChild(btn);
+  });
+  render();
+}
+
+function nearestCenterable(id) {
+  const direct = adjacency.get(id) || [];
+  for (const edge of direct) {
+    const other = edge.source === id ? edge.target : edge.source;
+    const node = nodes.get(other);
+    if (node && node.centerable && CENTERABLE.has(node.kind)) return other;
+  }
+  return GRAPH.rootId;
+}
+
+function nodeMatchesSearch(node) {
+  return Boolean(searchHit(node));
+}
+
+function searchHit(node) {
+  const query = searchQuery.trim();
+  if (!query) return null;
+  const fields = [
+    { label: "标题", value: displayTitle(node) || "" },
+    { label: "正文", value: cleanDisplayText(node.text || "") },
+    { label: "路径", value: nodePath(node).join(" > ") },
+    { label: "标签", value: (node.tags || []).join("、") }
+  ];
+  const q = query.toLowerCase();
+  for (const field of fields) {
+    const value = String(field.value || "");
+    const idx = value.toLowerCase().indexOf(q);
+    if (idx >= 0) {
+      return { label: field.label, snippet: searchSnippet(value, idx, query.length) };
+    }
+  }
+  return null;
+}
+
+function searchSnippet(value, index, length) {
+  const radiusBefore = 24;
+  const radiusAfter = 38;
+  const start = Math.max(0, index - radiusBefore);
+  const end = Math.min(value.length, index + length + radiusAfter);
+  const prefix = start > 0 ? "前文 " : "";
+  const suffix = end < value.length ? " 后文可展开查看" : "";
+  return `${prefix}${value.slice(start, end)}${suffix}`;
+}
+
+function highlightTermHTML(value) {
+  const query = searchQuery.trim();
+  const text = String(value || "");
+  if (!query) return escapeHtml(text);
+  const lower = text.toLowerCase();
+  const q = query.toLowerCase();
+  let cursor = 0;
+  let html = "";
+  while (cursor < text.length) {
+    const index = lower.indexOf(q, cursor);
+    if (index < 0) {
+      html += escapeHtml(text.slice(cursor));
+      break;
+    }
+    html += escapeHtml(text.slice(cursor, index));
+    html += `<mark class="search-mark">${escapeHtml(text.slice(index, index + query.length))}</mark>`;
+    cursor = index + query.length;
+  }
+  return html;
+}
+
+function cleanDisplayText(text) {
+  return String(text || "")
+    .replace(/[.…]{2,}/g, "")
+    .replaceAll("NaCI", "NaCl")
+    .replaceAll("HCI", "HCl")
+    .replaceAll("KCI", "KCl")
+    .replaceAll("CI2", "Cl2")
+    .replaceAll("SiO:", "SiO2")
+    .replaceAll("CO:", "CO2")
+    .replaceAll("SO:", "SO2")
+    .replaceAll("NO:", "NO2");
+}
+
+function formatChemistry(line) {
+  const escaped = escapeHtml(line);
+  return escaped
+    .replace(/([A-Z][a-z]?)(\d+)/g, (_, el, num) => `${el}<sub>${num}</sub>`)
+    .replace(/\^(\d*[+-])/g, "<sup>$1</sup>")
+    .replace(/([A-Za-z]\))?(\d*[+-])(?=($|[，。；、\s]))/g, match => match)
+    .replace(/ΔH/g, "<span class=\"chem-symbol\">ΔH</span>")
+    .replace(/ΔG/g, "<span class=\"chem-symbol\">ΔG</span>");
+}
+
+function escapeHtml(value) {
+  return String(value)
+    .replaceAll("&", "&amp;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;")
+    .replaceAll('"', "&quot;")
+    .replaceAll("'", "&#039;");
+}
+
+function compactPages(pages) {
+  if (!pages || !pages.length) return "";
+  const sorted = [...pages].sort((a, b) => a - b);
+  const ranges = [];
+  sorted.forEach(page => {
+    const last = ranges[ranges.length - 1];
+    if (!last || page > last[1] + 1) ranges.push([page, page]);
+    else last[1] = page;
+  });
+  return ranges.map(([a, b]) => (a === b ? `${a}` : `${a}-${b}`)).join("、");
+}
+
+function relationRank(relation) {
+  const idx = RELATION_ORDER.indexOf(relationGroup(relation));
+  return idx >= 0 ? idx : 99;
+}
+
+function relationGroup(relation) {
+  if (relation === "包含") return "层级结构";
+  if (relation === "内容提要") return "框架提要";
+  if (relation === "对应例题") return "例题训练";
+  if (relation.includes("原页")) return "原页核对";
+  return "跨章关联";
+}
+
+function edgePriority(edge) {
+  return (edge.strength || 1) * 10 - relationRank(edge.relation);
+}
+
+function edgeKey(edge) {
+  return `${edge.source}\u0000${edge.relation}\u0000${edge.target}`;
+}
+
+function relationLabel(relation, edge = null) {
+  const source = edge ? nodes.get(edge.source) : null;
+  const target = edge ? nodes.get(edge.target) : null;
+  if (relation === "包含" && source && target) {
+    if (source.kind === "root" && target.kind === "chapter") return "纳入章节";
+    if (source.kind === "chapter" && target.kind === "module") return "章内模块";
+    if (source.kind === "module" && target.kind === "section") return "模块分节";
+    if (source.kind === "module" && target.kind === "type") return "模块题型";
+    if (source.kind === "section" && target.kind === "type") return "小节题型";
+    return "层级归属";
+  }
+  if (relation === "内容提要") return "提炼框架";
+  if (relation === "对应例题") return "配套训练";
+  if (relation === "原页") return "OCR 来源页";
+  if (relation === "原页截图") return "高清原页";
+  const labels = {
+    "守恒与氧化还原计算互通": "守恒↔氧化还原",
+    "浓度与水溶液平衡计算": "浓度↔水溶液平衡",
+    "离子反应延伸到离子平衡": "离子反应→离子平衡",
+    "电子转移进入电化学": "电子转移→电化学",
+    "金属元素进入工艺流程": "金属主线→工艺流程",
+    "非金属元素进入工艺流程": "非金属主线→工艺流程",
+    "结构决定有机性质": "结构→有机性质",
+    "反应原理支撑工业条件": "原理→工业条件",
+    "实验验证金属化合物性质": "实验验证金属性质",
+    "实验验证非金属化合物性质": "实验验证非金属性质",
+    "阿伏加德罗常数依托化学计量": "NA 判断↔化学计量",
+    "化学用语支撑离子方程式": "化学用语→离子方程式",
+    "生活材料联系元素化合物": "生活材料↔元素化合物"
+  };
+  return labels[relation] || relation;
+}
+
+function edgeClass(relation) {
+  if (relation === "包含") return "hierarchy";
+  if (relation.includes("例题")) return "example";
+  if (relation.includes("原页")) return "page";
+  if (relation.includes("内容提要")) return "summary";
+  return "semantic";
+}

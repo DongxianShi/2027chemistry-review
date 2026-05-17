@@ -18,6 +18,8 @@ function Copy-SiteFiles {
   New-Item -ItemType Directory -Force -Path $TargetDir | Out-Null
   New-Item -ItemType Directory -Force -Path (Join-Path $TargetDir "build") | Out-Null
   New-Item -ItemType Directory -Force -Path (Join-Path $TargetDir "tools") | Out-Null
+  New-Item -ItemType Directory -Force -Path (Join-Path $TargetDir "js") | Out-Null
+  New-Item -ItemType Directory -Force -Path (Join-Path $TargetDir "css") | Out-Null
 
   $files = @(
     "index.html",
@@ -34,6 +36,8 @@ function Copy-SiteFiles {
     Copy-Item -LiteralPath (Join-Path $SourceDir.Path $file) -Destination (Join-Path $TargetDir $file) -Force
   }
   Copy-Item -LiteralPath (Join-Path $SourceDir.Path ".nojekyll") -Destination (Join-Path $RepoRoot.Path ".nojekyll") -Force
+  Copy-Item -LiteralPath (Join-Path $SourceDir.Path "js") -Destination $TargetDir -Recurse -Force
+  Copy-Item -LiteralPath (Join-Path $SourceDir.Path "css") -Destination $TargetDir -Recurse -Force
 
   Copy-Item -LiteralPath (Join-Path $SourceDir.Path "tools\sync_github_pages.ps1") -Destination (Join-Path $TargetDir "tools\sync_github_pages.ps1") -Force
   Copy-Item -LiteralPath (Join-Path $SourceDir.Path "tools\render_hd_pages.mjs") -Destination (Join-Path $TargetDir "tools\render_hd_pages.mjs") -Force
@@ -81,6 +85,17 @@ function Get-SourceSignature {
     ".gitignore",
     ".nojekyll",
     "DEPLOYMENT.md",
+    "js\theme.js",
+    "js\library.js",
+    "js\search.js",
+    "js\detail.js",
+    "js\doc-mode.js",
+    "js\graph.js",
+    "css\base.css",
+    "css\layout.css",
+    "css\graph.css",
+    "css\components.css",
+    "css\responsive.css",
     "tools\sync_github_pages.ps1",
     "tools\render_hd_pages.mjs",
     "tools\render_content_crops.mjs"

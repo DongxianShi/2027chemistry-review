@@ -1,0 +1,451 @@
+﻿.network-canvas {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  overflow: hidden;
+  cursor: grab;
+  touch-action: none;
+  border-radius: 10px;
+  isolation: isolate;
+  background:
+    linear-gradient(rgba(255, 255, 255, 0.024) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.024) 1px, transparent 1px),
+    rgba(5, 25, 31, 0.58);
+  background-size: 44px 44px;
+}
+
+.network-canvas::before {
+  content: "";
+  position: absolute;
+  inset: -20%;
+  z-index: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(115deg, transparent 18%, rgba(139, 232, 255, 0.055) 48%, transparent 78%);
+  opacity: 0.62;
+  transform: translateX(-58%);
+  animation: ambientSweep 10s var(--ease-soft) infinite;
+}
+
+.network-canvas.dragging {
+  cursor: grabbing;
+}
+
+.network-canvas.dragging::before {
+  opacity: 0.42;
+}
+
+.graph-stage {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  transform-origin: 0 0;
+  will-change: transform, opacity, filter;
+  animation: stageReveal 280ms var(--ease-out) both;
+}
+
+.graph-stage.is-soft-update {
+  animation: none;
+}
+
+.edge-layer {
+  position: absolute;
+  inset: 0;
+  overflow: visible;
+  pointer-events: none;
+}
+
+.edge,
+.edge-visible {
+  fill: none;
+  stroke: var(--edge);
+  stroke-width: 2.2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  transition:
+    opacity 220ms var(--ease-out),
+    stroke 220ms var(--ease-out),
+    stroke-width 220ms var(--ease-out),
+    filter 220ms var(--ease-out);
+}
+
+.edge-carrier {
+  pointer-events: none;
+}
+
+.edge-click-target {
+  fill: none;
+  stroke: transparent;
+  stroke-width: 18;
+  stroke-linecap: round;
+  pointer-events: stroke;
+  cursor: pointer;
+}
+
+.edge-path-layer > g {
+  opacity: 0;
+  animation: edgeReveal 420ms var(--ease-out) both;
+  animation-delay: var(--edge-delay, 0ms);
+}
+
+.graph-stage.is-soft-update .edge-path-layer > g {
+  opacity: 1;
+  animation: none;
+}
+
+.edge-direct {
+  stroke-width: 2.35;
+}
+
+.edge-indirect {
+  opacity: 0.5;
+}
+
+.edge-muted {
+  stroke: rgba(118, 152, 160, 0.68) !important;
+  opacity: 0.34;
+  filter: grayscale(0.82) saturate(0.28) brightness(0.76);
+}
+
+.graph-stage.has-edge-focus .edge-muted {
+  stroke: rgba(132, 176, 184, 0.72) !important;
+  opacity: 0.48;
+  filter: grayscale(0.55) saturate(0.42) brightness(0.84);
+}
+
+.edge-active {
+  opacity: 0.94;
+  filter: drop-shadow(0 0 5px rgba(123, 229, 255, 0.18));
+}
+
+.edge-focused-group .edge-active {
+  opacity: 1;
+  stroke-width: 3.25;
+  filter:
+    drop-shadow(0 0 7px rgba(132, 234, 255, 0.52))
+    drop-shadow(0 0 16px rgba(84, 201, 255, 0.28));
+}
+
+.graph-stage.has-edge-focus .edge-focused-group .edge-visible.edge-active {
+  animation: focusedEdgePulse 760ms var(--ease-out) both;
+}
+
+.edge-semantic {
+  stroke-dasharray: none;
+  stroke: rgba(243, 201, 106, 0.66);
+}
+
+.edge-hierarchy {
+  stroke: rgba(120, 223, 255, 0.82);
+}
+
+.edge-summary {
+  stroke: rgba(143, 183, 255, 0.78);
+}
+
+.edge-example {
+  stroke: rgba(255, 152, 186, 0.78);
+}
+
+.edge-page {
+  stroke-dasharray: none;
+  stroke: rgba(207, 216, 227, 0.62);
+}
+
+.edge-label {
+  fill: rgba(226, 252, 255, 0.92);
+  font-size: 11px;
+  text-anchor: middle;
+  pointer-events: none;
+  transition:
+    fill 200ms var(--ease-out),
+    opacity 200ms var(--ease-out);
+}
+
+.edge-label-wrap {
+  --label-final-opacity: 1;
+  pointer-events: none;
+  opacity: 0;
+  animation: labelReveal 320ms var(--ease-out) both;
+  animation-delay: var(--label-delay, 80ms);
+}
+
+.graph-stage.is-soft-update .edge-label-wrap {
+  opacity: var(--label-final-opacity, 1);
+  animation: none;
+}
+
+.edge-label-wrap-muted {
+  --label-final-opacity: 0.42;
+}
+
+.graph-stage.has-edge-focus .edge-label-wrap-muted {
+  --label-final-opacity: 0.52;
+}
+
+.edge-label-focused {
+  --label-final-opacity: 1;
+  filter: drop-shadow(0 0 10px rgba(114, 226, 255, 0.34));
+}
+
+.edge-label-focused .edge-label-bg {
+  animation: focusedLabelPulse 820ms var(--ease-out) both;
+}
+
+.edge-label-bg {
+  fill: rgb(4, 20, 26);
+  stroke: rgba(132, 223, 243, 0.36);
+  stroke-width: 1px;
+  transition:
+    fill 200ms var(--ease-out),
+    stroke 200ms var(--ease-out),
+    opacity 200ms var(--ease-out);
+}
+
+.edge-label-stem {
+  stroke: rgba(160, 235, 250, 0.58);
+  stroke-width: 1px;
+  stroke-linecap: round;
+  pointer-events: none;
+}
+
+.edge-label-wrap-muted .edge-label-bg {
+  fill: rgb(8, 20, 24);
+  stroke: rgba(126, 160, 166, 0.34);
+}
+
+.graph-stage.has-edge-focus .edge-label-wrap-muted .edge-label-bg {
+  stroke: rgba(112, 156, 166, 0.34);
+}
+
+.edge-label-wrap-muted .edge-label-stem {
+  stroke: rgba(126, 160, 166, 0.4);
+}
+
+.graph-stage.has-edge-focus .edge-label-wrap-muted .edge-label-stem {
+  stroke: rgba(112, 156, 166, 0.38);
+}
+
+.edge-label-wrap-muted .edge-label {
+  fill: rgba(178, 207, 212, 0.86);
+}
+
+.graph-stage.has-edge-focus .edge-label-wrap-muted .edge-label {
+  fill: rgba(166, 196, 202, 0.82);
+}
+
+/* Retained for text-only fallback labels generated by older cached views. */
+.edge-label-legacy {
+  paint-order: stroke;
+  stroke: rgba(3, 14, 19, 0.85);
+  stroke-width: 4px;
+}
+
+.edge-label-muted {
+  fill: rgba(119, 145, 151, 0.44);
+  stroke: rgba(3, 14, 19, 0.76);
+}
+
+.net-node {
+  --node-final-opacity: 1;
+  position: absolute;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 8px;
+  border: 1px solid rgba(227, 250, 255, 0.34);
+  border-radius: 8px;
+  color: #10232b;
+  box-shadow:
+    0 10px 24px rgba(0, 0, 0, 0.14),
+    0 0 0 1px rgba(255, 255, 255, 0.18) inset;
+  text-align: left;
+  overflow: hidden;
+  cursor: pointer;
+  isolation: isolate;
+  transform-origin: center;
+  z-index: 2;
+  will-change: opacity, filter;
+  animation: nodeEnter 420ms var(--ease-snap) both;
+  animation-delay: var(--node-delay, 0ms);
+  transition:
+    transform 190ms var(--ease-out),
+    border-color 190ms var(--ease-out),
+    box-shadow 220ms var(--ease-out),
+    filter 220ms var(--ease-out),
+    opacity 220ms var(--ease-out),
+    background 220ms var(--ease-out);
+}
+
+.graph-stage.is-soft-update .net-node {
+  opacity: var(--node-final-opacity, 1);
+  animation: none;
+}
+
+.net-node::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background: linear-gradient(115deg, transparent 22%, rgba(255, 255, 255, 0.42) 48%, transparent 74%);
+  opacity: 0;
+  transform: translateX(-135%) skewX(-12deg);
+  transition:
+    opacity 180ms var(--ease-out),
+    transform 520ms var(--ease-out);
+}
+
+.net-node:hover {
+  border-color: rgba(237, 253, 255, 0.68);
+  box-shadow:
+    0 14px 30px rgba(3, 21, 28, 0.28),
+    0 0 24px rgba(119, 228, 255, 0.22),
+    0 0 0 1px rgba(255, 255, 255, 0.28) inset;
+}
+
+.net-node:hover::before {
+  opacity: 0.5;
+  transform: translateX(135%) skewX(-12deg);
+}
+
+.net-node:active {
+  border-color: rgba(255, 255, 255, 0.82);
+}
+
+.net-node.center {
+  --node-final-opacity: 1;
+  z-index: 5;
+  background:
+    linear-gradient(135deg, #5064ff, #2e9bf0 54%, #23c7ad) !important;
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.78);
+  box-shadow:
+    0 18px 42px rgba(0, 0, 0, 0.22),
+    0 0 34px rgba(122, 220, 255, 0.46);
+  animation:
+    nodeEnter 420ms var(--ease-snap) both,
+    centerBreath 2600ms var(--ease-soft) infinite;
+  animation-delay:
+    var(--node-delay, 0ms),
+    calc(var(--node-delay, 0ms) + 460ms);
+}
+
+.graph-stage.is-soft-update .net-node.center {
+  animation: centerBreath 2600ms var(--ease-soft) infinite;
+  animation-delay: 0ms;
+}
+
+.net-node.selected:not(.center) {
+  z-index: 4;
+  outline: 3px solid rgba(125, 220, 255, 0.5);
+}
+
+.net-node.expanded-source {
+  z-index: 6;
+  outline: 3px solid rgba(255, 232, 158, 0.64);
+  box-shadow:
+    0 0 0 1px rgba(255, 244, 198, 0.5),
+    0 0 28px rgba(255, 224, 128, 0.26);
+}
+
+.net-node.match {
+  box-shadow: 0 0 0 3px rgba(255, 226, 128, 0.5), 0 0 20px rgba(255, 226, 128, 0.24);
+}
+
+.net-node.filter-muted:not(.center) {
+  --node-final-opacity: 0.34;
+  z-index: 1;
+  pointer-events: none;
+  filter: grayscale(0.94) saturate(0.12) brightness(0.42);
+  opacity: var(--node-final-opacity);
+  box-shadow: none;
+}
+
+.graph-stage.has-expansion .net-node.filter-muted:not(.expanded-source) {
+  --node-final-opacity: 0.18;
+  opacity: var(--node-final-opacity);
+  filter: grayscale(1) saturate(0.08) brightness(0.32);
+}
+
+.graph-stage.has-expansion .edge-muted {
+  opacity: 0.1;
+}
+
+.net-node.edge-focus-node {
+  z-index: 4;
+  box-shadow:
+    0 0 0 1px rgba(183, 244, 255, 0.48),
+    0 0 24px rgba(105, 220, 255, 0.28);
+}
+
+.graph-stage.has-edge-focus .net-node.edge-focus-node {
+  animation: focusNodePop 320ms var(--ease-snap) both;
+}
+
+.net-node.filter-muted:not(.center):hover {
+  border-color: rgba(227, 250, 255, 0.2);
+  box-shadow: none;
+}
+
+.role-contained {
+  border-color: rgba(126, 245, 218, 0.72);
+  box-shadow: 0 0 22px rgba(82, 229, 203, 0.22);
+}
+
+.role-parent {
+  border-color: rgba(187, 217, 236, 0.56);
+  opacity: 0.9;
+}
+
+.role-support {
+  border-color: rgba(140, 190, 255, 0.52);
+  box-shadow: 0 0 15px rgba(122, 173, 255, 0.12);
+}
+
+.role-related {
+  border-color: rgba(255, 218, 157, 0.52);
+  box-shadow: 0 0 13px rgba(255, 202, 116, 0.12);
+  opacity: 0.9;
+}
+
+.node-title {
+  min-width: 0;
+  overflow-wrap: break-word;
+  font-weight: 700;
+  line-height: 1.18;
+  font-size: 12px;
+  display: block;
+  position: relative;
+  z-index: 1;
+}
+
+.center .node-title {
+  display: block;
+  font-size: 18px;
+  text-align: center;
+}
+
+.node-kind {
+  align-self: start;
+  border: 1px solid rgba(20, 70, 84, 0.18);
+  border-radius: 8px;
+  padding: 1px 6px;
+  background: rgba(255, 255, 255, 0.68);
+  color: #31505b;
+  font-size: 12px;
+  white-space: nowrap;
+  position: relative;
+  z-index: 1;
+  transition:
+    background 180ms var(--ease-out),
+    border-color 180ms var(--ease-out),
+    color 180ms var(--ease-out);
+}
+
+.center .node-kind {
+  display: none;
+}
+
