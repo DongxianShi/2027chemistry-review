@@ -1060,19 +1060,14 @@ function renderEdge(plan, placedLabel, edgeLabelBoxes, muted = false) {
   });
   pathGroup.appendChild(hitPath);
 
-  const visibleSegments = pathSegmentsAvoidingLabels(plan, edgeLabelBoxes);
-  visibleSegments.forEach((segment, index) => {
-    const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
-    path.setAttribute("d", segment.d);
-    path.setAttribute("class", `edge-visible edge-${edgeClass(edge.relation)} ${direct ? "edge-direct" : "edge-indirect"} ${muted ? "edge-muted" : "edge-active"}`);
-    if (segment.endsAtEnd && index === visibleSegments.length - 1) {
-      path.setAttribute("marker-end", `url(#${arrowMarkerId(edge, muted)})`);
-    }
-    path.dataset.source = edge.source;
-    path.dataset.target = edge.target;
-    path.dataset.relation = edge.relation;
-    pathGroup.appendChild(path);
-  });
+  const visiblePath = document.createElementNS("http://www.w3.org/2000/svg", "path");
+  visiblePath.setAttribute("d", quadraticPathD(start, control, end));
+  visiblePath.setAttribute("class", `edge-visible edge-${edgeClass(edge.relation)} ${direct ? "edge-direct" : "edge-indirect"} ${muted ? "edge-muted" : "edge-active"}`);
+  visiblePath.setAttribute("marker-end", `url(#${arrowMarkerId(edge, muted)})`);
+  visiblePath.dataset.source = edge.source;
+  visiblePath.dataset.target = edge.target;
+  visiblePath.dataset.relation = edge.relation;
+  pathGroup.appendChild(visiblePath);
 
   const carrier = document.createElementNS("http://www.w3.org/2000/svg", "path");
   carrier.setAttribute("id", plan.id);
