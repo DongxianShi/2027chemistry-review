@@ -821,7 +821,7 @@ function edgePlan(edge, positions, index, priorPlans = []) {
   });
   const labelT = direct
     ? (edge.source === centerId ? 0.68 : edge.target === centerId ? 0.32 : 0.5)
-    : (semantic ? 0.82 : 0.5);
+    : (semantic ? [0.62, 0.7, 0.78, 0.86][Math.abs(index) % 4] : 0.5);
   return {
     edge,
     id: `edge_path_${index}`,
@@ -874,13 +874,17 @@ function chooseEdgeControl(context) {
     push(midX, midY, 8);
   } else {
     const laneOffsets = [lane, lane + 2, lane - 2, lane + 4, lane - 4, 0];
-    [1, 1.28, 1.58, 1.94].forEach((multiplier, order) => {
-      laneOffsets.forEach((laneOffset, laneOrder) => {
-        push(
-          midX + outwardX * indirectCurve * multiplier + normalX * laneOffset * 64,
-          midY + outwardY * indirectCurve * multiplier + normalY * laneOffset * 64,
-          order + laneOrder * 0.08
-        );
+    const semantic = relationGroup(edge.relation) === "相关主线";
+    const signs = semantic ? [1, -1] : [1];
+    signs.forEach((sign, signOrder) => {
+      [1, 1.28, 1.58, 1.94, 2.38].forEach((multiplier, order) => {
+        laneOffsets.forEach((laneOffset, laneOrder) => {
+          push(
+            midX + outwardX * indirectCurve * multiplier * sign + normalX * laneOffset * 64,
+            midY + outwardY * indirectCurve * multiplier * sign + normalY * laneOffset * 64,
+            order + signOrder * 0.22 + laneOrder * 0.08
+          );
+        });
       });
     });
   }
@@ -1033,14 +1037,6 @@ function placeLabelOnPath(plan, labelBoxes, pathObstacles) {
   const width = labelWidth(plan.labelText);
   const height = 22;
   const stageBox = stageBoxFromPositions();
-  if (relationGroup(plan.edge.relation) === "相关主线") {
-    const rawPoint = quadraticPoint(plan.start, plan.control, plan.end, plan.labelT);
-    const tangent = quadraticTangent(plan.start, plan.control, plan.end, plan.labelT);
-    const angle = readableAngle(Math.atan2(tangent.y, tangent.x) * 180 / Math.PI);
-    const box = labelAxisBox(rawPoint, width, height, angle);
-    labelBoxes.push(box);
-    return { x: rawPoint.x, y: rawPoint.y, angle, width, height };
-  }
   const candidates = labelCandidates(plan);
   let best = null;
   for (const t of candidates) {
