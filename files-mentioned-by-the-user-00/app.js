@@ -1796,32 +1796,84 @@ function expansionMeta(node) {
   return `例题截图 · 来源页 ${pages}`;
 }
 
-function renderInlinePage(node) {
+function contentCropSrc(node) {
+  if (!node) return "";
+  if (node.kind === "page" && node.page) {
+    return `build/content_crops/page_${String(node.page).padStart(3, "0")}.jpg`;
+  }
+  if (node.kind === "example" && node.id) {
+    return `build/content_crops/${node.id}.jpg`;
+  }
+  return "";
+}
+
+function renderContentCropFigure(node, src, captionText, fallbackFactory) {
   const figure = document.createElement("figure");
-  figure.className = "inline-media inline-page-frame";
+  figure.className = "inline-media inline-content-crop";
+  const frame = document.createElement("div");
+  frame.className = "content-crop-frame";
   const img = document.createElement("img");
-  img.src = imageForPageNode(node);
-  img.alt = `${displayTitle(node)} 原页截图`;
+  img.src = src;
+  img.alt = `${displayTitle(node)} 截图`;
+  img.loading = "lazy";
+  img.decoding = "async";
   const cap = document.createElement("figcaption");
-  cap.textContent = "完整原页截图";
+  cap.textContent = captionText;
   img.addEventListener("error", () => {
-    if (tryFallbackImage(img, node.image)) return;
+    if (typeof fallbackFactory === "function") {
+      const fallback = fallbackFactory();
+      if (fallback) {
+        figure.replaceWith(fallback);
+        return;
+      }
+    }
     figure.classList.add("missing");
-    cap.textContent = "原页截图未随网站发布，请确认 build/page_images 或 build/page_images_hd 已上传。";
+    frame.textContent = "截图资源未随网站发布，请重新生成 build/content_crops 后同步网站。";
+    cap.textContent = "截图缺失";
   });
-  figure.append(img, cap);
+  frame.appendChild(img);
+  figure.append(frame, cap);
   return figure;
+}
+
+function renderInlinePage(node) {
+  return renderContentCropFigure(node, contentCropSrc(node), "已裁去空白边距的原页截图", () => {
+    const figure = document.createElement("figure");
+    figure.className = "inline-media inline-page-frame";
+    const img = document.createElement("img");
+    img.src = imageForPageNode(node);
+    img.alt = `${displayTitle(node)} 原页截图`;
+    const cap = document.createElement("figcaption");
+    cap.textContent = "完整原页截图";
+    img.addEventListener("error", () => {
+      if (tryFallbackImage(img, node.image)) return;
+      figure.classList.add("missing");
+      cap.textContent = "原页截图未随网站发布，请确认 build/page_images 或 build/page_images_hd 已上传。";
+    });
+    figure.append(img, cap);
+    return figure;
+  });
 }
 
 function renderInlineExample(node) {
   const crop = exampleCropSpec(node);
+  const contentCrop = contentCropSrc(node);
+  if (contentCrop) {
+    return renderContentCropFigure(node, contentCrop, "例题组截图：从本类型起点到下一类型起点前，已按页纵向合并", () => {
+      if (!crop) return null;
+      return renderLegacyExampleCrop(node, crop);
+    });
+  }
   if (!crop) {
     const fallback = document.createElement("div");
     fallback.className = "inline-text-fallback";
     fallback.appendChild(renderTextBlock(node.text || "该例题暂无可定位截图。"));
     return fallback;
   }
+  return renderLegacyExampleCrop(node, crop);
+}
 
+function renderLegacyExampleCrop(node, crop) {
   const figure = document.createElement("figure");
   figure.className = "inline-media inline-example-crop";
   const frame = document.createElement("div");
