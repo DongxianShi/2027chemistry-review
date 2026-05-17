@@ -821,7 +821,7 @@ function edgePlan(edge, positions, index, priorPlans = []) {
   });
   const labelT = direct
     ? (edge.source === centerId ? 0.68 : edge.target === centerId ? 0.32 : 0.5)
-    : (semantic ? 0.9 : 0.5);
+    : (semantic ? 0.82 : 0.5);
   return {
     edge,
     id: `edge_path_${index}`,
@@ -1033,6 +1033,14 @@ function placeLabelOnPath(plan, labelBoxes, pathObstacles) {
   const width = labelWidth(plan.labelText);
   const height = 22;
   const stageBox = stageBoxFromPositions();
+  if (relationGroup(plan.edge.relation) === "相关主线") {
+    const rawPoint = quadraticPoint(plan.start, plan.control, plan.end, plan.labelT);
+    const tangent = quadraticTangent(plan.start, plan.control, plan.end, plan.labelT);
+    const angle = readableAngle(Math.atan2(tangent.y, tangent.x) * 180 / Math.PI);
+    const box = labelAxisBox(rawPoint, width, height, angle);
+    labelBoxes.push(box);
+    return { x: rawPoint.x, y: rawPoint.y, angle, width, height };
+  }
   const candidates = labelCandidates(plan);
   let best = null;
   for (const t of candidates) {
