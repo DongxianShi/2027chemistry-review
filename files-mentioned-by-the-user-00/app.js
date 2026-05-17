@@ -1080,7 +1080,7 @@ function placeLabelOnPath(plan, labelBoxes, pathObstacles) {
     }, 0);
     const labelScore = labelBoxes.reduce((sum, existing) => {
       if (existing.type === "node" || existing.type === "panel") return sum;
-      return sum + overlapPenalty(existing, box, 24);
+      return sum + overlapPenalty(existing, box, 32);
     }, 0);
     const lineScore = pathObstacles.reduce((sum, existing) => {
       if (existing.key === plan.key) return sum;
@@ -1089,7 +1089,7 @@ function placeLabelOnPath(plan, labelBoxes, pathObstacles) {
     const stageScore = outsidePenalty(box, stageBox) * 36;
     const endpointScore = (Math.max(0, 0.12 - t) + Math.max(0, t - 0.88)) * 260;
     const driftScore = Math.abs(t - plan.labelT) * 18;
-    const score = nodeScore * 80 + labelScore * 8 + lineScore * 1.8 + stageScore + endpointScore + driftScore;
+    const score = nodeScore * 90 + labelScore * 22 + lineScore * 1.35 + stageScore + endpointScore + driftScore;
     const placed = { x: rawPoint.x, y: rawPoint.y, angle, width, height, t };
     if (!nodeScore && !labelScore && !lineScore && !stageScore) {
       labelBoxes.push({ ...box, type: "label" });
