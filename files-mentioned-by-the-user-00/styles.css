@@ -898,10 +898,94 @@ button {
 
 .detail-body {
   animation: detailIn 240ms var(--ease-out) both;
+  padding-right: 2px;
+  scrollbar-color: rgba(144, 224, 239, 0.45) rgba(255, 255, 255, 0.05);
 }
 
 .detail-panel.soft-update .detail-body {
   animation: none;
+}
+
+.learning-guide {
+  display: grid;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.guide-intro {
+  margin: 0;
+  border: 1px solid rgba(159, 241, 210, 0.24);
+  border-radius: 8px;
+  padding: 9px 10px;
+  background:
+    linear-gradient(135deg, rgba(159, 241, 210, 0.12), rgba(125, 220, 255, 0.07)),
+    rgba(255, 255, 255, 0.035);
+  color: #eafcff;
+  line-height: 1.62;
+}
+
+.guide-section {
+  border: 1px solid rgba(144, 224, 239, 0.2);
+  border-radius: 8px;
+  padding: 9px 10px 10px;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.045), transparent),
+    rgba(4, 22, 28, 0.42);
+}
+
+.guide-section > strong {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 6px;
+  color: var(--gold);
+  font-size: 13px;
+  letter-spacing: 0.02em;
+}
+
+.guide-section > strong::before {
+  content: "";
+  width: 7px;
+  height: 7px;
+  border-radius: 2px;
+  background: currentColor;
+  box-shadow: 0 0 12px currentColor;
+}
+
+.guide-list {
+  display: grid;
+  gap: 6px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.guide-list li {
+  position: relative;
+  padding-left: 14px;
+  color: #d9f4f8;
+  line-height: 1.58;
+  word-break: normal;
+  overflow-wrap: break-word;
+}
+
+.guide-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.72em;
+  width: 5px;
+  height: 5px;
+  border-radius: 999px;
+  background: var(--mint);
+}
+
+.guide-note {
+  border-left: 3px solid var(--plum);
+  padding: 7px 9px;
+  background: rgba(216, 183, 255, 0.08);
+  color: #d9d0ff;
+  line-height: 1.55;
 }
 
 .meta-line {
