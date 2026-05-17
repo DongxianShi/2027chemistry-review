@@ -838,7 +838,11 @@ function edgePlan(edge, positions, index, priorPlans = []) {
     priorPlans
   });
   const labelT = direct
-    ? (edge.source === centerId ? 0.56 : edge.target === centerId ? 0.44 : 0.5)
+    ? (
+      semantic
+        ? (edge.source === centerId ? 0.72 : edge.target === centerId ? 0.28 : 0.5)
+        : (edge.source === centerId ? 0.56 : edge.target === centerId ? 0.44 : 0.5)
+    )
     : (semantic ? [0.62, 0.7, 0.78, 0.86][Math.abs(index) % 4] : 0.5);
   return {
     edge,
