@@ -188,6 +188,15 @@ button {
   box-shadow: 0 8px 20px rgba(3, 21, 28, 0.22), 0 0 18px rgba(105, 220, 255, 0.12);
 }
 
+.filter-button.active {
+  border-color: rgba(245, 212, 123, 0.72);
+  background:
+    linear-gradient(135deg, rgba(245, 212, 123, 0.18), rgba(125, 220, 255, 0.12)),
+    rgba(32, 90, 102, 0.82);
+  color: #fff7d6;
+  box-shadow: 0 0 0 1px rgba(245, 212, 123, 0.16) inset, 0 10px 24px rgba(0, 0, 0, 0.18);
+}
+
 .search-wrap button:active,
 .buttons button:active,
 .panel-toggle:active,
