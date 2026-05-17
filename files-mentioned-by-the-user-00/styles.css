@@ -486,6 +486,10 @@ button {
   animation: stageReveal 280ms var(--ease-out) both;
 }
 
+.graph-stage.is-soft-update {
+  animation: none;
+}
+
 .edge-layer {
   position: absolute;
   inset: 0;
@@ -526,6 +530,11 @@ button {
   animation-delay: var(--edge-delay, 0ms);
 }
 
+.graph-stage.is-soft-update .edge-path-layer > g {
+  opacity: 1;
+  animation: none;
+}
+
 .edge-direct {
   stroke-width: 2.35;
 }
@@ -557,6 +566,10 @@ button {
   filter:
     drop-shadow(0 0 7px rgba(132, 234, 255, 0.52))
     drop-shadow(0 0 16px rgba(84, 201, 255, 0.28));
+}
+
+.graph-stage.has-edge-focus .edge-focused-group .edge-visible.edge-active {
+  animation: focusedEdgePulse 760ms var(--ease-out) both;
 }
 
 .edge-semantic {
@@ -599,6 +612,11 @@ button {
   animation-delay: var(--label-delay, 80ms);
 }
 
+.graph-stage.is-soft-update .edge-label-wrap {
+  opacity: var(--label-final-opacity, 1);
+  animation: none;
+}
+
 .edge-label-wrap-muted {
   --label-final-opacity: 0.2;
 }
@@ -610,6 +628,10 @@ button {
 .edge-label-focused {
   --label-final-opacity: 1;
   filter: drop-shadow(0 0 10px rgba(114, 226, 255, 0.34));
+}
+
+.edge-label-focused .edge-label-bg {
+  animation: focusedLabelPulse 820ms var(--ease-out) both;
 }
 
 .edge-label-bg {
@@ -696,6 +718,11 @@ button {
     background 220ms var(--ease-out);
 }
 
+.graph-stage.is-soft-update .net-node {
+  opacity: var(--node-final-opacity, 1);
+  animation: none;
+}
+
 .net-node::before {
   content: "";
   position: absolute;
@@ -739,6 +766,11 @@ button {
     calc(var(--node-delay, 0ms) + 460ms);
 }
 
+.graph-stage.is-soft-update .net-node.center {
+  animation: centerBreath 2600ms var(--ease-soft) infinite;
+  animation-delay: 0ms;
+}
+
 .net-node.selected:not(.center) {
   z-index: 4;
   outline: 3px solid rgba(125, 220, 255, 0.5);
@@ -780,6 +812,10 @@ button {
   box-shadow:
     0 0 0 1px rgba(183, 244, 255, 0.48),
     0 0 24px rgba(105, 220, 255, 0.28);
+}
+
+.graph-stage.has-edge-focus .net-node.edge-focus-node {
+  animation: focusNodePop 320ms var(--ease-snap) both;
 }
 
 .net-node.filter-muted:not(.center):hover {
@@ -854,6 +890,10 @@ button {
 
 .detail-body {
   animation: detailIn 240ms var(--ease-out) both;
+}
+
+.detail-panel.soft-update .detail-body {
+  animation: none;
 }
 
 .meta-line {
@@ -1237,6 +1277,46 @@ sup {
 
   50% {
     box-shadow: 0 0 42px rgba(122, 220, 255, 0.68), 0 0 0 7px rgba(122, 220, 255, 0.08);
+  }
+}
+
+@keyframes focusedEdgePulse {
+  0% {
+    stroke-width: 5.2;
+    filter:
+      drop-shadow(0 0 12px rgba(145, 238, 255, 0.7))
+      drop-shadow(0 0 24px rgba(84, 201, 255, 0.36));
+  }
+
+  100% {
+    stroke-width: 3.25;
+    filter:
+      drop-shadow(0 0 7px rgba(132, 234, 255, 0.52))
+      drop-shadow(0 0 16px rgba(84, 201, 255, 0.28));
+  }
+}
+
+@keyframes focusedLabelPulse {
+  0% {
+    stroke: rgba(255, 238, 166, 0.86);
+    filter: drop-shadow(0 0 12px rgba(255, 226, 128, 0.34));
+  }
+
+  100% {
+    stroke: rgba(132, 223, 243, 0.52);
+    filter: drop-shadow(0 0 8px rgba(114, 226, 255, 0.18));
+  }
+}
+
+@keyframes focusNodePop {
+  0% {
+    opacity: var(--node-final-opacity, 1);
+    filter: brightness(1.08) saturate(1.08);
+  }
+
+  100% {
+    opacity: var(--node-final-opacity, 1);
+    filter: none;
   }
 }
 
