@@ -183,6 +183,7 @@ function render() {
   const stage = document.createElement("div");
   stage.className = "graph-stage";
   if (expandedNodeId) stage.classList.add("has-expansion");
+  if (focusedEdgeKey) stage.classList.add("has-edge-focus");
   stage.style.width = `${layout.width}px`;
   stage.style.height = `${layout.height}px`;
   stageEl = stage;
