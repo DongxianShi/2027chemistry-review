@@ -1166,6 +1166,12 @@ sup {
   background: #fff;
 }
 
+.content-crop-frame.is-zoomed img {
+  width: auto;
+  max-width: none;
+  min-width: min(960px, 180%);
+}
+
 .crop-frame {
   position: relative;
   width: 100%;
