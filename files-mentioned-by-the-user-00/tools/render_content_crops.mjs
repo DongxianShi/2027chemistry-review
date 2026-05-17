@@ -11,6 +11,7 @@ const hdPageDir = path.join(root, "build", "page_images_hd");
 const pdfPath = path.join(root, "chemistry_method.pdf");
 const scale = Number(process.env.CONTENT_CROP_SCALE || 2);
 const quality = Number(process.env.CONTENT_CROP_QUALITY || 0.92);
+const preferPdf = process.env.CONTENT_CROP_SOURCE === "pdf";
 
 const pdfjs = await import("pdfjs-dist/legacy/build/pdf.mjs");
 
@@ -21,7 +22,6 @@ const pageNodeByBookPage = new Map(nodes.filter(node => node.kind === "page" && 
 const pdfPageByBookPage = await readPageMap();
 const typeNodes = nodes.filter(node => node.kind === "type");
 const typeOrderByModule = groupTypeOrder(typeNodes);
-const pdfCanvasCache = new Map();
 const pdfDocument = existsSync(pdfPath)
   ? await pdfjs.getDocument({ data: new Uint8Array(await readFile(pdfPath)), disableWorker: true }).promise
   : null;
@@ -200,14 +200,14 @@ function cropFullContent(canvas) {
 async function canvasForBookPage(bookPage) {
   const filename = `page_${String(bookPage).padStart(3, "0")}.jpg`;
   const filePath = path.join(hdPageDir, filename);
-  if (existsSync(filePath)) return canvasFromImage(filePath);
   const pdfPage = pdfPageByBookPage.get(bookPage);
+  if (preferPdf && pdfPage) return canvasForPdfPage(pdfPage);
+  if (existsSync(filePath)) return canvasFromImage(filePath);
   if (!pdfPage) throw new Error(`no source image or pdf mapping for book page ${bookPage}`);
   return canvasForPdfPage(pdfPage);
 }
 
 async function canvasForPdfPage(pdfPage) {
-  if (pdfCanvasCache.has(pdfPage)) return pdfCanvasCache.get(pdfPage);
   if (!pdfDocument) throw new Error("chemistry_method.pdf is required to render continuation pages");
   const page = await pdfDocument.getPage(pdfPage);
   const viewport = page.getViewport({ scale });
@@ -216,7 +216,6 @@ async function canvasForPdfPage(pdfPage) {
   ctx.fillStyle = "#fff";
   ctx.fillRect(0, 0, canvas.width, canvas.height);
   await page.render({ canvasContext: ctx, viewport }).promise;
-  pdfCanvasCache.set(pdfPage, canvas);
   return canvas;
 }
 

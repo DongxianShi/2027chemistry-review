@@ -21,9 +21,11 @@ function Copy-SiteFiles {
 
   $files = @(
     "index.html",
+    "404.html",
     "styles.css",
     "app.js",
     "network_data.js",
+    "package.json",
     ".gitignore",
     ".nojekyll",
     "DEPLOYMENT.md"
@@ -71,9 +73,11 @@ function Publish-Site {
 function Get-SourceSignature {
   $paths = @(
     "index.html",
+    "404.html",
     "styles.css",
     "app.js",
     "network_data.js",
+    "package.json",
     ".gitignore",
     ".nojekyll",
     "DEPLOYMENT.md",

@@ -10,7 +10,7 @@ const pathNodeByKey = new Map();
 const CENTERABLE = new Set(["root", "chapter", "module", "section", "type", "summary"]);
 const LEAF = new Set(["example", "page"]);
 const EXPANDABLE = new Set(["example", "page"]);
-const RELATION_ORDER = ["包含", "内容提要", "对应例题", "原页", "原页截图", "相关"];
+const RELATION_ORDER = ["层级结构", "框架提要", "例题训练", "原页核对", "跨章关联"];
 const COLORS = {
   root: "#4863ff",
   chapter: "#e8eef7",
@@ -67,6 +67,12 @@ const relationFilters = document.getElementById("relationFilters");
 const searchResults = document.getElementById("searchResults");
 const pathPanel = document.getElementById("pathPanel");
 const togglePathPanel = document.getElementById("togglePathPanel");
+const libraryPanel = document.getElementById("libraryPanel");
+const libraryGrid = document.getElementById("libraryGrid");
+const docToc = document.getElementById("docToc");
+const libraryNavButton = document.getElementById("libraryNavButton");
+const graphNavButton = document.getElementById("graphNavButton");
+const themeToggle = document.getElementById("themeToggle");
 let resizeTimer = null;
 let stageEl = null;
 let lastLayout = null;
@@ -86,6 +92,7 @@ function init() {
   statsLine.textContent = `节点 ${GRAPH.stats.nodes} 个 · 关系 ${GRAPH.stats.edges} 条 · 层级单元 ${GRAPH.stats.hierarchy} 个 · 原页缓存 ${GRAPH.stats.pages} 页`;
   initViewportControls();
   initPanelToggles();
+  initKnowledgeShell();
   renderRelationFilters();
   render();
 
@@ -123,6 +130,177 @@ function addAdj(id, edge) {
   adjacency.get(id).push(edge);
 }
 
+function initKnowledgeShell() {
+  initTheme();
+  renderDocToc();
+  renderLibraryPanel();
+  libraryNavButton?.addEventListener("click", () => showLibraryPanel(true));
+  graphNavButton?.addEventListener("click", () => showLibraryPanel(false));
+  document.getElementById("closeLibraryPanel")?.addEventListener("click", () => showLibraryPanel(false));
+  themeToggle?.addEventListener("click", () => {
+    const current = document.documentElement.dataset.theme === "light" ? "dark" : "light";
+    setTheme(current);
+  });
+}
+
+function initTheme() {
+  const saved = localStorage.getItem("chem-review-theme");
+  const preferredLight = window.matchMedia?.("(prefers-color-scheme: light)").matches;
+  setTheme(saved || (preferredLight ? "light" : "dark"));
+}
+
+function setTheme(theme) {
+  document.documentElement.dataset.theme = theme;
+  localStorage.setItem("chem-review-theme", theme);
+  if (themeToggle) themeToggle.textContent = theme === "light" ? "浅色" : "深色";
+}
+
+function showLibraryPanel(show) {
+  if (!libraryPanel) return;
+  libraryPanel.hidden = !show;
+  libraryNavButton?.classList.toggle("active", show);
+  graphNavButton?.classList.toggle("active", !show);
+  if (!show) {
+    view.needsFit = true;
+    render();
+  }
+}
+
+function chapterNodes() {
+  return [...nodes.values()]
+    .filter(node => node.kind === "chapter")
+    .sort((a, b) => (a.page || 0) - (b.page || 0));
+}
+
+function childrenOf(parentId, kind) {
+  return (adjacency.get(parentId) || [])
+    .map(edge => edge.source === parentId ? edge.target : edge.source)
+    .map(id => nodes.get(id))
+    .filter(node => node && (!kind || node.kind === kind))
+    .sort((a, b) => (a.page || 0) - (b.page || 0));
+}
+
+function renderDocToc() {
+  if (!docToc) return;
+  docToc.innerHTML = "";
+  chapterNodes().forEach(chapter => {
+    const item = document.createElement("details");
+    item.className = "doc-toc-section";
+    if (chapter.id === centerId || nodePath(nodes.get(centerId)).includes(chapter.title)) item.open = true;
+    const summary = document.createElement("summary");
+    summary.textContent = displayTitle(chapter);
+    summary.addEventListener("click", event => {
+      if (event.target.tagName === "SUMMARY" && !item.open) {
+        event.preventDefault();
+        item.open = true;
+        focusNode(chapter.id, true);
+      }
+    });
+    const list = document.createElement("div");
+    list.className = "doc-toc-children";
+    childrenOf(chapter.id, "module").slice(0, 10).forEach(module => {
+      const btn = document.createElement("button");
+      btn.type = "button";
+      btn.textContent = displayTitle(module);
+      btn.className = module.id === centerId ? "active" : "";
+      btn.addEventListener("click", () => focusNode(module.id, true));
+      list.appendChild(btn);
+    });
+    item.append(summary, list);
+    docToc.appendChild(item);
+  });
+}
+
+function renderLibraryPanel() {
+  if (!libraryGrid) return;
+  libraryGrid.innerHTML = "";
+  libraryGrid.appendChild(resourceCard({
+    title: "知识关系网",
+    meta: `${GRAPH.stats.nodes} 个节点 · ${GRAPH.stats.edges} 条关系`,
+    body: "用于从章节、模块、题型、内容提要、例题和原页之间切换，适合建立一轮复习知识体系。",
+    actions: [{ label: "进入图谱", run: () => showLibraryPanel(false) }]
+  }));
+  const pdfAction = { label: "检测中", disabled: true, run: null };
+  const pdfCard = resourceCard({
+    title: "原书 PDF",
+    meta: "本地资源优先，GitHub Pages 不强制发布大 PDF",
+    body: "如果当前环境中存在 PDF，可直接打开；公开站点未上传 PDF 时，请使用高清原页截图和例题截图核对内容。",
+    actions: [pdfAction]
+  });
+  libraryGrid.appendChild(pdfCard);
+  updatePdfCardAction(pdfCard);
+  libraryGrid.appendChild(resourceCard({
+    title: "高清原页截图",
+    meta: `${GRAPH.stats.pages} 页缓存 · build/page_images_hd`,
+    body: "适合核对结构式、表格、装置图和复杂排版。原页节点展开时会优先显示裁边后的高清图片。",
+    actions: [{ label: "查看原页索引", run: () => focusFirstNodeOfKind("page") }]
+  }));
+  libraryGrid.appendChild(resourceCard({
+    title: "例题截图",
+    meta: "按题型合并裁剪 · build/content_crops",
+    body: "例题节点展开时显示同一题型的完整题目、解析和答案，尽量避免题目与答案错配。",
+    actions: [{ label: "查看例题索引", run: () => focusFirstNodeOfKind("example") }]
+  }));
+  chapterNodes().forEach(chapter => {
+    const modules = childrenOf(chapter.id, "module");
+    libraryGrid.appendChild(resourceCard({
+      title: displayTitle(chapter),
+      meta: `${modules.length} 个模块 · 起始页 ${chapter.page || "未标注"}`,
+      body: learningGuideForNode(chapter).intro,
+      actions: [{ label: "打开章节", run: () => focusNode(chapter.id, true) }]
+    }));
+  });
+}
+
+function resourceCard({ title, meta, body, actions }) {
+  const card = document.createElement("article");
+  card.className = "resource-card";
+  const h = document.createElement("h3");
+  h.textContent = title;
+  const m = document.createElement("p");
+  m.className = "resource-card-meta";
+  m.textContent = meta;
+  const b = document.createElement("p");
+  b.textContent = body;
+  const actionWrap = document.createElement("div");
+  actionWrap.className = "resource-card-actions";
+  actions.forEach(action => {
+    const btn = document.createElement("button");
+    btn.type = "button";
+    btn.textContent = action.label;
+    btn.disabled = Boolean(action.disabled);
+    if (action.run) btn.addEventListener("click", () => {
+      showLibraryPanel(false);
+      action.run();
+    });
+    actionWrap.appendChild(btn);
+  });
+  card.append(h, m, b, actionWrap);
+  return card;
+}
+
+function updatePdfCardAction(card) {
+  const btn = card.querySelector("button");
+  fetch("chemistry_method.pdf", { method: "HEAD" })
+    .then(response => {
+      if (!response.ok) throw new Error("pdf unavailable");
+      btn.textContent = "打开 PDF";
+      btn.disabled = false;
+      btn.addEventListener("click", () => window.open("chemistry_method.pdf", "_blank", "noopener"));
+    })
+    .catch(() => {
+      btn.textContent = "PDF 未随 Pages 发布";
+      btn.disabled = true;
+    });
+}
+
+function focusFirstNodeOfKind(kind) {
+  const node = [...nodes.values()].find(item => item.kind === kind);
+  if (!node) return;
+  if (EXPANDABLE.has(node.kind)) openLeafNode(node.id, { toggle: false, focusHost: true });
+  else focusNode(node.id, true);
+}
+
 function renderRelationFilters() {
   const relationCounts = new Map();
   const currentEdges = currentNetworkEdges(centerId);
@@ -131,7 +309,7 @@ function renderRelationFilters() {
     relationCounts.set(group, (relationCounts.get(group) || 0) + 1);
   }
   if (activeRelation !== "all" && !relationCounts.has(activeRelation)) activeRelation = "all";
-  const relations = ["all", "包含", "内容提要", "对应例题", "原页", "相关主线"]
+  const relations = ["all", "层级结构", "框架提要", "例题训练", "原页核对", "跨章关联"]
     .filter(relation => relation === "all" || relationCounts.has(relation));
   relationFilters.innerHTML = "";
   relations.forEach(relation => {
@@ -139,7 +317,8 @@ function renderRelationFilters() {
     btn.type = "button";
     btn.className = "filter-button";
     if (activeRelation === relation) btn.classList.add("active");
-    btn.textContent = relation === "all" ? `全部 ${currentEdges.length}` : `${relation} ${relationCounts.get(relation)}`;
+    btn.textContent = relation === "all" ? `全部关系 ${currentEdges.length}` : `${relation} ${relationCounts.get(relation)}`;
+    btn.title = relationFilterTitle(relation);
     btn.addEventListener("click", () => {
       setActiveRelation(relation);
     });
@@ -155,6 +334,18 @@ function setActiveRelation(relation) {
   activeRelation = relation;
   renderRelationFilters();
   render();
+}
+
+function relationFilterTitle(relation) {
+  const titles = {
+    all: "显示当前网络中的全部关系",
+    "层级结构": "章、模块、小节、题型之间的归属关系",
+    "框架提要": "内容提要与知识框架来源",
+    "例题训练": "题型与配套例题截图",
+    "原页核对": "OCR、截图和原书页之间的来源关系",
+    "跨章关联": "跨章节、跨模块的知识迁移关系"
+  };
+  return titles[relation] || relation;
 }
 
 function clearFilterVisualState() {
@@ -178,6 +369,7 @@ function currentNetworkEdges(id) {
 
 function render() {
   renderBreadcrumb();
+  renderDocToc();
   const softUpdate = lastRenderedCenterId === centerId;
   const layout = buildLayout(centerId);
   lastLayout = layout;
@@ -333,8 +525,8 @@ function updatePanelToggleLabels() {
   }
   if (sideBtn) {
     const collapsed = sidePanel.classList.contains("collapsed");
-    sideBtn.textContent = collapsed ? "☷ 展开关系" : "☷ 收起关系";
-    sideBtn.title = collapsed ? "展开关系类型栏目" : "收起关系类型栏目";
+    sideBtn.textContent = collapsed ? "☷ 展开目录" : "☷ 收起目录";
+    sideBtn.title = collapsed ? "展开学习目录和关系筛选" : "收起学习目录和关系筛选";
     sideBtn.setAttribute("aria-label", sideBtn.title);
   }
   const detailBtn = document.getElementById("toggleDetailPanel");
@@ -877,7 +1069,7 @@ function edgePlan(edge, positions, index, priorPlans = []) {
     end,
     direct,
     labelT,
-    labelText: relationLabel(edge.relation),
+    labelText: relationLabel(edge.relation, edge),
     samples: quadraticSamples(start, control, end, 30)
   };
 }
@@ -2648,16 +2840,16 @@ function compactPages(pages) {
 }
 
 function relationRank(relation) {
-  const idx = RELATION_ORDER.indexOf(relation);
+  const idx = RELATION_ORDER.indexOf(relationGroup(relation));
   return idx >= 0 ? idx : 99;
 }
 
 function relationGroup(relation) {
-  if (relation === "包含") return "包含";
-  if (relation === "内容提要") return "内容提要";
-  if (relation === "对应例题") return "对应例题";
-  if (relation.includes("原页")) return "原页";
-  return "相关主线";
+  if (relation === "包含") return "层级结构";
+  if (relation === "内容提要") return "框架提要";
+  if (relation === "对应例题") return "例题训练";
+  if (relation.includes("原页")) return "原页核对";
+  return "跨章关联";
 }
 
 function edgePriority(edge) {
@@ -2668,26 +2860,35 @@ function edgeKey(edge) {
   return `${edge.source}\u0000${edge.relation}\u0000${edge.target}`;
 }
 
-function relationLabel(relation) {
+function relationLabel(relation, edge = null) {
+  const source = edge ? nodes.get(edge.source) : null;
+  const target = edge ? nodes.get(edge.target) : null;
+  if (relation === "包含" && source && target) {
+    if (source.kind === "root" && target.kind === "chapter") return "纳入章节";
+    if (source.kind === "chapter" && target.kind === "module") return "章内模块";
+    if (source.kind === "module" && target.kind === "section") return "模块分节";
+    if (source.kind === "module" && target.kind === "type") return "模块题型";
+    if (source.kind === "section" && target.kind === "type") return "小节题型";
+    return "层级归属";
+  }
+  if (relation === "内容提要") return "提炼框架";
+  if (relation === "对应例题") return "配套训练";
+  if (relation === "原页") return "OCR 来源页";
+  if (relation === "原页截图") return "高清原页";
   const labels = {
-    "包含": "包含",
-    "内容提要": "内容提要",
-    "对应例题": "对应例题",
-    "原页": "原页 OCR",
-    "原页截图": "原页截图",
-    "守恒与氧化还原计算互通": "守恒与氧化还原计算互通",
-    "浓度与水溶液平衡计算": "浓度与水溶液平衡计算",
-    "离子反应延伸到离子平衡": "离子反应延伸到离子平衡",
-    "电子转移进入电化学": "电子转移进入电化学",
-    "金属元素进入工艺流程": "金属元素进入工艺流程",
-    "非金属元素进入工艺流程": "非金属元素进入工艺流程",
-    "结构决定有机性质": "结构决定有机性质",
-    "反应原理支撑工业条件": "反应原理支撑工业条件",
-    "实验验证金属化合物性质": "实验验证金属化合物性质",
-    "实验验证非金属化合物性质": "实验验证非金属化合物性质",
-    "阿伏加德罗常数依托化学计量": "阿伏加德罗常数依托化学计量",
-    "化学用语支撑离子方程式": "化学用语支撑离子方程式",
-    "生活材料联系元素化合物": "生活材料联系元素化合物"
+    "守恒与氧化还原计算互通": "守恒↔氧化还原",
+    "浓度与水溶液平衡计算": "浓度↔水溶液平衡",
+    "离子反应延伸到离子平衡": "离子反应→离子平衡",
+    "电子转移进入电化学": "电子转移→电化学",
+    "金属元素进入工艺流程": "金属主线→工艺流程",
+    "非金属元素进入工艺流程": "非金属主线→工艺流程",
+    "结构决定有机性质": "结构→有机性质",
+    "反应原理支撑工业条件": "原理→工业条件",
+    "实验验证金属化合物性质": "实验验证金属性质",
+    "实验验证非金属化合物性质": "实验验证非金属性质",
+    "阿伏加德罗常数依托化学计量": "NA 判断↔化学计量",
+    "化学用语支撑离子方程式": "化学用语→离子方程式",
+    "生活材料联系元素化合物": "生活材料↔元素化合物"
   };
   return labels[relation] || relation;
 }

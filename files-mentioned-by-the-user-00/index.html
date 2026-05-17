@@ -3,24 +3,42 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>2027 广东高考化学知识关系网</title>
+  <meta name="description" content="2027 广东高考化学一轮复习知识库：知识图谱、章节目录、例题截图、原页索引与本地搜索。">
+  <title>2027 广东高考化学复习知识库</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <main class="app-shell">
     <header class="topbar">
-      <div>
-        <h1>2027 广东高考化学知识关系网</h1>
-        <p id="statsLine">正在加载知识节点与关系边</p>
+      <div class="brand-block">
+        <p class="site-eyebrow">2027 广东高考化学一轮复习</p>
+        <h1>化学复习知识库</h1>
+        <p id="statsLine">正在加载知识节点与资源索引</p>
       </div>
+      <nav class="top-nav" aria-label="站点导航">
+        <button id="graphNavButton" type="button" class="top-nav-link active">知识图谱</button>
+        <button id="libraryNavButton" type="button" class="top-nav-link">资料库</button>
+        <button id="themeToggle" type="button" class="top-nav-link">深色</button>
+      </nav>
       <div id="searchPanel" class="search-panel">
         <button id="toggleSearchPanel" class="panel-toggle" type="button" title="收起搜索">⌕ 收起搜索</button>
         <div class="search-wrap">
-          <input id="searchInput" type="search" placeholder="搜索章、模块、类型、例题、关键词" autocomplete="off">
+          <input id="searchInput" type="search" placeholder="搜索章节、模块、题型、例题、关键词" autocomplete="off">
           <button id="clearSearch" type="button" title="清空搜索">×</button>
         </div>
       </div>
     </header>
+
+    <section id="libraryPanel" class="library-panel" aria-label="资料库概览" hidden>
+      <div class="library-head">
+        <div>
+          <p class="site-eyebrow">学习资源目录</p>
+          <h2>按章节进入复习，按资源核对原书内容</h2>
+        </div>
+        <button id="closeLibraryPanel" type="button" class="panel-toggle">回到图谱</button>
+      </div>
+      <div id="libraryGrid" class="library-grid"></div>
+    </section>
 
     <section id="pathPanel" class="control-row path-panel">
       <button id="togglePathPanel" class="panel-toggle path-toggle" type="button" title="收起路径">⌘ 收起路径</button>
@@ -34,10 +52,12 @@
     <section class="main-grid">
       <aside id="sidePanel" class="side-panel">
         <div class="panel-head">
-          <strong>关系类型</strong>
-          <button id="toggleSidePanel" class="panel-toggle" type="button" title="收起关系类型">☷ 收起</button>
+          <strong>学习目录</strong>
+          <button id="toggleSidePanel" class="panel-toggle" type="button" title="收起左侧目录">☰ 收起</button>
         </div>
         <div class="side-panel-body">
+          <nav id="docToc" class="doc-toc" aria-label="章节目录"></nav>
+          <strong>关系类型</strong>
           <div id="relationFilters" class="relation-filters"></div>
           <strong>搜索结果</strong>
           <div id="searchResults" class="search-results"></div>

@@ -1,0 +1,20 @@
+{
+  "name": "2027-chemistry-review-knowledge-base",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "serve": "npx http-server . -p 4173 -c-1",
+    "check": "node --check app.js && node --check tools/render_content_crops.mjs && node --check tools/ui_interaction_check.mjs && node --check tools/inline_expansion_check.mjs",
+    "test:ui": "node tools/ui_interaction_check.mjs && node tools/inline_expansion_check.mjs",
+    "test:quality": "node tools/network_quality_check.mjs build/quality_docs_upgrade.json",
+    "render:crops": "set CONTENT_CROP_SOURCE=pdf&& set CONTENT_CROP_SCALE=3&& set CONTENT_CROP_QUALITY=0.94&& node tools/render_content_crops.mjs"
+  },
+  "dependencies": {
+    "@napi-rs/canvas": "^0.1.81",
+    "pdfjs-dist": "^5.4.394"
+  },
+  "devDependencies": {
+    "http-server": "^14.1.1"
+  }
+}

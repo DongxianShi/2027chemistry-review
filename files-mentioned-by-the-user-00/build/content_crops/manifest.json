@@ -1,3704 +1,3704 @@
 {
-  "generatedAt": "2026-05-17T01:55:48.393Z",
-  "scale": 2,
-  "quality": 0.92,
+  "generatedAt": "2026-05-17T06:14:13.280Z",
+  "scale": 3,
+  "quality": 0.94,
   "pages": {
     "page_001": {
       "file": "page_001.jpg",
-      "width": 1168,
-      "height": 1576,
+      "width": 1724,
+      "height": 2326,
       "source": "book:1"
     },
     "page_002": {
       "file": "page_002.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:2"
     },
     "page_003": {
       "file": "page_003.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:3"
     },
     "page_004": {
       "file": "page_004.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:4"
     },
     "page_005": {
       "file": "page_005.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:5"
     },
     "page_007": {
       "file": "page_007.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:7"
     },
     "page_008": {
       "file": "page_008.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:8"
     },
     "page_011": {
       "file": "page_011.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:11"
     },
     "page_012": {
       "file": "page_012.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:12"
     },
     "page_013": {
       "file": "page_013.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:13"
     },
     "page_014": {
       "file": "page_014.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:14"
     },
     "page_016": {
       "file": "page_016.jpg",
-      "width": 1168,
-      "height": 1570,
+      "width": 1724,
+      "height": 2326,
       "source": "book:16"
     },
     "page_017": {
       "file": "page_017.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:17"
     },
     "page_018": {
       "file": "page_018.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:18"
     },
     "page_019": {
       "file": "page_019.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:19"
     },
     "page_020": {
       "file": "page_020.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:20"
     },
     "page_021": {
       "file": "page_021.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:21"
     },
     "page_022": {
       "file": "page_022.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:22"
     },
     "page_023": {
       "file": "page_023.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:23"
     },
     "page_024": {
       "file": "page_024.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:24"
     },
     "page_025": {
       "file": "page_025.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:25"
     },
     "page_026": {
       "file": "page_026.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:26"
     },
     "page_028": {
       "file": "page_028.jpg",
-      "width": 1168,
-      "height": 1570,
+      "width": 1724,
+      "height": 2326,
       "source": "book:28"
     },
     "page_029": {
       "file": "page_029.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:29"
     },
     "page_030": {
       "file": "page_030.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:30"
     },
     "page_033": {
       "file": "page_033.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:33"
     },
     "page_036": {
       "file": "page_036.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:36"
     },
     "page_038": {
       "file": "page_038.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:38"
     },
     "page_040": {
       "file": "page_040.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:40"
     },
     "page_041": {
       "file": "page_041.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:41"
     },
     "page_042": {
       "file": "page_042.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:42"
     },
     "page_043": {
       "file": "page_043.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:43"
     },
     "page_044": {
       "file": "page_044.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:44"
     },
     "page_045": {
       "file": "page_045.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:45"
     },
     "page_046": {
       "file": "page_046.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:46"
     },
     "page_048": {
       "file": "page_048.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:48"
     },
     "page_049": {
       "file": "page_049.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:49"
     },
     "page_050": {
       "file": "page_050.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:50"
     },
     "page_051": {
       "file": "page_051.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:51"
     },
     "page_055": {
       "file": "page_055.jpg",
-      "width": 1168,
-      "height": 1576,
+      "width": 1724,
+      "height": 2326,
       "source": "book:55"
     },
     "page_056": {
       "file": "page_056.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:56"
     },
     "page_057": {
       "file": "page_057.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:57"
     },
     "page_058": {
       "file": "page_058.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:58"
     },
     "page_059": {
       "file": "page_059.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:59"
     },
     "page_061": {
       "file": "page_061.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:61"
     },
     "page_062": {
       "file": "page_062.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:62"
     },
     "page_063": {
       "file": "page_063.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:63"
     },
     "page_064": {
       "file": "page_064.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:64"
     },
     "page_065": {
       "file": "page_065.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:65"
     },
     "page_066": {
       "file": "page_066.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:66"
     },
     "page_067": {
       "file": "page_067.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:67"
     },
     "page_069": {
       "file": "page_069.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:69"
     },
     "page_070": {
       "file": "page_070.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:70"
     },
     "page_071": {
       "file": "page_071.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:71"
     },
     "page_072": {
       "file": "page_072.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:72"
     },
     "page_073": {
       "file": "page_073.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:73"
     },
     "page_074": {
       "file": "page_074.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:74"
     },
     "page_075": {
       "file": "page_075.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:75"
     },
     "page_076": {
       "file": "page_076.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:76"
     },
     "page_078": {
       "file": "page_078.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:78"
     },
     "page_079": {
       "file": "page_079.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:79"
     },
     "page_081": {
       "file": "page_081.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:81"
     },
     "page_082": {
       "file": "page_082.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:82"
     },
     "page_083": {
       "file": "page_083.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:83"
     },
     "page_085": {
       "file": "page_085.jpg",
-      "width": 1168,
-      "height": 1576,
+      "width": 1724,
+      "height": 2326,
       "source": "book:85"
     },
     "page_086": {
       "file": "page_086.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:86"
     },
     "page_087": {
       "file": "page_087.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:87"
     },
     "page_088": {
       "file": "page_088.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:88"
     },
     "page_089": {
       "file": "page_089.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:89"
     },
     "page_090": {
       "file": "page_090.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:90"
     },
     "page_091": {
       "file": "page_091.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:91"
     },
     "page_092": {
       "file": "page_092.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:92"
     },
     "page_093": {
       "file": "page_093.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:93"
     },
     "page_094": {
       "file": "page_094.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:94"
     },
     "page_095": {
       "file": "page_095.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:95"
     },
     "page_097": {
       "file": "page_097.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:97"
     },
     "page_098": {
       "file": "page_098.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:98"
     },
     "page_100": {
       "file": "page_100.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:100"
     },
     "page_101": {
       "file": "page_101.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:101"
     },
     "page_102": {
       "file": "page_102.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:102"
     },
     "page_103": {
       "file": "page_103.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:103"
     },
     "page_104": {
       "file": "page_104.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:104"
     },
     "page_106": {
       "file": "page_106.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:106"
     },
     "page_107": {
       "file": "page_107.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:107"
     },
     "page_108": {
       "file": "page_108.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:108"
     },
     "page_109": {
       "file": "page_109.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:109"
     },
     "page_110": {
       "file": "page_110.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:110"
     },
     "page_111": {
       "file": "page_111.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:111"
     },
     "page_112": {
       "file": "page_112.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:112"
     },
     "page_114": {
       "file": "page_114.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:114"
     },
     "page_115": {
       "file": "page_115.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:115"
     },
     "page_116": {
       "file": "page_116.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:116"
     },
     "page_117": {
       "file": "page_117.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:117"
     },
     "page_118": {
       "file": "page_118.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:118"
     },
     "page_120": {
       "file": "page_120.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:120"
     },
     "page_121": {
       "file": "page_121.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:121"
     },
     "page_122": {
       "file": "page_122.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:122"
     },
     "page_123": {
       "file": "page_123.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:123"
     },
     "page_125": {
       "file": "page_125.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:125"
     },
     "page_126": {
       "file": "page_126.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:126"
     },
     "page_127": {
       "file": "page_127.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:127"
     },
     "page_128": {
       "file": "page_128.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:128"
     },
     "page_129": {
       "file": "page_129.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:129"
     },
     "page_130": {
       "file": "page_130.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:130"
     },
     "page_131": {
       "file": "page_131.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:131"
     },
     "page_134": {
       "file": "page_134.jpg",
-      "width": 1168,
-      "height": 1570,
+      "width": 1724,
+      "height": 2326,
       "source": "book:134"
     },
     "page_135": {
       "file": "page_135.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:135"
     },
     "page_136": {
       "file": "page_136.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:136"
     },
     "page_137": {
       "file": "page_137.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:137"
     },
     "page_138": {
       "file": "page_138.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:138"
     },
     "page_139": {
       "file": "page_139.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:139"
     },
     "page_140": {
       "file": "page_140.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:140"
     },
     "page_141": {
       "file": "page_141.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:141"
     },
     "page_142": {
       "file": "page_142.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:142"
     },
     "page_143": {
       "file": "page_143.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:143"
     },
     "page_144": {
       "file": "page_144.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:144"
     },
     "page_145": {
       "file": "page_145.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:145"
     },
     "page_146": {
       "file": "page_146.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:146"
     },
     "page_147": {
       "file": "page_147.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:147"
     },
     "page_148": {
       "file": "page_148.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:148"
     },
     "page_149": {
       "file": "page_149.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:149"
     },
     "page_151": {
       "file": "page_151.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:151"
     },
     "page_152": {
       "file": "page_152.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:152"
     },
     "page_153": {
       "file": "page_153.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:153"
     },
     "page_154": {
       "file": "page_154.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:154"
     },
     "page_155": {
       "file": "page_155.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:155"
     },
     "page_156": {
       "file": "page_156.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:156"
     },
     "page_157": {
       "file": "page_157.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:157"
     },
     "page_158": {
       "file": "page_158.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:158"
     },
     "page_159": {
       "file": "page_159.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:159"
     },
     "page_160": {
       "file": "page_160.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:160"
     },
     "page_161": {
       "file": "page_161.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:161"
     },
     "page_162": {
       "file": "page_162.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:162"
     },
     "page_163": {
       "file": "page_163.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:163"
     },
     "page_164": {
       "file": "page_164.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:164"
     },
     "page_165": {
       "file": "page_165.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:165"
     },
     "page_166": {
       "file": "page_166.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:166"
     },
     "page_167": {
       "file": "page_167.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:167"
     },
     "page_168": {
       "file": "page_168.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:168"
     },
     "page_169": {
       "file": "page_169.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:169"
     },
     "page_170": {
       "file": "page_170.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:170"
     },
     "page_171": {
       "file": "page_171.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:171"
     },
     "page_174": {
       "file": "page_174.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:174"
     },
     "page_175": {
       "file": "page_175.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:175"
     },
     "page_176": {
       "file": "page_176.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:176"
     },
     "page_177": {
       "file": "page_177.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:177"
     },
     "page_178": {
       "file": "page_178.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:178"
     },
     "page_179": {
       "file": "page_179.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:179"
     },
     "page_180": {
       "file": "page_180.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:180"
     },
     "page_181": {
       "file": "page_181.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:181"
     },
     "page_182": {
       "file": "page_182.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:182"
     },
     "page_183": {
       "file": "page_183.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:183"
     },
     "page_184": {
       "file": "page_184.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:184"
     },
     "page_185": {
       "file": "page_185.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:185"
     },
     "page_186": {
       "file": "page_186.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:186"
     },
     "page_187": {
       "file": "page_187.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:187"
     },
     "page_188": {
       "file": "page_188.jpg",
-      "width": 1168,
-      "height": 1570,
+      "width": 1724,
+      "height": 2326,
       "source": "book:188"
     },
     "page_189": {
       "file": "page_189.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:189"
     },
     "page_190": {
       "file": "page_190.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:190"
     },
     "page_191": {
       "file": "page_191.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:191"
     },
     "page_192": {
       "file": "page_192.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:192"
     },
     "page_193": {
       "file": "page_193.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:193"
     },
     "page_194": {
       "file": "page_194.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:194"
     },
     "page_196": {
       "file": "page_196.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:196"
     },
     "page_197": {
       "file": "page_197.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:197"
     },
     "page_198": {
       "file": "page_198.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:198"
     },
     "page_199": {
       "file": "page_199.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:199"
     },
     "page_200": {
       "file": "page_200.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:200"
     },
     "page_201": {
       "file": "page_201.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:201"
     },
     "page_202": {
       "file": "page_202.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:202"
     },
     "page_205": {
       "file": "page_205.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:205"
     },
     "page_208": {
       "file": "page_208.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:208"
     },
     "page_209": {
       "file": "page_209.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:209"
     },
     "page_212": {
       "file": "page_212.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:212"
     },
     "page_214": {
       "file": "page_214.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:214"
     },
     "page_217": {
       "file": "page_217.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:217"
     },
     "page_219": {
       "file": "page_219.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:219"
     },
     "page_222": {
       "file": "page_222.jpg",
-      "width": 1168,
-      "height": 1570,
+      "width": 1724,
+      "height": 2326,
       "source": "book:222"
     },
     "page_223": {
       "file": "page_223.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:223"
     },
     "page_224": {
       "file": "page_224.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:224"
     },
     "page_225": {
       "file": "page_225.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:225"
     },
     "page_226": {
       "file": "page_226.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:226"
     },
     "page_227": {
       "file": "page_227.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:227"
     },
     "page_228": {
       "file": "page_228.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:228"
     },
     "page_229": {
       "file": "page_229.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:229"
     },
     "page_230": {
       "file": "page_230.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:230"
     },
     "page_231": {
       "file": "page_231.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:231"
     },
     "page_232": {
       "file": "page_232.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:232"
     },
     "page_233": {
       "file": "page_233.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:233"
     },
     "page_234": {
       "file": "page_234.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:234"
     },
     "page_235": {
       "file": "page_235.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:235"
     },
     "page_236": {
       "file": "page_236.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:236"
     },
     "page_237": {
       "file": "page_237.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:237"
     },
     "page_238": {
       "file": "page_238.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:238"
     },
     "page_239": {
       "file": "page_239.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:239"
     },
     "page_240": {
       "file": "page_240.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:240"
     },
     "page_241": {
       "file": "page_241.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:241"
     },
     "page_242": {
       "file": "page_242.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:242"
     },
     "page_243": {
       "file": "page_243.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:243"
     },
     "page_244": {
       "file": "page_244.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:244"
     },
     "page_246": {
       "file": "page_246.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:246"
     },
     "page_247": {
       "file": "page_247.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:247"
     },
     "page_248": {
       "file": "page_248.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:248"
     },
     "page_249": {
       "file": "page_249.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:249"
     },
     "page_250": {
       "file": "page_250.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:250"
     },
     "page_251": {
       "file": "page_251.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:251"
     },
     "page_252": {
       "file": "page_252.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:252"
     },
     "page_253": {
       "file": "page_253.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:253"
     },
     "page_254": {
       "file": "page_254.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:254"
     },
     "page_255": {
       "file": "page_255.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:255"
     },
     "page_256": {
       "file": "page_256.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:256"
     },
     "page_257": {
       "file": "page_257.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:257"
     },
     "page_258": {
       "file": "page_258.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:258"
     },
     "page_259": {
       "file": "page_259.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:259"
     },
     "page_261": {
       "file": "page_261.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:261"
     },
     "page_262": {
       "file": "page_262.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:262"
     },
     "page_263": {
       "file": "page_263.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:263"
     },
     "page_264": {
       "file": "page_264.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:264"
     },
     "page_265": {
       "file": "page_265.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:265"
     },
     "page_266": {
       "file": "page_266.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:266"
     },
     "page_267": {
       "file": "page_267.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:267"
     },
     "page_269": {
       "file": "page_269.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:269"
     },
     "page_271": {
       "file": "page_271.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:271"
     },
     "page_272": {
       "file": "page_272.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:272"
     },
     "page_274": {
       "file": "page_274.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:274"
     },
     "page_275": {
       "file": "page_275.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:275"
     },
     "page_278": {
       "file": "page_278.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:278"
     },
     "page_279": {
       "file": "page_279.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:279"
     },
     "page_280": {
       "file": "page_280.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:280"
     },
     "page_281": {
       "file": "page_281.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:281"
     },
     "page_282": {
       "file": "page_282.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:282"
     },
     "page_285": {
       "file": "page_285.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:285"
     },
     "page_286": {
       "file": "page_286.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:286"
     },
     "page_287": {
       "file": "page_287.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:287"
     },
     "page_288": {
       "file": "page_288.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:288"
     },
     "page_289": {
       "file": "page_289.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:289"
     },
     "page_290": {
       "file": "page_290.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:290"
     },
     "page_292": {
       "file": "page_292.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:292"
     },
     "page_294": {
       "file": "page_294.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:294"
     },
     "page_295": {
       "file": "page_295.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:295"
     },
     "page_297": {
       "file": "page_297.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:297"
     },
     "page_298": {
       "file": "page_298.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:298"
     },
     "page_299": {
       "file": "page_299.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:299"
     },
     "page_300": {
       "file": "page_300.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:300"
     },
     "page_301": {
       "file": "page_301.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:301"
     },
     "page_302": {
       "file": "page_302.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:302"
     },
     "page_303": {
       "file": "page_303.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:303"
     },
     "page_304": {
       "file": "page_304.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:304"
     },
     "page_305": {
       "file": "page_305.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:305"
     },
     "page_306": {
       "file": "page_306.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:306"
     },
     "page_307": {
       "file": "page_307.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:307"
     },
     "page_310": {
       "file": "page_310.jpg",
-      "width": 1168,
-      "height": 1570,
+      "width": 1724,
+      "height": 2326,
       "source": "book:310"
     },
     "page_311": {
       "file": "page_311.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:311"
     },
     "page_312": {
       "file": "page_312.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:312"
     },
     "page_313": {
       "file": "page_313.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:313"
     },
     "page_314": {
       "file": "page_314.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:314"
     },
     "page_315": {
       "file": "page_315.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:315"
     },
     "page_316": {
       "file": "page_316.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:316"
     },
     "page_317": {
       "file": "page_317.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:317"
     },
     "page_318": {
       "file": "page_318.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:318"
     },
     "page_319": {
       "file": "page_319.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:319"
     },
     "page_320": {
       "file": "page_320.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:320"
     },
     "page_321": {
       "file": "page_321.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:321"
     },
     "page_322": {
       "file": "page_322.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:322"
     },
     "page_323": {
       "file": "page_323.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:323"
     },
     "page_324": {
       "file": "page_324.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:324"
     },
     "page_326": {
       "file": "page_326.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:326"
     },
     "page_328": {
       "file": "page_328.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:328"
     },
     "page_329": {
       "file": "page_329.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:329"
     },
     "page_330": {
       "file": "page_330.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:330"
     },
     "page_331": {
       "file": "page_331.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:331"
     },
     "page_332": {
       "file": "page_332.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:332"
     },
     "page_334": {
       "file": "page_334.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:334"
     },
     "page_335": {
       "file": "page_335.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:335"
     },
     "page_336": {
       "file": "page_336.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:336"
     },
     "page_338": {
       "file": "page_338.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:338"
     },
     "page_339": {
       "file": "page_339.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:339"
     },
     "page_340": {
       "file": "page_340.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:340"
     },
     "page_341": {
       "file": "page_341.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:341"
     },
     "page_342": {
       "file": "page_342.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:342"
     },
     "page_343": {
       "file": "page_343.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:343"
     },
     "page_345": {
       "file": "page_345.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:345"
     },
     "page_346": {
       "file": "page_346.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:346"
     },
     "page_347": {
       "file": "page_347.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:347"
     },
     "page_348": {
       "file": "page_348.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:348"
     },
     "page_349": {
       "file": "page_349.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:349"
     },
     "page_350": {
       "file": "page_350.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:350"
     },
     "page_351": {
       "file": "page_351.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:351"
     },
     "page_352": {
       "file": "page_352.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:352"
     },
     "page_354": {
       "file": "page_354.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:354"
     },
     "page_355": {
       "file": "page_355.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:355"
     },
     "page_356": {
       "file": "page_356.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:356"
     },
     "page_357": {
       "file": "page_357.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:357"
     },
     "page_359": {
       "file": "page_359.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:359"
     },
     "page_360": {
       "file": "page_360.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:360"
     },
     "page_361": {
       "file": "page_361.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:361"
     },
     "page_362": {
       "file": "page_362.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:362"
     },
     "page_363": {
       "file": "page_363.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:363"
     },
     "page_365": {
       "file": "page_365.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:365"
     },
     "page_367": {
       "file": "page_367.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:367"
     },
     "page_368": {
       "file": "page_368.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:368"
     },
     "page_369": {
       "file": "page_369.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:369"
     },
     "page_370": {
       "file": "page_370.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:370"
     },
     "page_371": {
       "file": "page_371.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:371"
     },
     "page_372": {
       "file": "page_372.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:372"
     },
     "page_373": {
       "file": "page_373.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:373"
     },
     "page_374": {
       "file": "page_374.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:374"
     },
     "page_375": {
       "file": "page_375.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:375"
     },
     "page_376": {
       "file": "page_376.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:376"
     },
     "page_377": {
       "file": "page_377.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:377"
     },
     "page_378": {
       "file": "page_378.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:378"
     },
     "page_379": {
       "file": "page_379.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:379"
     },
     "page_380": {
       "file": "page_380.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:380"
     },
     "page_381": {
       "file": "page_381.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:381"
     },
     "page_382": {
       "file": "page_382.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:382"
     },
     "page_383": {
       "file": "page_383.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:383"
     },
     "page_384": {
       "file": "page_384.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:384"
     },
     "page_385": {
       "file": "page_385.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:385"
     },
     "page_386": {
       "file": "page_386.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:386"
     },
     "page_387": {
       "file": "page_387.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:387"
     },
     "page_393": {
       "file": "page_393.jpg",
-      "width": 1168,
-      "height": 1576,
+      "width": 1724,
+      "height": 2326,
       "source": "book:393"
     },
     "page_394": {
       "file": "page_394.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:394"
     },
     "page_395": {
       "file": "page_395.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:395"
     },
     "page_396": {
       "file": "page_396.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:396"
     },
     "page_398": {
       "file": "page_398.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:398"
     },
     "page_399": {
       "file": "page_399.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:399"
     },
     "page_400": {
       "file": "page_400.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:400"
     },
     "page_401": {
       "file": "page_401.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:401"
     },
     "page_402": {
       "file": "page_402.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:402"
     },
     "page_403": {
       "file": "page_403.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:403"
     },
     "page_404": {
       "file": "page_404.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:404"
     },
     "page_405": {
       "file": "page_405.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:405"
     },
     "page_406": {
       "file": "page_406.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:406"
     },
     "page_408": {
       "file": "page_408.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:408"
     },
     "page_407": {
       "file": "page_407.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:407"
     },
     "page_409": {
       "file": "page_409.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:409"
     },
     "page_410": {
       "file": "page_410.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:410"
     },
     "page_412": {
       "file": "page_412.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:412"
     },
     "page_413": {
       "file": "page_413.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:413"
     },
     "page_415": {
       "file": "page_415.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:415"
     },
     "page_416": {
       "file": "page_416.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:416"
     },
     "page_417": {
       "file": "page_417.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:417"
     },
     "page_418": {
       "file": "page_418.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:418"
     },
     "page_419": {
       "file": "page_419.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:419"
     },
     "page_420": {
       "file": "page_420.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:420"
     },
     "page_421": {
       "file": "page_421.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:421"
     },
     "page_422": {
       "file": "page_422.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:422"
     },
     "page_423": {
       "file": "page_423.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:423"
     },
     "page_424": {
       "file": "page_424.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:424"
     },
     "page_425": {
       "file": "page_425.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:425"
     },
     "page_426": {
       "file": "page_426.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:426"
     },
     "page_430": {
       "file": "page_430.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:430"
     },
     "page_431": {
       "file": "page_431.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:431"
     },
     "page_432": {
       "file": "page_432.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:432"
     },
     "page_433": {
       "file": "page_433.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:433"
     },
     "page_434": {
       "file": "page_434.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:434"
     },
     "page_435": {
       "file": "page_435.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:435"
     },
     "page_436": {
       "file": "page_436.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:436"
     },
     "page_437": {
       "file": "page_437.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:437"
     },
     "page_440": {
       "file": "page_440.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:440"
     },
     "page_444": {
       "file": "page_444.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:444"
     },
     "page_447": {
       "file": "page_447.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:447"
     },
     "page_450": {
       "file": "page_450.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:450"
     },
     "page_451": {
       "file": "page_451.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:451"
     },
     "page_452": {
       "file": "page_452.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:452"
     },
     "page_453": {
       "file": "page_453.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:453"
     },
     "page_454": {
       "file": "page_454.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:454"
     },
     "page_456": {
       "file": "page_456.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:456"
     },
     "page_457": {
       "file": "page_457.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:457"
     },
     "page_458": {
       "file": "page_458.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:458"
     },
     "page_459": {
       "file": "page_459.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:459"
     },
     "page_460": {
       "file": "page_460.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:460"
     },
     "page_463": {
       "file": "page_463.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:463"
     },
     "page_466": {
       "file": "page_466.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:466"
     },
     "page_469": {
       "file": "page_469.jpg",
-      "width": 1168,
-      "height": 1576,
+      "width": 1724,
+      "height": 2326,
       "source": "book:469"
     },
     "page_470": {
       "file": "page_470.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:470"
     },
     "page_471": {
       "file": "page_471.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:471"
     },
     "page_472": {
       "file": "page_472.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:472"
     },
     "page_473": {
       "file": "page_473.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:473"
     },
     "page_474": {
       "file": "page_474.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:474"
     },
     "page_475": {
       "file": "page_475.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:475"
     },
     "page_476": {
       "file": "page_476.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:476"
     },
     "page_477": {
       "file": "page_477.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:477"
     },
     "page_478": {
       "file": "page_478.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:478"
     },
     "page_479": {
       "file": "page_479.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:479"
     },
     "page_480": {
       "file": "page_480.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:480"
     },
     "page_481": {
       "file": "page_481.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:481"
     },
     "page_482": {
       "file": "page_482.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:482"
     },
     "page_484": {
       "file": "page_484.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:484"
     },
     "page_486": {
       "file": "page_486.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:486"
     },
     "page_487": {
       "file": "page_487.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:487"
     },
     "page_488": {
       "file": "page_488.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:488"
     },
     "page_489": {
       "file": "page_489.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:489"
     },
     "page_490": {
       "file": "page_490.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:490"
     },
     "page_491": {
       "file": "page_491.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:491"
     },
     "page_492": {
       "file": "page_492.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:492"
     },
     "page_494": {
       "file": "page_494.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:494"
     },
     "page_495": {
       "file": "page_495.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:495"
     },
     "page_497": {
       "file": "page_497.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:497"
     },
     "page_498": {
       "file": "page_498.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:498"
     },
     "page_499": {
       "file": "page_499.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:499"
     },
     "page_500": {
       "file": "page_500.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:500"
     },
     "page_501": {
       "file": "page_501.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:501"
     },
     "page_502": {
       "file": "page_502.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:502"
     },
     "page_503": {
       "file": "page_503.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:503"
     },
     "page_505": {
       "file": "page_505.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:505"
     },
     "page_506": {
       "file": "page_506.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:506"
     },
     "page_507": {
       "file": "page_507.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:507"
     },
     "page_508": {
       "file": "page_508.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:508"
     },
     "page_509": {
       "file": "page_509.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:509"
     },
     "page_511": {
       "file": "page_511.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:511"
     },
     "page_513": {
       "file": "page_513.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:513"
     },
     "page_514": {
       "file": "page_514.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:514"
     },
     "page_516": {
       "file": "page_516.jpg",
-      "width": 1168,
-      "height": 1570,
+      "width": 1724,
+      "height": 2326,
       "source": "book:516"
     },
     "page_517": {
       "file": "page_517.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:517"
     },
     "page_518": {
       "file": "page_518.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:518"
     },
     "page_519": {
       "file": "page_519.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:519"
     },
     "page_520": {
       "file": "page_520.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:520"
     },
     "page_521": {
       "file": "page_521.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:521"
     },
     "page_522": {
       "file": "page_522.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:522"
     },
     "page_523": {
       "file": "page_523.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:523"
     },
     "page_524": {
       "file": "page_524.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:524"
     },
     "page_525": {
       "file": "page_525.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:525"
     },
     "page_526": {
       "file": "page_526.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:526"
     },
     "page_528": {
       "file": "page_528.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:528"
     },
     "page_529": {
       "file": "page_529.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:529"
     },
     "page_530": {
       "file": "page_530.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:530"
     },
     "page_532": {
       "file": "page_532.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:532"
     },
     "page_534": {
       "file": "page_534.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:534"
     },
     "page_535": {
       "file": "page_535.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:535"
     },
     "page_536": {
       "file": "page_536.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:536"
     },
     "page_537": {
       "file": "page_537.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:537"
     },
     "page_538": {
       "file": "page_538.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:538"
     },
     "page_539": {
       "file": "page_539.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:539"
     },
     "page_540": {
       "file": "page_540.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:540"
     },
     "page_541": {
       "file": "page_541.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:541"
     },
     "page_542": {
       "file": "page_542.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:542"
     },
     "page_543": {
       "file": "page_543.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:543"
     },
     "page_544": {
       "file": "page_544.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:544"
     },
     "page_545": {
       "file": "page_545.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:545"
     },
     "page_546": {
       "file": "page_546.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:546"
     },
     "page_547": {
       "file": "page_547.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:547"
     },
     "page_549": {
       "file": "page_549.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:549"
     },
     "page_551": {
       "file": "page_551.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:551"
     },
     "page_552": {
       "file": "page_552.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:552"
     },
     "page_553": {
       "file": "page_553.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:553"
     },
     "page_554": {
       "file": "page_554.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:554"
     },
     "page_555": {
       "file": "page_555.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:555"
     },
     "page_556": {
       "file": "page_556.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:556"
     },
     "page_557": {
       "file": "page_557.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:557"
     },
     "page_558": {
       "file": "page_558.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:558"
     },
     "page_559": {
       "file": "page_559.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:559"
     },
     "page_560": {
       "file": "page_560.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:560"
     },
     "page_561": {
       "file": "page_561.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:561"
     },
     "page_562": {
       "file": "page_562.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:562"
     },
     "page_565": {
       "file": "page_565.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:565"
     },
     "page_566": {
       "file": "page_566.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:566"
     },
     "page_567": {
       "file": "page_567.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:567"
     },
     "page_568": {
       "file": "page_568.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:568"
     },
     "page_569": {
       "file": "page_569.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:569"
     },
     "page_571": {
       "file": "page_571.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:571"
     },
     "page_572": {
       "file": "page_572.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:572"
     },
     "page_573": {
       "file": "page_573.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:573"
     },
     "page_574": {
       "file": "page_574.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:574"
     },
     "page_576": {
       "file": "page_576.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:576"
     },
     "page_578": {
       "file": "page_578.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:578"
     },
     "page_579": {
       "file": "page_579.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:579"
     },
     "page_580": {
       "file": "page_580.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:580"
     },
     "page_581": {
       "file": "page_581.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:581"
     },
     "page_582": {
       "file": "page_582.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:582"
     },
     "page_583": {
       "file": "page_583.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:583"
     },
     "page_584": {
       "file": "page_584.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:584"
     },
     "page_585": {
       "file": "page_585.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:585"
     },
     "page_586": {
       "file": "page_586.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:586"
     },
     "page_587": {
       "file": "page_587.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:587"
     },
     "page_589": {
       "file": "page_589.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:589"
     },
     "page_590": {
       "file": "page_590.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:590"
     },
     "page_591": {
       "file": "page_591.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:591"
     },
     "page_592": {
       "file": "page_592.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:592"
     },
     "page_593": {
       "file": "page_593.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:593"
     },
     "page_595": {
       "file": "page_595.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:595"
     },
     "page_596": {
       "file": "page_596.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:596"
     },
     "page_597": {
       "file": "page_597.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:597"
     },
     "page_598": {
       "file": "page_598.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:598"
     },
     "page_599": {
       "file": "page_599.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:599"
     },
     "page_600": {
       "file": "page_600.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:600"
     },
     "page_601": {
       "file": "page_601.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:601"
     },
     "page_602": {
       "file": "page_602.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:602"
     },
     "page_604": {
       "file": "page_604.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:604"
     },
     "page_605": {
       "file": "page_605.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:605"
     },
     "page_606": {
       "file": "page_606.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:606"
     },
     "page_607": {
       "file": "page_607.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:607"
     },
     "page_608": {
       "file": "page_608.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:608"
     },
     "page_609": {
       "file": "page_609.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:609"
     },
     "page_610": {
       "file": "page_610.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:610"
     },
     "page_611": {
       "file": "page_611.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:611"
     },
     "page_612": {
       "file": "page_612.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:612"
     },
     "page_613": {
       "file": "page_613.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:613"
     },
     "page_614": {
       "file": "page_614.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:614"
     },
     "page_615": {
       "file": "page_615.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:615"
     },
     "page_616": {
       "file": "page_616.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:616"
     },
     "page_617": {
       "file": "page_617.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:617"
     },
     "page_618": {
       "file": "page_618.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:618"
     },
     "page_619": {
       "file": "page_619.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:619"
     },
     "page_620": {
       "file": "page_620.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:620"
     },
     "page_621": {
       "file": "page_621.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:621"
     },
     "page_622": {
       "file": "page_622.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:622"
     },
     "page_624": {
       "file": "page_624.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:624"
     },
     "page_625": {
       "file": "page_625.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:625"
     },
     "page_626": {
       "file": "page_626.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:626"
     },
     "page_627": {
       "file": "page_627.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:627"
     },
     "page_628": {
       "file": "page_628.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:628"
     },
     "page_630": {
       "file": "page_630.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:630"
     },
     "page_632": {
       "file": "page_632.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:632"
     },
     "page_633": {
       "file": "page_633.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:633"
     },
     "page_634": {
       "file": "page_634.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:634"
     },
     "page_635": {
       "file": "page_635.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:635"
     },
     "page_636": {
       "file": "page_636.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:636"
     },
     "page_637": {
       "file": "page_637.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:637"
     },
     "page_638": {
       "file": "page_638.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:638"
     },
     "page_639": {
       "file": "page_639.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:639"
     },
     "page_640": {
       "file": "page_640.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:640"
     },
     "page_641": {
       "file": "page_641.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:641"
     },
     "page_642": {
       "file": "page_642.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:642"
     },
     "page_643": {
       "file": "page_643.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:643"
     },
     "page_649": {
       "file": "page_649.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:649"
     },
     "page_652": {
       "file": "page_652.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:652"
     },
     "page_654": {
       "file": "page_654.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:654"
     },
     "page_656": {
       "file": "page_656.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:656"
     },
     "page_659": {
       "file": "page_659.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:659"
     },
     "page_663": {
       "file": "page_663.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:663"
     },
     "page_667": {
       "file": "page_667.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:667"
     },
     "page_671": {
       "file": "page_671.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:671"
     },
     "page_675": {
       "file": "page_675.jpg",
-      "width": 1168,
-      "height": 1576,
+      "width": 1724,
+      "height": 2326,
       "source": "book:675"
     },
     "page_676": {
       "file": "page_676.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:676"
     },
     "page_677": {
       "file": "page_677.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:677"
     },
     "page_678": {
       "file": "page_678.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:678"
     },
     "page_679": {
       "file": "page_679.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:679"
     },
     "page_680": {
       "file": "page_680.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:680"
     },
     "page_681": {
       "file": "page_681.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:681"
     },
     "page_682": {
       "file": "page_682.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:682"
     },
     "page_683": {
       "file": "page_683.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:683"
     },
     "page_684": {
       "file": "page_684.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:684"
     },
     "page_685": {
       "file": "page_685.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:685"
     },
     "page_686": {
       "file": "page_686.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:686"
     },
     "page_687": {
       "file": "page_687.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:687"
     },
     "page_688": {
       "file": "page_688.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:688"
     },
     "page_690": {
       "file": "page_690.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:690"
     },
     "page_691": {
       "file": "page_691.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:691"
     },
     "page_692": {
       "file": "page_692.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:692"
     },
     "page_693": {
       "file": "page_693.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:693"
     },
     "page_694": {
       "file": "page_694.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:694"
     },
     "page_697": {
       "file": "page_697.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:697"
     },
     "page_699": {
       "file": "page_699.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:699"
     },
     "page_700": {
       "file": "page_700.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:700"
     },
     "page_701": {
       "file": "page_701.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:701"
     },
     "page_702": {
       "file": "page_702.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:702"
     },
     "page_703": {
       "file": "page_703.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:703"
     },
     "page_704": {
       "file": "page_704.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:704"
     },
     "page_705": {
       "file": "page_705.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:705"
     },
     "page_707": {
       "file": "page_707.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:707"
     },
     "page_711": {
       "file": "page_711.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:711"
     },
     "page_713": {
       "file": "page_713.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:713"
     },
     "page_715": {
       "file": "page_715.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:715"
     },
     "page_716": {
       "file": "page_716.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:716"
     },
     "page_717": {
       "file": "page_717.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:717"
     },
     "page_720": {
       "file": "page_720.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:720"
     },
     "page_721": {
       "file": "page_721.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:721"
     },
     "page_722": {
       "file": "page_722.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:722"
     },
     "page_723": {
       "file": "page_723.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:723"
     },
     "page_728": {
       "file": "page_728.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:728"
     },
     "page_730": {
       "file": "page_730.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:730"
     },
     "page_731": {
       "file": "page_731.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:731"
     },
     "page_732": {
       "file": "page_732.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:732"
     },
     "page_734": {
       "file": "page_734.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:734"
     },
     "page_735": {
       "file": "page_735.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:735"
     },
     "page_737": {
       "file": "page_737.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:737"
     },
     "page_738": {
       "file": "page_738.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:738"
     },
     "page_742": {
       "file": "page_742.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:742"
     },
     "page_743": {
       "file": "page_743.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:743"
     },
     "page_746": {
       "file": "page_746.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:746"
     },
     "page_748": {
       "file": "page_748.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:748"
     },
     "page_751": {
       "file": "page_751.jpg",
-      "width": 1168,
-      "height": 1576,
+      "width": 1724,
+      "height": 2326,
       "source": "book:751"
     },
     "page_752": {
       "file": "page_752.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:752"
     },
     "page_753": {
       "file": "page_753.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:753"
     },
     "page_754": {
       "file": "page_754.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:754"
     },
     "page_755": {
       "file": "page_755.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:755"
     },
     "page_756": {
       "file": "page_756.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:756"
     },
     "page_757": {
       "file": "page_757.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:757"
     },
     "page_758": {
       "file": "page_758.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:758"
     },
     "page_759": {
       "file": "page_759.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:759"
     },
     "page_760": {
       "file": "page_760.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:760"
     },
     "page_761": {
       "file": "page_761.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:761"
     },
     "page_764": {
       "file": "page_764.jpg",
-      "width": 1168,
-      "height": 1570,
+      "width": 1724,
+      "height": 2326,
       "source": "book:764"
     },
     "page_765": {
       "file": "page_765.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:765"
     },
     "page_766": {
       "file": "page_766.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:766"
     },
     "page_767": {
       "file": "page_767.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:767"
     },
     "page_768": {
       "file": "page_768.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:768"
     },
     "page_769": {
       "file": "page_769.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:769"
     },
     "page_771": {
       "file": "page_771.jpg",
-      "width": 1168,
-      "height": 1576,
+      "width": 1724,
+      "height": 2326,
       "source": "book:771"
     },
     "page_772": {
       "file": "page_772.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:772"
     },
     "page_773": {
       "file": "page_773.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:773"
     },
     "page_774": {
       "file": "page_774.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:774"
     },
     "page_775": {
       "file": "page_775.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:775"
     },
     "page_776": {
       "file": "page_776.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:776"
     },
     "page_780": {
       "file": "page_780.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:780"
     },
     "page_781": {
       "file": "page_781.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:781"
     },
     "page_782": {
       "file": "page_782.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:782"
     },
     "page_783": {
       "file": "page_783.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:783"
     },
     "page_784": {
       "file": "page_784.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:784"
     },
     "page_785": {
       "file": "page_785.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:785"
     },
     "page_786": {
       "file": "page_786.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:786"
     },
     "page_787": {
       "file": "page_787.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:787"
     },
     "page_788": {
       "file": "page_788.jpg",
-      "width": 1168,
-      "height": 1522,
+      "width": 1722,
+      "height": 2240,
       "source": "book:788"
     },
     "page_789": {
       "file": "page_789.jpg",
-      "width": 1166,
-      "height": 1528,
+      "width": 1722,
+      "height": 2240,
       "source": "book:789"
     }
   },
   "examples": {
     "ex_n4": {
       "file": "ex_n4.jpg",
-      "width": 1056,
-      "height": 1932,
+      "width": 1722,
+      "height": 2822,
       "source": [
         "book:5",
         "pdf:25"
@@ -3708,8 +3708,8 @@
     },
     "ex_n5": {
       "file": "ex_n5.jpg",
-      "width": 1154,
-      "height": 1516,
+      "width": 1710,
+      "height": 2228,
       "source": [
         "book:7"
       ],
@@ -3718,8 +3718,8 @@
     },
     "ex_n6": {
       "file": "ex_n6.jpg",
-      "width": 942,
-      "height": 1446,
+      "width": 1386,
+      "height": 2136,
       "source": [
         "book:8"
       ],
@@ -3728,8 +3728,8 @@
     },
     "ex_n8": {
       "file": "ex_n8.jpg",
-      "width": 942,
-      "height": 982,
+      "width": 1386,
+      "height": 1448,
       "source": [
         "book:12"
       ],
@@ -3738,8 +3738,8 @@
     },
     "ex_n9": {
       "file": "ex_n9.jpg",
-      "width": 948,
-      "height": 486,
+      "width": 1388,
+      "height": 686,
       "source": [
         "book:13"
       ],
@@ -3748,8 +3748,8 @@
     },
     "ex_n10": {
       "file": "ex_n10.jpg",
-      "width": 1158,
-      "height": 1510,
+      "width": 1712,
+      "height": 2228,
       "source": [
         "book:14"
       ],
@@ -3758,8 +3758,8 @@
     },
     "ex_n13": {
       "file": "ex_n13.jpg",
-      "width": 940,
-      "height": 222,
+      "width": 1382,
+      "height": 300,
       "source": [
         "book:19"
       ],
@@ -3768,8 +3768,8 @@
     },
     "ex_n14": {
       "file": "ex_n14.jpg",
-      "width": 942,
-      "height": 640,
+      "width": 1386,
+      "height": 924,
       "source": [
         "book:20"
       ],
@@ -3778,8 +3778,8 @@
     },
     "ex_n15": {
       "file": "ex_n15.jpg",
-      "width": 940,
-      "height": 728,
+      "width": 1372,
+      "height": 1060,
       "source": [
         "book:21"
       ],
@@ -3788,8 +3788,8 @@
     },
     "ex_n16": {
       "file": "ex_n16.jpg",
-      "width": 950,
-      "height": 1324,
+      "width": 1386,
+      "height": 1944,
       "source": [
         "book:21"
       ],
@@ -3798,8 +3798,8 @@
     },
     "ex_n18": {
       "file": "ex_n18.jpg",
-      "width": 1052,
-      "height": 818,
+      "width": 1542,
+      "height": 1204,
       "source": [
         "book:23"
       ],
@@ -3808,8 +3808,8 @@
     },
     "ex_n19": {
       "file": "ex_n19.jpg",
-      "width": 952,
-      "height": 670,
+      "width": 1386,
+      "height": 972,
       "source": [
         "book:23"
       ],
@@ -3818,8 +3818,8 @@
     },
     "ex_n20": {
       "file": "ex_n20.jpg",
-      "width": 934,
-      "height": 470,
+      "width": 1374,
+      "height": 682,
       "source": [
         "book:24"
       ],
@@ -3828,8 +3828,8 @@
     },
     "ex_n21": {
       "file": "ex_n21.jpg",
-      "width": 942,
-      "height": 1234,
+      "width": 1388,
+      "height": 1824,
       "source": [
         "book:24"
       ],
@@ -3838,8 +3838,8 @@
     },
     "ex_n22": {
       "file": "ex_n22.jpg",
-      "width": 1154,
-      "height": 1500,
+      "width": 1710,
+      "height": 2216,
       "source": [
         "book:25"
       ],
@@ -3848,8 +3848,8 @@
     },
     "ex_n23": {
       "file": "ex_n23.jpg",
-      "width": 942,
-      "height": 932,
+      "width": 1388,
+      "height": 1372,
       "source": [
         "book:26"
       ],
@@ -3858,8 +3858,8 @@
     },
     "ex_n26": {
       "file": "ex_n26.jpg",
-      "width": 950,
-      "height": 1068,
+      "width": 1386,
+      "height": 1570,
       "source": [
         "book:29"
       ],
@@ -3868,8 +3868,8 @@
     },
     "ex_n27": {
       "file": "ex_n27.jpg",
-      "width": 880,
-      "height": 560,
+      "width": 1298,
+      "height": 810,
       "source": [
         "book:30"
       ],
@@ -3878,8 +3878,8 @@
     },
     "ex_n29": {
       "file": "ex_n29.jpg",
-      "width": 1054,
-      "height": 4438,
+      "width": 1722,
+      "height": 6546,
       "source": [
         "book:33",
         "pdf:53",
@@ -3890,8 +3890,8 @@
     },
     "ex_n30": {
       "file": "ex_n30.jpg",
-      "width": 1054,
-      "height": 2676,
+      "width": 1722,
+      "height": 3950,
       "source": [
         "book:36",
         "pdf:56"
@@ -3901,8 +3901,8 @@
     },
     "ex_n31": {
       "file": "ex_n31.jpg",
-      "width": 932,
-      "height": 890,
+      "width": 1372,
+      "height": 1312,
       "source": [
         "book:38"
       ],
@@ -3911,8 +3911,8 @@
     },
     "ex_n32": {
       "file": "ex_n32.jpg",
-      "width": 940,
-      "height": 272,
+      "width": 1386,
+      "height": 382,
       "source": [
         "book:38"
       ],
@@ -3921,8 +3921,8 @@
     },
     "ex_n34": {
       "file": "ex_n34.jpg",
-      "width": 948,
-      "height": 1434,
+      "width": 1386,
+      "height": 2112,
       "source": [
         "book:43"
       ],
@@ -3931,8 +3931,8 @@
     },
     "ex_n35": {
       "file": "ex_n35.jpg",
-      "width": 932,
-      "height": 852,
+      "width": 1372,
+      "height": 1248,
       "source": [
         "book:44"
       ],
@@ -3941,8 +3941,8 @@
     },
     "ex_n36": {
       "file": "ex_n36.jpg",
-      "width": 942,
-      "height": 1326,
+      "width": 1386,
+      "height": 1962,
       "source": [
         "book:44"
       ],
@@ -3951,8 +3951,8 @@
     },
     "ex_n37": {
       "file": "ex_n37.jpg",
-      "width": 932,
-      "height": 956,
+      "width": 1372,
+      "height": 1396,
       "source": [
         "book:45"
       ],
@@ -3961,8 +3961,8 @@
     },
     "ex_n38": {
       "file": "ex_n38.jpg",
-      "width": 942,
-      "height": 336,
+      "width": 1384,
+      "height": 470,
       "source": [
         "book:45"
       ],
@@ -3971,8 +3971,8 @@
     },
     "ex_n39": {
       "file": "ex_n39.jpg",
-      "width": 1054,
-      "height": 1912,
+      "width": 1722,
+      "height": 2806,
       "source": [
         "book:46",
         "pdf:66"
@@ -3982,8 +3982,8 @@
     },
     "ex_n40": {
       "file": "ex_n40.jpg",
-      "width": 942,
-      "height": 582,
+      "width": 1386,
+      "height": 848,
       "source": [
         "book:48"
       ],
@@ -3992,8 +3992,8 @@
     },
     "ex_n44": {
       "file": "ex_n44.jpg",
-      "width": 1050,
-      "height": 1484,
+      "width": 1386,
+      "height": 2112,
       "source": [
         "book:57"
       ],
@@ -4002,8 +4002,8 @@
     },
     "ex_n45": {
       "file": "ex_n45.jpg",
-      "width": 932,
-      "height": 682,
+      "width": 1372,
+      "height": 1000,
       "source": [
         "book:58"
       ],
@@ -4012,8 +4012,8 @@
     },
     "ex_n46": {
       "file": "ex_n46.jpg",
-      "width": 942,
-      "height": 1270,
+      "width": 1386,
+      "height": 1880,
       "source": [
         "book:58"
       ],
@@ -4022,8 +4022,8 @@
     },
     "ex_n47": {
       "file": "ex_n47.jpg",
-      "width": 952,
-      "height": 1352,
+      "width": 1386,
+      "height": 1996,
       "source": [
         "book:59"
       ],
@@ -4032,8 +4032,8 @@
     },
     "ex_n49": {
       "file": "ex_n49.jpg",
-      "width": 942,
-      "height": 596,
+      "width": 1386,
+      "height": 868,
       "source": [
         "book:64"
       ],
@@ -4042,8 +4042,8 @@
     },
     "ex_n50": {
       "file": "ex_n50.jpg",
-      "width": 948,
-      "height": 1432,
+      "width": 1386,
+      "height": 2116,
       "source": [
         "book:65"
       ],
@@ -4052,8 +4052,8 @@
     },
     "ex_n51": {
       "file": "ex_n51.jpg",
-      "width": 942,
-      "height": 1430,
+      "width": 1386,
+      "height": 2118,
       "source": [
         "book:66"
       ],
@@ -4062,8 +4062,8 @@
     },
     "ex_n52": {
       "file": "ex_n52.jpg",
-      "width": 938,
-      "height": 256,
+      "width": 1382,
+      "height": 350,
       "source": [
         "book:67"
       ],
@@ -4072,8 +4072,8 @@
     },
     "ex_n54": {
       "file": "ex_n54.jpg",
-      "width": 1044,
-      "height": 1070,
+      "width": 1542,
+      "height": 1572,
       "source": [
         "book:70"
       ],
@@ -4082,8 +4082,8 @@
     },
     "ex_n55": {
       "file": "ex_n55.jpg",
-      "width": 938,
-      "height": 406,
+      "width": 1382,
+      "height": 580,
       "source": [
         "book:70"
       ],
@@ -4092,8 +4092,8 @@
     },
     "ex_n56": {
       "file": "ex_n56.jpg",
-      "width": 1156,
-      "height": 1514,
+      "width": 1710,
+      "height": 2228,
       "source": [
         "book:71"
       ],
@@ -4102,8 +4102,8 @@
     },
     "ex_n57": {
       "file": "ex_n57.jpg",
-      "width": 932,
-      "height": 836,
+      "width": 1372,
+      "height": 1230,
       "source": [
         "book:72"
       ],
@@ -4112,8 +4112,8 @@
     },
     "ex_n58": {
       "file": "ex_n58.jpg",
-      "width": 942,
-      "height": 514,
+      "width": 1388,
+      "height": 742,
       "source": [
         "book:72"
       ],
@@ -4122,8 +4122,8 @@
     },
     "ex_n59": {
       "file": "ex_n59.jpg",
-      "width": 944,
-      "height": 1120,
+      "width": 1386,
+      "height": 1632,
       "source": [
         "book:73"
       ],
@@ -4132,8 +4132,8 @@
     },
     "ex_n60": {
       "file": "ex_n60.jpg",
-      "width": 942,
-      "height": 1228,
+      "width": 1386,
+      "height": 1816,
       "source": [
         "book:74"
       ],
@@ -4142,8 +4142,8 @@
     },
     "ex_n62": {
       "file": "ex_n62.jpg",
-      "width": 1054,
-      "height": 2146,
+      "width": 1722,
+      "height": 3148,
       "source": [
         "book:76",
         "pdf:96"
@@ -4153,8 +4153,8 @@
     },
     "ex_n63": {
       "file": "ex_n63.jpg",
-      "width": 942,
-      "height": 1412,
+      "width": 1386,
+      "height": 2094,
       "source": [
         "book:78"
       ],
@@ -4163,8 +4163,8 @@
     },
     "ex_n64": {
       "file": "ex_n64.jpg",
-      "width": 1054,
-      "height": 2878,
+      "width": 1722,
+      "height": 4248,
       "source": [
         "book:79",
         "pdf:99"
@@ -4174,8 +4174,8 @@
     },
     "ex_n65": {
       "file": "ex_n65.jpg",
-      "width": 950,
-      "height": 1120,
+      "width": 1386,
+      "height": 1646,
       "source": [
         "book:81"
       ],
@@ -4184,8 +4184,8 @@
     },
     "ex_n67": {
       "file": "ex_n67.jpg",
-      "width": 942,
-      "height": 912,
+      "width": 1386,
+      "height": 1342,
       "source": [
         "book:82"
       ],
@@ -4194,8 +4194,8 @@
     },
     "ex_n68": {
       "file": "ex_n68.jpg",
-      "width": 948,
-      "height": 842,
+      "width": 1386,
+      "height": 1230,
       "source": [
         "book:83"
       ],
@@ -4204,8 +4204,8 @@
     },
     "ex_n72": {
       "file": "ex_n72.jpg",
-      "width": 942,
-      "height": 1264,
+      "width": 1386,
+      "height": 1870,
       "source": [
         "book:88"
       ],
@@ -4214,8 +4214,8 @@
     },
     "ex_n73": {
       "file": "ex_n73.jpg",
-      "width": 1156,
-      "height": 830,
+      "width": 1710,
+      "height": 1224,
       "source": [
         "book:89"
       ],
@@ -4224,8 +4224,8 @@
     },
     "ex_n74": {
       "file": "ex_n74.jpg",
-      "width": 1156,
-      "height": 1496,
+      "width": 1710,
+      "height": 2212,
       "source": [
         "book:89"
       ],
@@ -4234,8 +4234,8 @@
     },
     "ex_n75": {
       "file": "ex_n75.jpg",
-      "width": 942,
-      "height": 710,
+      "width": 1388,
+      "height": 1038,
       "source": [
         "book:90"
       ],
@@ -4244,8 +4244,8 @@
     },
     "ex_n77": {
       "file": "ex_n77.jpg",
-      "width": 938,
-      "height": 962,
+      "width": 1372,
+      "height": 1420,
       "source": [
         "book:94"
       ],
@@ -4254,8 +4254,8 @@
     },
     "ex_n78": {
       "file": "ex_n78.jpg",
-      "width": 758,
-      "height": 260,
+      "width": 1114,
+      "height": 364,
       "source": [
         "book:94"
       ],
@@ -4264,8 +4264,8 @@
     },
     "ex_n79": {
       "file": "ex_n79.jpg",
-      "width": 938,
-      "height": 400,
+      "width": 1372,
+      "height": 576,
       "source": [
         "book:95"
       ],
@@ -4274,8 +4274,8 @@
     },
     "ex_n80": {
       "file": "ex_n80.jpg",
-      "width": 1056,
-      "height": 2756,
+      "width": 1722,
+      "height": 4064,
       "source": [
         "book:95",
         "pdf:115"
@@ -4285,8 +4285,8 @@
     },
     "ex_n81": {
       "file": "ex_n81.jpg",
-      "width": 934,
-      "height": 488,
+      "width": 1372,
+      "height": 676,
       "source": [
         "book:97"
       ],
@@ -4295,8 +4295,8 @@
     },
     "ex_n82": {
       "file": "ex_n82.jpg",
-      "width": 942,
-      "height": 206,
+      "width": 1386,
+      "height": 276,
       "source": [
         "book:97"
       ],
@@ -4305,8 +4305,8 @@
     },
     "ex_n83": {
       "file": "ex_n83.jpg",
-      "width": 940,
-      "height": 1302,
+      "width": 1386,
+      "height": 1924,
       "source": [
         "book:98"
       ],
@@ -4315,8 +4315,8 @@
     },
     "ex_n86": {
       "file": "ex_n86.jpg",
-      "width": 932,
-      "height": 1014,
+      "width": 1372,
+      "height": 1454,
       "source": [
         "book:103"
       ],
@@ -4325,8 +4325,8 @@
     },
     "ex_n87": {
       "file": "ex_n87.jpg",
-      "width": 948,
-      "height": 414,
+      "width": 1386,
+      "height": 590,
       "source": [
         "book:103"
       ],
@@ -4335,8 +4335,8 @@
     },
     "ex_n88": {
       "file": "ex_n88.jpg",
-      "width": 934,
-      "height": 484,
+      "width": 1370,
+      "height": 702,
       "source": [
         "book:104"
       ],
@@ -4345,8 +4345,8 @@
     },
     "ex_n89": {
       "file": "ex_n89.jpg",
-      "width": 942,
-      "height": 1430,
+      "width": 1386,
+      "height": 2118,
       "source": [
         "book:104"
       ],
@@ -4355,8 +4355,8 @@
     },
     "ex_n91": {
       "file": "ex_n91.jpg",
-      "width": 940,
-      "height": 768,
+      "width": 1372,
+      "height": 1130,
       "source": [
         "book:109"
       ],
@@ -4365,8 +4365,8 @@
     },
     "ex_n92": {
       "file": "ex_n92.jpg",
-      "width": 948,
-      "height": 352,
+      "width": 1386,
+      "height": 496,
       "source": [
         "book:109"
       ],
@@ -4375,8 +4375,8 @@
     },
     "ex_n93": {
       "file": "ex_n93.jpg",
-      "width": 940,
-      "height": 454,
+      "width": 1372,
+      "height": 654,
       "source": [
         "book:110"
       ],
@@ -4385,8 +4385,8 @@
     },
     "ex_n94": {
       "file": "ex_n94.jpg",
-      "width": 942,
-      "height": 1352,
+      "width": 1386,
+      "height": 2002,
       "source": [
         "book:110"
       ],
@@ -4395,8 +4395,8 @@
     },
     "ex_n95": {
       "file": "ex_n95.jpg",
-      "width": 1156,
-      "height": 1510,
+      "width": 1710,
+      "height": 2228,
       "source": [
         "book:111"
       ],
@@ -4405,8 +4405,8 @@
     },
     "ex_n96": {
       "file": "ex_n96.jpg",
-      "width": 942,
-      "height": 1368,
+      "width": 1386,
+      "height": 2018,
       "source": [
         "book:112"
       ],
@@ -4415,8 +4415,8 @@
     },
     "ex_n98": {
       "file": "ex_n98.jpg",
-      "width": 940,
-      "height": 312,
+      "width": 1386,
+      "height": 442,
       "source": [
         "book:116"
       ],
@@ -4425,8 +4425,8 @@
     },
     "ex_n99": {
       "file": "ex_n99.jpg",
-      "width": 890,
-      "height": 356,
+      "width": 1308,
+      "height": 512,
       "source": [
         "book:117"
       ],
@@ -4435,8 +4435,8 @@
     },
     "ex_n100": {
       "file": "ex_n100.jpg",
-      "width": 950,
-      "height": 1252,
+      "width": 1386,
+      "height": 1844,
       "source": [
         "book:117"
       ],
@@ -4445,8 +4445,8 @@
     },
     "ex_n101": {
       "file": "ex_n101.jpg",
-      "width": 1156,
-      "height": 1270,
+      "width": 1710,
+      "height": 1870,
       "source": [
         "book:118"
       ],
@@ -4455,8 +4455,8 @@
     },
     "ex_n102": {
       "file": "ex_n102.jpg",
-      "width": 940,
-      "height": 214,
+      "width": 1386,
+      "height": 296,
       "source": [
         "book:118"
       ],
@@ -4465,8 +4465,8 @@
     },
     "ex_n105": {
       "file": "ex_n105.jpg",
-      "width": 940,
-      "height": 566,
+      "width": 1372,
+      "height": 822,
       "source": [
         "book:123"
       ],
@@ -4475,8 +4475,8 @@
     },
     "ex_n106": {
       "file": "ex_n106.jpg",
-      "width": 942,
-      "height": 432,
+      "width": 1386,
+      "height": 614,
       "source": [
         "book:123"
       ],
@@ -4485,8 +4485,8 @@
     },
     "ex_n108": {
       "file": "ex_n108.jpg",
-      "width": 948,
-      "height": 686,
+      "width": 1386,
+      "height": 994,
       "source": [
         "book:129"
       ],
@@ -4495,8 +4495,8 @@
     },
     "ex_n109": {
       "file": "ex_n109.jpg",
-      "width": 934,
-      "height": 738,
+      "width": 1372,
+      "height": 1046,
       "source": [
         "book:130"
       ],
@@ -4505,8 +4505,8 @@
     },
     "ex_n110": {
       "file": "ex_n110.jpg",
-      "width": 940,
-      "height": 1258,
+      "width": 1386,
+      "height": 1862,
       "source": [
         "book:130"
       ],
@@ -4515,8 +4515,8 @@
     },
     "ex_n111": {
       "file": "ex_n111.jpg",
-      "width": 1154,
-      "height": 820,
+      "width": 1710,
+      "height": 1200,
       "source": [
         "book:131"
       ],
@@ -4525,8 +4525,8 @@
     },
     "ex_n112": {
       "file": "ex_n112.jpg",
-      "width": 942,
-      "height": 1322,
+      "width": 1388,
+      "height": 1948,
       "source": [
         "book:131"
       ],
@@ -4535,8 +4535,8 @@
     },
     "ex_n115": {
       "file": "ex_n115.jpg",
-      "width": 1050,
-      "height": 1484,
+      "width": 1386,
+      "height": 2112,
       "source": [
         "book:137"
       ],
@@ -4545,8 +4545,8 @@
     },
     "ex_n116": {
       "file": "ex_n116.jpg",
-      "width": 938,
-      "height": 572,
+      "width": 1372,
+      "height": 834,
       "source": [
         "book:138"
       ],
@@ -4555,8 +4555,8 @@
     },
     "ex_n117": {
       "file": "ex_n117.jpg",
-      "width": 942,
-      "height": 1380,
+      "width": 1388,
+      "height": 2046,
       "source": [
         "book:138"
       ],
@@ -4565,8 +4565,8 @@
     },
     "ex_n118": {
       "file": "ex_n118.jpg",
-      "width": 938,
-      "height": 708,
+      "width": 1372,
+      "height": 1038,
       "source": [
         "book:139"
       ],
@@ -4575,8 +4575,8 @@
     },
     "ex_n119": {
       "file": "ex_n119.jpg",
-      "width": 942,
-      "height": 338,
+      "width": 1386,
+      "height": 474,
       "source": [
         "book:139"
       ],
@@ -4585,8 +4585,8 @@
     },
     "ex_n120": {
       "file": "ex_n120.jpg",
-      "width": 932,
-      "height": 786,
+      "width": 1372,
+      "height": 1158,
       "source": [
         "book:140"
       ],
@@ -4595,8 +4595,8 @@
     },
     "ex_n121": {
       "file": "ex_n121.jpg",
-      "width": 942,
-      "height": 1400,
+      "width": 1386,
+      "height": 2076,
       "source": [
         "book:140"
       ],
@@ -4605,8 +4605,8 @@
     },
     "ex_n124": {
       "file": "ex_n124.jpg",
-      "width": 942,
-      "height": 916,
+      "width": 1386,
+      "height": 1348,
       "source": [
         "book:146"
       ],
@@ -4615,8 +4615,8 @@
     },
     "ex_n125": {
       "file": "ex_n125.jpg",
-      "width": 938,
-      "height": 1016,
+      "width": 1376,
+      "height": 1498,
       "source": [
         "book:147"
       ],
@@ -4625,8 +4625,8 @@
     },
     "ex_n126": {
       "file": "ex_n126.jpg",
-      "width": 954,
-      "height": 1336,
+      "width": 1388,
+      "height": 1968,
       "source": [
         "book:147"
       ],
@@ -4635,8 +4635,8 @@
     },
     "ex_n127": {
       "file": "ex_n127.jpg",
-      "width": 942,
-      "height": 1446,
+      "width": 1388,
+      "height": 2136,
       "source": [
         "book:148"
       ],
@@ -4645,8 +4645,8 @@
     },
     "ex_n128": {
       "file": "ex_n128.jpg",
-      "width": 948,
-      "height": 1316,
+      "width": 1388,
+      "height": 1940,
       "source": [
         "book:149"
       ],
@@ -4655,8 +4655,8 @@
     },
     "ex_n130": {
       "file": "ex_n130.jpg",
-      "width": 1156,
-      "height": 998,
+      "width": 1712,
+      "height": 1472,
       "source": [
         "book:154"
       ],
@@ -4665,8 +4665,8 @@
     },
     "ex_n131": {
       "file": "ex_n131.jpg",
-      "width": 942,
-      "height": 498,
+      "width": 1386,
+      "height": 684,
       "source": [
         "book:154"
       ],
@@ -4675,8 +4675,8 @@
     },
     "ex_n132": {
       "file": "ex_n132.jpg",
-      "width": 950,
-      "height": 1438,
+      "width": 1388,
+      "height": 2122,
       "source": [
         "book:155"
       ],
@@ -4685,8 +4685,8 @@
     },
     "ex_n133": {
       "file": "ex_n133.jpg",
-      "width": 1156,
-      "height": 1510,
+      "width": 1712,
+      "height": 2228,
       "source": [
         "book:156"
       ],
@@ -4695,8 +4695,8 @@
     },
     "ex_n136": {
       "file": "ex_n136.jpg",
-      "width": 932,
-      "height": 520,
+      "width": 1372,
+      "height": 758,
       "source": [
         "book:161"
       ],
@@ -4705,8 +4705,8 @@
     },
     "ex_n137": {
       "file": "ex_n137.jpg",
-      "width": 942,
-      "height": 726,
+      "width": 1386,
+      "height": 1056,
       "source": [
         "book:161"
       ],
@@ -4715,8 +4715,8 @@
     },
     "ex_n138": {
       "file": "ex_n138.jpg",
-      "width": 1156,
-      "height": 318,
+      "width": 1712,
+      "height": 442,
       "source": [
         "book:162"
       ],
@@ -4725,8 +4725,8 @@
     },
     "ex_n139": {
       "file": "ex_n139.jpg",
-      "width": 1156,
-      "height": 1510,
+      "width": 1712,
+      "height": 2228,
       "source": [
         "book:162"
       ],
@@ -4735,8 +4735,8 @@
     },
     "ex_n140": {
       "file": "ex_n140.jpg",
-      "width": 950,
-      "height": 1324,
+      "width": 1386,
+      "height": 1944,
       "source": [
         "book:163"
       ],
@@ -4745,8 +4745,8 @@
     },
     "ex_n142": {
       "file": "ex_n142.jpg",
-      "width": 948,
-      "height": 1410,
+      "width": 1386,
+      "height": 2082,
       "source": [
         "book:169"
       ],
@@ -4755,8 +4755,8 @@
     },
     "ex_n143": {
       "file": "ex_n143.jpg",
-      "width": 1158,
-      "height": 876,
+      "width": 1712,
+      "height": 1278,
       "source": [
         "book:170"
       ],
@@ -4765,8 +4765,8 @@
     },
     "ex_n144": {
       "file": "ex_n144.jpg",
-      "width": 1158,
-      "height": 1510,
+      "width": 1712,
+      "height": 2228,
       "source": [
         "book:170"
       ],
@@ -4775,8 +4775,8 @@
     },
     "ex_n145": {
       "file": "ex_n145.jpg",
-      "width": 934,
-      "height": 596,
+      "width": 1372,
+      "height": 858,
       "source": [
         "book:171"
       ],
@@ -4785,8 +4785,8 @@
     },
     "ex_n146": {
       "file": "ex_n146.jpg",
-      "width": 950,
-      "height": 858,
+      "width": 1386,
+      "height": 1254,
       "source": [
         "book:171"
       ],
@@ -4795,8 +4795,8 @@
     },
     "ex_n149": {
       "file": "ex_n149.jpg",
-      "width": 942,
-      "height": 1372,
+      "width": 1386,
+      "height": 2034,
       "source": [
         "book:178"
       ],
@@ -4805,8 +4805,8 @@
     },
     "ex_n150": {
       "file": "ex_n150.jpg",
-      "width": 940,
-      "height": 710,
+      "width": 1372,
+      "height": 1042,
       "source": [
         "book:179"
       ],
@@ -4815,8 +4815,8 @@
     },
     "ex_n151": {
       "file": "ex_n151.jpg",
-      "width": 956,
-      "height": 1358,
+      "width": 1386,
+      "height": 2004,
       "source": [
         "book:179"
       ],
@@ -4825,8 +4825,8 @@
     },
     "ex_n152": {
       "file": "ex_n152.jpg",
-      "width": 1158,
-      "height": 1510,
+      "width": 1710,
+      "height": 2228,
       "source": [
         "book:180"
       ],
@@ -4835,8 +4835,8 @@
     },
     "ex_n154": {
       "file": "ex_n154.jpg",
-      "width": 544,
-      "height": 186,
+      "width": 792,
+      "height": 252,
       "source": [
         "book:184"
       ],
@@ -4845,8 +4845,8 @@
     },
     "ex_n155": {
       "file": "ex_n155.jpg",
-      "width": 946,
-      "height": 418,
+      "width": 1386,
+      "height": 592,
       "source": [
         "book:185"
       ],
@@ -4855,8 +4855,8 @@
     },
     "ex_n156": {
       "file": "ex_n156.jpg",
-      "width": 940,
-      "height": 1206,
+      "width": 1386,
+      "height": 1782,
       "source": [
         "book:186"
       ],
@@ -4865,8 +4865,8 @@
     },
     "ex_n157": {
       "file": "ex_n157.jpg",
-      "width": 942,
-      "height": 1018,
+      "width": 1386,
+      "height": 1494,
       "source": [
         "book:187"
       ],
@@ -4875,8 +4875,8 @@
     },
     "ex_n160": {
       "file": "ex_n160.jpg",
-      "width": 956,
-      "height": 1134,
+      "width": 1386,
+      "height": 1668,
       "source": [
         "book:193"
       ],
@@ -4885,8 +4885,8 @@
     },
     "ex_n161": {
       "file": "ex_n161.jpg",
-      "width": 1156,
-      "height": 682,
+      "width": 1712,
+      "height": 986,
       "source": [
         "book:194"
       ],
@@ -4895,8 +4895,8 @@
     },
     "ex_n162": {
       "file": "ex_n162.jpg",
-      "width": 1156,
-      "height": 3040,
+      "width": 1722,
+      "height": 4486,
       "source": [
         "book:194",
         "pdf:214"
@@ -4906,8 +4906,8 @@
     },
     "ex_n163": {
       "file": "ex_n163.jpg",
-      "width": 1156,
-      "height": 310,
+      "width": 1712,
+      "height": 430,
       "source": [
         "book:196"
       ],
@@ -4916,8 +4916,8 @@
     },
     "ex_n164": {
       "file": "ex_n164.jpg",
-      "width": 940,
-      "height": 486,
+      "width": 1386,
+      "height": 698,
       "source": [
         "book:196"
       ],
@@ -4926,8 +4926,8 @@
     },
     "ex_n165": {
       "file": "ex_n165.jpg",
-      "width": 940,
-      "height": 1064,
+      "width": 1386,
+      "height": 1562,
       "source": [
         "book:197"
       ],
@@ -4936,8 +4936,8 @@
     },
     "ex_n167": {
       "file": "ex_n167.jpg",
-      "width": 1056,
-      "height": 3686,
+      "width": 1722,
+      "height": 5430,
       "source": [
         "book:202",
         "pdf:222",
@@ -4948,8 +4948,8 @@
     },
     "ex_n168": {
       "file": "ex_n168.jpg",
-      "width": 1054,
-      "height": 4474,
+      "width": 1722,
+      "height": 6606,
       "source": [
         "book:205",
         "pdf:225",
@@ -4960,8 +4960,8 @@
     },
     "ex_n169": {
       "file": "ex_n169.jpg",
-      "width": 1158,
-      "height": 1510,
+      "width": 1710,
+      "height": 2228,
       "source": [
         "book:208"
       ],
@@ -4970,8 +4970,8 @@
     },
     "ex_n170": {
       "file": "ex_n170.jpg",
-      "width": 1054,
-      "height": 3636,
+      "width": 1722,
+      "height": 5346,
       "source": [
         "book:209",
         "pdf:229",
@@ -4982,8 +4982,8 @@
     },
     "ex_n171": {
       "file": "ex_n171.jpg",
-      "width": 1158,
-      "height": 3040,
+      "width": 1722,
+      "height": 4486,
       "source": [
         "book:212",
         "pdf:232"
@@ -4993,8 +4993,8 @@
     },
     "ex_n172": {
       "file": "ex_n172.jpg",
-      "width": 1056,
-      "height": 4494,
+      "width": 1722,
+      "height": 6642,
       "source": [
         "book:214",
         "pdf:234",
@@ -5005,8 +5005,8 @@
     },
     "ex_n173": {
       "file": "ex_n173.jpg",
-      "width": 1054,
-      "height": 2650,
+      "width": 1722,
+      "height": 3902,
       "source": [
         "book:217",
         "pdf:237"
@@ -5016,8 +5016,8 @@
     },
     "ex_n174": {
       "file": "ex_n174.jpg",
-      "width": 1156,
-      "height": 1496,
+      "width": 1710,
+      "height": 2212,
       "source": [
         "book:219"
       ],
@@ -5026,8 +5026,8 @@
     },
     "ex_n177": {
       "file": "ex_n177.jpg",
-      "width": 1052,
-      "height": 944,
+      "width": 1542,
+      "height": 1358,
       "source": [
         "book:223"
       ],
@@ -5036,8 +5036,8 @@
     },
     "ex_n178": {
       "file": "ex_n178.jpg",
-      "width": 942,
-      "height": 544,
+      "width": 1386,
+      "height": 782,
       "source": [
         "book:223"
       ],
@@ -5046,8 +5046,8 @@
     },
     "ex_n179": {
       "file": "ex_n179.jpg",
-      "width": 942,
-      "height": 1446,
+      "width": 1386,
+      "height": 2136,
       "source": [
         "book:224"
       ],
@@ -5056,8 +5056,8 @@
     },
     "ex_n181": {
       "file": "ex_n181.jpg",
-      "width": 1156,
-      "height": 1122,
+      "width": 1710,
+      "height": 1648,
       "source": [
         "book:228"
       ],
@@ -5066,8 +5066,8 @@
     },
     "ex_n182": {
       "file": "ex_n182.jpg",
-      "width": 938,
-      "height": 376,
+      "width": 1384,
+      "height": 516,
       "source": [
         "book:228"
       ],
@@ -5076,8 +5076,8 @@
     },
     "ex_n183": {
       "file": "ex_n183.jpg",
-      "width": 940,
-      "height": 1032,
+      "width": 1372,
+      "height": 1506,
       "source": [
         "book:229"
       ],
@@ -5086,8 +5086,8 @@
     },
     "ex_n184": {
       "file": "ex_n184.jpg",
-      "width": 956,
-      "height": 1270,
+      "width": 1386,
+      "height": 1872,
       "source": [
         "book:229"
       ],
@@ -5096,8 +5096,8 @@
     },
     "ex_n185": {
       "file": "ex_n185.jpg",
-      "width": 942,
-      "height": 620,
+      "width": 1384,
+      "height": 904,
       "source": [
         "book:230"
       ],
@@ -5106,8 +5106,8 @@
     },
     "ex_n186": {
       "file": "ex_n186.jpg",
-      "width": 954,
-      "height": 972,
+      "width": 1386,
+      "height": 1426,
       "source": [
         "book:231"
       ],
@@ -5116,8 +5116,8 @@
     },
     "ex_n189": {
       "file": "ex_n189.jpg",
-      "width": 1156,
-      "height": 1510,
+      "width": 1710,
+      "height": 2228,
       "source": [
         "book:234"
       ],
@@ -5126,8 +5126,8 @@
     },
     "ex_n190": {
       "file": "ex_n190.jpg",
-      "width": 948,
-      "height": 1434,
+      "width": 1386,
+      "height": 2114,
       "source": [
         "book:235"
       ],
@@ -5136,8 +5136,8 @@
     },
     "ex_n192": {
       "file": "ex_n192.jpg",
-      "width": 956,
-      "height": 1216,
+      "width": 1386,
+      "height": 1792,
       "source": [
         "book:239"
       ],
@@ -5146,8 +5146,8 @@
     },
     "ex_n193": {
       "file": "ex_n193.jpg",
-      "width": 942,
-      "height": 806,
+      "width": 1386,
+      "height": 1164,
       "source": [
         "book:240"
       ],
@@ -5156,8 +5156,8 @@
     },
     "ex_n194": {
       "file": "ex_n194.jpg",
-      "width": 1156,
-      "height": 1144,
+      "width": 1710,
+      "height": 1658,
       "source": [
         "book:241"
       ],
@@ -5166,8 +5166,8 @@
     },
     "ex_n195": {
       "file": "ex_n195.jpg",
-      "width": 1156,
-      "height": 1500,
+      "width": 1710,
+      "height": 2218,
       "source": [
         "book:241"
       ],
@@ -5176,8 +5176,8 @@
     },
     "ex_n196": {
       "file": "ex_n196.jpg",
-      "width": 942,
-      "height": 898,
+      "width": 1386,
+      "height": 1322,
       "source": [
         "book:242"
       ],
@@ -5186,8 +5186,8 @@
     },
     "ex_n199": {
       "file": "ex_n199.jpg",
-      "width": 1054,
-      "height": 2796,
+      "width": 1722,
+      "height": 4130,
       "source": [
         "book:244",
         "pdf:264"
@@ -5197,8 +5197,8 @@
     },
     "ex_n200": {
       "file": "ex_n200.jpg",
-      "width": 1156,
-      "height": 1504,
+      "width": 1712,
+      "height": 2228,
       "source": [
         "book:246"
       ],
@@ -5207,8 +5207,8 @@
     },
     "ex_n202": {
       "file": "ex_n202.jpg",
-      "width": 1158,
-      "height": 1510,
+      "width": 1712,
+      "height": 2228,
       "source": [
         "book:250"
       ],
@@ -5217,8 +5217,8 @@
     },
     "ex_n203": {
       "file": "ex_n203.jpg",
-      "width": 948,
-      "height": 1080,
+      "width": 1386,
+      "height": 1588,
       "source": [
         "book:251"
       ],
@@ -5227,8 +5227,8 @@
     },
     "ex_n204": {
       "file": "ex_n204.jpg",
-      "width": 942,
-      "height": 1266,
+      "width": 1386,
+      "height": 1872,
       "source": [
         "book:252"
       ],
@@ -5237,8 +5237,8 @@
     },
     "ex_n209": {
       "file": "ex_n209.jpg",
-      "width": 1156,
-      "height": 1504,
+      "width": 1710,
+      "height": 2228,
       "source": [
         "book:264"
       ],
@@ -5247,8 +5247,8 @@
     },
     "ex_n210": {
       "file": "ex_n210.jpg",
-      "width": 948,
-      "height": 1284,
+      "width": 1386,
+      "height": 1884,
       "source": [
         "book:265"
       ],
@@ -5257,8 +5257,8 @@
     },
     "ex_n212": {
       "file": "ex_n212.jpg",
-      "width": 1056,
-      "height": 2180,
+      "width": 1722,
+      "height": 3200,
       "source": [
         "book:267",
         "pdf:287"
@@ -5268,8 +5268,8 @@
     },
     "ex_n213": {
       "file": "ex_n213.jpg",
-      "width": 1054,
-      "height": 2562,
+      "width": 1722,
+      "height": 3774,
       "source": [
         "book:269",
         "pdf:289"
@@ -5279,8 +5279,8 @@
     },
     "ex_n214": {
       "file": "ex_n214.jpg",
-      "width": 1044,
-      "height": 1484,
+      "width": 1386,
+      "height": 2112,
       "source": [
         "book:271"
       ],
@@ -5289,8 +5289,8 @@
     },
     "ex_n216": {
       "file": "ex_n216.jpg",
-      "width": 936,
-      "height": 496,
+      "width": 1372,
+      "height": 714,
       "source": [
         "book:272"
       ],
@@ -5299,8 +5299,8 @@
     },
     "ex_n217": {
       "file": "ex_n217.jpg",
-      "width": 942,
-      "height": 666,
+      "width": 1386,
+      "height": 972,
       "source": [
         "book:272"
       ],
@@ -5309,8 +5309,8 @@
     },
     "ex_n219": {
       "file": "ex_n219.jpg",
-      "width": 932,
-      "height": 704,
+      "width": 1372,
+      "height": 1028,
       "source": [
         "book:275"
       ],
@@ -5319,8 +5319,8 @@
     },
     "ex_n220": {
       "file": "ex_n220.jpg",
-      "width": 948,
-      "height": 434,
+      "width": 1386,
+      "height": 618,
       "source": [
         "book:275"
       ],
@@ -5329,8 +5329,8 @@
     },
     "ex_n222": {
       "file": "ex_n222.jpg",
-      "width": 1052,
-      "height": 1492,
+      "width": 1542,
+      "height": 2204,
       "source": [
         "book:279"
       ],
@@ -5339,8 +5339,8 @@
     },
     "ex_n223": {
       "file": "ex_n223.jpg",
-      "width": 942,
-      "height": 760,
+      "width": 1386,
+      "height": 1104,
       "source": [
         "book:280"
       ],
@@ -5349,8 +5349,8 @@
     },
     "ex_n224": {
       "file": "ex_n224.jpg",
-      "width": 948,
-      "height": 1338,
+      "width": 1386,
+      "height": 1966,
       "source": [
         "book:281"
       ],
@@ -5359,8 +5359,8 @@
     },
     "ex_n225": {
       "file": "ex_n225.jpg",
-      "width": 942,
-      "height": 1008,
+      "width": 1386,
+      "height": 1488,
       "source": [
         "book:282"
       ],
@@ -5369,8 +5369,8 @@
     },
     "ex_n227": {
       "file": "ex_n227.jpg",
-      "width": 940,
-      "height": 824,
+      "width": 1386,
+      "height": 1210,
       "source": [
         "book:288"
       ],
@@ -5379,8 +5379,8 @@
     },
     "ex_n228": {
       "file": "ex_n228.jpg",
-      "width": 950,
-      "height": 642,
+      "width": 1386,
+      "height": 926,
       "source": [
         "book:289"
       ],
@@ -5389,8 +5389,8 @@
     },
     "ex_n229": {
       "file": "ex_n229.jpg",
-      "width": 1054,
-      "height": 1898,
+      "width": 1722,
+      "height": 2784,
       "source": [
         "book:290",
         "pdf:310"
@@ -5400,8 +5400,8 @@
     },
     "ex_n230": {
       "file": "ex_n230.jpg",
-      "width": 938,
-      "height": 634,
+      "width": 1372,
+      "height": 916,
       "source": [
         "book:292"
       ],
@@ -5410,8 +5410,8 @@
     },
     "ex_n231": {
       "file": "ex_n231.jpg",
-      "width": 1054,
-      "height": 2202,
+      "width": 1722,
+      "height": 3240,
       "source": [
         "book:292",
         "pdf:312"
@@ -5421,8 +5421,8 @@
     },
     "ex_n232": {
       "file": "ex_n232.jpg",
-      "width": 1156,
-      "height": 1510,
+      "width": 1710,
+      "height": 2228,
       "source": [
         "book:294"
       ],
@@ -5431,8 +5431,8 @@
     },
     "ex_n233": {
       "file": "ex_n233.jpg",
-      "width": 1044,
-      "height": 1028,
+      "width": 1542,
+      "height": 1520,
       "source": [
         "book:295"
       ],
@@ -5441,8 +5441,8 @@
     },
     "ex_n234": {
       "file": "ex_n234.jpg",
-      "width": 1044,
-      "height": 1490,
+      "width": 1542,
+      "height": 2200,
       "source": [
         "book:295"
       ],
@@ -5451,8 +5451,8 @@
     },
     "ex_n236": {
       "file": "ex_n236.jpg",
-      "width": 942,
-      "height": 1056,
+      "width": 1386,
+      "height": 1550,
       "source": [
         "book:299"
       ],
@@ -5461,8 +5461,8 @@
     },
     "ex_n237": {
       "file": "ex_n237.jpg",
-      "width": 930,
-      "height": 372,
+      "width": 1372,
+      "height": 536,
       "source": [
         "book:300"
       ],
@@ -5471,8 +5471,8 @@
     },
     "ex_n238": {
       "file": "ex_n238.jpg",
-      "width": 936,
-      "height": 1094,
+      "width": 1372,
+      "height": 1612,
       "source": [
         "book:300"
       ],
@@ -5481,8 +5481,8 @@
     },
     "ex_n239": {
       "file": "ex_n239.jpg",
-      "width": 942,
-      "height": 1202,
+      "width": 1386,
+      "height": 1778,
       "source": [
         "book:300"
       ],
@@ -5491,8 +5491,8 @@
     },
     "ex_n240": {
       "file": "ex_n240.jpg",
-      "width": 934,
-      "height": 634,
+      "width": 1372,
+      "height": 930,
       "source": [
         "book:301"
       ],
@@ -5501,8 +5501,8 @@
     },
     "ex_n241": {
       "file": "ex_n241.jpg",
-      "width": 954,
-      "height": 440,
+      "width": 1386,
+      "height": 628,
       "source": [
         "book:301"
       ],
@@ -5511,8 +5511,8 @@
     },
     "ex_n242": {
       "file": "ex_n242.jpg",
-      "width": 940,
-      "height": 1412,
+      "width": 1386,
+      "height": 2094,
       "source": [
         "book:302"
       ],
@@ -5521,8 +5521,8 @@
     },
     "ex_n244": {
       "file": "ex_n244.jpg",
-      "width": 942,
-      "height": 1184,
+      "width": 1386,
+      "height": 1750,
       "source": [
         "book:304"
       ],
@@ -5531,8 +5531,8 @@
     },
     "ex_n245": {
       "file": "ex_n245.jpg",
-      "width": 950,
-      "height": 1106,
+      "width": 1386,
+      "height": 1628,
       "source": [
         "book:305"
       ],
@@ -5541,8 +5541,8 @@
     },
     "ex_n246": {
       "file": "ex_n246.jpg",
-      "width": 942,
-      "height": 1076,
+      "width": 1386,
+      "height": 1586,
       "source": [
         "book:306"
       ],
@@ -5551,8 +5551,8 @@
     },
     "ex_n247": {
       "file": "ex_n247.jpg",
-      "width": 1156,
-      "height": 1514,
+      "width": 1710,
+      "height": 2228,
       "source": [
         "book:307"
       ],
@@ -5561,8 +5561,8 @@
     },
     "ex_n251": {
       "file": "ex_n251.jpg",
-      "width": 1156,
-      "height": 700,
+      "width": 1712,
+      "height": 1012,
       "source": [
         "book:314"
       ],
@@ -5571,8 +5571,8 @@
     },
     "ex_n252": {
       "file": "ex_n252.jpg",
-      "width": 942,
-      "height": 774,
+      "width": 1386,
+      "height": 1136,
       "source": [
         "book:314"
       ],
@@ -5581,8 +5581,8 @@
     },
     "ex_n253": {
       "file": "ex_n253.jpg",
-      "width": 1154,
-      "height": 346,
+      "width": 1710,
+      "height": 482,
       "source": [
         "book:315"
       ],
@@ -5591,8 +5591,8 @@
     },
     "ex_n254": {
       "file": "ex_n254.jpg",
-      "width": 1154,
-      "height": 1516,
+      "width": 1710,
+      "height": 2228,
       "source": [
         "book:315"
       ],
@@ -5601,8 +5601,8 @@
     },
     "ex_n255": {
       "file": "ex_n255.jpg",
-      "width": 1156,
-      "height": 888,
+      "width": 1710,
+      "height": 1298,
       "source": [
         "book:316"
       ],
@@ -5611,8 +5611,8 @@
     },
     "ex_n256": {
       "file": "ex_n256.jpg",
-      "width": 940,
-      "height": 1130,
+      "width": 1372,
+      "height": 1644,
       "source": [
         "book:316"
       ],
@@ -5621,8 +5621,8 @@
     },
     "ex_n257": {
       "file": "ex_n257.jpg",
-      "width": 938,
-      "height": 272,
+      "width": 1384,
+      "height": 382,
       "source": [
         "book:316"
       ],
@@ -5631,8 +5631,8 @@
     },
     "ex_n258": {
       "file": "ex_n258.jpg",
-      "width": 954,
-      "height": 1360,
+      "width": 1386,
+      "height": 1996,
       "source": [
         "book:317"
       ],
@@ -5641,8 +5641,8 @@
     },
     "ex_n260": {
       "file": "ex_n260.jpg",
-      "width": 1050,
-      "height": 1488,
+      "width": 1542,
+      "height": 2198,
       "source": [
         "book:319"
       ],
@@ -5651,8 +5651,8 @@
     },
     "ex_n261": {
       "file": "ex_n261.jpg",
-      "width": 942,
-      "height": 1360,
+      "width": 1386,
+      "height": 2014,
       "source": [
         "book:318"
       ],
@@ -5661,8 +5661,8 @@
     },
     "ex_n264": {
       "file": "ex_n264.jpg",
-      "width": 950,
-      "height": 588,
+      "width": 1386,
+      "height": 850,
       "source": [
         "book:321"
       ],
@@ -5671,8 +5671,8 @@
     },
     "ex_n265": {
       "file": "ex_n265.jpg",
-      "width": 942,
-      "height": 1286,
+      "width": 1386,
+      "height": 1902,
       "source": [
         "book:322"
       ],
@@ -5681,8 +5681,8 @@
     },
     "ex_n267": {
       "file": "ex_n267.jpg",
-      "width": 1054,
-      "height": 2808,
+      "width": 1722,
+      "height": 4150,
       "source": [
         "book:324",
         "pdf:344"
@@ -5692,8 +5692,8 @@
     },
     "ex_n268": {
       "file": "ex_n268.jpg",
-      "width": 1054,
-      "height": 2976,
+      "width": 1722,
+      "height": 4394,
       "source": [
         "book:326",
         "pdf:346"
@@ -5703,8 +5703,8 @@
     },
     "ex_n269": {
       "file": "ex_n269.jpg",
-      "width": 942,
-      "height": 1328,
+      "width": 1386,
+      "height": 1966,
       "source": [
         "book:328"
       ],
@@ -5713,8 +5713,8 @@
     },
     "ex_n271": {
       "file": "ex_n271.jpg",
-      "width": 1156,
-      "height": 1432,
+      "width": 1710,
+      "height": 2116,
       "source": [
         "book:331"
       ],
@@ -5723,8 +5723,8 @@
     },
     "ex_n272": {
       "file": "ex_n272.jpg",
-      "width": 948,
-      "height": 1148,
+      "width": 1386,
+      "height": 1688,
       "source": [
         "book:331"
       ],
@@ -5733,8 +5733,8 @@
     },
     "ex_n273": {
       "file": "ex_n273.jpg",
-      "width": 930,
-      "height": 348,
+      "width": 1372,
+      "height": 500,
       "source": [
         "book:332"
       ],
@@ -5743,8 +5743,8 @@
     },
     "ex_n274": {
       "file": "ex_n274.jpg",
-      "width": 942,
-      "height": 864,
+      "width": 1386,
+      "height": 1272,
       "source": [
         "book:332"
       ],
@@ -5753,8 +5753,8 @@
     },
     "ex_n276": {
       "file": "ex_n276.jpg",
-      "width": 932,
-      "height": 818,
+      "width": 1372,
+      "height": 1200,
       "source": [
         "book:336"
       ],
@@ -5763,8 +5763,8 @@
     },
     "ex_n277": {
       "file": "ex_n277.jpg",
-      "width": 1054,
-      "height": 2136,
+      "width": 1722,
+      "height": 3142,
       "source": [
         "book:336",
         "pdf:356"
@@ -5774,8 +5774,8 @@
     },
     "ex_n278": {
       "file": "ex_n278.jpg",
-      "width": 1158,
-      "height": 1510,
+      "width": 1710,
+      "height": 2228,
       "source": [
         "book:338"
       ],
@@ -5784,8 +5784,8 @@
     },
     "ex_n280": {
       "file": "ex_n280.jpg",
-      "width": 1054,
-      "height": 2964,
+      "width": 1722,
+      "height": 4376,
       "source": [
         "book:343",
         "pdf:363"
@@ -5795,8 +5795,8 @@
     },
     "ex_n281": {
       "file": "ex_n281.jpg",
-      "width": 950,
-      "height": 1324,
+      "width": 1386,
+      "height": 1942,
       "source": [
         "book:345"
       ],
@@ -5805,8 +5805,8 @@
     },
     "ex_n282": {
       "file": "ex_n282.jpg",
-      "width": 950,
-      "height": 1324,
+      "width": 1386,
+      "height": 1942,
       "source": [
         "book:345"
       ],
@@ -5815,8 +5815,8 @@
     },
     "ex_n283": {
       "file": "ex_n283.jpg",
-      "width": 942,
-      "height": 1446,
+      "width": 1386,
+      "height": 2134,
       "source": [
         "book:346"
       ],
@@ -5825,8 +5825,8 @@
     },
     "ex_n284": {
       "file": "ex_n284.jpg",
-      "width": 1154,
-      "height": 1516,
+      "width": 1710,
+      "height": 2228,
       "source": [
         "book:347"
       ],
@@ -5835,8 +5835,8 @@
     },
     "ex_n285": {
       "file": "ex_n285.jpg",
-      "width": 942,
-      "height": 1012,
+      "width": 1390,
+      "height": 1496,
       "source": [
         "book:348"
       ],
@@ -5845,8 +5845,8 @@
     },
     "ex_n288": {
       "file": "ex_n288.jpg",
-      "width": 1156,
-      "height": 474,
+      "width": 1712,
+      "height": 676,
       "source": [
         "book:352"
       ],
@@ -5855,8 +5855,8 @@
     },
     "ex_n289": {
       "file": "ex_n289.jpg",
-      "width": 942,
-      "height": 1032,
+      "width": 1386,
+      "height": 1524,
       "source": [
         "book:352"
       ],
@@ -5865,8 +5865,8 @@
     },
     "ex_n291": {
       "file": "ex_n291.jpg",
-      "width": 1156,
-      "height": 1016,
+      "width": 1710,
+      "height": 1480,
       "source": [
         "book:356"
       ],
@@ -5875,8 +5875,8 @@
     },
     "ex_n292": {
       "file": "ex_n292.jpg",
-      "width": 940,
-      "height": 488,
+      "width": 1386,
+      "height": 706,
       "source": [
         "book:356"
       ],
@@ -5885,8 +5885,8 @@
     },
     "ex_n293": {
       "file": "ex_n293.jpg",
-      "width": 1056,
-      "height": 1892,
+      "width": 1722,
+      "height": 2768,
       "source": [
         "book:357",
         "pdf:377"
@@ -5896,8 +5896,8 @@
     },
     "ex_n294": {
       "file": "ex_n294.jpg",
-      "width": 944,
-      "height": 784,
+      "width": 1386,
+      "height": 1132,
       "source": [
         "book:359"
       ],
@@ -5906,8 +5906,8 @@
     },
     "ex_n295": {
       "file": "ex_n295.jpg",
-      "width": 942,
-      "height": 824,
+      "width": 1386,
+      "height": 1210,
       "source": [
         "book:360"
       ],
@@ -5916,8 +5916,8 @@
     },
     "ex_n297": {
       "file": "ex_n297.jpg",
-      "width": 940,
-      "height": 270,
+      "width": 1386,
+      "height": 378,
       "source": [
         "book:362"
       ],
@@ -5926,8 +5926,8 @@
     },
     "ex_n298": {
       "file": "ex_n298.jpg",
-      "width": 938,
-      "height": 362,
+      "width": 1370,
+      "height": 504,
       "source": [
         "book:363"
       ],
@@ -5936,8 +5936,8 @@
     },
     "ex_n299": {
       "file": "ex_n299.jpg",
-      "width": 938,
-      "height": 350,
+      "width": 1370,
+      "height": 486,
       "source": [
         "book:363"
       ],
@@ -5946,8 +5946,8 @@
     },
     "ex_n300": {
       "file": "ex_n300.jpg",
-      "width": 1056,
-      "height": 2844,
+      "width": 1722,
+      "height": 4180,
       "source": [
         "book:363",
         "pdf:383"
@@ -5957,8 +5957,8 @@
     },
     "ex_n301": {
       "file": "ex_n301.jpg",
-      "width": 1056,
-      "height": 2502,
+      "width": 1722,
+      "height": 3684,
       "source": [
         "book:365",
         "pdf:385"
@@ -5968,8 +5968,8 @@
     },
     "ex_n302": {
       "file": "ex_n302.jpg",
-      "width": 950,
-      "height": 1450,
+      "width": 1386,
+      "height": 2134,
       "source": [
         "book:367"
       ],
@@ -5978,8 +5978,8 @@
     },
     "ex_n303": {
       "file": "ex_n303.jpg",
-      "width": 1156,
-      "height": 1504,
+      "width": 1710,
+      "height": 2228,
       "source": [
         "book:368"
       ],
@@ -5988,8 +5988,8 @@
     },
     "ex_n304": {
       "file": "ex_n304.jpg",
-      "width": 950,
-      "height": 1440,
+      "width": 1386,
+      "height": 2126,
       "source": [
         "book:369"
       ],
@@ -5998,8 +5998,8 @@
     },
     "ex_n306": {
       "file": "ex_n306.jpg",
-      "width": 1158,
-      "height": 404,
+      "width": 1712,
+      "height": 572,
       "source": [
         "book:372"
       ],
@@ -6008,8 +6008,8 @@
     },
     "ex_n307": {
       "file": "ex_n307.jpg",
-      "width": 942,
-      "height": 1108,
+      "width": 1386,
+      "height": 1632,
       "source": [
         "book:372"
       ],
@@ -6018,8 +6018,8 @@
     },
     "ex_n308": {
       "file": "ex_n308.jpg",
-      "width": 952,
-      "height": 816,
+      "width": 1388,
+      "height": 1192,
       "source": [
         "book:373"
       ],
@@ -6028,8 +6028,8 @@
     },
     "ex_n310": {
       "file": "ex_n310.jpg",
-      "width": 840,
-      "height": 266,
+      "width": 1234,
+      "height": 372,
       "source": [
         "book:374"
       ],
@@ -6038,8 +6038,8 @@
     },
     "ex_n311": {
       "file": "ex_n311.jpg",
-      "width": 1156,
-      "height": 1506,
+      "width": 1710,
+      "height": 2226,
       "source": [
         "book:375"
       ],
@@ -6048,8 +6048,8 @@
     },
     "ex_n312": {
       "file": "ex_n312.jpg",
-      "width": 942,
-      "height": 1332,
+      "width": 1386,
+      "height": 1972,
       "source": [
         "book:376"
       ],
@@ -6058,8 +6058,8 @@
     },
     "ex_n314": {
       "file": "ex_n314.jpg",
-      "width": 952,
-      "height": 592,
+      "width": 1386,
+      "height": 858,
       "source": [
         "book:377"
       ],
@@ -6068,8 +6068,8 @@
     },
     "ex_n315": {
       "file": "ex_n315.jpg",
-      "width": 942,
-      "height": 922,
+      "width": 1388,
+      "height": 1358,
       "source": [
         "book:378"
       ],
@@ -6078,8 +6078,8 @@
     },
     "ex_n316": {
       "file": "ex_n316.jpg",
-      "width": 942,
-      "height": 636,
+      "width": 1386,
+      "height": 920,
       "source": [
         "book:379"
       ],
@@ -6088,8 +6088,8 @@
     },
     "ex_n317": {
       "file": "ex_n317.jpg",
-      "width": 932,
-      "height": 526,
+      "width": 1376,
+      "height": 766,
       "source": [
         "book:380"
       ],
@@ -6098,8 +6098,8 @@
     },
     "ex_n318": {
       "file": "ex_n318.jpg",
-      "width": 942,
-      "height": 588,
+      "width": 1386,
+      "height": 856,
       "source": [
         "book:380"
       ],
@@ -6108,8 +6108,8 @@
     },
     "ex_n319": {
       "file": "ex_n319.jpg",
-      "width": 948,
-      "height": 528,
+      "width": 1386,
+      "height": 758,
       "source": [
         "book:381"
       ],
@@ -6118,8 +6118,8 @@
     },
     "ex_n325": {
       "file": "ex_n325.jpg",
-      "width": 938,
-      "height": 290,
+      "width": 1382,
+      "height": 392,
       "source": [
         "book:394"
       ],
@@ -6128,8 +6128,8 @@
     },
     "ex_n326": {
       "file": "ex_n326.jpg",
-      "width": 948,
-      "height": 506,
+      "width": 1386,
+      "height": 724,
       "source": [
         "book:395"
       ],
@@ -6138,8 +6138,8 @@
     },
     "ex_n327": {
       "file": "ex_n327.jpg",
-      "width": 1156,
-      "height": 1510,
+      "width": 1712,
+      "height": 2228,
       "source": [
         "book:396"
       ],
@@ -6148,8 +6148,8 @@
     },
     "ex_n329": {
       "file": "ex_n329.jpg",
-      "width": 940,
-      "height": 1182,
+      "width": 1372,
+      "height": 1744,
       "source": [
         "book:399"
       ],
@@ -6158,8 +6158,8 @@
     },
     "ex_n330": {
       "file": "ex_n330.jpg",
-      "width": 956,
-      "height": 634,
+      "width": 1386,
+      "height": 918,
       "source": [
         "book:399"
       ],
@@ -6168,8 +6168,8 @@
     },
     "ex_n331": {
       "file": "ex_n331.jpg",
-      "width": 942,
-      "height": 1406,
+      "width": 1386,
+      "height": 2084,
       "source": [
         "book:400"
       ],
@@ -6178,8 +6178,8 @@
     },
     "ex_n333": {
       "file": "ex_n333.jpg",
-      "width": 1056,
-      "height": 2168,
+      "width": 1722,
+      "height": 3190,
       "source": [
         "book:406",
         "pdf:426"
@@ -6189,8 +6189,8 @@
     },
     "ex_n334": {
       "file": "ex_n334.jpg",
-      "width": 942,
-      "height": 1308,
+      "width": 1386,
+      "height": 1934,
       "source": [
         "book:408"
       ],
@@ -6199,8 +6199,8 @@
     },
     "ex_n335": {
       "file": "ex_n335.jpg",
-      "width": 956,
-      "height": 988,
+      "width": 1386,
+      "height": 1450,
       "source": [
         "book:407"
       ],
@@ -6209,8 +6209,8 @@
     },
     "ex_n337": {
       "file": "ex_n337.jpg",
-      "width": 1054,
-      "height": 2072,
+      "width": 1722,
+      "height": 3046,
       "source": [
         "book:410",
         "pdf:430"
@@ -6220,8 +6220,8 @@
     },
     "ex_n338": {
       "file": "ex_n338.jpg",
-      "width": 942,
-      "height": 1144,
+      "width": 1388,
+      "height": 1692,
       "source": [
         "book:412"
       ],
@@ -6230,8 +6230,8 @@
     },
     "ex_n339": {
       "file": "ex_n339.jpg",
-      "width": 940,
-      "height": 258,
+      "width": 1386,
+      "height": 354,
       "source": [
         "book:413"
       ],
@@ -6240,8 +6240,8 @@
     },
     "ex_n342": {
       "file": "ex_n342.jpg",
-      "width": 948,
-      "height": 808,
+      "width": 1386,
+      "height": 1180,
       "source": [
         "book:421"
       ],
@@ -6250,8 +6250,8 @@
     },
     "ex_n343": {
       "file": "ex_n343.jpg",
-      "width": 932,
-      "height": 348,
+      "width": 1372,
+      "height": 500,
       "source": [
         "book:422"
       ],
@@ -6260,8 +6260,8 @@
     },
     "ex_n344": {
       "file": "ex_n344.jpg",
-      "width": 934,
-      "height": 1050,
+      "width": 1372,
+      "height": 1554,
       "source": [
         "book:422"
       ],
@@ -6270,8 +6270,8 @@
     },
     "ex_n345": {
       "file": "ex_n345.jpg",
-      "width": 942,
-      "height": 1264,
+      "width": 1386,
+      "height": 1870,
       "source": [
         "book:422"
       ],
@@ -6280,8 +6280,8 @@
     },
     "ex_n346": {
       "file": "ex_n346.jpg",
-      "width": 1052,
-      "height": 1488,
+      "width": 1542,
+      "height": 2200,
       "source": [
         "book:423"
       ],
@@ -6290,8 +6290,8 @@
     },
     "ex_n348": {
       "file": "ex_n348.jpg",
-      "width": 942,
-      "height": 684,
+      "width": 1386,
+      "height": 992,
       "source": [
         "book:425"
       ],
@@ -6300,8 +6300,8 @@
     },
     "ex_n349": {
       "file": "ex_n349.jpg",
-      "width": 938,
-      "height": 398,
+      "width": 1382,
+      "height": 568,
       "source": [
         "book:426"
       ],
@@ -6310,8 +6310,8 @@
     },
     "ex_n351": {
       "file": "ex_n351.jpg",
-      "width": 1052,
-      "height": 1488,
+      "width": 1542,
+      "height": 2198,
       "source": [
         "book:433"
       ],
@@ -6320,8 +6320,8 @@
     },
     "ex_n352": {
       "file": "ex_n352.jpg",
-      "width": 940,
-      "height": 980,
+      "width": 1372,
+      "height": 1408,
       "source": [
         "book:434"
       ],
@@ -6330,8 +6330,8 @@
     },
     "ex_n353": {
       "file": "ex_n353.jpg",
-      "width": 942,
-      "height": 1228,
+      "width": 1386,
+      "height": 1818,
       "source": [
         "book:434"
       ],
@@ -6340,8 +6340,8 @@
     },
     "ex_n355": {
       "file": "ex_n355.jpg",
-      "width": 956,
-      "height": 796,
+      "width": 1386,
+      "height": 1138,
       "source": [
         "book:435"
       ],
@@ -6350,8 +6350,8 @@
     },
     "ex_n356": {
       "file": "ex_n356.jpg",
-      "width": 940,
-      "height": 672,
+      "width": 1386,
+      "height": 982,
       "source": [
         "book:436"
       ],
@@ -6360,8 +6360,8 @@
     },
     "ex_n357": {
       "file": "ex_n357.jpg",
-      "width": 1156,
-      "height": 4574,
+      "width": 1722,
+      "height": 6744,
       "source": [
         "book:437",
         "pdf:457",
@@ -6372,8 +6372,8 @@
     },
     "ex_n358": {
       "file": "ex_n358.jpg",
-      "width": 1054,
-      "height": 5580,
+      "width": 1722,
+      "height": 8232,
       "source": [
         "book:440",
         "pdf:460",
@@ -6385,8 +6385,8 @@
     },
     "ex_n359": {
       "file": "ex_n359.jpg",
-      "width": 1056,
-      "height": 4444,
+      "width": 1722,
+      "height": 6566,
       "source": [
         "book:444",
         "pdf:464",
@@ -6397,8 +6397,8 @@
     },
     "ex_n360": {
       "file": "ex_n360.jpg",
-      "width": 942,
-      "height": 1334,
+      "width": 1386,
+      "height": 1966,
       "source": [
         "book:447"
       ],
@@ -6407,8 +6407,8 @@
     },
     "ex_n363": {
       "file": "ex_n363.jpg",
-      "width": 942,
-      "height": 1186,
+      "width": 1388,
+      "height": 1746,
       "source": [
         "book:453"
       ],
@@ -6417,8 +6417,8 @@
     },
     "ex_n364": {
       "file": "ex_n364.jpg",
-      "width": 1156,
-      "height": 406,
+      "width": 1710,
+      "height": 574,
       "source": [
         "book:454"
       ],
@@ -6427,8 +6427,8 @@
     },
     "ex_n365": {
       "file": "ex_n365.jpg",
-      "width": 1156,
-      "height": 1510,
+      "width": 1710,
+      "height": 2228,
       "source": [
         "book:454"
       ],
@@ -6437,8 +6437,8 @@
     },
     "ex_n367": {
       "file": "ex_n367.jpg",
-      "width": 956,
-      "height": 924,
+      "width": 1386,
+      "height": 1354,
       "source": [
         "book:459"
       ],
@@ -6447,8 +6447,8 @@
     },
     "ex_n368": {
       "file": "ex_n368.jpg",
-      "width": 1056,
-      "height": 3766,
+      "width": 1722,
+      "height": 5550,
       "source": [
         "book:460",
         "pdf:480",
@@ -6459,8 +6459,8 @@
     },
     "ex_n369": {
       "file": "ex_n369.jpg",
-      "width": 1056,
-      "height": 4290,
+      "width": 1722,
+      "height": 6330,
       "source": [
         "book:463",
         "pdf:483",
@@ -6471,8 +6471,8 @@
     },
     "ex_n370": {
       "file": "ex_n370.jpg",
-      "width": 942,
-      "height": 1306,
+      "width": 1386,
+      "height": 1930,
       "source": [
         "book:466"
       ],
@@ -6481,8 +6481,8 @@
     },
     "ex_n374": {
       "file": "ex_n374.jpg",
-      "width": 948,
-      "height": 330,
+      "width": 1386,
+      "height": 462,
       "source": [
         "book:471"
       ],
@@ -6491,8 +6491,8 @@
     },
     "ex_n375": {
       "file": "ex_n375.jpg",
-      "width": 942,
-      "height": 1086,
+      "width": 1386,
+      "height": 1602,
       "source": [
         "book:472"
       ],
@@ -6501,8 +6501,8 @@
     },
     "ex_n376": {
       "file": "ex_n376.jpg",
-      "width": 946,
-      "height": 1334,
+      "width": 1386,
+      "height": 1966,
       "source": [
         "book:473"
       ],
@@ -6511,8 +6511,8 @@
     },
     "ex_n378": {
       "file": "ex_n378.jpg",
-      "width": 942,
-      "height": 1226,
+      "width": 1388,
+      "height": 1814,
       "source": [
         "book:474"
       ],
@@ -6521,8 +6521,8 @@
     },
     "ex_n379": {
       "file": "ex_n379.jpg",
-      "width": 946,
-      "height": 490,
+      "width": 1386,
+      "height": 702,
       "source": [
         "book:475"
       ],
@@ -6531,8 +6531,8 @@
     },
     "ex_n380": {
       "file": "ex_n380.jpg",
-      "width": 942,
-      "height": 876,
+      "width": 1386,
+      "height": 1288,
       "source": [
         "book:476"
       ],
@@ -6541,8 +6541,8 @@
     },
     "ex_n382": {
       "file": "ex_n382.jpg",
-      "width": 1044,
-      "height": 1116,
+      "width": 1542,
+      "height": 1652,
       "source": [
         "book:481"
       ],
@@ -6551,8 +6551,8 @@
     },
     "ex_n383": {
       "file": "ex_n383.jpg",
-      "width": 1044,
-      "height": 1488,
+      "width": 1542,
+      "height": 2198,
       "source": [
         "book:481"
       ],
@@ -6561,8 +6561,8 @@
     },
     "ex_n384": {
       "file": "ex_n384.jpg",
-      "width": 1054,
-      "height": 2888,
+      "width": 1722,
+      "height": 4268,
       "source": [
         "book:482",
         "pdf:502"
@@ -6572,8 +6572,8 @@
     },
     "ex_n385": {
       "file": "ex_n385.jpg",
-      "width": 1056,
-      "height": 1672,
+      "width": 1722,
+      "height": 2444,
       "source": [
         "book:484",
         "pdf:504"
@@ -6583,8 +6583,8 @@
     },
     "ex_n386": {
       "file": "ex_n386.jpg",
-      "width": 942,
-      "height": 796,
+      "width": 1386,
+      "height": 1168,
       "source": [
         "book:486"
       ],
@@ -6593,8 +6593,8 @@
     },
     "ex_n388": {
       "file": "ex_n388.jpg",
-      "width": 942,
-      "height": 860,
+      "width": 1386,
+      "height": 1252,
       "source": [
         "book:487"
       ],
@@ -6603,8 +6603,8 @@
     },
     "ex_n389": {
       "file": "ex_n389.jpg",
-      "width": 942,
-      "height": 706,
+      "width": 1386,
+      "height": 1030,
       "source": [
         "book:488"
       ],
@@ -6613,8 +6613,8 @@
     },
     "ex_n390": {
       "file": "ex_n390.jpg",
-      "width": 1154,
-      "height": 1516,
+      "width": 1710,
+      "height": 2228,
       "source": [
         "book:489"
       ],
@@ -6623,8 +6623,8 @@
     },
     "ex_n391": {
       "file": "ex_n391.jpg",
-      "width": 942,
-      "height": 614,
+      "width": 1386,
+      "height": 896,
       "source": [
         "book:490"
       ],
@@ -6633,8 +6633,8 @@
     },
     "ex_n392": {
       "file": "ex_n392.jpg",
-      "width": 948,
-      "height": 964,
+      "width": 1388,
+      "height": 1412,
       "source": [
         "book:491"
       ],
@@ -6643,8 +6643,8 @@
     },
     "ex_n393": {
       "file": "ex_n393.jpg",
-      "width": 808,
-      "height": 374,
+      "width": 1188,
+      "height": 536,
       "source": [
         "book:492"
       ],
@@ -6653,8 +6653,8 @@
     },
     "ex_n396": {
       "file": "ex_n396.jpg",
-      "width": 932,
-      "height": 350,
+      "width": 1372,
+      "height": 502,
       "source": [
         "book:495"
       ],
@@ -6663,8 +6663,8 @@
     },
     "ex_n397": {
       "file": "ex_n397.jpg",
-      "width": 948,
-      "height": 390,
+      "width": 1386,
+      "height": 554,
       "source": [
         "book:495"
       ],
@@ -6673,8 +6673,8 @@
     },
     "ex_n399": {
       "file": "ex_n399.jpg",
-      "width": 942,
-      "height": 950,
+      "width": 1386,
+      "height": 1398,
       "source": [
         "book:498"
       ],
@@ -6683,8 +6683,8 @@
     },
     "ex_n400": {
       "file": "ex_n400.jpg",
-      "width": 956,
-      "height": 1080,
+      "width": 1386,
+      "height": 1588,
       "source": [
         "book:499"
       ],
@@ -6693,8 +6693,8 @@
     },
     "ex_n402": {
       "file": "ex_n402.jpg",
-      "width": 932,
-      "height": 720,
+      "width": 1372,
+      "height": 1058,
       "source": [
         "book:503"
       ],
@@ -6703,8 +6703,8 @@
     },
     "ex_n403": {
       "file": "ex_n403.jpg",
-      "width": 1056,
-      "height": 1612,
+      "width": 1722,
+      "height": 2344,
       "source": [
         "book:503",
         "pdf:523"
@@ -6714,8 +6714,8 @@
     },
     "ex_n404": {
       "file": "ex_n404.jpg",
-      "width": 934,
-      "height": 1076,
+      "width": 1372,
+      "height": 1582,
       "source": [
         "book:505"
       ],
@@ -6724,8 +6724,8 @@
     },
     "ex_n405": {
       "file": "ex_n405.jpg",
-      "width": 944,
-      "height": 1452,
+      "width": 1386,
+      "height": 2136,
       "source": [
         "book:505"
       ],
@@ -6734,8 +6734,8 @@
     },
     "ex_n407": {
       "file": "ex_n407.jpg",
-      "width": 942,
-      "height": 1168,
+      "width": 1386,
+      "height": 1712,
       "source": [
         "book:506"
       ],
@@ -6744,8 +6744,8 @@
     },
     "ex_n408": {
       "file": "ex_n408.jpg",
-      "width": 942,
-      "height": 940,
+      "width": 1386,
+      "height": 1372,
       "source": [
         "book:507"
       ],
@@ -6754,8 +6754,8 @@
     },
     "ex_n409": {
       "file": "ex_n409.jpg",
-      "width": 1158,
-      "height": 400,
+      "width": 1712,
+      "height": 564,
       "source": [
         "book:508"
       ],
@@ -6764,8 +6764,8 @@
     },
     "ex_n410": {
       "file": "ex_n410.jpg",
-      "width": 1158,
-      "height": 1510,
+      "width": 1712,
+      "height": 2228,
       "source": [
         "book:508"
       ],
@@ -6774,8 +6774,8 @@
     },
     "ex_n411": {
       "file": "ex_n411.jpg",
-      "width": 1156,
-      "height": 3036,
+      "width": 1722,
+      "height": 4484,
       "source": [
         "book:509",
         "pdf:529"
@@ -6785,8 +6785,8 @@
     },
     "ex_n412": {
       "file": "ex_n412.jpg",
-      "width": 1154,
-      "height": 1504,
+      "width": 1710,
+      "height": 2222,
       "source": [
         "book:511"
       ],
@@ -6795,8 +6795,8 @@
     },
     "ex_n414": {
       "file": "ex_n414.jpg",
-      "width": 1156,
-      "height": 894,
+      "width": 1712,
+      "height": 1304,
       "source": [
         "book:514"
       ],
@@ -6805,8 +6805,8 @@
     },
     "ex_n415": {
       "file": "ex_n415.jpg",
-      "width": 942,
-      "height": 614,
+      "width": 1386,
+      "height": 894,
       "source": [
         "book:514"
       ],
@@ -6815,8 +6815,8 @@
     },
     "ex_n419": {
       "file": "ex_n419.jpg",
-      "width": 948,
-      "height": 404,
+      "width": 1386,
+      "height": 562,
       "source": [
         "book:517"
       ],
@@ -6825,8 +6825,8 @@
     },
     "ex_n420": {
       "file": "ex_n420.jpg",
-      "width": 942,
-      "height": 672,
+      "width": 1384,
+      "height": 982,
       "source": [
         "book:518"
       ],
@@ -6835,8 +6835,8 @@
     },
     "ex_n421": {
       "file": "ex_n421.jpg",
-      "width": 948,
-      "height": 880,
+      "width": 1386,
+      "height": 1288,
       "source": [
         "book:519"
       ],
@@ -6845,8 +6845,8 @@
     },
     "ex_n423": {
       "file": "ex_n423.jpg",
-      "width": 942,
-      "height": 1364,
+      "width": 1386,
+      "height": 2022,
       "source": [
         "book:524"
       ],
@@ -6855,8 +6855,8 @@
     },
     "ex_n424": {
       "file": "ex_n424.jpg",
-      "width": 948,
-      "height": 634,
+      "width": 1386,
+      "height": 920,
       "source": [
         "book:525"
       ],
@@ -6865,8 +6865,8 @@
     },
     "ex_n425": {
       "file": "ex_n425.jpg",
-      "width": 878,
-      "height": 582,
+      "width": 1290,
+      "height": 830,
       "source": [
         "book:526"
       ],
@@ -6875,8 +6875,8 @@
     },
     "ex_n427": {
       "file": "ex_n427.jpg",
-      "width": 950,
-      "height": 216,
+      "width": 1386,
+      "height": 292,
       "source": [
         "book:529"
       ],
@@ -6885,8 +6885,8 @@
     },
     "ex_n428": {
       "file": "ex_n428.jpg",
-      "width": 1054,
-      "height": 2572,
+      "width": 1722,
+      "height": 3796,
       "source": [
         "book:530",
         "pdf:550"
@@ -6896,8 +6896,8 @@
     },
     "ex_n429": {
       "file": "ex_n429.jpg",
-      "width": 942,
-      "height": 1412,
+      "width": 1386,
+      "height": 2094,
       "source": [
         "book:532"
       ],
@@ -6906,8 +6906,8 @@
     },
     "ex_n432": {
       "file": "ex_n432.jpg",
-      "width": 942,
-      "height": 748,
+      "width": 1386,
+      "height": 1086,
       "source": [
         "book:536"
       ],
@@ -6916,8 +6916,8 @@
     },
     "ex_n433": {
       "file": "ex_n433.jpg",
-      "width": 948,
-      "height": 896,
+      "width": 1386,
+      "height": 1312,
       "source": [
         "book:537"
       ],
@@ -6926,8 +6926,8 @@
     },
     "ex_n434": {
       "file": "ex_n434.jpg",
-      "width": 942,
-      "height": 1132,
+      "width": 1386,
+      "height": 1670,
       "source": [
         "book:538"
       ],
@@ -6936,8 +6936,8 @@
     },
     "ex_n435": {
       "file": "ex_n435.jpg",
-      "width": 948,
-      "height": 1272,
+      "width": 1386,
+      "height": 1876,
       "source": [
         "book:539"
       ],
@@ -6946,8 +6946,8 @@
     },
     "ex_n437": {
       "file": "ex_n437.jpg",
-      "width": 952,
-      "height": 1114,
+      "width": 1386,
+      "height": 1638,
       "source": [
         "book:543"
       ],
@@ -6956,8 +6956,8 @@
     },
     "ex_n438": {
       "file": "ex_n438.jpg",
-      "width": 944,
-      "height": 1000,
+      "width": 1388,
+      "height": 1476,
       "source": [
         "book:544"
       ],
@@ -6966,8 +6966,8 @@
     },
     "ex_n439": {
       "file": "ex_n439.jpg",
-      "width": 1154,
-      "height": 1512,
+      "width": 1710,
+      "height": 2228,
       "source": [
         "book:545"
       ],
@@ -6976,8 +6976,8 @@
     },
     "ex_n441": {
       "file": "ex_n441.jpg",
-      "width": 1054,
-      "height": 1884,
+      "width": 1722,
+      "height": 2750,
       "source": [
         "book:547",
         "pdf:567"
@@ -6987,8 +6987,8 @@
     },
     "ex_n442": {
       "file": "ex_n442.jpg",
-      "width": 1154,
-      "height": 676,
+      "width": 1710,
+      "height": 978,
       "source": [
         "book:549"
       ],
@@ -6997,8 +6997,8 @@
     },
     "ex_n443": {
       "file": "ex_n443.jpg",
-      "width": 1154,
-      "height": 1516,
+      "width": 1710,
+      "height": 2228,
       "source": [
         "book:549"
       ],
@@ -7007,8 +7007,8 @@
     },
     "ex_n446": {
       "file": "ex_n446.jpg",
-      "width": 948,
-      "height": 488,
+      "width": 1386,
+      "height": 688,
       "source": [
         "book:553"
       ],
@@ -7017,8 +7017,8 @@
     },
     "ex_n447": {
       "file": "ex_n447.jpg",
-      "width": 942,
-      "height": 292,
+      "width": 1384,
+      "height": 412,
       "source": [
         "book:554"
       ],
@@ -7027,8 +7027,8 @@
     },
     "ex_n448": {
       "file": "ex_n448.jpg",
-      "width": 946,
-      "height": 1360,
+      "width": 1386,
+      "height": 2010,
       "source": [
         "book:555"
       ],
@@ -7037,8 +7037,8 @@
     },
     "ex_n450": {
       "file": "ex_n450.jpg",
-      "width": 946,
-      "height": 306,
+      "width": 1382,
+      "height": 422,
       "source": [
         "book:557"
       ],
@@ -7047,8 +7047,8 @@
     },
     "ex_n451": {
       "file": "ex_n451.jpg",
-      "width": 938,
-      "height": 444,
+      "width": 1382,
+      "height": 634,
       "source": [
         "book:558"
       ],
@@ -7057,8 +7057,8 @@
     },
     "ex_n452": {
       "file": "ex_n452.jpg",
-      "width": 944,
-      "height": 1340,
+      "width": 1386,
+      "height": 1976,
       "source": [
         "book:559"
       ],
@@ -7067,8 +7067,8 @@
     },
     "ex_n454": {
       "file": "ex_n454.jpg",
-      "width": 1054,
-      "height": 3798,
+      "width": 1722,
+      "height": 5598,
       "source": [
         "book:562",
         "pdf:582",
@@ -7079,8 +7079,8 @@
     },
     "ex_n455": {
       "file": "ex_n455.jpg",
-      "width": 1154,
-      "height": 1512,
+      "width": 1710,
+      "height": 2228,
       "source": [
         "book:565"
       ],
@@ -7089,8 +7089,8 @@
     },
     "ex_n456": {
       "file": "ex_n456.jpg",
-      "width": 1158,
-      "height": 1510,
+      "width": 1710,
+      "height": 2228,
       "source": [
         "book:566"
       ],
@@ -7099,8 +7099,8 @@
     },
     "ex_n459": {
       "file": "ex_n459.jpg",
-      "width": 1056,
-      "height": 2436,
+      "width": 1722,
+      "height": 3584,
       "source": [
         "book:569",
         "pdf:589"
@@ -7110,8 +7110,8 @@
     },
     "ex_n460": {
       "file": "ex_n460.jpg",
-      "width": 950,
-      "height": 1434,
+      "width": 1386,
+      "height": 2118,
       "source": [
         "book:571"
       ],
@@ -7120,8 +7120,8 @@
     },
     "ex_n461": {
       "file": "ex_n461.jpg",
-      "width": 1156,
-      "height": 1510,
+      "width": 1710,
+      "height": 2228,
       "source": [
         "book:572"
       ],
@@ -7130,8 +7130,8 @@
     },
     "ex_n463": {
       "file": "ex_n463.jpg",
-      "width": 1156,
-      "height": 3028,
+      "width": 1722,
+      "height": 4480,
       "source": [
         "book:574",
         "pdf:594"
@@ -7141,8 +7141,8 @@
     },
     "ex_n464": {
       "file": "ex_n464.jpg",
-      "width": 1056,
-      "height": 2960,
+      "width": 1722,
+      "height": 4376,
       "source": [
         "book:576",
         "pdf:596"
@@ -7152,8 +7152,8 @@
     },
     "ex_n465": {
       "file": "ex_n465.jpg",
-      "width": 942,
-      "height": 1440,
+      "width": 1386,
+      "height": 2132,
       "source": [
         "book:578"
       ],
@@ -7162,8 +7162,8 @@
     },
     "ex_n467": {
       "file": "ex_n467.jpg",
-      "width": 942,
-      "height": 946,
+      "width": 1386,
+      "height": 1380,
       "source": [
         "book:581"
       ],
@@ -7172,8 +7172,8 @@
     },
     "ex_n469": {
       "file": "ex_n469.jpg",
-      "width": 938,
-      "height": 260,
+      "width": 1382,
+      "height": 356,
       "source": [
         "book:583"
       ],
@@ -7182,8 +7182,8 @@
     },
     "ex_n470": {
       "file": "ex_n470.jpg",
-      "width": 942,
-      "height": 1328,
+      "width": 1386,
+      "height": 1966,
       "source": [
         "book:584"
       ],
@@ -7192,8 +7192,8 @@
     },
     "ex_n473": {
       "file": "ex_n473.jpg",
-      "width": 782,
-      "height": 270,
+      "width": 1146,
+      "height": 378,
       "source": [
         "book:586"
       ],
@@ -7202,8 +7202,8 @@
     },
     "ex_n474": {
       "file": "ex_n474.jpg",
-      "width": 952,
-      "height": 1090,
+      "width": 1386,
+      "height": 1562,
       "source": [
         "book:587"
       ],
@@ -7212,8 +7212,8 @@
     },
     "ex_n476": {
       "file": "ex_n476.jpg",
-      "width": 944,
-      "height": 1008,
+      "width": 1386,
+      "height": 1478,
       "source": [
         "book:591"
       ],
@@ -7222,8 +7222,8 @@
     },
     "ex_n477": {
       "file": "ex_n477.jpg",
-      "width": 942,
-      "height": 494,
+      "width": 1386,
+      "height": 714,
       "source": [
         "book:592"
       ],
@@ -7232,8 +7232,8 @@
     },
     "ex_n478": {
       "file": "ex_n478.jpg",
-      "width": 950,
-      "height": 1430,
+      "width": 1386,
+      "height": 2112,
       "source": [
         "book:593"
       ],
@@ -7242,8 +7242,8 @@
     },
     "ex_n480": {
       "file": "ex_n480.jpg",
-      "width": 1154,
-      "height": 1504,
+      "width": 1710,
+      "height": 2222,
       "source": [
         "book:599"
       ],
@@ -7252,8 +7252,8 @@
     },
     "ex_n481": {
       "file": "ex_n481.jpg",
-      "width": 942,
-      "height": 932,
+      "width": 1386,
+      "height": 1372,
       "source": [
         "book:600"
       ],
@@ -7262,8 +7262,8 @@
     },
     "ex_n482": {
       "file": "ex_n482.jpg",
-      "width": 942,
-      "height": 576,
+      "width": 1386,
+      "height": 830,
       "source": [
         "book:601"
       ],
@@ -7272,8 +7272,8 @@
     },
     "ex_n483": {
       "file": "ex_n483.jpg",
-      "width": 1158,
-      "height": 1510,
+      "width": 1712,
+      "height": 2228,
       "source": [
         "book:602"
       ],
@@ -7282,8 +7282,8 @@
     },
     "ex_n485": {
       "file": "ex_n485.jpg",
-      "width": 948,
-      "height": 1236,
+      "width": 1386,
+      "height": 1822,
       "source": [
         "book:605"
       ],
@@ -7292,8 +7292,8 @@
     },
     "ex_n486": {
       "file": "ex_n486.jpg",
-      "width": 942,
-      "height": 1148,
+      "width": 1386,
+      "height": 1696,
       "source": [
         "book:606"
       ],
@@ -7302,8 +7302,8 @@
     },
     "ex_n489": {
       "file": "ex_n489.jpg",
-      "width": 938,
-      "height": 358,
+      "width": 1384,
+      "height": 512,
       "source": [
         "book:608"
       ],
@@ -7312,8 +7312,8 @@
     },
     "ex_n490": {
       "file": "ex_n490.jpg",
-      "width": 942,
-      "height": 1384,
+      "width": 1386,
+      "height": 2042,
       "source": [
         "book:609"
       ],
@@ -7322,8 +7322,8 @@
     },
     "ex_n492": {
       "file": "ex_n492.jpg",
-      "width": 1156,
-      "height": 732,
+      "width": 1712,
+      "height": 1060,
       "source": [
         "book:614"
       ],
@@ -7332,8 +7332,8 @@
     },
     "ex_n493": {
       "file": "ex_n493.jpg",
-      "width": 940,
-      "height": 774,
+      "width": 1384,
+      "height": 1136,
       "source": [
         "book:614"
       ],
@@ -7342,8 +7342,8 @@
     },
     "ex_n494": {
       "file": "ex_n494.jpg",
-      "width": 1154,
-      "height": 1512,
+      "width": 1710,
+      "height": 2228,
       "source": [
         "book:615"
       ],
@@ -7352,8 +7352,8 @@
     },
     "ex_n496": {
       "file": "ex_n496.jpg",
-      "width": 1154,
-      "height": 1512,
+      "width": 1710,
+      "height": 2228,
       "source": [
         "book:617"
       ],
@@ -7362,8 +7362,8 @@
     },
     "ex_n497": {
       "file": "ex_n497.jpg",
-      "width": 942,
-      "height": 1290,
+      "width": 1386,
+      "height": 1910,
       "source": [
         "book:618"
       ],
@@ -7372,8 +7372,8 @@
     },
     "ex_n498": {
       "file": "ex_n498.jpg",
-      "width": 948,
-      "height": 1358,
+      "width": 1388,
+      "height": 2004,
       "source": [
         "book:619"
       ],
@@ -7382,8 +7382,8 @@
     },
     "ex_n500": {
       "file": "ex_n500.jpg",
-      "width": 1158,
-      "height": 484,
+      "width": 1710,
+      "height": 692,
       "source": [
         "book:622"
       ],
@@ -7392,8 +7392,8 @@
     },
     "ex_n501": {
       "file": "ex_n501.jpg",
-      "width": 942,
-      "height": 1314,
+      "width": 1386,
+      "height": 1944,
       "source": [
         "book:622"
       ],
@@ -7402,8 +7402,8 @@
     },
     "ex_n503": {
       "file": "ex_n503.jpg",
-      "width": 946,
-      "height": 1432,
+      "width": 1388,
+      "height": 2112,
       "source": [
         "book:627"
       ],
@@ -7412,8 +7412,8 @@
     },
     "ex_n504": {
       "file": "ex_n504.jpg",
-      "width": 930,
-      "height": 314,
+      "width": 1370,
+      "height": 432,
       "source": [
         "book:628"
       ],
@@ -7422,8 +7422,8 @@
     },
     "ex_n505": {
       "file": "ex_n505.jpg",
-      "width": 1056,
-      "height": 2960,
+      "width": 1722,
+      "height": 4370,
       "source": [
         "book:628",
         "pdf:648"
@@ -7433,8 +7433,8 @@
     },
     "ex_n506": {
       "file": "ex_n506.jpg",
-      "width": 1158,
-      "height": 3040,
+      "width": 1722,
+      "height": 4486,
       "source": [
         "book:630",
         "pdf:650"
@@ -7444,8 +7444,8 @@
     },
     "ex_n507": {
       "file": "ex_n507.jpg",
-      "width": 932,
-      "height": 870,
+      "width": 1372,
+      "height": 1302,
       "source": [
         "book:632"
       ],
@@ -7454,8 +7454,8 @@
     },
     "ex_n508": {
       "file": "ex_n508.jpg",
-      "width": 940,
-      "height": 376,
+      "width": 1386,
+      "height": 538,
       "source": [
         "book:632"
       ],
@@ -7464,8 +7464,8 @@
     },
     "ex_n509": {
       "file": "ex_n509.jpg",
-      "width": 948,
-      "height": 664,
+      "width": 1388,
+      "height": 964,
       "source": [
         "book:633"
       ],
@@ -7474,8 +7474,8 @@
     },
     "ex_n510": {
       "file": "ex_n510.jpg",
-      "width": 942,
-      "height": 1286,
+      "width": 1388,
+      "height": 1904,
       "source": [
         "book:634"
       ],
@@ -7484,8 +7484,8 @@
     },
     "ex_n512": {
       "file": "ex_n512.jpg",
-      "width": 1154,
-      "height": 9166,
+      "width": 1722,
+      "height": 13518,
       "source": [
         "book:643",
         "pdf:663",
@@ -7499,8 +7499,8 @@
     },
     "ex_n513": {
       "file": "ex_n513.jpg",
-      "width": 1056,
-      "height": 3818,
+      "width": 1722,
+      "height": 5620,
       "source": [
         "book:649",
         "pdf:669",
@@ -7511,8 +7511,8 @@
     },
     "ex_n514": {
       "file": "ex_n514.jpg",
-      "width": 1156,
-      "height": 3040,
+      "width": 1722,
+      "height": 4486,
       "source": [
         "book:652",
         "pdf:672"
@@ -7522,8 +7522,8 @@
     },
     "ex_n515": {
       "file": "ex_n515.jpg",
-      "width": 1158,
-      "height": 3040,
+      "width": 1722,
+      "height": 4486,
       "source": [
         "book:654",
         "pdf:674"
@@ -7533,8 +7533,8 @@
     },
     "ex_n516": {
       "file": "ex_n516.jpg",
-      "width": 1056,
-      "height": 3828,
+      "width": 1722,
+      "height": 5642,
       "source": [
         "book:656",
         "pdf:676",
@@ -7545,8 +7545,8 @@
     },
     "ex_n517": {
       "file": "ex_n517.jpg",
-      "width": 1056,
-      "height": 5390,
+      "width": 1722,
+      "height": 7942,
       "source": [
         "book:659",
         "pdf:679",
@@ -7558,8 +7558,8 @@
     },
     "ex_n518": {
       "file": "ex_n518.jpg",
-      "width": 1156,
-      "height": 6104,
+      "width": 1722,
+      "height": 9002,
       "source": [
         "book:663",
         "pdf:683",
@@ -7571,8 +7571,8 @@
     },
     "ex_n519": {
       "file": "ex_n519.jpg",
-      "width": 1156,
-      "height": 6104,
+      "width": 1722,
+      "height": 9002,
       "source": [
         "book:667",
         "pdf:687",
@@ -7584,8 +7584,8 @@
     },
     "ex_n520": {
       "file": "ex_n520.jpg",
-      "width": 942,
-      "height": 1094,
+      "width": 1386,
+      "height": 1606,
       "source": [
         "book:671"
       ],
@@ -7594,8 +7594,8 @@
     },
     "ex_n524": {
       "file": "ex_n524.jpg",
-      "width": 942,
-      "height": 1234,
+      "width": 1386,
+      "height": 1786,
       "source": [
         "book:678"
       ],
@@ -7604,8 +7604,8 @@
     },
     "ex_n525": {
       "file": "ex_n525.jpg",
-      "width": 948,
-      "height": 1276,
+      "width": 1386,
+      "height": 1884,
       "source": [
         "book:679"
       ],
@@ -7614,8 +7614,8 @@
     },
     "ex_n527": {
       "file": "ex_n527.jpg",
-      "width": 950,
-      "height": 192,
+      "width": 1386,
+      "height": 256,
       "source": [
         "book:681"
       ],
@@ -7624,8 +7624,8 @@
     },
     "ex_n528": {
       "file": "ex_n528.jpg",
-      "width": 942,
-      "height": 700,
+      "width": 1384,
+      "height": 1026,
       "source": [
         "book:682"
       ],
@@ -7634,8 +7634,8 @@
     },
     "ex_n530": {
       "file": "ex_n530.jpg",
-      "width": 942,
-      "height": 866,
+      "width": 1388,
+      "height": 1274,
       "source": [
         "book:686"
       ],
@@ -7644,8 +7644,8 @@
     },
     "ex_n531": {
       "file": "ex_n531.jpg",
-      "width": 946,
-      "height": 968,
+      "width": 1388,
+      "height": 1418,
       "source": [
         "book:687"
       ],
@@ -7654,8 +7654,8 @@
     },
     "ex_n532": {
       "file": "ex_n532.jpg",
-      "width": 938,
-      "height": 780,
+      "width": 1372,
+      "height": 1142,
       "source": [
         "book:688"
       ],
@@ -7664,8 +7664,8 @@
     },
     "ex_n533": {
       "file": "ex_n533.jpg",
-      "width": 942,
-      "height": 1358,
+      "width": 1386,
+      "height": 2008,
       "source": [
         "book:688"
       ],
@@ -7674,8 +7674,8 @@
     },
     "ex_n535": {
       "file": "ex_n535.jpg",
-      "width": 1054,
-      "height": 3512,
+      "width": 1722,
+      "height": 5168,
       "source": [
         "book:694",
         "pdf:714",
@@ -7686,8 +7686,8 @@
     },
     "ex_n536": {
       "file": "ex_n536.jpg",
-      "width": 950,
-      "height": 772,
+      "width": 1388,
+      "height": 1122,
       "source": [
         "book:697"
       ],
@@ -7696,8 +7696,8 @@
     },
     "ex_n538": {
       "file": "ex_n538.jpg",
-      "width": 1156,
-      "height": 1036,
+      "width": 1710,
+      "height": 1518,
       "source": [
         "book:704"
       ],
@@ -7706,8 +7706,8 @@
     },
     "ex_n539": {
       "file": "ex_n539.jpg",
-      "width": 942,
-      "height": 478,
+      "width": 1386,
+      "height": 692,
       "source": [
         "book:704"
       ],
@@ -7716,8 +7716,8 @@
     },
     "ex_n541": {
       "file": "ex_n541.jpg",
-      "width": 1054,
-      "height": 2948,
+      "width": 1722,
+      "height": 4352,
       "source": [
         "book:705",
         "pdf:725"
@@ -7727,8 +7727,8 @@
     },
     "ex_n542": {
       "file": "ex_n542.jpg",
-      "width": 1054,
-      "height": 5964,
+      "width": 1722,
+      "height": 8802,
       "source": [
         "book:707",
         "pdf:727",
@@ -7740,8 +7740,8 @@
     },
     "ex_n543": {
       "file": "ex_n543.jpg",
-      "width": 1056,
-      "height": 2912,
+      "width": 1722,
+      "height": 4296,
       "source": [
         "book:711",
         "pdf:731"
@@ -7751,8 +7751,8 @@
     },
     "ex_n544": {
       "file": "ex_n544.jpg",
-      "width": 942,
-      "height": 756,
+      "width": 1386,
+      "height": 1100,
       "source": [
         "book:713"
       ],
@@ -7761,8 +7761,8 @@
     },
     "ex_n548": {
       "file": "ex_n548.jpg",
-      "width": 1154,
-      "height": 7624,
+      "width": 1722,
+      "height": 11254,
       "source": [
         "book:723",
         "pdf:743",
@@ -7775,8 +7775,8 @@
     },
     "ex_n549": {
       "file": "ex_n549.jpg",
-      "width": 942,
-      "height": 1244,
+      "width": 1386,
+      "height": 1840,
       "source": [
         "book:728"
       ],
@@ -7785,8 +7785,8 @@
     },
     "ex_n551": {
       "file": "ex_n551.jpg",
-      "width": 1054,
-      "height": 1910,
+      "width": 1722,
+      "height": 2802,
       "source": [
         "book:732",
         "pdf:752"
@@ -7796,8 +7796,8 @@
     },
     "ex_n552": {
       "file": "ex_n552.jpg",
-      "width": 942,
-      "height": 1440,
+      "width": 1386,
+      "height": 2136,
       "source": [
         "book:734"
       ],
@@ -7806,8 +7806,8 @@
     },
     "ex_n553": {
       "file": "ex_n553.jpg",
-      "width": 1054,
-      "height": 2358,
+      "width": 1722,
+      "height": 3468,
       "source": [
         "book:735",
         "pdf:755"
@@ -7817,8 +7817,8 @@
     },
     "ex_n554": {
       "file": "ex_n554.jpg",
-      "width": 948,
-      "height": 968,
+      "width": 1386,
+      "height": 1420,
       "source": [
         "book:737"
       ],
@@ -7827,8 +7827,8 @@
     },
     "ex_n555": {
       "file": "ex_n555.jpg",
-      "width": 942,
-      "height": 904,
+      "width": 1386,
+      "height": 1330,
       "source": [
         "book:738"
       ],
@@ -7837,8 +7837,8 @@
     },
     "ex_n557": {
       "file": "ex_n557.jpg",
-      "width": 1056,
-      "height": 4550,
+      "width": 1722,
+      "height": 6716,
       "source": [
         "book:743",
         "pdf:763",
@@ -7849,8 +7849,8 @@
     },
     "ex_n558": {
       "file": "ex_n558.jpg",
-      "width": 1054,
-      "height": 1656,
+      "width": 1722,
+      "height": 2422,
       "source": [
         "book:746",
         "pdf:766"
@@ -7860,8 +7860,8 @@
     },
     "ex_n559": {
       "file": "ex_n559.jpg",
-      "width": 942,
-      "height": 528,
+      "width": 1386,
+      "height": 766,
       "source": [
         "book:748"
       ],
@@ -7870,8 +7870,8 @@
     },
     "ex_n567": {
       "file": "ex_n567.jpg",
-      "width": 1156,
-      "height": 1504,
+      "width": 1712,
+      "height": 2228,
       "source": [
         "book:768"
       ],
@@ -7880,8 +7880,8 @@
     },
     "ex_n568": {
       "file": "ex_n568.jpg",
-      "width": 952,
-      "height": 1166,
+      "width": 1386,
+      "height": 1718,
       "source": [
         "book:769"
       ],
