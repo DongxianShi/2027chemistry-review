@@ -1598,11 +1598,12 @@ function renderPageImage(node) {
   const box = document.createElement("figure");
   box.className = "page-image";
   const img = document.createElement("img");
-  img.src = imageForPageNode(node);
+  img.src = contentCropSrc(node) || imageForPageNode(node);
   img.alt = displayTitle(node);
   const cap = document.createElement("figcaption");
-  cap.textContent = `${displayTitle(node)} 原书截图，可用于核对苯环、结构式、表格和复杂图示。`;
+  cap.textContent = `${displayTitle(node)} 原书截图，已裁去空白边距，可用于核对苯环、结构式、表格和复杂图示。`;
   img.addEventListener("error", () => {
+    if (tryFallbackImage(img, imageForPageNode(node))) return;
     if (tryFallbackImage(img, node.image)) return;
     box.classList.add("missing");
     cap.textContent = `${displayTitle(node)} 的截图资源未随网站发布，请确认 build/page_images 目录已上传到 GitHub。`;

@@ -35,9 +35,13 @@ function Copy-SiteFiles {
 
   Copy-Item -LiteralPath (Join-Path $SourceDir.Path "tools\sync_github_pages.ps1") -Destination (Join-Path $TargetDir "tools\sync_github_pages.ps1") -Force
   Copy-Item -LiteralPath (Join-Path $SourceDir.Path "tools\render_hd_pages.mjs") -Destination (Join-Path $TargetDir "tools\render_hd_pages.mjs") -Force
+  Copy-Item -LiteralPath (Join-Path $SourceDir.Path "tools\render_content_crops.mjs") -Destination (Join-Path $TargetDir "tools\render_content_crops.mjs") -Force
   Copy-Item -LiteralPath (Join-Path $SourceDir.Path "build\page_images") -Destination (Join-Path $TargetDir "build") -Recurse -Force
   if (Test-Path (Join-Path $SourceDir.Path "build\page_images_hd")) {
     Copy-Item -LiteralPath (Join-Path $SourceDir.Path "build\page_images_hd") -Destination (Join-Path $TargetDir "build") -Recurse -Force
+  }
+  if (Test-Path (Join-Path $SourceDir.Path "build\content_crops")) {
+    Copy-Item -LiteralPath (Join-Path $SourceDir.Path "build\content_crops") -Destination (Join-Path $TargetDir "build") -Recurse -Force
   }
 
   $pdf = Join-Path $TargetDir "chemistry_method.pdf"
@@ -74,7 +78,8 @@ function Get-SourceSignature {
     ".nojekyll",
     "DEPLOYMENT.md",
     "tools\sync_github_pages.ps1",
-    "tools\render_hd_pages.mjs"
+    "tools\render_hd_pages.mjs",
+    "tools\render_content_crops.mjs"
   )
   $items = foreach ($path in $paths) {
     Get-Item -LiteralPath (Join-Path $SourceDir.Path $path)
@@ -82,6 +87,9 @@ function Get-SourceSignature {
   $items += Get-ChildItem -LiteralPath (Join-Path $SourceDir.Path "build\page_images") -File -Recurse
   if (Test-Path (Join-Path $SourceDir.Path "build\page_images_hd")) {
     $items += Get-ChildItem -LiteralPath (Join-Path $SourceDir.Path "build\page_images_hd") -File -Recurse
+  }
+  if (Test-Path (Join-Path $SourceDir.Path "build\content_crops")) {
+    $items += Get-ChildItem -LiteralPath (Join-Path $SourceDir.Path "build\content_crops") -File -Recurse
   }
   ($items | Sort-Object FullName | ForEach-Object { "$($_.FullName)|$($_.Length)|$($_.LastWriteTimeUtc.Ticks)" }) -join "`n"
 }

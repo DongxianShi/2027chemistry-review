@@ -1149,6 +1149,23 @@ sup {
   background: #fff;
 }
 
+.content-crop-frame {
+  width: 100%;
+  max-height: min(72vh, 760px);
+  overflow: auto;
+  border: 1px solid rgba(176, 229, 239, 0.32);
+  border-radius: 8px;
+  background: #fff;
+  overscroll-behavior: contain;
+}
+
+.content-crop-frame img {
+  width: 100%;
+  min-width: min(100%, 620px);
+  height: auto;
+  background: #fff;
+}
+
 .crop-frame {
   position: relative;
   width: 100%;
@@ -1186,7 +1203,8 @@ sup {
   font-size: 12px;
 }
 
-.inline-media.missing .crop-frame {
+.inline-media.missing .crop-frame,
+.inline-media.missing .content-crop-frame {
   display: grid;
   min-height: 120px;
   place-items: center;
