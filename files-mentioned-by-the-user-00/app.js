@@ -340,7 +340,12 @@ function updatePanelToggleLabels() {
 
 function renderArrowMarkers() {
   const defs = document.createElementNS("http://www.w3.org/2000/svg", "defs");
-  defs.appendChild(createArrowMarker("arrow-main", "rgba(128, 230, 255, 0.9)"));
+  defs.appendChild(createArrowMarker("arrow-main", "#78dfff"));
+  defs.appendChild(createArrowMarker("arrow-hierarchy", "#78dfff"));
+  defs.appendChild(createArrowMarker("arrow-summary", "#8fb7ff"));
+  defs.appendChild(createArrowMarker("arrow-example", "#ff98ba"));
+  defs.appendChild(createArrowMarker("arrow-page", "#cfd8e3"));
+  defs.appendChild(createArrowMarker("arrow-semantic", "#f3c96a"));
   defs.appendChild(createArrowMarker("arrow-muted", "rgba(92, 118, 124, 0.54)"));
   return defs;
 }
@@ -563,12 +568,12 @@ function nodeRole(center, id, directEdges) {
 }
 
 function layoutSpread(count) {
-  if (count > 38) return 3.85;
-  if (count > 30) return 3.35;
-  if (count > 22) return 2.9;
-  if (count > 14) return 2.42;
-  if (count > 8) return 1.95;
-  return 1.62;
+  if (count > 38) return 3.1;
+  if (count > 30) return 2.78;
+  if (count > 22) return 2.48;
+  if (count > 14) return 2.04;
+  if (count > 8) return 1.68;
+  return 1.46;
 }
 
 function filteredEdges(edgeList) {
@@ -636,7 +641,7 @@ function placeRadialNodes(center, ids, directEdges, roles, positions, safe, cx, 
   const ringCount = rings.length;
 
   rings.forEach((ringIds, ringIndex) => {
-    const ringRatio = ringCount === 1 ? 0.9 : ringIndex === 0 ? 0.64 : 0.97;
+    const ringRatio = ringCount === 1 ? 0.78 : ringIndex === 0 ? 0.56 : 0.86;
     const rx = Math.max(170, safe.w * ringRatio * 0.5);
     const ry = Math.max(145, safe.h * ringRatio * 0.5);
     const offset = ringIndex === 0 ? 0 : 0.5;
@@ -676,8 +681,8 @@ function neighborRank(center, edge, node) {
 }
 
 function splitRings(ids) {
-  if (ids.length <= 30) return [ids];
-  const innerCount = ids.length <= 24 ? Math.ceil(ids.length * 0.46) : Math.ceil(ids.length * 0.38);
+  if (ids.length <= 24) return [ids];
+  const innerCount = ids.length <= 32 ? Math.ceil(ids.length * 0.42) : Math.ceil(ids.length * 0.36);
   const inner = [];
   const outer = [];
   ids.forEach((id, index) => {
@@ -807,11 +812,11 @@ function edgePlan(edge, positions, index, priorPlans = []) {
   const semantic = relationGroup(edge.relation) === "相关主线";
   const directLane = lane || (index % 2 ? 1 : -1);
   const directCurve = semantic
-    ? Math.min(520, Math.max(180, len * 0.4) + Math.abs(lane) * 34)
-    : Math.min(160, Math.max(62, len * 0.15) + Math.abs(lane) * 14);
+    ? Math.min(300, Math.max(110, len * 0.24) + Math.abs(lane) * 24)
+    : Math.min(105, Math.max(42, len * 0.1) + Math.abs(lane) * 10);
   const indirectCurve = semantic
-    ? Math.min(980, Math.max(420, len * 0.92) + Math.abs(lane) * 86)
-    : Math.min(620, Math.max(260, len * 0.62) + Math.abs(lane) * 52);
+    ? Math.min(430, Math.max(170, len * 0.36) + Math.abs(lane) * 42)
+    : Math.min(300, Math.max(110, len * 0.28) + Math.abs(lane) * 28);
   const control = chooseEdgeControl({
     edge,
     positions,
@@ -875,7 +880,7 @@ function chooseEdgeControl(context) {
     const signs = semantic
       ? [outwardSign, -outwardSign]
       : (directLane >= 0 ? [1, -1] : [-1, 1]);
-    const multipliers = [1, 1.45, 1.9, 2.45, 3.05, 3.75, 4.55];
+    const multipliers = [0.72, 1, 1.28, 1.65, 2.05, 2.55];
     signs.forEach(sign => {
       multipliers.forEach((multiplier, order) => {
         const offset = sign * directCurve * multiplier;
@@ -888,11 +893,11 @@ function chooseEdgeControl(context) {
     const semantic = relationGroup(edge.relation) === "相关主线";
     const signs = semantic ? [1, -1] : [1];
     signs.forEach((sign, signOrder) => {
-      [1, 1.28, 1.58, 1.94, 2.38].forEach((multiplier, order) => {
+      [0.72, 1, 1.28, 1.62, 2.02].forEach((multiplier, order) => {
         laneOffsets.forEach((laneOffset, laneOrder) => {
           push(
-            midX + outwardX * indirectCurve * multiplier * sign + normalX * laneOffset * 64,
-            midY + outwardY * indirectCurve * multiplier * sign + normalY * laneOffset * 64,
+            midX + outwardX * indirectCurve * multiplier * sign + normalX * laneOffset * 44,
+            midY + outwardY * indirectCurve * multiplier * sign + normalY * laneOffset * 44,
             order + signOrder * 0.22 + laneOrder * 0.08
           );
         });
@@ -1032,7 +1037,7 @@ function renderEdge(plan, placedLabel, edgeLabelBoxes, muted = false) {
     path.setAttribute("d", segment.d);
     path.setAttribute("class", `edge-visible edge-${edgeClass(edge.relation)} ${direct ? "edge-direct" : "edge-indirect"} ${muted ? "edge-muted" : "edge-active"}`);
     if (segment.endsAtEnd && index === visibleSegments.length - 1) {
-      path.setAttribute("marker-end", muted ? "url(#arrow-muted)" : "url(#arrow-main)");
+      path.setAttribute("marker-end", `url(#${arrowMarkerId(edge, muted)})`);
     }
     path.dataset.source = edge.source;
     path.dataset.target = edge.target;
@@ -1143,6 +1148,10 @@ function labelCarrierPath(plan, placedLabel) {
   const end = quadraticPoint(plan.start, plan.control, plan.end, Math.min(1, t + 0.012));
   const control = quadraticPoint(plan.start, plan.control, plan.end, t);
   return quadraticPathD(start, control, end);
+}
+
+function arrowMarkerId(edge, muted) {
+  return muted ? "arrow-muted" : `arrow-${edgeClass(edge.relation)}`;
 }
 
 function pointInBox(point, box, pad = 0) {
