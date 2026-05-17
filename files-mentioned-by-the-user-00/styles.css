@@ -535,6 +535,12 @@ button {
 }
 
 .edge-muted {
+  stroke: rgba(92, 118, 124, 0.54) !important;
+  opacity: 0.16;
+  filter: grayscale(1) saturate(0.12) brightness(0.62);
+}
+
+.graph-stage.has-edge-focus .edge-muted {
   stroke: rgba(118, 158, 166, 0.68) !important;
   opacity: 0.36;
   filter: grayscale(0.65) saturate(0.34) brightness(0.78);
@@ -594,6 +600,10 @@ button {
 }
 
 .edge-label-wrap-muted {
+  --label-final-opacity: 0.2;
+}
+
+.graph-stage.has-edge-focus .edge-label-wrap-muted {
   --label-final-opacity: 0.38;
 }
 
@@ -621,14 +631,26 @@ button {
 
 .edge-label-wrap-muted .edge-label-bg {
   fill: rgb(8, 20, 24);
+  stroke: rgba(99, 124, 130, 0.24);
+}
+
+.graph-stage.has-edge-focus .edge-label-wrap-muted .edge-label-bg {
   stroke: rgba(112, 156, 166, 0.34);
 }
 
 .edge-label-wrap-muted .edge-label-stem {
+  stroke: rgba(99, 124, 130, 0.28);
+}
+
+.graph-stage.has-edge-focus .edge-label-wrap-muted .edge-label-stem {
   stroke: rgba(112, 156, 166, 0.38);
 }
 
 .edge-label-wrap-muted .edge-label {
+  fill: rgba(132, 154, 158, 0.7);
+}
+
+.graph-stage.has-edge-focus .edge-label-wrap-muted .edge-label {
   fill: rgba(166, 196, 202, 0.82);
 }
 
