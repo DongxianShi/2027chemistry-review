@@ -69,6 +69,7 @@ const togglePathPanel = document.getElementById("togglePathPanel");
 let resizeTimer = null;
 let stageEl = null;
 let lastLayout = null;
+let lastRenderedCenterId = null;
 let focusedEdgeKey = null;
 let expandedNodeId = null;
 
@@ -176,12 +177,14 @@ function currentNetworkEdges(id) {
 
 function render() {
   renderBreadcrumb();
+  const softUpdate = lastRenderedCenterId === centerId;
   const layout = buildLayout(centerId);
   lastLayout = layout;
   canvas.innerHTML = "";
 
   const stage = document.createElement("div");
   stage.className = "graph-stage";
+  if (softUpdate) stage.classList.add("is-soft-update");
   if (expandedNodeId) stage.classList.add("has-expansion");
   if (focusedEdgeKey) stage.classList.add("has-edge-focus");
   stage.style.width = `${layout.width}px`;
@@ -253,7 +256,9 @@ function render() {
     stage.appendChild(expansion.card);
   }
   canvas.appendChild(stage);
+  detailPanel.classList.toggle("soft-update", softUpdate);
   renderDetail(selectedId);
+  lastRenderedCenterId = centerId;
 }
 
 function nodeMutedForFilter(layout, id) {
